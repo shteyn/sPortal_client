@@ -19,6 +19,10 @@ export default {
         .post("http://localhost:8080/api/auth/confirmation", {
           token
         })
-        .then(res => res.data.user)
+        .then(res => res.data.user),
+    resetPasswordRequest: email =>
+      axios.post("http://localhost:8080/api/auth/reset_password_request", {
+        email
+      })
   }
 };

@@ -24,3 +24,15 @@ export function sendConfirmationEmail(user) {
   };
   transport.sendMail(email);
 }
+
+export function sendResetPasswordEmail(user) {
+  const transport = setup();
+  const email = {
+    from,
+    to: user.email,
+    subject: "DCi Students Portal | Reset Password",
+    text: `Please click this link to reset your password.
+    ${user.generateResetPasswordUrl()}`
+  };
+  transport.sendMail(email);
+}

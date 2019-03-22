@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import ForgotPasswordForm from "../forms/ForgotPasswordForm";
+import { resetPasswordRequest } from "../../actions/auth";
 
 class ForgotPasswordPage extends Component {
   state = {
