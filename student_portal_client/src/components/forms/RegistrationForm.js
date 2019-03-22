@@ -4,7 +4,7 @@ import Validator from "validator";
 
 import InlineError from "../messages/InlineError";
 
-class LoginForm extends Component {
+class RegistrationForm extends Component {
   state = {
     data: {
       email: "",
@@ -37,6 +37,7 @@ class LoginForm extends Component {
     }
   };
 
+  //making syntax validation onSubmit();
   validate = data => {
     const errors = {};
     if (!Validator.isEmail(data.email)) errors.email = "Invalid email";
@@ -48,7 +49,6 @@ class LoginForm extends Component {
     const { data, errors, loading } = this.state;
     return (
       <div>
-        {errors.global && <p id="globalError">{errors.global}</p>}
         <form onSubmit={this.onSubmit} loading={loading}>
           <input
             type="email"
@@ -59,6 +59,7 @@ class LoginForm extends Component {
             value={data.email}
             onChange={this.onChange}
           />
+          {/* InlineError server side validation */}
           {errors.email && <InlineError text={errors.email} />}
           <br />
           <input
@@ -78,8 +79,8 @@ class LoginForm extends Component {
     );
   }
 }
-LoginForm.propTypes = {
+RegistrationForm.propTypes = {
   submit: PropTypes.func.isRequired
 };
 
-export default LoginForm;
+export default RegistrationForm;
