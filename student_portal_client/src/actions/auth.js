@@ -26,3 +26,8 @@ export const confirm = token => dispatch =>
     localStorage.userJWT = user.token;
     dispatch(userLoggedIn(user));
   });
+
+export const resetPasswordRequest = ({ email }) => () => {
+  //console.log("ACTION", email);
+  api.user.resetPasswordRequest(email);
+};
