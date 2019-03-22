@@ -3,9 +3,11 @@ import path from "path";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
-import auth from "./routes/auth";
 import dotenv from "dotenv";
 import BluebirdPromise from "bluebird";
+
+import auth from "./routes/auth";
+import users from "./routes/users";
 
 dotenv.config();
 const app = express();
@@ -22,6 +24,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 });
 
 app.use("/api/auth", auth);
+app.use("/api/users", users);
 
 const PORT = process.env.PORT || 8080;
 

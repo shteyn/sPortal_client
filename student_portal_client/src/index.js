@@ -1,14 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import thunk from "redux-thunk";
+import decode from "jwt-decode";
+
+import { BrowserRouter, Route } from "react-router-dom";
 import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { Provider } from "react-redux";
-import thunk from "redux-thunk";
-import rootReducer from "./rootReducer";
+
 import { userLoggedIn } from "./actions/auth";
-import "./App.css";
 import App from "./App";
+import "./App.css";
+import rootReducer from "./rootReducer";
 import * as serviceWorker from "./serviceWorker";
 
 const store = createStore(
@@ -17,14 +20,20 @@ const store = createStore(
 );
 
 if (localStorage.userJWT) {
-  const user = { token: localStorage.userJWT };
+  const payload = decode(localStorage.userJWT); //payload contains email and confirmed
+  const user = {
+    token: localStorage.userJWT,
+    email: payload.email,
+    confirmed: payload.confirmed
+  };
+  //console.log("PAYLOAD", user);
   store.dispatch(userLoggedIn(user));
 }
 
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+      <Route component={App} />
     </Provider>
   </BrowserRouter>,
   document.getElementById("root")

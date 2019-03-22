@@ -13,9 +13,16 @@ export const login = credentials => dispatch =>
   api.user.login(credentials).then(user => {
     localStorage.userJWT = user.token;
     dispatch(userLoggedIn(user));
+    //console.log("AUTH.JS USER userLoggedIn(user) ", user);
   });
 
 export const logout = () => dispatch => {
   localStorage.removeItem("userJWT");
   dispatch(userLoggedOut());
 };
+
+export const confirm = token => dispatch =>
+  api.user.confirm(token).then(user => {
+    localStorage.userJWT = user.token;
+    dispatch(userLoggedIn(user));
+  });

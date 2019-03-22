@@ -4,11 +4,10 @@ import Validator from "validator";
 
 import InlineError from "../messages/InlineError";
 
-class LoginForm extends Component {
+class ForgotPasswordForm extends Component {
   state = {
     data: {
-      email: "",
-      password: ""
+      email: ""
     },
     loading: false,
     errors: {}
@@ -40,7 +39,6 @@ class LoginForm extends Component {
   validate = data => {
     const errors = {};
     if (!Validator.isEmail(data.email)) errors.email = "Invalid email";
-    if (!data.password) errors.password = "Can't be blank";
     return errors;
   };
 
@@ -61,25 +59,14 @@ class LoginForm extends Component {
           />
           {errors.email && <InlineError text={errors.email} />}
           <br />
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="inserts password"
-            autoComplete="current-password"
-            value={data.password}
-            onChange={this.onChange}
-          />
-          {errors.password && <InlineError text={errors.password} />}
-          <br />
           <button>Submit</button>
         </form>
       </div>
     );
   }
 }
-LoginForm.propTypes = {
+ForgotPasswordForm.propTypes = {
   submit: PropTypes.func.isRequired
 };
 
-export default LoginForm;
+export default ForgotPasswordForm;
