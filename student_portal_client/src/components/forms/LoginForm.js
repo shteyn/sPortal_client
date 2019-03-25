@@ -48,8 +48,10 @@ class LoginForm extends Component {
     const { data, errors, loading } = this.state;
     return (
       <div>
-        {errors.global && <p id="globalError">{errors.global}</p>}
+        
         <form onSubmit={this.onSubmit} loading={loading}>
+        {errors.global && <p id="globalError">{errors.global}</p>}
+        
           <input
             type="email"
             id="email"

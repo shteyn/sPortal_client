@@ -15,6 +15,7 @@ const Dashboard = ({ isConfirmed }) => (
 Dashboard.propTypes = {
   isConfirmed: PropTypes.bool.isRequired
 };
+
 function mapStateToProps(state) {
   return {
     isConfirmed: !!state.user.confirmed

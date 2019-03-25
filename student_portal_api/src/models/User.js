@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import uniqueValidator from "mongoose-unique-validator";
 
+
 const UserSchema = new mongoose.Schema(
   {
     email: {
@@ -49,6 +50,25 @@ UserSchema.methods.setConfirmationToken = function setConfirmationToken() {
 
 UserSchema.methods.generateConfirmationUrl = function generateConfirmationUrl() {
   return `${process.env.HOST}/confirmation/${this.confirmationToken}`;
+};
+
+//Create JWT
+//encode user ID
+//add expreration date 1 hour
+//NOT saving into DB
+UserSchema.methods.generateResetPasswordUrl = function generateResetPasswordUrl() {
+  return `${process.env.HOST}/reset_password/${this.generateResetPasswordToken()}`;
+}
+
+//generate Reset Password JWT
+UserSchema.methods.generateResetPasswordToken = function generateResetPasswordToken() {
+  return jwt.sign(
+    {
+      _id: this._id
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "1h"}
+  );
 };
 
 //generate JWT
