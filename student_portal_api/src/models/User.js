@@ -84,6 +84,7 @@ UserSchema.methods.generateJTW = function generateJTW() {
 
 //return user json
 UserSchema.methods.toAuthJSON = function toAuthJSON() {
+  
   return {
     email: this.email,
     confirmed: this.confirmed,
