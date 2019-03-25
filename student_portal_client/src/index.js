@@ -8,6 +8,8 @@ import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { Provider } from "react-redux";
 
+import "semantic-ui-css/semantic.min.css";
+
 import { userLoggedIn } from "./actions/auth";
 import App from "./App";
 import "./App.css";
