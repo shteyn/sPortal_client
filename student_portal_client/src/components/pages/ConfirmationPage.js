@@ -13,21 +13,10 @@ class ConfirmationPage extends Component {
   };
 
   componentDidMount() {
-    const newUserToken = this.props.match.params.token;
     this.props
-      .confirm(newUserToken)
-      .then(() =>
-        this.setState({
-          loading: false,
-          success: true
-        })
-      )
-      .catch(() =>
-        this.setState({
-          loading: false,
-          success: false
-        })
-      );
+      .confirm(this.props.match.params.token)
+      .then(() => this.setState({ loading: false, success: true }))
+      .catch(() => this.setState({ loading: false, success: false }));
   }
 
   render() {
