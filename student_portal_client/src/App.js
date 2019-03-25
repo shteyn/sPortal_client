@@ -16,6 +16,7 @@ import GuestRoutes from "./components/routes/GuestRoutes";
 
 const App = ({ location, isAuthenticated }) => (
   <div>
+
     {isAuthenticated && <TopNavigation />}
     
     <Route location={location} path="/" exact component={HomePage} />
@@ -66,6 +67,7 @@ App.propTypes = {
 };
 
 function mapStateToProps(state) {
+  console.log('STATE FROM App.js', state);
   return {
     isAuthenticated: !!state.user.email
   };

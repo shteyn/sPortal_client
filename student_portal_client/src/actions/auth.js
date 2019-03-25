@@ -9,8 +9,9 @@ export const userLoggedIn = user => ({
 export const userLoggedOut = () => ({
   type: USER_LOGGED_OUT
 });
+
 export const login = credentials => dispatch =>
-  api.user.login(credentials).then(user => {
+  api.user.login(credentials).then(user => {    
     localStorage.userJWT = user.token;
     dispatch(userLoggedIn(user));
 });
