@@ -21,7 +21,6 @@ const TopNavigation = ({user, logout}) => (
         </li>
         <li>
           <NavLink to='/dashboard'><img src={gravatarUrl(user.email)}/></NavLink>
-          {/*<img src={gravatarUrl(user.email)} to='/dashboard'/>*/}
         </li>
       </ul>
     </nav>

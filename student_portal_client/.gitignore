@@ -3,7 +3,7 @@
 /.pnp
 .pnp.js
 .sass-cache
-
+.idea/
 # testing
 /coverage
 
