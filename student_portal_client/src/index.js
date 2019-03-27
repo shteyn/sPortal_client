@@ -12,14 +12,16 @@ import "semantic-ui-css/semantic.min.css";
 
 import { userLoggedIn } from "./actions/auth";
 import App from "./App";
-import "./App.css";
 import rootReducer from "./rootReducer";
 import * as serviceWorker from "./serviceWorker";
+import "./stylesheet/style.scss"
 
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 );
+
+
 
 if (localStorage.userJWT) {
   const payload = decode(localStorage.userJWT); //payload contains email and confirmed

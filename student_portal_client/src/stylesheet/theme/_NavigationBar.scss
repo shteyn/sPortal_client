@@ -1,0 +1,56 @@
+.navigationBar {
+  width: 100%;
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  background: black;
+  .label {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    align-self: center;
+    .labelD {
+      font-family: Ropa Sans,sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      font-size: 26px;
+      color: #FFFFFF;
+    }
+    .labelC {
+      font-family: Ropa Sans,sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      font-size: 48px;
+      color: #FFFFFF;
+    }
+    .labelI {
+      font-family: Ropa Sans,sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      font-size: 32px;
+      color: #FFFFFF;
+    }
+  }
+  ul {
+    align-self: center;
+    display: flex;
+    list-style: none;
+    li {
+      margin-right: 20px;
+      a {
+        text-decoration: none;
+        font-family: Ropa Sans, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 24px;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
