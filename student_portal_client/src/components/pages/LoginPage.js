@@ -13,11 +13,21 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div>
-        <h1>LoginPage</h1>
-        <LoginForm submit={this.submit} />
-        <br />
-        <Link to="/forgot_password">Forgot Password</Link>
+      <div className="LoginCont">
+        <div className="navigation">
+          <div>
+            <Link to="/" className="labelUserPage">
+              <span className="labelD">D</span>
+              <span className="labelC">C</span>
+              <span className="labelI">I</span>
+            </Link>
+          </div>
+        </div>
+        <div className="LoginModel">
+          <LoginForm submit={this.submit} />
+          <br />
+          <Link to="/forgot_password">Forgot Password</Link>
+        </div>
       </div>
     );
   }

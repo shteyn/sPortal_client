@@ -8,10 +8,12 @@
     text-align: center;
     z-index: 1;
     .textCont {
+      position: relative;
+      top: 100px;
       width: 100%;
       max-width: 1180px;
       height: 514px;
-      margin: 100px auto 10px auto;
+      margin: 0 auto 0 auto;
       background: rgba(196, 196, 196, 0.6);
       text-align: center;
       display: flex;
@@ -30,9 +32,10 @@
       }
     }
     button {
+      position: relative;
       background: rgba(0,0,0,0);
       border: none;
-      margin: auto;
+      margin: 100px;
       &:focus {
         outline: none;
       }

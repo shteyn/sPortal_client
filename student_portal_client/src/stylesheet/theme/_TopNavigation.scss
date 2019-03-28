@@ -3,9 +3,11 @@
   height: 85px;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  top: 0;
-  background: black;
+  flex-direction: row;
+  background: rgba(0,0,0,0);
+  a {
+    align-self: center;
+  }
   .label {
     color: white;
     text-decoration: none;
@@ -40,8 +42,11 @@
     align-self: center;
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
     li {
       margin-right: 20px;
+      align-self: center;
       a {
         text-decoration: none;
         font-family: Ropa Sans, sans-serif;

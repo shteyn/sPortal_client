@@ -15,7 +15,7 @@ import UserRoutes from "./components/routes/UserRoutes";
 import GuestRoutes from "./components/routes/GuestRoutes";
 
 const App = ({ location, isAuthenticated }) => (
-  <div>
+  <div className="container">
 
     {isAuthenticated && <TopNavigation />}
     

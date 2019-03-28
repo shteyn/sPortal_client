@@ -6,8 +6,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/auth";
 
 const HomePage = ({ isAuthenticated, logout }) => (
-  <div className="container">
-    <div>
+  <div>
       {!isAuthenticated &&
       <div className="navigationBar">
         <NavLink className="label">
@@ -25,7 +24,6 @@ const HomePage = ({ isAuthenticated, logout }) => (
         </ul>
       </div>
       }
-    </div>
     <div className="centerWelcomeCont">
       <div className="textCont">
         <h1>WELCOME TO DCI.</h1>
