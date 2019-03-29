@@ -8,13 +8,13 @@ import * as actions from "../../actions/auth";
 const HomePage = ({ isAuthenticated, logout }) => (
   <div>
     <h1>HomePage</h1>
-    {!isAuthenticated &&
+    {!isAuthenticated && (
       <div>
         <Link to="/login">Login</Link>
         <br />
         <Link to="/registration">Registration</Link>
       </div>
-    }
+    )}
   </div>
 );
 
@@ -23,7 +23,6 @@ HomePage.propTypes = {
   logout: PropTypes.func.isRequired
 };
 function mapStateToProps(state) {
-  //console.log("HOME PAGE MAPSTATE", state.user.token);
   return {
     isAuthenticated: !!state.user.token
   };

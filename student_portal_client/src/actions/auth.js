@@ -11,10 +11,10 @@ export const userLoggedOut = () => ({
 });
 
 export const login = credentials => dispatch =>
-  api.user.login(credentials).then(user => {    
+  api.user.login(credentials).then(user => {
     localStorage.userJWT = user.token;
     dispatch(userLoggedIn(user));
-});
+  });
 
 export const logout = () => dispatch => {
   localStorage.removeItem("userJWT");
@@ -27,11 +27,9 @@ export const confirm = token => dispatch =>
     dispatch(userLoggedIn(user));
   });
 
-export const resetPasswordRequest = ({ email }) => () => 
+export const resetPasswordRequest = ({ email }) => () =>
   api.user.resetPasswordRequest(email);
 
-export const validateToken = (token) => () =>
-  api.user.validateToken(token);
+export const validateToken = token => () => api.user.validateToken(token);
 
-export const resetPassword = (data) => () => 
-  api.user.resetPassword(data);
+export const resetPassword = data => () => api.user.resetPassword(data);

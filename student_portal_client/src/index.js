@@ -11,6 +11,7 @@ import { Provider } from "react-redux";
 import "semantic-ui-css/semantic.min.css";
 
 import { userLoggedIn } from "./actions/auth";
+
 import App from "./App";
 import "./App.css";
 import rootReducer from "./rootReducer";
@@ -22,13 +23,13 @@ const store = createStore(
 );
 
 if (localStorage.userJWT) {
-  const payload = decode(localStorage.userJWT); //payload contains email and confirmed
+  const payload = decode(localStorage.userJWT);
   const user = {
     token: localStorage.userJWT,
     email: payload.email,
-    confirmed: payload.confirmed
+    confirmed: payload.confirmed,
+    isAdmin: payload.isAdmin
   };
-  //console.log("PAYLOAD", user);
   store.dispatch(userLoggedIn(user));
 }
 

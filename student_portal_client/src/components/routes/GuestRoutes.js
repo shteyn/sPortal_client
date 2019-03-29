@@ -17,7 +17,6 @@ GuestRoutes.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired
 };
 function mapStateToProps(state) {
-  //console.log("STATE FROM GUEST", state.user.email);
   return {
     isAuthenticated: !!state.user.token
   };

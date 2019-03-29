@@ -3,14 +3,13 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import RegistrationForm from "../forms/RegistrationForm";
-import { registration } from "../../actions/newUser";
+import { registration } from "../../actions/user";
 
 class RegistrationPage extends Component {
   submit = data =>
     this.props
       .registration(data)
       .then(() => this.props.history.push("/dashboard"));
-  //push to admin page
 
   render() {
     return (
