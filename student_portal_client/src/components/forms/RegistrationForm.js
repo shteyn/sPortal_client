@@ -48,7 +48,7 @@ class RegistrationForm extends Component {
   render() {
     const { data, errors, loading } = this.state;
     return (
-      <div>
+      <div  className="loginForm">
         <form onSubmit={this.onSubmit} loading={loading}>
           <input
             type="email"

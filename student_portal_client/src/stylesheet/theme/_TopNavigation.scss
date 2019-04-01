@@ -7,6 +7,9 @@
   background: rgba(0,0,0,0);
   a {
     align-self: center;
+    &:focus {
+      outline: none;
+    }
   }
   .label {
     color: white;
