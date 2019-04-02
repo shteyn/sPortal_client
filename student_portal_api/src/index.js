@@ -26,7 +26,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 app.use("/api/auth", auth);
 app.use("/api/users", users);
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 7777;
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
