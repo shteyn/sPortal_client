@@ -21,7 +21,7 @@ class UserCard extends Component {
                     <h4>ALL LOCATIONS</h4>
                     <div className="UserCardsItems">
                         <div className="CardItem">
-                            <img src={require('../img/user.png')} alt=""/>
+                            <img src={require('../../img/user.png')} alt=""/>
                             <p className="userName">Alex Starr</p>
                             <div className="locationAndAvailability">
                                 <p className="location">Berlin</p>
@@ -31,14 +31,14 @@ class UserCard extends Component {
                                 </div>
                             </div>
                             <div className="CardLinks">
-                                <NavLink title="Linked In" to="#"><img src={require('../img/linkedin.png')} alt=""/></NavLink>
-                                <NavLink title="GitHub" to="#"><img src={require('../img/github.png')} alt=""/></NavLink>
-                                <NavLink title="Xing" to="#"><img src={require('../img/xing.png')} alt=""/></NavLink>
-                                <NavLink title="Portfolio" to="#"><img src={require('../img/briefcase.png')} alt=""/></NavLink>
+                                <NavLink title="Linked In" to="#"><img src={require('../../img/linkedin.png')} alt=""/></NavLink>
+                                <NavLink title="GitHub" to="#"><img src={require('../../img/github.png')} alt=""/></NavLink>
+                                <NavLink title="Xing" to="#"><img src={require('../../img/xing.png')} alt=""/></NavLink>
+                                <NavLink title="Portfolio" to="#"><img src={require('../../img/briefcase.png')} alt=""/></NavLink>
                             </div>
                         </div>
                         <div className="CardItem">
-                            <img src={require('../img/user.png')} alt=""/>
+                            <img src={require('../../img/user.png')} alt=""/>
                             <p className="userName">Alex Starr</p>
                             <div className="locationAndAvailability">
                                 <p className="location">Düsseldorf</p>
@@ -48,14 +48,14 @@ class UserCard extends Component {
                                 </div>
                             </div>
                             <div className="CardLinks">
-                                <NavLink title="Linked In" to="#"><img src={require('../img/linkedin.png')} alt=""/></NavLink>
-                                <NavLink title="GitHub" to="#"><img src={require('../img/github.png')} alt=""/></NavLink>
-                                <NavLink title="Xing" to="#"><img src={require('../img/xing.png')} alt=""/></NavLink>
-                                <NavLink title="Portfolio" to="#"><img src={require('../img/briefcase.png')} alt=""/></NavLink>
+                                <NavLink title="Linked In" to="#"><img src={require('../../img/linkedin.png')} alt=""/></NavLink>
+                                <NavLink title="GitHub" to="#"><img src={require('../../img/github.png')} alt=""/></NavLink>
+                                <NavLink title="Xing" to="#"><img src={require('../../img/xing.png')} alt=""/></NavLink>
+                                <NavLink title="Portfolio" to="#"><img src={require('../../img/briefcase.png')} alt=""/></NavLink>
                             </div>
                         </div>
                         <div className="CardItem">
-                            <img src={require('../img/user.png')} alt=""/>
+                            <img src={require('../../img/user.png')} alt=""/>
                             <p className="userName">Alex Starr</p>
                             <div className="locationAndAvailability">
                                 <p className="location">Köln</p>
@@ -65,14 +65,14 @@ class UserCard extends Component {
                                 </div>
                             </div>
                             <div className="CardLinks">
-                                <NavLink title="Linked In" to="#"><img src={require('../img/linkedin.png')} alt=""/></NavLink>
-                                <NavLink title="GitHub" to="#"><img src={require('../img/github.png')} alt=""/></NavLink>
-                                <NavLink title="Xing" to="#"><img src={require('../img/xing.png')} alt=""/></NavLink>
-                                <NavLink title="Portfolio" to="#"><img src={require('../img/briefcase.png')} alt=""/></NavLink>
+                                <NavLink title="Linked In" to="#"><img src={require('../../img/linkedin.png')} alt=""/></NavLink>
+                                <NavLink title="GitHub" to="#"><img src={require('../../img/github.png')} alt=""/></NavLink>
+                                <NavLink title="Xing" to="#"><img src={require('../../img/xing.png')} alt=""/></NavLink>
+                                <NavLink title="Portfolio" to="#"><img src={require('../../img/briefcase.png')} alt=""/></NavLink>
                             </div>
                         </div>
                         <div className="CardItem">
-                            <img src={require('../img/user.png')} alt=""/>
+                            <img src={require('../../img/user.png')} alt=""/>
                             <p className="userName">Alex Starr</p>
                             <div className="locationAndAvailability">
                                 <p className="location">Hamburg</p>
@@ -82,10 +82,10 @@ class UserCard extends Component {
                                 </div>
                             </div>
                             <div className="CardLinks">
-                                <NavLink title="Linked In" to="#"><img src={require('../img/linkedin.png')} alt=""/></NavLink>
-                                <NavLink title="GitHub" to="#"><img src={require('../img/github.png')} alt=""/></NavLink>
-                                <NavLink title="Xing" to="#"><img src={require('../img/xing.png')} alt=""/></NavLink>
-                                <NavLink title="Portfolio" to="#"><img src={require('../img/briefcase.png')} alt=""/></NavLink>
+                                <NavLink title="Linked In" to="#"><img src={require('../../img/linkedin.png')} alt=""/></NavLink>
+                                <NavLink title="GitHub" to="#"><img src={require('../../img/github.png')} alt=""/></NavLink>
+                                <NavLink title="Xing" to="#"><img src={require('../../img/xing.png')} alt=""/></NavLink>
+                                <NavLink title="Portfolio" to="#"><img src={require('../../img/briefcase.png')} alt=""/></NavLink>
                             </div>
                         </div>
                     </div>
