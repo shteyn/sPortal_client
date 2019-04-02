@@ -3,7 +3,6 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import uniqueValidator from "mongoose-unique-validator";
 
-
 const UserSchema = new mongoose.Schema(
   {
     email: {
@@ -16,6 +15,22 @@ const UserSchema = new mongoose.Schema(
     passwordHash: {
       type: String,
       required: true
+    },
+    firstName: {
+      type: String,
+      default: ""
+    },
+    lastName: {
+      type: String,
+      default: ""
+    },
+    location: {
+      type: String,
+      default: ""
+    },
+    studentClass: {
+      type: Number,
+      default: ""
     },
     confirmationToken: {
       type: String,
@@ -57,8 +72,10 @@ UserSchema.methods.generateConfirmationUrl = function generateConfirmationUrl() 
 //add expreration date 1 hour
 //NOT saving into DB
 UserSchema.methods.generateResetPasswordUrl = function generateResetPasswordUrl() {
-  return `${process.env.HOST}/reset_password/${this.generateResetPasswordToken()}`;
-}
+  return `${
+    process.env.HOST
+  }/reset_password/${this.generateResetPasswordToken()}`;
+};
 
 //generate Reset Password JWT
 UserSchema.methods.generateResetPasswordToken = function generateResetPasswordToken() {
@@ -67,7 +84,7 @@ UserSchema.methods.generateResetPasswordToken = function generateResetPasswordTo
       _id: this._id
     },
     process.env.JWT_SECRET,
-    { expiresIn: "1h"}
+    { expiresIn: "1h" }
   );
 };
 
@@ -76,7 +93,8 @@ UserSchema.methods.generateJTW = function generateJTW() {
   return jwt.sign(
     {
       email: this.email,
-      confirmed: this.confirmed
+      confirmed: this.confirmed,
+      isAdmin: this.isAdmin
     },
     process.env.JWT_SECRET
   );
@@ -84,7 +102,6 @@ UserSchema.methods.generateJTW = function generateJTW() {
 
 //return user json
 UserSchema.methods.toAuthJSON = function toAuthJSON() {
-  
   return {
     email: this.email,
     confirmed: this.confirmed,

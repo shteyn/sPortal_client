@@ -8,7 +8,11 @@ class RegistrationForm extends Component {
   state = {
     data: {
       email: "",
-      password: ""
+      password: "",
+      firstName: "",
+      lastName: "",
+      location: "",
+      studentClass: ""
     },
     loading: false,
     errors: {}
@@ -49,7 +53,7 @@ class RegistrationForm extends Component {
     const { data, errors, loading } = this.state;
     return (
       <div>
-        <form onSubmit={this.onSubmit} loading={loading}>
+        <form onSubmit={this.onSubmit} loading={loading.toString()}>
           <input
             type="email"
             id="email"
@@ -72,6 +76,42 @@ class RegistrationForm extends Component {
             onChange={this.onChange}
           />
           {errors.password && <InlineError text={errors.password} />}
+          <br />
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="insert your first name..."
+            value={data.firstName}
+            onChange={this.onChange}
+          />
+          <br />
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="insert your last name..."
+            value={data.lastName}
+            onChange={this.onChange}
+          />
+          <br />
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="insert your location..."
+            value={data.location}
+            onChange={this.onChange}
+          />
+          <br />
+          <input
+            type="number"
+            id="studentClass"
+            name="studentClass"
+            placeholder="insert your class number..."
+            value={data.studentClass}
+            onChange={this.onChange}
+          />
           <br />
           <button>Submit</button>
         </form>

@@ -1,10 +1,9 @@
 import { combineReducers } from "redux";
 
 import user from "./reducers/user";
-import profileCard from "./reducers/profileCard";
-
+import allUsers from "./reducers/userData";
 
 export default combineReducers({
   user,
-  profileCard
+  allUsers
 });

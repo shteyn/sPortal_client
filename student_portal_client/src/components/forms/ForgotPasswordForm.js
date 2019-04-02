@@ -47,7 +47,7 @@ class ForgotPasswordForm extends Component {
     return (
       <div>
         {!!errors.global && <p id="globalError">{errors.global}</p>}
-        <form onSubmit={this.onSubmit} loading={loading}>
+        <form onSubmit={this.onSubmit} loading={loading.toString()}>
           <input
             type="email"
             id="email"
