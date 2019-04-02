@@ -29,7 +29,10 @@ router.post("/", (req, res) => {
 //Get All Approved Users
 router.get("/", (req, res) => {
   User.find(
-    { confirmed: { $in: ["true", true] }, isAdmin: { $in: ["false", false] } },
+    {
+      confirmed: { $in: ["false", false] },
+      isAdmin: { $in: ["false", false] }
+    },
     { passwordHash: 0 }
   ).then(user => {
     res.json(user);
