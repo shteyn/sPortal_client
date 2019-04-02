@@ -26,7 +26,7 @@ class ConfirmationPage extends Component {
         {loading && (
           <div>
             <p>Validating your email</p>
-            <YourSvg loading />
+            <YourSvg loading={loading.toString()} />
           </div>
         )}
         {!loading && success && (

@@ -7,8 +7,8 @@ class ResetPasswordForm extends Component {
   state = {
     data: {
       token: this.props.token,
-      password: '',
-      passwordConfirmation: ''
+      password: "",
+      passwordConfirmation: ""
     },
     loading: false,
     errors: {}
@@ -28,10 +28,8 @@ class ResetPasswordForm extends Component {
     this.setState({ errors });
     if (Object.keys(errors).length === 0) {
       this.setState({ loading: true });
-      this.props
-        .submit(this.state.data)
-        .catch(error => 
-          this.setState({
+      this.props.submit(this.state.data).catch(error =>
+        this.setState({
           errors: error.response.data.errors,
           loading: false
         })
@@ -42,7 +40,8 @@ class ResetPasswordForm extends Component {
   validate = data => {
     const errors = {};
     if (!data.password) errors.password = "Can't be blank";
-    if (data.password !== data.passwordConfirmation) errors.password = "Passwords must match";
+    if (data.password !== data.passwordConfirmation)
+      errors.password = "Passwords must match";
     return errors;
   };
 
@@ -51,7 +50,7 @@ class ResetPasswordForm extends Component {
     return (
       <div>
         {errors.global && <p id="globalError">{errors.global}</p>}
-        <form onSubmit={this.onSubmit} loading={loading}>
+        <form onSubmit={this.onSubmit} loading={loading.toString()}>
           <div error={!!errors.password}>
             <input
               type="password"
@@ -60,8 +59,8 @@ class ResetPasswordForm extends Component {
               placeholder="your new password..."
               value={data.password}
               onChange={this.onChange}
-            /> 
-          {errors.password && <InlineError text={errors.password} />}
+            />
+            {errors.password && <InlineError text={errors.password} />}
           </div>
           <br />
           <div error={!!errors.passwordConfirmation}>
@@ -74,7 +73,9 @@ class ResetPasswordForm extends Component {
               value={data.passwordConfirmation}
               onChange={this.onChange}
             />
-          {errors.passwordConfirmation && <InlineError text={errors.passwordConfirmation} />}
+            {errors.passwordConfirmation && (
+              <InlineError text={errors.passwordConfirmation} />
+            )}
           </div>
           <br />
           <button>Reset</button>

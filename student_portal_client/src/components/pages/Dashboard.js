@@ -4,11 +4,14 @@ import { connect } from "react-redux";
 import TopNavigation from '../navigation/TopNavigation'
 
 import ConfirmEmailMessage from "../messages/ConfirmEmailMessage";
+import UserDashboardPage from "./UserDashboardPage";
+import AdminDashboardPage from "./AdminDashboardPage";
 
-const Dashboard = ({ isConfirmed }) => (
+const Dashboard = ({ isConfirmed, isAdmin }) => (
   //ADD SUBMIT FUNCTION TO CHANGE DATA
   <div className="UserPage">
     {!isConfirmed && <ConfirmEmailMessage />}
+<<<<<<< HEAD
     <div className="navigationBarUserPage">
       <TopNavigation/>
     </div>
@@ -83,16 +86,21 @@ const Dashboard = ({ isConfirmed }) => (
         <h3>Location</h3>
       </div>
     </div>
+=======
+    {!isAdmin ? <UserDashboardPage /> : <AdminDashboardPage />}
+>>>>>>> fa74473acc976ed100b6c38518a317f42c22432d
   </div>
 );
 
 Dashboard.propTypes = {
-  isConfirmed: PropTypes.bool.isRequired
+  isConfirmed: PropTypes.bool.isRequired,
+  isAdmin: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    isConfirmed: !!state.user.confirmed
+    isConfirmed: !!state.user.confirmed,
+    isAdmin: !!state.user.isAdmin
   };
 }
 
