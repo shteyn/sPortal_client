@@ -29,12 +29,15 @@ class LoginForm extends Component {
     if (Object.keys(errors).length === 0) {
       this.setState({ loading: true });
       this.props.submit(this.state.data).catch(error =>
+
         this.setState({
-          errors: error.response.data.error,
+          errors: error.response.data.errors,
           loading: false
         })
+
       );
     }
+    // console.log(errors)
   };
 
   validate = data => {

@@ -7,10 +7,9 @@ import * as actions from "../../actions/auth";
 
 const HomePage = ({ isAuthenticated, logout }) => (
   <div>
-<<<<<<< HEAD
       {!isAuthenticated &&
       <div className="navigationBar">
-        <NavLink className="label">
+        <NavLink to="/" className="label">
           <span className="labelD">D</span>
           <span className="labelC">C</span>
           <span className="labelI">I</span>
@@ -38,16 +37,6 @@ const HomePage = ({ isAuthenticated, logout }) => (
         </NavLink>
       </button>
     </div>
-=======
-    <h1>HomePage</h1>
-    {!isAuthenticated && (
-      <div>
-        <Link to="/login">Login</Link>
-        <br />
-        <Link to="/registration">Registration</Link>
-      </div>
-    )}
->>>>>>> fa74473acc976ed100b6c38518a317f42c22432d
   </div>
 );
 

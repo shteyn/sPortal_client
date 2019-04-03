@@ -74,11 +74,7 @@ UserSchema.methods.generateConfirmationUrl = function generateConfirmationUrl() 
 UserSchema.methods.generateResetPasswordUrl = function generateResetPasswordUrl() {
   return `${
     process.env.HOST
-<<<<<<< HEAD
-    }/reset_password/${this.generateResetPasswordToken()}`;
-=======
   }/reset_password/${this.generateResetPasswordToken()}`;
->>>>>>> fa74473acc976ed100b6c38518a317f42c22432d
 };
 
 //generate Reset Password JWT

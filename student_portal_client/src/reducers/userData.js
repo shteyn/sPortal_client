@@ -6,10 +6,9 @@ const initialState = {
 };
 
 export default function(state = initialState, action = {}) {
-  switch (action.type) {
-    case GET_ALL_USERS:
-      return { allUsers: action.allUsers };
-    default:
-      return state;
+  if (action.type === GET_ALL_USERS) {
+    return { allUsers: action.allUsers };
+  } else {
+    return state;
   }
 }

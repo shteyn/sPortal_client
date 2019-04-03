@@ -5,13 +5,12 @@ import TopNavigation from '../navigation/TopNavigation'
 
 import ConfirmEmailMessage from "../messages/ConfirmEmailMessage";
 import UserDashboardPage from "./UserDashboardPage";
-import AdminDashboardPage from "./AdminDashboardPage";
+import AdminDashboardPage from "./AdminDashboardPage'";
 
 const Dashboard = ({ isConfirmed, isAdmin }) => (
   //ADD SUBMIT FUNCTION TO CHANGE DATA
   <div className="UserPage">
     {!isConfirmed && <ConfirmEmailMessage />}
-<<<<<<< HEAD
     <div className="navigationBarUserPage">
       <TopNavigation/>
     </div>
@@ -86,9 +85,7 @@ const Dashboard = ({ isConfirmed, isAdmin }) => (
         <h3>Location</h3>
       </div>
     </div>
-=======
     {!isAdmin ? <UserDashboardPage /> : <AdminDashboardPage />}
->>>>>>> fa74473acc976ed100b6c38518a317f42c22432d
   </div>
 );
 
