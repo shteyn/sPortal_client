@@ -3,7 +3,13 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Table, Button } from "semantic-ui-react";
 
+import { deleteUser } from "../../actions/user";
+
 class ConfirmedUsersForm extends Component {
+  deleteUser = id => {
+    console.log("deleteUser user CALLED", id);
+    this.props.deleteUser(id);
+  };
   render() {
     const { allUsers } = this.props.allUsers;
 
@@ -40,7 +46,12 @@ class ConfirmedUsersForm extends Component {
                     <Table.Cell>{lastName}</Table.Cell>
                     <Table.Cell>{email}</Table.Cell>
                     <Table.Cell>
-                      <Button color="red">Delete User</Button>
+                      <Button
+                        color="red"
+                        onClick={this.deleteUser.bind(this, _id)}
+                      >
+                        Delete User
+                      </Button>
                     </Table.Cell>
                   </Table.Row>
                 );
@@ -56,7 +67,8 @@ class ConfirmedUsersForm extends Component {
 }
 
 ConfirmedUsersForm.propTypes = {
-  allUsers: PropTypes.object.isRequired
+  allUsers: PropTypes.object.isRequired,
+  deleteUser: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
@@ -67,4 +79,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(ConfirmedUsersForm);
+export default connect(
+  mapStateToProps,
+  { deleteUser }
+)(ConfirmedUsersForm);

@@ -33,7 +33,18 @@ export default {
 
     resetPassword: data =>
       axios.post("http://localhost:8080/api/auth/reset_password", { data }),
-    getWaitingUsers: () =>
-      axios.get("http://localhost:8080/api/users").then(res => res.data)
+
+    getAllUsers: () =>
+      axios.get("http://localhost:8080/api/users").then(res => res.data),
+
+    approveUser: id =>
+      axios
+        .post(`http://localhost:8080/api/users/${id}`)
+        .then(console.log("user posted")),
+
+    deleteUser: id =>
+      axios
+        .delete(`http://localhost:8080/api/users/${id}`)
+        .then(console.log("user deleted"))
   }
 };
