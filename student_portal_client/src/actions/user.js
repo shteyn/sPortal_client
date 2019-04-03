@@ -13,8 +13,8 @@ export const registration = data => dispatch =>
     dispatch(userLoggedIn(user));
   });
 
-export const getAllUsers = () => dispatch =>
-  api.user.getAllUsers().then(allUsers => {
+export const getWaitingUsers = () => dispatch =>
+  api.user.getWaitingUsers().then(allUsers => {
     dispatch(allUsersList(allUsers));
   });
 

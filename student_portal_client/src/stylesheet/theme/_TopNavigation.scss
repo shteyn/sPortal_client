@@ -1,0 +1,67 @@
+.navigationBar {
+  width: 100%;
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  background: rgba(0, 0, 0, 0);
+  a {
+    align-self: center;
+    &:focus {
+      outline: none;
+    }
+  }
+  .label {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    align-self: center;
+    .labelD {
+      font-family: Ropa Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      font-size: 26px;
+      color: #ffffff;
+    }
+    .labelC {
+      font-family: Ropa Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      font-size: 48px;
+      color: #ffffff;
+    }
+    .labelI {
+      font-family: Ropa Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      font-size: 32px;
+      color: #ffffff;
+    }
+  }
+  #gravatar-img {
+    border-radius: 50%;
+  }
+  ul {
+    align-self: center;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin-right: 20px;
+      align-self: center;
+      a {
+        text-decoration: none;
+        font-family: Ropa Sans, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 24px;
+        color: #ffffff;
+      }
+    }
+  }
+}

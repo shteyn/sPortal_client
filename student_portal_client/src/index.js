@@ -13,7 +13,8 @@ import "semantic-ui-css/semantic.min.css";
 import { userLoggedIn } from "./actions/auth";
 
 import App from "./App";
-import "./App.css";
+import "./stylesheet/style.scss";
+import "bootstrap/dist/css/bootstrap.css";
 import rootReducer from "./rootReducer";
 import * as serviceWorker from "./serviceWorker";
 

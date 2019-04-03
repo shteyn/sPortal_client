@@ -1,70 +1,57 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Table } from "semantic-ui-react";
+import { Tab } from "semantic-ui-react";
 
-import { getAllUsers } from "../../actions/user";
+import WaitingUsersForm from "../forms/WaitingUsersForm";
+import ConfirmedUsersForm from "../forms/ConfirmedUsersForm";
+import { getWaitingUsers } from "../../actions/user";
+
+const panes = [
+  {
+    menuItem: "Waiting Users",
+    render: () => (
+      <Tab.Pane attached={false}>
+        <WaitingUsersForm />
+      </Tab.Pane>
+    )
+  },
+  {
+    menuItem: "Confirmed Users",
+    render: () => (
+      <Tab.Pane attached={false}>
+        <ConfirmedUsersForm />
+      </Tab.Pane>
+    )
+  }
+];
 
 class AdminDashboardPage extends Component {
   componentDidMount() {
-    this.props.getAllUsers();
+    this.props.getWaitingUsers();
   }
-
   render() {
-    const { allUsers } = this.props.allUsers;
+    const AdminTabs = () => <Tab menu={{ pointing: true }} panes={panes} />;
 
-    return (
-      <Table celled>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>Location</Table.HeaderCell>
-            <Table.HeaderCell>Class</Table.HeaderCell>
-            <Table.HeaderCell>First Name</Table.HeaderCell>
-            <Table.HeaderCell>Last Name</Table.HeaderCell>
-            <Table.HeaderCell>E-Mail</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-
-        <Table.Body>
-          {allUsers.map(
-            ({
-              _id,
-              firstName,
-              lastName,
-              email,
-              location,
-              studentClass,
-              confirmed
-            }) => (
-              <Table.Row key={_id}>
-                <Table.Cell>{location}</Table.Cell>
-                <Table.Cell>{studentClass}</Table.Cell>
-                <Table.Cell>{firstName}</Table.Cell>
-                <Table.Cell>{lastName}</Table.Cell>
-                <Table.Cell>{email}</Table.Cell>
-              </Table.Row>
-            )
-          )}
-        </Table.Body>
-      </Table>
-    );
+    return <AdminTabs />;
   }
 }
 
 AdminDashboardPage.propTypes = {
   allUsers: PropTypes.object.isRequired,
-  getAllUsers: PropTypes.func.isRequired
+  getWaitingUsers: PropTypes.func.isRequired,
+  isConfirmed: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state) {
-  console.log("mapStateToProps AdminPage", state.allUsers);
-
+  console.log("ADMIN PAGE", state.allUsers);
   return {
-    allUsers: state.allUsers
+    allUsers: state.allUsers,
+    isConfirmed: !!state.user.confirmed
   };
 }
 
 export default connect(
   mapStateToProps,
-  { getAllUsers }
+  { getWaitingUsers }
 )(AdminDashboardPage);
