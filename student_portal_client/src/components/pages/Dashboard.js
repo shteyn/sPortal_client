@@ -9,7 +9,6 @@ import AdminDashboardPage from "./AdminDashboardPage";
 const Dashboard = ({ isConfirmed, isAdmin }) => (
   //ADD SUBMIT FUNCTION TO CHANGE DATA
   <div>
-    <p> Dashboard</p>
     {!isConfirmed && <ConfirmEmailMessage />}
     {!isAdmin ? <UserDashboardPage /> : <AdminDashboardPage />}
   </div>

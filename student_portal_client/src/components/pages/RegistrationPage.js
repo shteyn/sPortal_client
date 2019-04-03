@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import RegistrationForm from "../forms/RegistrationForm";
 import { registration } from "../../actions/user";
@@ -13,9 +14,19 @@ class RegistrationPage extends Component {
 
   render() {
     return (
-      <div>
-        <h1>RegistrationPage</h1>
-        <RegistrationForm submit={this.submit} />
+      <div className="LoginCont">
+        <div className="navigation">
+          <div>
+            <Link to="/" className="labelUserPage">
+              <span className="labelD">D</span>
+              <span className="labelC">C</span>
+              <span className="labelI">I</span>
+            </Link>
+          </div>
+        </div>
+        <div className="LoginModel">
+          <RegistrationForm submit={this.submit} />
+        </div>
       </div>
     );
   }

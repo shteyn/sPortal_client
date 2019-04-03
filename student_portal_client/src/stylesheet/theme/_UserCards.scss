@@ -1,0 +1,159 @@
+.UserCardsCont {
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  .navigationBarUserCardPage {
+    height: 85px;
+    background: #1d3b8b;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .labelUserPage {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-55%);
+      .labelD {
+        font-family: Ropa Sans, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 26px;
+        color: #ffffff;
+      }
+      .labelC {
+        font-family: Ropa Sans, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 48px;
+        color: #ffffff;
+      }
+      .labelI {
+        font-family: Ropa Sans, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 32px;
+        color: #ffffff;
+      }
+    }
+  }
+  .UserCardsListCont {
+    position: relative;
+    text-align: center;
+    top: 100px;
+    h1 {
+      font-family: Ropa Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 72px;
+      line-height: normal;
+      text-align: center;
+      color: #173396;
+    }
+    h3 {
+      margin: 0;
+      font-family: Ropa Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 48px;
+      line-height: normal;
+      text-align: center;
+      color: #173396;
+    }
+    h4 {
+      margin: 0;
+      font-family: Ropa Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 36px;
+      line-height: normal;
+      text-align: center;
+      color: #f2a23a;
+    }
+    .UserCardsItems {
+      width: 100%;
+      max-width: 1428px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      .CardItem {
+        width: 342px;
+        height: 401px;
+        background: rgba(23, 51, 150, 0.1);
+        border-radius: 19px;
+        .CardLinks {
+          margin: auto;
+          img {
+            width: 31px;
+            height: 31px;
+            color: rgba(29, 59, 139, 0.5);
+            margin: 10px 10px;
+          }
+        }
+        .locationAndAvailability {
+          width: 319px;
+          height: 87px;
+          margin: 30px auto;
+          background: rgba(218, 148, 70, 0.5);
+          border-radius: 9px;
+          display: flex;
+          flex-direction: row;
+          justify-content: left;
+          text-align: left;
+          p {
+            margin: 8px;
+            width: 104px;
+            font-family: Ropa Sans, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+          }
+          .Availability {
+            border-left: 2px solid white;
+            display: flex;
+            flex-direction: column;
+            justify-items: left;
+            text-align: left;
+            width: 100%;
+            p {
+              width: 100%;
+              text-align: left;
+              margin: 8px auto 8px 20px;
+              font-family: Ropa Sans, sans-serif;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 18px;
+              line-height: normal;
+              color: #1d3b8b;
+            }
+          }
+        }
+        img {
+          width: 128px;
+          height: 128px;
+          margin: 10px auto 10px;
+        }
+        p {
+          color: #1d3b8b;
+          font-family: Ropa Sans, sans-serif;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 36px;
+          line-height: normal;
+          text-align: center;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

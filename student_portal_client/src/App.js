@@ -10,12 +10,13 @@ import LoginPage from "./components/pages/LoginPage";
 import RegistrationPage from "./components/pages/RegistrationPage";
 import ForgotPasswordPage from "./components/pages/ForgotPasswordPage";
 import ResetPasswordPage from "./components/pages/ResetPasswordPage";
+import UserCard from "./components/pages/UserCard";
 import Dashboard from "./components/pages/Dashboard";
 import UserRoutes from "./components/routes/UserRoutes";
 import GuestRoutes from "./components/routes/GuestRoutes";
 
 const App = ({ location, isAuthenticated }) => (
-  <div>
+  <div className="container-app">
     {isAuthenticated && <TopNavigation />}
 
     <Route location={location} path="/" exact component={HomePage} />
@@ -54,6 +55,12 @@ const App = ({ location, isAuthenticated }) => (
       path="/dashboard"
       exact
       component={Dashboard}
+    />
+    <UserRoutes
+      location={location}
+      path="/user-card"
+      exact
+      component={UserCard}
     />
   </div>
 );

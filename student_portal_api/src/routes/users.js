@@ -30,13 +30,12 @@ router.post("/", (req, res) => {
 router.get("/", (req, res) => {
   User.find(
     {
-      confirmed: { $in: ["false", false] },
+      //confirmed: { $in: ["true", true] },
       isAdmin: { $in: ["false", false] }
     },
     { passwordHash: 0 }
   ).then(user => {
     res.json(user);
-    console.log("get All users ", user);
   });
 });
 
@@ -44,7 +43,6 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   User.findById(req.body).then(user => {
     res.json(user);
-    console.log("get only one", user);
   });
 });
 

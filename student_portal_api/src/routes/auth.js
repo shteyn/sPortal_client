@@ -56,7 +56,6 @@ router.post("/validate_token", (req, res) => {
 
 router.post("/reset_password", (req, res) => {
   const { password, token } = req.body.data;
-  console.log("req.body.data", req.body.data);
 
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {

@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Table, Button } from "semantic-ui-react";
 
-class ConfirmedUsersForm extends Component {
+import { getWaitingUsers } from "../../actions/user";
+
+class WaitingUsersForm extends Component {
   render() {
     const { allUsers } = this.props.allUsers;
 
@@ -31,7 +33,7 @@ class ConfirmedUsersForm extends Component {
               studentClass,
               confirmed
             }) => {
-              if (confirmed) {
+              if (!confirmed) {
                 return (
                   <Table.Row key={_id}>
                     <Table.Cell>{location}</Table.Cell>
@@ -40,7 +42,8 @@ class ConfirmedUsersForm extends Component {
                     <Table.Cell>{lastName}</Table.Cell>
                     <Table.Cell>{email}</Table.Cell>
                     <Table.Cell>
-                      <Button color="red">Delete User</Button>
+                      <Button secondary>Approve</Button>
+                      <Button color="red">Reject</Button>
                     </Table.Cell>
                   </Table.Row>
                 );
@@ -55,16 +58,20 @@ class ConfirmedUsersForm extends Component {
   }
 }
 
-ConfirmedUsersForm.propTypes = {
-  allUsers: PropTypes.object.isRequired
+WaitingUsersForm.propTypes = {
+  allUsers: PropTypes.object.isRequired,
+  getWaitingUsers: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
-  console.log("CONFIRMED USERS", state.allUsers);
+  console.log("WAITING USERS", state.allUsers.allUsers);
 
   return {
     allUsers: state.allUsers
   };
 }
 
-export default connect(mapStateToProps)(ConfirmedUsersForm);
+export default connect(
+  mapStateToProps,
+  { getWaitingUsers }
+)(WaitingUsersForm);
