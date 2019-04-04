@@ -5,7 +5,7 @@ import { Tab } from "semantic-ui-react";
 
 import WaitingUsersForm from "../forms/WaitingUsersForm";
 import ConfirmedUsersForm from "../forms/ConfirmedUsersForm";
-import { getWaitingUsers } from "../../actions/user";
+import { getAllUsers } from "../../actions/user";
 
 const panes = [
   {
@@ -28,7 +28,7 @@ const panes = [
 
 class AdminDashboardPage extends Component {
   componentDidMount() {
-    this.props.getWaitingUsers();
+    this.props.getAllUsers();
   }
   render() {
     const AdminTabs = () => <Tab menu={{ pointing: true }} panes={panes} />;
@@ -39,7 +39,7 @@ class AdminDashboardPage extends Component {
 
 AdminDashboardPage.propTypes = {
   allUsers: PropTypes.object.isRequired,
-  getWaitingUsers: PropTypes.func.isRequired,
+  getAllUsers: PropTypes.func.isRequired,
   isConfirmed: PropTypes.bool.isRequired
 };
 
@@ -53,5 +53,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { getWaitingUsers }
+  { getAllUsers }
 )(AdminDashboardPage);

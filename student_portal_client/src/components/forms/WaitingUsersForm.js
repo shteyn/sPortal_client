@@ -3,12 +3,19 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Table, Button } from "semantic-ui-react";
 
-import { getWaitingUsers } from "../../actions/user";
+import { approveUser, deleteUser } from "../../actions/user";
 
 class WaitingUsersForm extends Component {
+  approveUser = id => {
+    this.props.approveUser(id);
+  };
+
+  deleteUser = id => {
+    console.log("deleteUser user CALLED", id);
+    this.props.deleteUser(id);
+  };
   render() {
     const { allUsers } = this.props.allUsers;
-
     return (
       <Table celled>
         <Table.Header>
@@ -42,8 +49,18 @@ class WaitingUsersForm extends Component {
                     <Table.Cell>{lastName}</Table.Cell>
                     <Table.Cell>{email}</Table.Cell>
                     <Table.Cell>
-                      <Button secondary>Approve</Button>
-                      <Button color="red">Reject</Button>
+                      <Button
+                        secondary
+                        onClick={this.approveUser.bind(this, _id)}
+                      >
+                        Approve
+                      </Button>
+                      <Button
+                        color="red"
+                        onClick={this.deleteUser.bind(this, _id)}
+                      >
+                        Reject
+                      </Button>
                     </Table.Cell>
                   </Table.Row>
                 );
@@ -60,7 +77,8 @@ class WaitingUsersForm extends Component {
 
 WaitingUsersForm.propTypes = {
   allUsers: PropTypes.object.isRequired,
-  getWaitingUsers: PropTypes.func.isRequired
+  approveUser: PropTypes.func.isRequired,
+  deleteUser: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
@@ -73,5 +91,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { getWaitingUsers }
+  { approveUser, deleteUser }
 )(WaitingUsersForm);

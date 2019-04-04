@@ -36,3 +36,27 @@ export function sendResetPasswordEmail(user) {
   };
   transport.sendMail(email);
 }
+
+export function sendRejectEmail(user) {
+  const transport = setup();
+  const email = {
+    from,
+    to: user.email,
+    subject: "DCi Students Portal | Registration Request",
+    text:
+      "We are sorry, but your registration request is not approved. Please contact our administration team for more info."
+  };
+  transport.sendMail(email);
+}
+
+export function sendDeleteUserEmail(user) {
+  const transport = setup();
+  const email = {
+    from,
+    to: user.email,
+    subject: "DCi Students Portal | Account Status Notification",
+    text:
+      "It seems that your user has been deleted from our DB. Please contact our administration team for more info. "
+  };
+  transport.sendMail(email);
+}
