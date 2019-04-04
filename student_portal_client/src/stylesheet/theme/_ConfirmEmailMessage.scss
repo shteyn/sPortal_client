@@ -1,0 +1,17 @@
+.ConfirmEmailMessage {
+  max-width: 800px;
+  height: 500px;
+  margin: 100px auto;
+  border-radius: 13px;
+  background: white;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: #da9446;
+  }
+}
