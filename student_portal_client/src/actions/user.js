@@ -1,26 +1,43 @@
 import api from "../api";
-import { userLoggedIn } from "./auth";
-import { GET_ALL_USERS } from "../types";
+import {userLoggedIn} from "./auth";
+import {GET_ALL_USERS} from "../types";
 
 export const allUsersList = allUsers => ({
-  type: GET_ALL_USERS,
-  allUsers
+    type: GET_ALL_USERS,
+    allUsers
 });
 
 export const registration = data => dispatch =>
-  api.user.registration(data).then(user => {
-    localStorage.userJWT = user.token;
-    dispatch(userLoggedIn(user));
-  });
+    api.user.registration(data).then(user => {
+        localStorage.userJWT = user.token;
+        dispatch(userLoggedIn(user));
+    });
 
 //export const approveUser = () => dispatch => api.user.approveUser();
 export const approveUser = id => dispatch => api.user.approveUser(id);
 
-export const deleteUser = id => dispatch => api.user.deleteUser(id);
+export const deleteUser = id => dispatch => api.user.deleteUser(id)
+    .then((response) => {
+        if (response.data && response.data.success) {
+            api.user.getAllUsers().then(allUsers => {
+                dispatch(allUsersList(allUsers));
+            });
+            console.log('deleted success', response);
+        } else {
+            api.user.getAllUsers().then(allUsers => {
+                dispatch(allUsersList(allUsers));
+            });
+            console.log("i am from user.js!!!!!!!!");
+        }
+
+    })
+    .catch((err) => {
+        console.log(err)
+    });
 
 export const getAllUsers = () => dispatch =>
-  api.user.getAllUsers().then(allUsers => {
-    dispatch(allUsersList(allUsers));
-  });
+    api.user.getAllUsers().then(allUsers => {
+        dispatch(allUsersList(allUsers));
+    });
 
 export const getOneUser = () => console.log("getOneUser func actions");

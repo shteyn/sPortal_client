@@ -6,6 +6,10 @@ import { Table, Button } from "semantic-ui-react";
 import { approveUser, deleteUser } from "../../actions/user";
 
 class WaitingUsersForm extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   approveUser = id => {
     this.props.approveUser(id);
   };
@@ -76,7 +80,7 @@ class WaitingUsersForm extends Component {
 }
 
 WaitingUsersForm.propTypes = {
-  allUsers: PropTypes.object.isRequired,
+  // allUsers: PropTypes.object.isRequired,
   approveUser: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired
 };
