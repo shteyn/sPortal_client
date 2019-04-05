@@ -40,7 +40,13 @@ router.post("/", (req, res) => {
 //Approve user by admin
 router.post("/:id", (req, res) => {
   User.findById(req.params.id)
-    .then(user => sendConfirmationEmail(user))
+    .then(user => {
+      sendConfirmationEmail(user);
+      updateConfirmationEmailStatus(user);
+      res.json({
+        success: true
+      });
+    })
     .catch(err => res.status(400).json({ errors: parseErrors(err.errors) }));
 });
 
@@ -54,10 +60,28 @@ router.delete("/:id", (req, res) => {
         } else {
           sendRejectEmail(user);
         }
+        res.json({
+          success: true
+        });
       });
     })
-    .catch(error => res.status(404).json({ success: "User is not exists" }));
+    .catch(error =>
+      res.json({
+        success: false,
+        message: "User is not exists"
+      })
+    );
 });
+//Change status of user when admin approved request
+const updateConfirmationEmailStatus = user => {
+  User.findByIdAndUpdate(
+    user._id,
+    { confirmationEmailSend: true },
+    { new: true }
+  ).then(updatedUser => {
+    console.log("updateConfirmationEmailStatus(user)", updatedUser);
+  });
+};
 
 //Get All Approved Users
 router.get("/", (req, res) => {

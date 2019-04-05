@@ -32,6 +32,10 @@ const UserSchema = new mongoose.Schema(
       type: Number,
       default: ""
     },
+    confirmationEmailSend: {
+      type: Boolean,
+      default: false
+    },
     confirmationToken: {
       type: String,
       default: ""

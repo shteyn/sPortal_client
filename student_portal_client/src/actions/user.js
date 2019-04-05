@@ -14,9 +14,36 @@ export const registration = data => dispatch =>
   });
 
 //export const approveUser = () => dispatch => api.user.approveUser();
-export const approveUser = id => dispatch => api.user.approveUser(id);
+export const approveUser = id => dispatch =>
+  api.user.approveUser(id).then(response => {
+    if (response.data && response.data.success) {
+      api.user.getAllUsers().then(allUsers => {
+        dispatch(allUsersList(allUsers));
+      });
+    } else {
+      api.user.getAllUsers().then(allUsers => {
+        dispatch(allUsersList(allUsers));
+      });
+    }
+  });
 
-export const deleteUser = id => dispatch => api.user.deleteUser(id);
+export const deleteUser = id => dispatch =>
+  api.user
+    .deleteUser(id)
+    .then(response => {
+      if (response.data && response.data.success) {
+        api.user.getAllUsers().then(allUsers => {
+          dispatch(allUsersList(allUsers));
+        });
+      } else {
+        api.user.getAllUsers().then(allUsers => {
+          dispatch(allUsersList(allUsers));
+        });
+      }
+    })
+    .catch(err => {
+      console.log(err);
+    });
 
 export const getAllUsers = () => dispatch =>
   api.user.getAllUsers().then(allUsers => {

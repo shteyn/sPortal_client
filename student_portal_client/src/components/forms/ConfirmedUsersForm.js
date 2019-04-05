@@ -6,10 +6,11 @@ import { Table, Button } from "semantic-ui-react";
 import { deleteUser } from "../../actions/user";
 
 class ConfirmedUsersForm extends Component {
-  deleteUser = id => {
+  deleteUserHandler = id => {
     console.log("deleteUser user CALLED", id);
     this.props.deleteUser(id);
   };
+
   render() {
     const { allUsers } = this.props.allUsers;
 
@@ -27,39 +28,29 @@ class ConfirmedUsersForm extends Component {
         </Table.Header>
 
         <Table.Body>
-          {allUsers.map(
-            ({
-              _id,
-              firstName,
-              lastName,
-              email,
-              location,
-              studentClass,
-              confirmed
-            }) => {
-              if (confirmed) {
-                return (
-                  <Table.Row key={_id}>
-                    <Table.Cell>{location}</Table.Cell>
-                    <Table.Cell>{studentClass}</Table.Cell>
-                    <Table.Cell>{firstName}</Table.Cell>
-                    <Table.Cell>{lastName}</Table.Cell>
-                    <Table.Cell>{email}</Table.Cell>
-                    <Table.Cell>
-                      <Button
-                        color="red"
-                        onClick={this.deleteUser.bind(this, _id)}
-                      >
-                        Delete User
-                      </Button>
-                    </Table.Cell>
-                  </Table.Row>
-                );
-              } else {
-                return null;
-              }
+          {allUsers.map(oneUser => {
+            if (oneUser.confirmed) {
+              return (
+                <Table.Row key={oneUser._id}>
+                  <Table.Cell>{oneUser.location}</Table.Cell>
+                  <Table.Cell>{oneUser.studentClass}</Table.Cell>
+                  <Table.Cell>{oneUser.firstName}</Table.Cell>
+                  <Table.Cell>{oneUser.lastName}</Table.Cell>
+                  <Table.Cell>{oneUser.email}</Table.Cell>
+                  <Table.Cell>
+                    <Button
+                      color="red"
+                      onClick={this.deleteUserHandler.bind(this, oneUser._id)}
+                    >
+                      Delete User
+                    </Button>
+                  </Table.Cell>
+                </Table.Row>
+              );
+            } else {
+              return null;
             }
-          )}
+          })}
         </Table.Body>
       </Table>
     );
@@ -83,3 +74,13 @@ export default connect(
   mapStateToProps,
   { deleteUser }
 )(ConfirmedUsersForm);
+
+// {
+//   _id,
+//       firstName,
+//       lastName,
+//       email,
+//       location,
+//       studentClass,
+//       confirmed
+// }

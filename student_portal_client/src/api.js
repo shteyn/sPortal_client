@@ -37,14 +37,8 @@ export default {
     getAllUsers: () =>
       axios.get("http://localhost:8080/api/users").then(res => res.data),
 
-    approveUser: id =>
-      axios
-        .post(`http://localhost:8080/api/users/${id}`)
-        .then(console.log("user posted")),
+    approveUser: id => axios.post(`http://localhost:8080/api/users/${id}`),
 
-    deleteUser: id =>
-      axios
-        .delete(`http://localhost:8080/api/users/${id}`)
-        .then(console.log("user deleted"))
+    deleteUser: id => axios.delete(`http://localhost:8080/api/users/${id}`)
   }
 };
