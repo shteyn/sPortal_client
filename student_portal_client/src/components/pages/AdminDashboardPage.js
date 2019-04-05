@@ -9,31 +9,31 @@ import { getAllUsers } from "../../actions/user";
 
 
 
-const panes = [
-  {
-    menuItem: "Waiting Users",
-    render: () => {
-      if(this.props && this.props.allUsers) {
-        const {allUsers} = this.props.allUsers;
-        console.log(allUsers)
-      }
-
-      return (
-          <Tab.Pane attached={false}>
-            <WaitingUsersForm/>
-          </Tab.Pane>
-      )
-    }
-  },
-  {
-    menuItem: "Confirmed Users",
-    render: () => (
-      <Tab.Pane attached={false}>
-        <ConfirmedUsersForm />
-      </Tab.Pane>
-    )
-  }
-];
+// const panes = [
+//   {
+//     menuItem: "Waiting Users",
+//     render: () => {
+//       if(this.props && this.props.allUsers) {
+//         const {allUsers} = this.props.allUsers;
+//         console.log(allUsers)
+//       }
+//
+//       return (
+//           <Tab.Pane attached={false}>
+//             <WaitingUsersForm/>
+//           </Tab.Pane>
+//       )
+//     }
+//   },
+//   {
+//     menuItem: "Confirmed Users",
+//     render: () => (
+//       <Tab.Pane attached={false}>
+//         <ConfirmedUsersForm />
+//       </Tab.Pane>
+//     )
+//   }
+// ];
 
 class AdminDashboardPage extends Component {
   componentDidMount() {

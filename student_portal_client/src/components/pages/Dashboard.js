@@ -10,7 +10,8 @@ const Dashboard = ({ isConfirmed, isAdmin }) => (
     //ADD SUBMIT FUNCTION TO CHANGE DATA
     <div>
       {!isConfirmed && <ConfirmEmailMessage />}
-      {!isAdmin ? <UserDashboardPage /> : <AdminDashboardPage />}
+      {!isAdmin && isConfirmed ? <UserDashboardPage /> : null}
+      {isAdmin ? <AdminDashboardPage /> : null}
     </div>
 );
 
