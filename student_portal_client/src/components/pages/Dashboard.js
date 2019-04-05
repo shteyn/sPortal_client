@@ -6,6 +6,7 @@ import ConfirmEmailMessage from "../messages/ConfirmEmailMessage";
 import UserDashboardPage from "./UserDashboardPage";
 import AdminDashboardPage from "./AdminDashboardPage";
 
+
 class Dashboard extends Component {
   render() {
     const { isConfirmed, isAdmin } = this.props;
@@ -18,6 +19,7 @@ class Dashboard extends Component {
     );
   }
 }
+
 
 Dashboard.propTypes = {
   isConfirmed: PropTypes.bool.isRequired,

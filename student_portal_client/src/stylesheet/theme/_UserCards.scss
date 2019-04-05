@@ -45,6 +45,26 @@
         color: #ffffff;
       }
     }
+    ul {
+      align-self: center;
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin-right: 20px;
+        align-self: center;
+        a {
+          text-decoration: none;
+          font-family: Ropa Sans, sans-serif;
+          font-style: normal;
+          font-weight: normal;
+          line-height: normal;
+          font-size: 24px;
+          color: #ffffff;
+        }
+      }
+    }
   }
   .UserCardsListCont {
     position: relative;
@@ -81,15 +101,17 @@
     }
     .UserCardsItems {
       width: 100%;
-      max-width: 1428px;
+      max-width: 1500px;
       margin: auto;
       display: flex;
-      justify-content: space-between;
+      justify-content: left;
+      flex-wrap: wrap;
       .CardItem {
         width: 342px;
         height: 401px;
         background: rgba(23, 51, 150, 0.1);
         border-radius: 19px;
+        margin: 10px;
         .CardLinks {
           margin: auto;
           img {
