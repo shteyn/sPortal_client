@@ -1,18 +1,16 @@
 import React, { Component } from "react";
 import {Link, NavLink} from "react-router-dom";
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
-import {getAllUsers} from "../../actions/user";
+import { connect } from "react-redux";
+import { getAllUsers } from "../../actions/user";
 
 class UserCard extends Component {
   componentDidMount() {
     this.props.getAllUsers();
-    console.log("")
+    console.log("");
   }
   render() {
-    let  { allUsers } = this.props.allUsers;
-
-
+    let { allUsers } = this.props.allUsers;
 
     return (
       <div className="UserCardsCont">
@@ -39,34 +37,36 @@ class UserCard extends Component {
           <h3>GRADUATED</h3>
           <h4>ALL LOCATIONS</h4>
           <div className="UserCardsItems">
-            {allUsers.map((oneUser)=>{
+            {allUsers.map(oneUser => {
               return (
-                  <div className="CardItem">
-                    <img src={require("../../img/user.png")} alt="" />
-                    <p className="userName">{oneUser.firstName} {oneUser.lastName}</p>
-                    <div className="locationAndAvailability">
-                      <p className="location">{oneUser.location}</p>
-                      <div className="Availability">
-                        <p>Availability</p>
-                        <p style={{ color: "white" }}>Available for offers</p>
-                      </div>
-                    </div>
-                    <div className="CardLinks">
-                      <NavLink title="Linked In" to="#">
-                        <img src={require("../../img/linkedin.png")} alt="" />
-                      </NavLink>
-                      <NavLink title="GitHub" to="#">
-                        <img src={require("../../img/github.png")} alt="" />
-                      </NavLink>
-                      <NavLink title="Xing" to="#">
-                        <img src={require("../../img/xing.png")} alt="" />
-                      </NavLink>
-                      <NavLink title="Portfolio" to="#">
-                        <img src={require("../../img/briefcase.png")} alt="" />
-                      </NavLink>
+                <div className="CardItem" key={oneUser._id}>
+                  <img src={require("../../img/user.png")} alt="" />
+                  <p className="userName">
+                    {oneUser.firstName} {oneUser.lastName}
+                  </p>
+                  <div className="locationAndAvailability">
+                    <p className="location">{oneUser.location}</p>
+                    <div className="Availability">
+                      <p>Availability</p>
+                      <p style={{ color: "white" }}>Available for offers</p>
                     </div>
                   </div>
-              )
+                  <div className="CardLinks">
+                    <NavLink title="Linked In" to="#">
+                      <img src={require("../../img/linkedin.png")} alt="" />
+                    </NavLink>
+                    <NavLink title="GitHub" to="#">
+                      <img src={require("../../img/github.png")} alt="" />
+                    </NavLink>
+                    <NavLink title="Xing" to="#">
+                      <img src={require("../../img/xing.png")} alt="" />
+                    </NavLink>
+                    <NavLink title="Portfolio" to="#">
+                      <img src={require("../../img/briefcase.png")} alt="" />
+                    </NavLink>
+                  </div>
+                </div>
+              );
             })}
           </div>
         </div>
@@ -77,7 +77,7 @@ class UserCard extends Component {
 
 UserCard.propTypes = {
   allUsers: PropTypes.object.isRequired,
-    getAllUsers: PropTypes.func.isRequired,
+  getAllUsers: PropTypes.func.isRequired,
   isConfirmed: PropTypes.bool.isRequired
 };
 
@@ -90,6 +90,6 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-    mapStateToProps,
-    { getAllUsers }
+  mapStateToProps,
+  { getAllUsers }
 )(UserCard);

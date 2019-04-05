@@ -85,7 +85,6 @@ WaitingUsersForm.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log("WAITING USERS", state.allUsers.allUsers);
   return {
     allUsers: state.allUsers
   };
