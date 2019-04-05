@@ -27,10 +27,13 @@ if (localStorage.userJWT) {
   const payload = decode(localStorage.userJWT);
   const user = {
     token: localStorage.userJWT,
+    firstName: payload.firstName,
+    lastName: payload.lastName,
     email: payload.email,
     confirmed: payload.confirmed,
     isAdmin: payload.isAdmin
   };
+
   store.dispatch(userLoggedIn(user));
 }
 

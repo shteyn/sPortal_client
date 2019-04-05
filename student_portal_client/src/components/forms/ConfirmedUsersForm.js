@@ -63,8 +63,6 @@ ConfirmedUsersForm.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log("CONFIRMED USERS", state.allUsers);
-
   return {
     allUsers: state.allUsers
   };

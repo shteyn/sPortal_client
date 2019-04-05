@@ -1,15 +1,16 @@
-import { GET_ALL_USERS } from "../types";
+import { GET_ONE_USER } from "../types";
 
 const initialState = {
-  allUsers: [],
+  oneUser: [],
   loading: false
 };
 
 export default function(state = initialState, action = {}) {
   switch (action.type) {
-    case GET_ALL_USERS:
+    case GET_ONE_USER:
+      console.log("oneUser action", action.oneUserData);
       return {
-        allUsers: action.allUsers
+        oneUser: action.oneUserData
       };
     default:
       return state;

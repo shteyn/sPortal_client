@@ -1,10 +1,15 @@
 import api from "../api";
 import { userLoggedIn } from "./auth";
-import { GET_ALL_USERS } from "../types";
+import { GET_ALL_USERS, GET_ONE_USER } from "../types";
 
 export const allUsersList = allUsers => ({
   type: GET_ALL_USERS,
   allUsers
+});
+
+export const oneUser = oneUserData => ({
+  type: GET_ONE_USER,
+  oneUserData
 });
 
 export const registration = data => dispatch =>
@@ -50,4 +55,13 @@ export const getAllUsers = () => dispatch =>
     dispatch(allUsersList(allUsers));
   });
 
-export const getOneUser = () => console.log("getOneUser func actions");
+export const getUserData = email => dispatch =>
+  api.user
+    .getUserData(email)
+    .then(user => {
+      console.log("response from Axios getUserData", user);
+      dispatch(oneUser(user));
+    })
+    .catch(err => {
+      console.log("Error from action axios", err);
+    });
