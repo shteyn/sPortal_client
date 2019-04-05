@@ -6,16 +6,11 @@ import { Table, Button } from "semantic-ui-react";
 import { approveUser, deleteUser } from "../../actions/user";
 
 class WaitingUsersForm extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   approveUser = id => {
-    this.props.approveUser(id);
+    this.props.approveUser(id).then(this.setState({}));
   };
 
   deleteUser = id => {
-    console.log("deleteUser user CALLED", id);
     this.props.deleteUser(id);
   };
   render() {
@@ -29,6 +24,7 @@ class WaitingUsersForm extends Component {
             <Table.HeaderCell>First Name</Table.HeaderCell>
             <Table.HeaderCell>Last Name</Table.HeaderCell>
             <Table.HeaderCell>E-Mail</Table.HeaderCell>
+            <Table.HeaderCell>User Status</Table.HeaderCell>
             <Table.HeaderCell />
           </Table.Row>
         </Table.Header>
@@ -42,7 +38,8 @@ class WaitingUsersForm extends Component {
               email,
               location,
               studentClass,
-              confirmed
+              confirmed,
+              confirmationEmailSend
             }) => {
               if (!confirmed) {
                 return (
@@ -53,11 +50,17 @@ class WaitingUsersForm extends Component {
                     <Table.Cell>{lastName}</Table.Cell>
                     <Table.Cell>{email}</Table.Cell>
                     <Table.Cell>
+                      {confirmationEmailSend ? "Approved" : "Not Approved"}
+                    </Table.Cell>
+                    <Table.Cell>
                       <Button
                         secondary
                         onClick={this.approveUser.bind(this, _id)}
+                        style={{
+                          color: confirmationEmailSend ? "green" : "white"
+                        }}
                       >
-                        Approve
+                        {confirmationEmailSend ? "Resend Email" : "Approve"}
                       </Button>
                       <Button
                         color="red"
@@ -80,14 +83,12 @@ class WaitingUsersForm extends Component {
 }
 
 WaitingUsersForm.propTypes = {
-  // allUsers: PropTypes.object.isRequired,
   approveUser: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
   console.log("WAITING USERS", state.allUsers.allUsers);
-
   return {
     allUsers: state.allUsers
   };
