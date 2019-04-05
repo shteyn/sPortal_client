@@ -9,7 +9,6 @@ import { getAllUsers } from "../../actions/user";
 
 
 
-
 const panes = [
   {
     menuItem: "Waiting Users",
