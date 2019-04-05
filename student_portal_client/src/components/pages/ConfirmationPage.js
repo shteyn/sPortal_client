@@ -22,21 +22,21 @@ class ConfirmationPage extends Component {
   render() {
     const { loading, success } = this.state;
     return (
-      <div>
+      <div className="ConfirmationPageCont">
         {loading && (
-          <div>
+          <div className="ValidatingCont">
             <p>Validating your email</p>
             <YourSvg loading={loading.toString()} />
           </div>
         )}
         {!loading && success && (
-          <div>
+          <div className="verifiedCont">
             Your account is verified
             <Link to="/dashboard"> Go to your dashboard</Link>
           </div>
         )}
 
-        {!loading && !success && <div>Oops. Invalid Token</div>}
+        {!loading && !success && <div className="invalidToken"><h1>Oops. Invalid Token</h1></div>}
       </div>
     );
   }

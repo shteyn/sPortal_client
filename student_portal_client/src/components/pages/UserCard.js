@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {getAllUsers} from "../../actions/user";
@@ -24,6 +24,14 @@ class UserCard extends Component {
               <span className="labelI">I</span>
             </NavLink>
           </div>
+          <ul>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/registration">Registration</Link>
+            </li>
+          </ul>
         </div>
 
         <div className="UserCardsListCont">
