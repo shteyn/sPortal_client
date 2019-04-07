@@ -14,7 +14,7 @@ class RegistrationPage extends Component {
 
   render() {
     return (
-      <div className="LoginCont">
+      <div className="RegistrationFormCont">
         <div className="navigation">
           <div>
             <Link to="/" className="labelUserPage">
@@ -24,7 +24,9 @@ class RegistrationPage extends Component {
             </Link>
           </div>
         </div>
-        <div className="LoginModel">
+        <div className="RegistrationModel">
+          <p>You dont have a account yet. Please provide the following information below.</p>
+          <p>We will contact you after reviewing your request</p>
           <RegistrationForm submit={this.submit} />
         </div>
       </div>
