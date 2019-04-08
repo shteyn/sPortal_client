@@ -28,6 +28,24 @@ const UserSchema = new mongoose.Schema(
       type: String,
       default: ""
     },
+    // new part for try to get links
+    linkedInUrl: {
+      type: String,
+      default: ""
+    },
+    gitHubUrl: {
+      type: String,
+      default: ""
+    },
+    xingUrl: {
+      type: String,
+      default: ""
+    },
+    portfolioUrl: {
+      type: String,
+      default: ""
+    },
+    // end part
     studentClass: {
       type: Number,
       default: ""
@@ -49,7 +67,7 @@ const UserSchema = new mongoose.Schema(
       default: false
     }
   },
-  { timestamps: true }
+  {timestamps: true}
 );
 
 //Compare user password during login
@@ -78,7 +96,7 @@ UserSchema.methods.generateConfirmationUrl = function generateConfirmationUrl() 
 UserSchema.methods.generateResetPasswordUrl = function generateResetPasswordUrl() {
   return `${
     process.env.HOST
-  }/reset_password/${this.generateResetPasswordToken()}`;
+    }/reset_password/${this.generateResetPasswordToken()}`;
 };
 
 //generate Reset Password JWT
@@ -88,7 +106,7 @@ UserSchema.methods.generateResetPasswordToken = function generateResetPasswordTo
       _id: this._id
     },
     process.env.JWT_SECRET,
-    { expiresIn: "1h" }
+    {expiresIn: "1h"}
   );
 };
 
@@ -118,6 +136,6 @@ UserSchema.methods.toAuthJSON = function toAuthJSON() {
   };
 };
 
-UserSchema.plugin(uniqueValidator, { message: "This email is already in use" });
+UserSchema.plugin(uniqueValidator, {message: "This email is already in use"});
 
 export default mongoose.model("User", UserSchema);
