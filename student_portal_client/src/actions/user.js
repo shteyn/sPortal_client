@@ -1,6 +1,7 @@
 import api from "../api";
 import { userLoggedIn } from "./auth";
-import { GET_ALL_USERS, GET_ONE_USER } from "../types";
+import { GET_ALL_USERS, GET_ONE_USER, UPDATE_USER } from "../types";
+import axios from "axios";
 
 export const allUsersList = allUsers => ({
   type: GET_ALL_USERS,
@@ -65,3 +66,13 @@ export const getUserData = email => dispatch =>
     .catch(err => {
       console.log("Error from action axios", err);
     });
+
+export const updateUserData = user => dispatch => {
+  axios.put(`http://localhost:8080/api/users/update-users/${user.id}`, user)
+    .then(res => {
+      dispatch({
+        type: UPDATE_USER,
+        payload: res.data
+      })
+    })
+}

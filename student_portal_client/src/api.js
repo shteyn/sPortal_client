@@ -1,4 +1,5 @@
 import axios from "axios";
+import {UPDATE_USER} from "./types";
 
 export default {
   user: {
@@ -54,6 +55,18 @@ export default {
       axios.post(`http://localhost:8080/api/users/waiting-users/${id}`),
 
     deleteUser: id =>
-      axios.delete(`http://localhost:8080/api/users/delete-users/${id}`)
+      axios.delete(`http://localhost:8080/api/users/delete-users/${id}`),
+
+    updateUserData: user => dispatch => {
+      axios.put(`http://localhost:8080/api/users/update-users/${user.id}`, user)
+        .then(res => {
+          dispatch({
+            type: UPDATE_USER,
+            payload: res.data
+          })
+        })
+    }
+
   }
+
 };
