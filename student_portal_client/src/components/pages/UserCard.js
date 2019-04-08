@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import {Link, NavLink} from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getAllUsers } from "../../actions/user";
+import { logout } from "../../actions/auth";
+import TopNavigation from "../navigation/TopNavigation";
 
 class UserCard extends Component {
   componentDidMount() {
@@ -15,21 +17,7 @@ class UserCard extends Component {
     return (
       <div className="UserCardsCont">
         <div className="navigationBarUserCardPage">
-          <div>
-            <NavLink to="/" className="labelUserPage">
-              <span className="labelD">D</span>
-              <span className="labelC">C</span>
-              <span className="labelI">I</span>
-            </NavLink>
-          </div>
-          <ul>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/registration">Registration</Link>
-            </li>
-          </ul>
+            <TopNavigation />
         </div>
 
         <div className="UserCardsListCont">

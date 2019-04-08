@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 import * as actions from "../../actions/auth";
 
-const HomePage = ({ isAuthenticated, logout }) => (
+const HomePage = ({ isAuthenticated, logout, login }) => (
   <div>
     {!isAuthenticated && (
       <div className="navigationBar">
@@ -22,6 +22,8 @@ const HomePage = ({ isAuthenticated, logout }) => (
         </ul>
       </div>
     )}
+
+    
     <div className="centerWelcomeCont">
       <div className="textCont">
         <h1>WELCOME TO DCI.</h1>

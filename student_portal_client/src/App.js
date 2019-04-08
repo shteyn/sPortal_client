@@ -52,15 +52,15 @@ const App = ({ location, isAuthenticated }) => (
     />
     <UserRoutes
       location={location}
-      path="/dashboard"
-      exact
-      component={Dashboard}
-    />
-    <UserRoutes
-      location={location}
       path="/user-card"
       exact
       component={UserCard}
+    />
+    <UserRoutes
+      location={location}
+      path="/dashboard"
+      exact
+      component={Dashboard}
     />
   </div>
 );
