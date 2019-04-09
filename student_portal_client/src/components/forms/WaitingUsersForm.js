@@ -6,11 +6,15 @@ import { Table, Button } from "semantic-ui-react";
 import { approveUser, deleteUser } from "../../actions/user";
 
 class WaitingUsersForm extends Component {
+  constructor(props) {
+    super(props);
+    this.deleteUserHandler.bind(this)
+  }
   approveUser = id => {
     this.props.approveUser(id).then(this.setState({}));
   };
 
-  deleteUser = id => {
+  deleteUserHandler = id => {
     this.props.deleteUser(id);
   };
   render() {
@@ -31,40 +35,33 @@ class WaitingUsersForm extends Component {
 
         <Table.Body>
           {allUsers.map(
-            ({
-              _id,
-              firstName,
-              lastName,
-              email,
-              location,
-              studentClass,
-              confirmed,
-              confirmationEmailSend
-            }) => {
-              if (!confirmed) {
+            (
+               oneUser
+            ) => {
+              if (!oneUser.confirmed) {
                 return (
-                  <Table.Row key={_id}>
-                    <Table.Cell>{location}</Table.Cell>
-                    <Table.Cell>{studentClass}</Table.Cell>
-                    <Table.Cell>{firstName}</Table.Cell>
-                    <Table.Cell>{lastName}</Table.Cell>
-                    <Table.Cell>{email}</Table.Cell>
+                  <Table.Row key={oneUser._id}>
+                    <Table.Cell>{oneUser.location}</Table.Cell>
+                    <Table.Cell>{oneUser.studentClass}</Table.Cell>
+                    <Table.Cell>{oneUser.firstName}</Table.Cell>
+                    <Table.Cell>{oneUser.lastName}</Table.Cell>
+                    <Table.Cell>{oneUser.email}</Table.Cell>
                     <Table.Cell>
-                      {confirmationEmailSend ? "Approved" : "Not Approved"}
+                      {oneUser.confirmationEmailSend ? "Approved" : "Not Approved"}
                     </Table.Cell>
                     <Table.Cell>
                       <Button
                         secondary
-                        onClick={this.approveUser.bind(this, _id)}
+                        onClick={this.approveUser.bind(this, oneUser._id)}
                         style={{
-                          color: confirmationEmailSend ? "green" : "white"
+                          color: oneUser.confirmationEmailSend ? "green" : "white"
                         }}
                       >
-                        {confirmationEmailSend ? "Resend Email" : "Approve"}
+                        {oneUser.confirmationEmailSend ? "Resend Email" : "Approve"}
                       </Button>
                       <Button
                         color="red"
-                        onClick={this.deleteUser.bind(this, _id)}
+                        onClick={(deleteUser) => {if(window.confirm("Are you sure?")) this.deleteUserHandler(oneUser._id, deleteUser)}}
                       >
                         Reject
                       </Button>

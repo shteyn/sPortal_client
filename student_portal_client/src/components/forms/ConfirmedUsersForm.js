@@ -6,6 +6,12 @@ import { Table, Button } from "semantic-ui-react";
 import { deleteUser } from "../../actions/user";
 
 class ConfirmedUsersForm extends Component {
+  constructor(props) {
+    super(props);
+    this.deleteUserHandler.bind(this)
+  }
+
+
   deleteUserHandler = id => {
     console.log("deleteUser user CALLED", id);
     this.props.deleteUser(id);
@@ -40,7 +46,7 @@ class ConfirmedUsersForm extends Component {
                   <Table.Cell>
                     <Button
                       color="red"
-                      onClick={this.deleteUserHandler.bind(this, oneUser._id)}
+                      onClick={(deleteUser) => {if(window.confirm("Are you sure?")) this.deleteUserHandler(oneUser._id, deleteUser)}}
                     >
                       Delete User
                     </Button>

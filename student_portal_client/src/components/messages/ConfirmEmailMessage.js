@@ -8,7 +8,7 @@ const ConfirmEmailMessage = () => {
         email address
       </h1>
     </div>
-  );
+  )
 };
 
 export default ConfirmEmailMessage;
