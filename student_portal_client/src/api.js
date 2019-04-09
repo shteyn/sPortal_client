@@ -11,7 +11,7 @@ export default {
 
     registration: user =>
       axios
-        .post("http://localhost:8080/api/users", {
+        .post("http://localhost:8080/api/users/registration", {
           user
         })
         .then(res => res.data.user), //call users.js routes backend
@@ -24,9 +24,13 @@ export default {
         .then(res => res.data.user),
 
     resetPasswordRequest: email =>
-      axios.post("http://localhost:8080/api/auth/reset_password_request", {
-        email
-      }),
+      axios.post(
+        "http://localhost:8080/api/auth/reset_password_request",
+        {
+          email
+        },
+        console.log("reset Password api", email)
+      ),
 
     validateToken: token =>
       axios.post("http://localhost:8080/api/auth/validate_token", { token }),
@@ -37,8 +41,15 @@ export default {
     getAllUsers: () =>
       axios.get("http://localhost:8080/api/users").then(res => res.data),
 
-    approveUser: id => axios.post(`http://localhost:8080/api/users/${id}`),
+    getUserData: email =>
+      axios
+        .post("http://localhost:8080/api/users/dashboard", { email })
+        .then(res => res.data),
 
-    deleteUser: id => axios.delete(`http://localhost:8080/api/users/${id}`)
+    approveUser: id =>
+      axios.post(`http://localhost:8080/api/users/waiting-users/${id}`),
+
+    deleteUser: id =>
+      axios.delete(`http://localhost:8080/api/users/delete-users/${id}`)
   }
 };

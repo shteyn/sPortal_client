@@ -18,18 +18,46 @@ const UserSchema = new mongoose.Schema(
     },
     firstName: {
       type: String,
-      default: ""
+      default: "",
+      required: true
     },
     lastName: {
       type: String,
-      default: ""
+      default: "",
+      required: true
     },
     location: {
       type: String,
-      default: ""
+      default: "",
+      required: true
     },
     studentClass: {
       type: Number,
+      default: "",
+      required: true
+    },
+    availability: {
+      type: Number,
+      default: ""
+    },
+    linkedInLink: {
+      type: String,
+      default: ""
+    },
+    xingLink: {
+      type: String,
+      default: ""
+    },
+    githubLink: {
+      type: String,
+      default: ""
+    },
+    portfolioLink: {
+      type: String,
+      default: ""
+    },
+    userImage: {
+      type: String,
       default: ""
     },
     confirmationEmailSend: {
@@ -96,6 +124,8 @@ UserSchema.methods.generateResetPasswordToken = function generateResetPasswordTo
 UserSchema.methods.generateJTW = function generateJTW() {
   return jwt.sign(
     {
+      firstName: this.firstName,
+      lastName: this.lastName,
       email: this.email,
       confirmed: this.confirmed,
       isAdmin: this.isAdmin
@@ -107,6 +137,8 @@ UserSchema.methods.generateJTW = function generateJTW() {
 //return user json
 UserSchema.methods.toAuthJSON = function toAuthJSON() {
   return {
+    firstName: this.firstName,
+    lastName: this.lastName,
     email: this.email,
     confirmed: this.confirmed,
     isAdmin: this.isAdmin,

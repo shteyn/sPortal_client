@@ -1,9 +1,23 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Button } from "react-bootstrap";
+
 import TopNavigation from "../navigation/TopNavigation";
+import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
+import { getUserData } from "../../actions/user";
+
 class UserDashboardPage extends Component {
+  updateProfile = data => console.log("User Page called", data);
+
+  componentDidMount() {
+    const { email } = this.props.user;
+    this.props.getUserData(email);
+  }
   render() {
+    const { firstName, lastName, email } = this.props.user;
+    //const { oneUser } = this.props.oneUser;
+    const { location, studentClass } = this.props.oneUser.oneUser;
     return (
       <div className="UserPage">
         <div className="navigationBarUserPage">
@@ -16,7 +30,7 @@ class UserDashboardPage extends Component {
               <div className="SubBoxCont">
                 <div className="classBox">
                   <h2>Class</h2>
-                  <p>09</p>
+                  <p>{studentClass}</p>
                 </div>
                 <div className="AvailableBox">
                   <h2>Available from</h2>
@@ -105,11 +119,15 @@ class UserDashboardPage extends Component {
           </div>
           <hr />
           <div className="profileInfoCont">
-            <h3>First Name</h3>
-            <h3>Last Name</h3>
-            <h3>Email</h3>
-            <h3>Location</h3>
+            <h3>First Name: {firstName}</h3>
+            <h3>Last Name: {lastName}</h3>
+            <h3>Email: {email}</h3>
+            <h3>Location: {location}</h3>
+            <h3>Student Class: {studentClass}</h3>
           </div>
+          <Button variant="primary">
+            <UpdateUserProfileForm updateProfile={this.updateProfile} />
+          </Button>
         </div>
       </div>
     );
@@ -117,13 +135,20 @@ class UserDashboardPage extends Component {
 }
 
 UserDashboardPage.propTypes = {
-  user: PropTypes.object.isRequired
+  getUserData: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
+  oneUser: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
+  console.log("UserDashboardPage", state.oneUser);
   return {
-    user: state.user
+    user: state.user,
+    oneUser: state.oneUser
   };
 }
 
-export default connect(mapStateToProps)(UserDashboardPage);
+export default connect(
+  mapStateToProps,
+  { getUserData }
+)(UserDashboardPage);

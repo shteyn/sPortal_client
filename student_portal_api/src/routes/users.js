@@ -10,7 +10,7 @@ import {
 const router = express.Router();
 
 //REGISTRATION
-router.post("/", (req, res) => {
+router.post("/users/registration", (req, res) => {
   const {
     email,
     password,
@@ -38,7 +38,7 @@ router.post("/", (req, res) => {
 });
 
 //Approve user by admin
-router.post("/:id", (req, res) => {
+router.post("/users/waiting-users/:id", (req, res) => {
   User.findById(req.params.id)
     .then(user => {
       sendConfirmationEmail(user);
@@ -51,7 +51,7 @@ router.post("/:id", (req, res) => {
 });
 
 //Reject waiting user by admin
-router.delete("/:id", (req, res) => {
+router.delete("/users/delete-users/:id", (req, res) => {
   User.findById(req.params.id)
     .then(user => {
       user.remove().then(user => {
@@ -84,7 +84,7 @@ const updateConfirmationEmailStatus = user => {
 };
 
 //Get All Approved Users
-router.get("/", (req, res) => {
+router.get("/users", (req, res) => {
   User.find(
     {
       //confirmed: { $in: ["true", true] },
@@ -97,10 +97,27 @@ router.get("/", (req, res) => {
 });
 
 //Get One User
-router.get("/:id", (req, res) => {
-  User.findById(req.body).then(user => {
-    res.json(user);
-  });
+router.post("/users/dashboard", (req, res) => {
+  console.log("axios called with: ", req.body.email);
+  User.findOne(
+    { email: req.body.email },
+    {
+      passwordHash: 0,
+      isAdmin: 0,
+      confirmationToken: 0,
+      confirmed: 0,
+      confirmationEmailSend: 0
+    }
+  )
+    .then(user => {
+      console.log("user router back", user);
+      res.json(user);
+    })
+    .catch(error =>
+      res.json({
+        success: false,
+        message: "User is not exists"
+      })
+    );
 });
-
 export default router;
