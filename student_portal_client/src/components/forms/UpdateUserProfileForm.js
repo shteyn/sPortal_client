@@ -8,10 +8,19 @@ class UpdateUserProfileForm extends Component {
     super(props, context);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    //Update user reflinks
+    this.firstNameRef = React.createRef();
+    this.lastNameRef = React.createRef();
+    this.emailRef = React.createRef();
+    this.locationRef = React.createRef();
+    this.studentClassRef = React.createRef();
+    this.linkedInLinkRef = React.createRef();
+    this.githubLinkRef = React.createRef();
+    this.xingLinkRef = React.createRef();
+    this.portfolioLinkRef = React.createRef();
   }
   state = {
-    show: false,
-    firstName: this.props.oneUser.oneUser.firstName
+    show: false
   };
   static defaultProps = {
     initialValue: 0
@@ -24,29 +33,47 @@ class UpdateUserProfileForm extends Component {
     this.setState({ show: true });
   }
 
-  handleChange = event => {
-    event.preventDefault();
-    console.log();
-  };
+  /*handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };*/
 
   handleSubmit = event => {
     event.preventDefault();
-    const newUser = {
-      firstName: this.props.oneUser.oneUser
+    const updatedUser = {
+      id: this.props.oneUser._id,
+      firstName: this.firstNameRef.current.value,
+      lastName: this.lastNameRef.current.value,
+      email: this.emailRef.current.value,
+      githubLink: this.githubLinkRef.current.value,
+      linkedInLink: this.linkedInLinkRef.current.value,
+      location: this.locationRef.current.value,
+      portfolioLink: this.portfolioLinkRef.current.value,
+      studentClass: this.studentClassRef.current.value,
+      xingLink: this.xingLinkRef.current.value
     };
-    this.props.updateProfile(newUser);
+    this.props.updateProfile(updatedUser);
   };
 
   render() {
-    const { firstName, lastName } = this.props.oneUser.oneUser;
-    console.log("firstName", this.state);
+    const {
+      firstName,
+      lastName,
+      email,
+      studentClass,
+      location,
+      githubLink,
+      linkedInLink,
+      portfolioLink,
+      xingLink
+    } = this.props.oneUser;
 
     return (
       <div>
         <div variant="primary" onClick={this.handleShow}>
           Launch demo modal
         </div>
-
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Update Your Profile</Modal.Title>
@@ -56,19 +83,91 @@ class UpdateUserProfileForm extends Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>First Name</Form.Label>
                 <Form.Control
-                  onChange={this.handleChange}
+                  //onChange={this.handleChange}
+                  ref={this.firstNameRef}
                   type="text"
                   name="firstName"
-                  value={firstName}
+                  defaultValue={firstName}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Last Name</Form.Label>
                 <Form.Control
-                  onChange={this.handleChange}
+                  //onChange={this.handleChange}
+                  ref={this.lastNameRef}
                   type="text"
-                  name="firstName"
-                  value={lastName}
+                  name="lastName"
+                  defaultValue={lastName}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  //onChange={this.handleChange}
+                  ref={this.emailRef}
+                  type="email"
+                  name="email"
+                  defaultValue={email}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Class</Form.Label>
+                <Form.Control
+                  //onChange={this.handleChange}
+                  ref={this.studentClassRef}
+                  type="text"
+                  name="studentClass"
+                  defaultValue={studentClass}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Location</Form.Label>
+                <Form.Control
+                  //onChange={this.handleChange}
+                  ref={this.locationRef}
+                  type="text"
+                  name="location"
+                  defaultValue={location}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>LinkedIn</Form.Label>
+                <Form.Control
+                  //onChange={this.handleChange}
+                  ref={this.linkedInLinkRef}
+                  type="text"
+                  name="linkedInLink"
+                  defaultValue={linkedInLink}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Github</Form.Label>
+                <Form.Control
+                  //onChange={this.handleChange}
+                  ref={this.githubLinkRef}
+                  type="text"
+                  name="githubLink"
+                  defaultValue={githubLink}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Xing</Form.Label>
+                <Form.Control
+                  //onChange={this.handleChange}
+                  ref={this.xingLinkRef}
+                  type="text"
+                  name="xingLink"
+                  defaultValue={xingLink}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Portfolio</Form.Label>
+                <Form.Control
+                  //onChange={this.handleChange}
+                  ref={this.portfolioLinkRef}
+                  type="text"
+                  name="portfolioLink"
+                  defaultValue={portfolioLink}
                 />
               </Form.Group>
               <Button variant="secondary" onClick={this.handleClose}>
@@ -95,7 +194,8 @@ UpdateUserProfileForm.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log("UpdateUserProfileForm", state.oneUser);
+  console.log("state profile form", state);
+
   return {
     oneUser: state.oneUser
   };

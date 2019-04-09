@@ -62,5 +62,15 @@ export const getUserData = email => dispatch =>
       dispatch(oneUser(user));
     })
     .catch(err => {
-      console.log("Error from action axios", err);
+      console.log("Error getUserData", err);
+    });
+
+export const updateProfile = userData => dispatch =>
+  api.user
+    .updateProfile(userData)
+    .then(updatedUser => {
+      dispatch(oneUser(updatedUser));
+    })
+    .catch(err => {
+      console.log("Error updateProfile", err);
     });
