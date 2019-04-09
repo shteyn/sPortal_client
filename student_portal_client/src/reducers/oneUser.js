@@ -1,16 +1,14 @@
 import { GET_ONE_USER } from "../types";
 
-const initialState = {
+/*const initialState = {
   oneUser: [],
   loading: false
-};
+};*/
 
-export default function(state = initialState, action = {}) {
+export default function(state = {}, action = {}) {
   switch (action.type) {
     case GET_ONE_USER:
-      return {
-        oneUser: action.oneUserData
-      };
+      return action.oneUserData;
     default:
       return state;
   }

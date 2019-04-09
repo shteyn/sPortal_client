@@ -50,6 +50,13 @@ export default {
       axios.post(`http://localhost:8080/api/users/waiting-users/${id}`),
 
     deleteUser: id =>
-      axios.delete(`http://localhost:8080/api/users/delete-users/${id}`)
+      axios.delete(`http://localhost:8080/api/users/delete-users/${id}`),
+
+    updateProfile: user =>
+      axios
+        .put(`http://localhost:8080/api/users/update-user/${user.id}`, {
+          user
+        })
+        .then(res => res.data)
   }
 };

@@ -72,6 +72,7 @@ router.delete("/users/delete-users/:id", (req, res) => {
       })
     );
 });
+
 //Change status of user when admin approved request
 const updateConfirmationEmailStatus = user => {
   User.findByIdAndUpdate(
@@ -98,7 +99,6 @@ router.get("/users", (req, res) => {
 
 //Get One User
 router.post("/users/dashboard", (req, res) => {
-  console.log("axios called with: ", req.body.email);
   User.findOne(
     { email: req.body.email },
     {
@@ -110,7 +110,6 @@ router.post("/users/dashboard", (req, res) => {
     }
   )
     .then(user => {
-      console.log("user router back", user);
       res.json(user);
     })
     .catch(error =>
@@ -120,4 +119,28 @@ router.post("/users/dashboard", (req, res) => {
       })
     );
 });
+
+//Update user profile
+router.put("/users/update-user/:id", (req, res) => {
+  console.log("REQ.BODY", req.body);
+  User.findByIdAndUpdate(req.params.id, req.body.user, {
+    new: true,
+    passwordHash: 0,
+    isAdmin: 0,
+    confirmationToken: 0,
+    confirmed: 0,
+    confirmationEmailSend: 0
+  })
+    .then(updatedUser => {
+      console.log("user router back", updatedUser);
+      res.json(updatedUser);
+    })
+    .catch(error =>
+      res.json({
+        success: false,
+        message: error
+      })
+    );
+});
+
 export default router;
