@@ -59,7 +59,6 @@ export const getUserData = email => dispatch =>
   api.user
     .getUserData(email)
     .then(user => {
-      console.log("response from Axios getUserData", user);
       dispatch(oneUser(user));
     })
     .catch(err => {

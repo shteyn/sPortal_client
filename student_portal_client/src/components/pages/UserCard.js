@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getAllUsers } from "../../actions/user";
+import TopNavigation from "../navigation/TopNavigation";
 
 class UserCard extends Component {
   componentDidMount() {
@@ -15,13 +16,7 @@ class UserCard extends Component {
     return (
       <div className="UserCardsCont">
         <div className="navigationBarUserCardPage">
-          <div>
-            <NavLink to="/" className="labelUserPage">
-              <span className="labelD">D</span>
-              <span className="labelC">C</span>
-              <span className="labelI">I</span>
-            </NavLink>
-          </div>
+          <TopNavigation />
         </div>
 
         <div className="UserCardsListCont">

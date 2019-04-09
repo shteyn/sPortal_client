@@ -10,7 +10,7 @@ import {
 const router = express.Router();
 
 //REGISTRATION
-router.post("/users", (req, res) => {
+router.post("/users/registration", (req, res) => {
   const {
     email,
     password,

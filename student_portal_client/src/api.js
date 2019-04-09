@@ -11,7 +11,7 @@ export default {
 
     registration: user =>
       axios
-        .post("http://localhost:8080/api/users", {
+        .post("http://localhost:8080/api/users/registration", {
           user
         })
         .then(res => res.data.user), //call users.js routes backend
@@ -43,11 +43,7 @@ export default {
 
     getUserData: email =>
       axios
-        .post(
-          "http://localhost:8080/api/users/dashboard",
-          { email },
-          console.log("email from axios call", email)
-        )
+        .post("http://localhost:8080/api/users/dashboard", { email })
         .then(res => res.data),
 
     approveUser: id =>

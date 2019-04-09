@@ -1,17 +1,27 @@
-.ConfirmEmailMessage {
-  max-width: 800px;
-  height: 500px;
-  margin: 100px auto;
-  border-radius: 13px;
-  background: white;
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-  align-items: center;
-  h1 {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    color: #da9446;
+.ConfirmEmailMessageCont {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 99;
+  background: darkgrey;
+  overflow: hidden;
+  .ConfirmEmailMessage {
+    max-width: 800px;
+    height: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 13px;
+    background: white;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    h1 {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      color: #da9446;
+    }
   }
 }

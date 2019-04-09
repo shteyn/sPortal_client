@@ -18,18 +18,46 @@ const UserSchema = new mongoose.Schema(
     },
     firstName: {
       type: String,
-      default: ""
+      default: "",
+      required: true
     },
     lastName: {
       type: String,
-      default: ""
+      default: "",
+      required: true
     },
     location: {
       type: String,
-      default: ""
+      default: "",
+      required: true
     },
     studentClass: {
       type: Number,
+      default: "",
+      required: true
+    },
+    availability: {
+      type: Number,
+      default: ""
+    },
+    linkedInLink: {
+      type: String,
+      default: ""
+    },
+    xingLink: {
+      type: String,
+      default: ""
+    },
+    githubLink: {
+      type: String,
+      default: ""
+    },
+    portfolioLink: {
+      type: String,
+      default: ""
+    },
+    userImage: {
+      type: String,
       default: ""
     },
     confirmationEmailSend: {
