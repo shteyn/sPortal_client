@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-
+import TopNavigation from '../navigation/TopNavigation'
 import RegistrationForm from "../forms/RegistrationForm";
 import { registration } from "../../actions/user";
 
@@ -17,11 +16,7 @@ class RegistrationPage extends Component {
       <div className="RegistrationFormCont">
         <div className="navigation">
           <div>
-            <Link to="/" className="labelUserPage">
-              <span className="labelD">D</span>
-              <span className="labelC">C</span>
-              <span className="labelI">I</span>
-            </Link>
+            <TopNavigation />
           </div>
         </div>
         <div className="RegistrationModel">

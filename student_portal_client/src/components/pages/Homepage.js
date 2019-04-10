@@ -2,12 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
+import TopNavigation from '../navigation/TopNavigation'
 import * as actions from "../../actions/auth";
 
 const HomePage = ({ isAuthenticated, logout }) => (
   <div>
-    {!isAuthenticated && (
+    {isAuthenticated && <TopNavigation/>}
+    {!isAuthenticated &&
       <div className="navigationBar">
         <Link to="/" className="label">
           <span>DCI</span>
@@ -21,7 +22,7 @@ const HomePage = ({ isAuthenticated, logout }) => (
           </li>
         </ul>
       </div>
-    )}
+    }
     <div className="centerWelcomeCont">
       <div className="textCont">
         <h1>WELCOME TO DCI.</h1>
