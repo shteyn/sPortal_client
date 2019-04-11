@@ -15,11 +15,11 @@ const HomePage = ({ isAuthenticated, logout }) => (
         </Link>
         <ul>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/login"><span>Sign In</span> | <span>Sign Up</span></Link>
           </li>
-          <li>
-            <Link to="/registration">Registration</Link>
-          </li>
+          {/*<li>*/}
+          {/*  <Link to="/registration">Registration</Link>*/}
+          {/*</li>*/}
         </ul>
       </div>
     }

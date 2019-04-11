@@ -25,10 +25,7 @@ class UserCard extends Component {
                         </Link>
                         <ul>
                             <li>
-                                <Link to="/login">Login</Link>
-                            </li>
-                            <li>
-                                <Link to="/registration">Registration</Link>
+                                <Link to="/login"><span>Sign In</span> | <span>Sign Up</span></Link>
                             </li>
                         </ul>
                     </div>}

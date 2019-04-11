@@ -26,13 +26,15 @@ class LoginPage extends Component {
           <Tabs defaultActiveKey="loginStudent" id="uncontrolled-tab-example">
             <Tab eventKey="loginStudent" title="Sign In">
               <LoginForm submit={this.submit} />
+              <div className="forgotPassDiv">
+                <Link to="/forgot_password">Forgot Password</Link>
+              </div>
             </Tab>
             <Tab eventKey="registrationUser" title="Sign Up">
               <RegistrationForm submit={this.submit}/>
             </Tab>
           </Tabs>
-          <br />
-          <Link to="/forgot_password">Forgot Password</Link>
+
         </div>
       </div>
     );

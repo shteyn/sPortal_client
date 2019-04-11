@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import TopNavigation from '../navigation/TopNavigation'
 import RegistrationForm from "../forms/RegistrationForm";
 import { registration } from "../../actions/user";
+import {Link} from "react-router-dom";
 
 class RegistrationPage extends Component {
   submit = data =>
@@ -15,9 +16,9 @@ class RegistrationPage extends Component {
     return (
       <div className="RegistrationFormCont">
         <div className="navigation">
-          <div>
-            <TopNavigation />
-          </div>
+          <Link to="/" className="labelUserPage">
+            <span className="labelD">DCI</span>
+          </Link>
         </div>
         <div className="RegistrationModel">
           <p>

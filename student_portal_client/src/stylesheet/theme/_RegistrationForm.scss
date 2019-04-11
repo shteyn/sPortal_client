@@ -17,6 +17,9 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    &:first-child {
+      width: 100%;
+    }
     .labelUserPage {
       color: white;
       text-decoration: none;

@@ -20,15 +20,12 @@ const TopNavigation = ({user, logout, isAdmin}) => (
           </Link>
         </li>
         <li>
-          <Link to="#">Contact Us</Link>
-        </li>
-        <li>
           {isAdmin && <Link to="/dashboard">
 
             <Image
                 id="gravatar-img"
                 // src={gravatarUrl(user.email)}
-                src={require('../../img/isAdmin.png')}
+                src={require('../../img/admin.png')}
                 width="50"
                 alt="avatar"
             />

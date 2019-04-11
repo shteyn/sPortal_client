@@ -71,7 +71,10 @@
     transform: translateX(-50%);
     background: rgba(29, 59, 139, 0.1);
     border-radius: 15px;
-
+    .forgotPassDiv {
+      margin:  30px auto 0;
+      text-align: center;
+    }
     input {
       width: 689px;
       height: 79px;
@@ -129,6 +132,11 @@
     .nav-link {
       width: 50%;
       height: 100px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       text-decoration: none;
@@ -137,10 +145,6 @@
       font-weight: normal;
       line-height: normal;
       font-size: 30px;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
     }
     .nav-link.active {
       background: none;
@@ -150,7 +154,7 @@
       font-weight: normal;
       line-height: normal;
       font-size: 30px;
-      color: #ffffff;
+      color: #da9446;
     }
   }
 }
