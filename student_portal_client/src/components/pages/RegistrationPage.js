@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import TopNavigation from '../navigation/TopNavigation'
+// import TopNavigation from '../navigation/TopNavigation'
 import RegistrationForm from "../forms/RegistrationForm";
 import { registration } from "../../actions/user";
 import {Link} from "react-router-dom";

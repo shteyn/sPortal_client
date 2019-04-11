@@ -17,14 +17,14 @@ class UserDashboardPage extends Component {
     const {
       firstName,
       lastName,
-      email,
+      // email,
       location,
       studentClass,
-      availability,
-      githubLink,
-      linkedInLink,
-      portfolioLink,
-      xingLink
+      // availability,
+      // githubLink,
+      // linkedInLink,
+      // portfolioLink,
+      // xingLink
     } = this.props.oneUser;
     return (
       <div className="UserPage">

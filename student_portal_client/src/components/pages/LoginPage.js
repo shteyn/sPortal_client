@@ -7,10 +7,16 @@ import { Tabs, Tab } from "react-bootstrap";
 import LoginForm from "../forms/LoginForm";
 import RegistrationForm from "../forms/RegistrationForm";
 import { login } from "../../actions/auth";
+import {registration} from "../../actions/user";
 
 class LoginPage extends Component {
   submit = data =>
     this.props.login(data).then(() => this.props.history.push("/dashboard"));
+
+  submitRegister = data =>
+      this.props
+          .registration(data)
+          .then(() => this.props.history.push("/dashboard"));
 
   render() {
     return (
@@ -31,7 +37,7 @@ class LoginPage extends Component {
               </div>
             </Tab>
             <Tab eventKey="registrationUser" title="Sign Up">
-              <RegistrationForm submit={this.submit}/>
+              <RegistrationForm submit={this.submitRegister}/>
             </Tab>
           </Tabs>
 
@@ -45,10 +51,13 @@ LoginPage.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
   }).isRequired,
-  login: PropTypes.func.isRequired
+  login: PropTypes.func.isRequired,
+  registration: PropTypes.func.isRequired
 };
+
+
 
 export default connect(
   null,
-  { login }
+  { login, registration }
 )(LoginPage);

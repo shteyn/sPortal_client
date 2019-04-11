@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 
 import ForgotPasswordForm from "../forms/ForgotPasswordForm";
 import {resetPasswordRequest} from "../../actions/auth";
-import TopNavigation from '../navigation/TopNavigation'
+// import TopNavigation from '../navigation/TopNavigation'
 import {Link} from "react-router-dom";
 
 class ForgotPasswordPage extends Component {

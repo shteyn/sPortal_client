@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {Route} from "react-router-dom";
 import {connect} from "react-redux";
 
-import TopNavigation from "./components/navigation/TopNavigation";
+// import TopNavigation from "./components/navigation/TopNavigation";
 import HomePage from "./components/pages/Homepage";
 import ConfirmationPage from "./components/pages/ConfirmationPage";
 import LoginPage from "./components/pages/LoginPage";

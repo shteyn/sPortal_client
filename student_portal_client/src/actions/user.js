@@ -16,6 +16,7 @@ export const registration = data => dispatch =>
   api.user.registration(data).then(user => {
     localStorage.userJWT = user.token;
     dispatch(userLoggedIn(user));
+    console.log('registered')
   });
 
 //export const approveUser = () => dispatch => api.user.approveUser();
