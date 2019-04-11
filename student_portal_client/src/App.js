@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Route} from "react-router-dom";
-import {connect} from "react-redux";
+import { Route } from "react-router-dom";
+import { connect } from "react-redux";
+import dotenv from "dotenv";
 
 // import TopNavigation from "./components/navigation/TopNavigation";
 import HomePage from "./components/pages/Homepage";

@@ -4,15 +4,28 @@ import { connect } from "react-redux";
 import TopNavigation from '../navigation/TopNavigation'
 
 import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
-import { getUserData, updateProfile } from "../../actions/user";
+import { getUserData, updateProfile, updateImage } from "../../actions/user";
 
 class UserDashboardPage extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.userImageRef = React.createRef();
+  }
   updateProfile = data => this.props.updateProfile(data);
 
   componentDidMount() {
     const { email } = this.props.user;
     this.props.getUserData(email);
   }
+
+  submitUploadImage = event => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.set("id", this.props.oneUser._id);
+    formData.append("userImage", this.userImageRef.current.files[0]);
+    this.props.updateImage(formData);
+  };
+
   render() {
     const {
       firstName,
@@ -44,17 +57,33 @@ class UserDashboardPage extends Component {
                   <h2>Available from</h2>
                   <p>September 21, 2019</p>
                 </div>
+                <div>
+                  <form>
+                    <h1>File Upload</h1>
 
-              </div>
-              <div className="ImageUploadCont">
-                <h3>Image</h3>
-                <div className="inputCont">
-                  <label htmlFor="imgUpload">upload</label>
-                  <input
+                    <label
+                      htmlFor="imgupload"
+                      style={{
+                        width: "100px",
+                        height: "100px",
+                        border: "solid 1px red"
+                      }}
+                    >
+                      upload
+                    </label>
+                    <input
+                      id="imgupload"
+                      ref={this.userImageRef}
                       type="file"
-                      id="imgUpload"
+                      name="userImageRef"
+                      onChange={this.submitUploadImage}
                       style={{ display: "none" }}
-                  />
+                    />
+                  </form>
+                </div>
+                <div className="ImageUploadCont">
+                  <h3>Image</h3>
+                  <img src={userImage} style={{ width: "200px" }} />
                 </div>
               </div>
             </div>
@@ -113,7 +142,8 @@ UserDashboardPage.propTypes = {
   getUserData: PropTypes.func.isRequired,
   updateProfile: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
-  oneUser: PropTypes.object.isRequired
+  oneUser: PropTypes.object.isRequired,
+  updateImage: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
@@ -126,5 +156,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { getUserData, updateProfile }
+  { getUserData, updateProfile, updateImage }
 )(UserDashboardPage);

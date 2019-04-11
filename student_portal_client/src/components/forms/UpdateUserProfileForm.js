@@ -8,7 +8,6 @@ class UpdateUserProfileForm extends Component {
     super(props, context);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
-    //Update user reflinks
     this.firstNameRef = React.createRef();
     this.lastNameRef = React.createRef();
     this.emailRef = React.createRef();
@@ -32,12 +31,6 @@ class UpdateUserProfileForm extends Component {
   handleShow() {
     this.setState({ show: true });
   }
-
-  /*handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  };*/
 
   handleSubmit = event => {
     event.preventDefault();
@@ -83,7 +76,6 @@ class UpdateUserProfileForm extends Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>First Name</Form.Label>
                 <Form.Control
-                  //onChange={this.handleChange}
                   ref={this.firstNameRef}
                   type="text"
                   name="firstName"
@@ -93,7 +85,6 @@ class UpdateUserProfileForm extends Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Last Name</Form.Label>
                 <Form.Control
-                  //onChange={this.handleChange}
                   ref={this.lastNameRef}
                   type="text"
                   name="lastName"
@@ -103,7 +94,6 @@ class UpdateUserProfileForm extends Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
-                  //onChange={this.handleChange}
                   ref={this.emailRef}
                   type="email"
                   name="email"
@@ -113,7 +103,6 @@ class UpdateUserProfileForm extends Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Class</Form.Label>
                 <Form.Control
-                  //onChange={this.handleChange}
                   ref={this.studentClassRef}
                   type="text"
                   name="studentClass"
@@ -123,7 +112,6 @@ class UpdateUserProfileForm extends Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Location</Form.Label>
                 <Form.Control
-                  //onChange={this.handleChange}
                   ref={this.locationRef}
                   type="text"
                   name="location"
@@ -133,7 +121,6 @@ class UpdateUserProfileForm extends Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>LinkedIn</Form.Label>
                 <Form.Control
-                  //onChange={this.handleChange}
                   ref={this.linkedInLinkRef}
                   type="text"
                   name="linkedInLink"
@@ -143,7 +130,6 @@ class UpdateUserProfileForm extends Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Github</Form.Label>
                 <Form.Control
-                  //onChange={this.handleChange}
                   ref={this.githubLinkRef}
                   type="text"
                   name="githubLink"
@@ -153,7 +139,6 @@ class UpdateUserProfileForm extends Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Xing</Form.Label>
                 <Form.Control
-                  //onChange={this.handleChange}
                   ref={this.xingLinkRef}
                   type="text"
                   name="xingLink"
@@ -163,13 +148,13 @@ class UpdateUserProfileForm extends Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Portfolio</Form.Label>
                 <Form.Control
-                  //onChange={this.handleChange}
                   ref={this.portfolioLinkRef}
                   type="text"
                   name="portfolioLink"
                   defaultValue={portfolioLink}
                 />
               </Form.Group>
+
               <Button variant="secondary" onClick={this.handleClose}>
                 Close
               </Button>
@@ -194,7 +179,7 @@ UpdateUserProfileForm.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log("state profile form", state);
+  console.log("state profile form", state.oneUser);
 
   return {
     oneUser: state.oneUser
