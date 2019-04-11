@@ -79,12 +79,3 @@ export default connect(
   { deleteUser }
 )(ConfirmedUsersForm);
 
-// {
-//   _id,
-//       firstName,
-//       lastName,
-//       email,
-//       location,
-//       studentClass,
-//       confirmed
-// }
