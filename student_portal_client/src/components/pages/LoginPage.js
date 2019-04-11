@@ -2,13 +2,21 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { Tabs, Tab } from "react-bootstrap";
 
 import LoginForm from "../forms/LoginForm";
+import RegistrationForm from "../forms/RegistrationForm";
 import { login } from "../../actions/auth";
+import {registration} from "../../actions/user";
 
 class LoginPage extends Component {
   submit = data =>
     this.props.login(data).then(() => this.props.history.push("/dashboard"));
+
+  submitRegister = data =>
+      this.props
+          .registration(data)
+          .then(() => this.props.history.push("/dashboard"));
 
   render() {
     return (
@@ -16,16 +24,23 @@ class LoginPage extends Component {
         <div className="navigation">
           <div>
             <Link to="/" className="labelUserPage">
-              <span className="labelD">D</span>
-              <span className="labelC">C</span>
-              <span className="labelI">I</span>
+              <span className="labelD">DCI</span>
             </Link>
           </div>
         </div>
         <div className="LoginModel">
-          <LoginForm submit={this.submit} />
-          <br />
-          <Link to="/forgot_password">Forgot Password</Link>
+          <Tabs defaultActiveKey="loginStudent" id="uncontrolled-tab-example">
+            <Tab eventKey="loginStudent" title="Sign In">
+              <LoginForm submit={this.submit} />
+              <div className="forgotPassDiv">
+                <Link to="/forgot_password">Forgot Password</Link>
+              </div>
+            </Tab>
+            <Tab eventKey="registrationUser" title="Sign Up">
+              <RegistrationForm submit={this.submitRegister}/>
+            </Tab>
+          </Tabs>
+
         </div>
       </div>
     );
@@ -36,10 +51,13 @@ LoginPage.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
   }).isRequired,
-  login: PropTypes.func.isRequired
+  login: PropTypes.func.isRequired,
+  registration: PropTypes.func.isRequired
 };
+
+
 
 export default connect(
   null,
-  { login }
+  { login, registration }
 )(LoginPage);

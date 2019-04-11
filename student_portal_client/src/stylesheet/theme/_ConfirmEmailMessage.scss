@@ -7,9 +7,9 @@
   overflow: hidden;
   .ConfirmEmailMessage {
     max-width: 800px;
-    height: 500px;
+    position: relative;
     margin: 100px auto;
-    padding: 20px;
+    padding: 40px;
     border-radius: 13px;
     background: white;
     display: flex;
@@ -24,4 +24,5 @@
       color: #da9446;
     }
   }
+
 }

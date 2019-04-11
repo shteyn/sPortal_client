@@ -4,7 +4,7 @@ import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 import dotenv from "dotenv";
 
-import TopNavigation from "./components/navigation/TopNavigation";
+// import TopNavigation from "./components/navigation/TopNavigation";
 import HomePage from "./components/pages/Homepage";
 import ConfirmationPage from "./components/pages/ConfirmationPage";
 import LoginPage from "./components/pages/LoginPage";
@@ -16,67 +16,66 @@ import Dashboard from "./components/pages/Dashboard";
 import UserRoutes from "./components/routes/UserRoutes";
 import GuestRoutes from "./components/routes/GuestRoutes";
 
-const App = ({ location, isAuthenticated }) => (
-  <div className="container-app">
-    {isAuthenticated && <TopNavigation />}
+const App = ({location, isAuthenticated}) => (
+    <div className="container-app">
+        <Route location={location} path="/" exact component={HomePage}/>
+        <Route
+            location={location}
+            path="/user-card"
+            exact
+            component={UserCard}
+        />
+        <Route
+            location={location}
+            path="/confirmation/:token"
+            exact
+            component={ConfirmationPage}
+        />
+        <GuestRoutes
+            location={location}
+            path="/login"
+            exact
+            component={LoginPage}
+        />
+        <GuestRoutes
+            location={location}
+            path="/registration"
+            exact
+            component={RegistrationPage}
+        />
+        <GuestRoutes
+            location={location}
+            path="/forgot_password"
+            exact
+            component={ForgotPasswordPage}
+        />
+        <GuestRoutes
+            location={location}
+            path="/reset_password/:token"
+            exact
+            component={ResetPasswordPage}
+        />
+        <UserRoutes
+            location={location}
+            path="/dashboard"
+            exact
+            component={Dashboard}
+        />
 
-    <Route location={location} path="/" exact component={HomePage} />
-    <Route
-      location={location}
-      path="/confirmation/:token"
-      exact
-      component={ConfirmationPage}
-    />
-    <GuestRoutes
-      location={location}
-      path="/login"
-      exact
-      component={LoginPage}
-    />
-    <GuestRoutes
-      location={location}
-      path="/registration"
-      exact
-      component={RegistrationPage}
-    />
-    <GuestRoutes
-      location={location}
-      path="/forgot_password"
-      exact
-      component={ForgotPasswordPage}
-    />
-    <GuestRoutes
-      location={location}
-      path="/reset_password/:token"
-      exact
-      component={ResetPasswordPage}
-    />
-    <UserRoutes
-      location={location}
-      path="/dashboard"
-      exact
-      component={Dashboard}
-    />
-    <UserRoutes
-      location={location}
-      path="/user-card"
-      exact
-      component={UserCard}
-    />
-  </div>
+    </div>
 );
 
 App.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
-  }).isRequired,
-  isAuthenticated: PropTypes.bool.isRequired
+    location: PropTypes.shape({
+        pathname: PropTypes.string.isRequired
+    }).isRequired,
+    isAuthenticated: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state) {
-  return {
-    isAuthenticated: !!state.user.email
-  };
+    return {
+        isAuthenticated: !!state.user.email
+    };
 }
 
 export default connect(mapStateToProps)(App);
