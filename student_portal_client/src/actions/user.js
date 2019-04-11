@@ -74,3 +74,14 @@ export const updateProfile = userData => dispatch =>
     .catch(err => {
       console.log("Error updateProfile", err);
     });
+
+export const updateImage = formData => dispatch =>
+  api.user
+    .updateImage(formData)
+    .then(updateImage => {
+      console.log(" updateImage", updateImage);
+      dispatch(oneUser(updateImage));
+    })
+    .catch(err => {
+      console.log("Error updateImage", updateImage, err);
+    });

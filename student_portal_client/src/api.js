@@ -52,6 +52,15 @@ export default {
     deleteUser: id =>
       axios.delete(`http://localhost:8080/api/users/delete-users/${id}`),
 
+    updateImage: user =>
+      axios({
+        method: "post",
+        url: `http://localhost:8080/api/users/update-img/${user.get("id")}`,
+        data: user,
+        headers: {
+          "content-type": `multipart/form-data; boundary=${user._boundary}`
+        }
+      }).then(res => res.data),
     updateProfile: user =>
       axios
         .put(`http://localhost:8080/api/users/update-user/${user.id}`, {
