@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import gravatarUrl from "gravatar-url";
 import { Link } from "react-router-dom";
-//import { Image } from "semantic-ui-react";
+// import { Image } from "semantic-ui-react";
 import { logout } from "../../actions/auth";
 
 const TopNavigation = ({ user, logout, isAdmin }) => (
@@ -20,7 +20,9 @@ const TopNavigation = ({ user, logout, isAdmin }) => (
         </Link>
       </li>
       <li>
-        <Link to="#">Contact Us</Link>
+        { isAdmin && <Link to="/dashboard"></Link> }
+        { !isAdmin && <Link to="/dashboard"></Link> }
+        {/* <Link to="#">Contact Us</Link> */}
       </li>
       <li>
         <Link to="/dashboard">

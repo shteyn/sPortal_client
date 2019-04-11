@@ -1,15 +1,18 @@
 .container-app {
     background-color: rgb(255, 255, 255);
 }
-
 .navigationBar {
     background-color: #1D3B8B;
+}
+.nav-tabs {
+    color: green;
 }
 
 .celled.table tr th {
     font-size: 17px;
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
+    // border: 3px solid red;
 }
 
 .ui.celled {
@@ -19,7 +22,7 @@
     position: absolute;
     overflow: auto;
     block-size: 43px;
-    background-color: rgba(139, 139, 139, 0.075);
+    background-color: rgba(139, 159, 250, 0.2);
 }
 
 .ui.red.button {
@@ -31,4 +34,8 @@
     font-style: normal;
     font-weight: normal;
     line-height: normal;
+}
+
+nav .nav-tabs {
+    border-bottom: none;
 }

@@ -21,7 +21,7 @@ class ConfirmedUsersForm extends Component {
     const { allUsers } = this.props.allUsers;
 
     return (
-      <Table celled>
+      <Table className="cdcd" celled>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Location</Table.HeaderCell>
