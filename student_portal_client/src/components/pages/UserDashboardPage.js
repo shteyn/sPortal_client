@@ -93,7 +93,10 @@ class UserDashboardPage extends Component {
                 </div>
                 <div className="ImageUploadCont">
                   <h3>Image</h3>
-                  <img src={userImage} style={{ width: "200px" }} />
+                  <img
+                    src={`http://localhost:8080/uploads/${userImage}`}
+                    style={{ width: "200px" }}
+                  />
                 </div>
               </div>
             </div>

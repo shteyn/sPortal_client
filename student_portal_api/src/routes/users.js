@@ -3,8 +3,8 @@ import User from "../models/User";
 import parseErrors from "../controllers/parseErrors";
 import multer from "multer";
 import uuid from "uuid";
-import sharp from "sharp";
-
+import fs from "fs";
+const { promisify } = require("util");
 import {
   sendConfirmationEmail,
   sendDeleteUserEmail,
@@ -25,7 +25,11 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
+  if (
+    file.mimetype === "image/jpeg" ||
+    file.mimetype === "image/png" ||
+    file.mimetype === "image/jpg"
+  ) {
     cb(null, true);
   } else {
     cb(null, false);
@@ -39,26 +43,28 @@ const upload = multer({
   fileFilter: fileFilter
 });
 
+const unlinkAsync = promisify(fs.unlink);
+
 //Update Image
 router.post("/users/update-img/:id", upload.single("userImage"), (req, res) => {
-  sharp("./public/uploads/" + req.imageFileName)
-    .resize(320)
-    .toFile(`./public/uploads/${req.imageFileName}`, (err, info) =>
-      console.log("newImage", info)
-    );
-  const newImage = `http://localhost:8080/uploads/${req.imageFileName}`;
+  console.log("req.imageFileName", `/public/uploads/${req.imageFileName}`);
+  const newImage = req.imageFileName;
   console.log("newImage", newImage);
-  User.findByIdAndUpdate(
-    req.body.id,
-    { userImage: newImage },
-    {
-      new: true,
-      select:
-        "_id location availability createdAt email firstName lastName studentClass linkedInLink xingLink githubLink portfolioLink userImage confirmationEmailSend confirmed isAdmin"
-    }
-  ).then(updatedImg => {
-    console.log("user router back", updatedImg);
-    res.json(updatedImg);
+  User.findById(req.body.id).then(user => {
+    const oldImage = user.userImage;
+    User.findByIdAndUpdate(
+      req.body.id,
+      { userImage: newImage },
+      {
+        new: true,
+        select:
+          "_id location availability createdAt email firstName lastName studentClass linkedInLink xingLink githubLink portfolioLink userImage confirmationEmailSend confirmed isAdmin"
+      }
+    ).then(updatedImg => {
+      unlinkAsync(`./public/uploads/${oldImage}`);
+      console.log("user router back", updatedImg);
+      res.json(updatedImg);
+    });
   });
 });
 
