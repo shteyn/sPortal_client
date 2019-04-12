@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-
-import { ReactComponent as YourSvg } from "../media/spinner.svg";
+import TopNavigation from '../navigation/TopNavigation'
 import { confirm } from "../../actions/auth";
 
 class ConfirmationPage extends Component {
@@ -23,20 +22,24 @@ class ConfirmationPage extends Component {
     const { loading, success } = this.state;
     return (
       <div className="ConfirmationPageCont">
-        {loading && (
-          <div className="ValidatingCont">
-            <p>Validating your email</p>
-            <YourSvg loading={loading.toString()} />
-          </div>
-        )}
-        {!loading && success && (
-          <div className="verifiedCont">
-            Your account is verified
-            <Link to="/dashboard"> Go to your dashboard</Link>
-          </div>
-        )}
+        <div>
+          <TopNavigation/>
+        </div>
+        <div>
+          {loading && (
+              <div className="ValidatingCont">
+                <p>Validating your email</p>
+              </div>
+          )}
+          {!loading && success && (
+              <div className="verifiedCont">
+                Your account is verified
+                <Link to="/dashboard"> Go to your dashboard</Link>
+              </div>
+          )}
 
-        {!loading && !success && <div className="invalidToken"><h1>Oops. Invalid Token</h1></div>}
+          {!loading && !success && <div className="invalidToken"><h1>Oops. Invalid Token</h1></div>}
+        </div>
       </div>
     );
   }

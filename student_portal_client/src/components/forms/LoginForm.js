@@ -49,7 +49,7 @@ class LoginForm extends Component {
     return (
       <div className="loginForm">
         <form onSubmit={this.onSubmit} loading={loading.toString()}>
-          {errors.global && <p id="globalError">{alert(errors.global)}</p>}
+          {errors.global && <p id="globalError">{errors.global}</p>}
 
           <input
             type="email"

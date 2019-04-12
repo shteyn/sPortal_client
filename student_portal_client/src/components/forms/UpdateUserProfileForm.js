@@ -66,8 +66,6 @@ class UpdateUserProfileForm extends Component {
       <div>
         <div variant="primary" onClick={this.handleShow}>
 
-          Launch demo modal window
-
           <img src={require('../../img/edit.svg')} alt=""/>
 
         </div>
