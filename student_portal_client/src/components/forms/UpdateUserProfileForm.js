@@ -65,11 +65,8 @@ class UpdateUserProfileForm extends Component {
     return (
       <div>
         <div variant="primary" onClick={this.handleShow}>
-
           Launch demo modal window
-
-          <img src={require('../../img/edit.svg')} alt=""/>
-
+          <img src={require("../../img/edit.svg")} alt="" />
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
@@ -183,8 +180,7 @@ UpdateUserProfileForm.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log("state profile form", state.oneUser);
-
+  //console.log("state profile form", state.oneUser);
   return {
     oneUser: state.oneUser
   };

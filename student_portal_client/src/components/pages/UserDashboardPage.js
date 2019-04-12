@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import TopNavigation from '../navigation/TopNavigation'
+import TopNavigation from "../navigation/TopNavigation";
 
 import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
 import { getUserData, updateProfile, updateImage } from "../../actions/user";
@@ -37,7 +37,8 @@ class UserDashboardPage extends Component {
       // githubLink,
       // linkedInLink,
       // portfolioLink,
-      // xingLink
+      // xingLink,
+      userImage
     } = this.props.oneUser;
     return (
       <div className="UserPage">
@@ -84,6 +85,7 @@ class UserDashboardPage extends Component {
                 <div className="ImageUploadCont">
                   <h3>Image</h3>
                   <img
+                    alt="user-profile"
                     src={`http://localhost:8080/uploads/${userImage}`}
                     style={{ width: "200px" }}
                   />
@@ -117,7 +119,7 @@ class UserDashboardPage extends Component {
               </div>
             </div>
           </div>
-          <hr/>
+          <hr />
         </div>
         <div className="profileInfoCont">
           <div className="profileInfoItem">
