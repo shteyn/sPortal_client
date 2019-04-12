@@ -21,6 +21,10 @@ class ConfirmedUsersForm extends Component {
     const { allUsers } = this.props.allUsers;
 
     return (
+      <div>
+      <br/>
+        <h2 className="top"><b>Approved Students</b></h2>
+      <br/>
       <Table className="cdcd" celled>
         <Table.Header>
           <Table.Row>
@@ -59,6 +63,7 @@ class ConfirmedUsersForm extends Component {
           })}
         </Table.Body>
       </Table>
+      </div>
     );
   }
 }
