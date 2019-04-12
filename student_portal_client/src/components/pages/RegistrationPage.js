@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-
+// import TopNavigation from '../navigation/TopNavigation'
 import RegistrationForm from "../forms/RegistrationForm";
 import { registration } from "../../actions/user";
+import {Link} from "react-router-dom";
 
 class RegistrationPage extends Component {
   submit = data =>
@@ -16,13 +16,9 @@ class RegistrationPage extends Component {
     return (
       <div className="RegistrationFormCont">
         <div className="navigation">
-          <div>
-            <Link to="/" className="labelUserPage">
-              <span className="labelD">D</span>
-              <span className="labelC">C</span>
-              <span className="labelI">I</span>
-            </Link>
-          </div>
+          <Link to="/" className="labelUserPage">
+            <span className="labelD">DCI</span>
+          </Link>
         </div>
         <div className="RegistrationModel">
           <p>

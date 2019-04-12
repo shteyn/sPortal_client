@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Button } from "react-bootstrap";
+import TopNavigation from '../navigation/TopNavigation'
 
 import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
 import { getUserData, updateProfile, updateImage } from "../../actions/user";
@@ -30,40 +30,30 @@ class UserDashboardPage extends Component {
     const {
       firstName,
       lastName,
-      email,
+      // email,
       location,
       studentClass,
-      availability,
-      githubLink,
-      linkedInLink,
-      portfolioLink,
-      xingLink,
-      userImage
+      // availability,
+      // githubLink,
+      // linkedInLink,
+      // portfolioLink,
+      // xingLink
     } = this.props.oneUser;
     return (
       <div className="UserPage">
+        <div className="navigationBarUserPage">
+          <TopNavigation />
+        </div>
         <div className="UserPageCont">
           <div className="InfoCont">
             <div className="infoBoxCont">
               <h3>Info Box</h3>
               <div className="SubBoxCont">
-                <div className="ImageUploadCont">
-                  <h2>First Name</h2>
-                  <p>{firstName}</p>
-                </div>
-                <div className="ImageUploadCont">
-                  <h2>Lats Name</h2>
-                  <p>{lastName}</p>
-                </div>
-                <div className="ImageUploadCont">
-                  <h2>Location</h2>
-                  <p>{location}</p>
-                </div>
-                <div className="ImageUploadCont">
+                <div className="SubBoxItem">
                   <h2>Class</h2>
                   <p>{studentClass}</p>
                 </div>
-                <div className="ImageUploadCont">
+                <div className="SubBoxItem">
                   <h2>Available from</h2>
                   <p>September 21, 2019</p>
                 </div>
@@ -125,12 +115,26 @@ class UserDashboardPage extends Component {
                 </span>
                 <input type="text" />
               </div>
-              <span>Update btn </span>
-              <Button variant="primary">
-                <UpdateUserProfileForm updateProfile={this.updateProfile} />
-              </Button>
             </div>
           </div>
+          <hr/>
+        </div>
+        <div className="profileInfoCont">
+          <div className="profileInfoItem">
+            <h2>First Name</h2>
+            <p>{firstName}</p>
+          </div>
+          <div className="profileInfoItem">
+            <h2>Lats Name</h2>
+            <p>{lastName}</p>
+          </div>
+          <div className="profileInfoItem">
+            <h2>Location</h2>
+            <p>{location}</p>
+          </div>
+          <button className="updateButton">
+            <UpdateUserProfileForm updateProfile={this.updateProfile} />
+          </button>
         </div>
       </div>
     );
