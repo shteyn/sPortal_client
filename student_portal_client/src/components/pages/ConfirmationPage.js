@@ -22,10 +22,10 @@ class ConfirmationPage extends Component {
     const { loading, success } = this.state;
     return (
       <div className="ConfirmationPageCont">
-        <div>
+        <div className="ConfirmationNavigationBar">
           <TopNavigation/>
         </div>
-        <div>
+        <div className="ValidatingAndVerifiedCont">
           {loading && (
               <div className="ValidatingCont">
                 <p>Validating your email</p>

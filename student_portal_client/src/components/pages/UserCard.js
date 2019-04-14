@@ -17,8 +17,8 @@ class UserCard extends Component {
         return (
             <div className="UserCardsCont">
                 <div className="navigationBarUserCardPage">
-                    {isConfirmedUser && <TopNavigation/>}
-                    {!isConfirmedUser &&
+                    {!isConfirmedUser && <TopNavigation/>}
+                    {isConfirmedUser &&
                     <div className="navigationBar">
                         <Link to="/" className="label">
                             <span>DCI</span>

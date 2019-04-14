@@ -35,7 +35,7 @@ class UserDashboardPage extends Component {
       location,
       studentClass,
       userImage,
-      availability,
+      // availability,
       githubLink,
       linkedInLink,
       portfolioLink,
@@ -49,9 +49,7 @@ class UserDashboardPage extends Component {
           <div className="UserPageCont">
             <div className="InfoCont">
               <div className="infoBoxCont">
-                <h3>Info Box</h3>
                 <div className="SubBoxCont">
-                  <div className="SubBoxItem">
                     <div className="userImageUploadCont"
                          style={{
                            position: 'relative',
@@ -85,7 +83,7 @@ class UserDashboardPage extends Component {
                               cursor: 'pointer'
                             }}
                         >
-                          <img src={require('../../img/edit.svg')} alt="" style={{width: '25px'}}/>
+                          <img src={require('../../img/edit-icon.png')} alt="" style={{width: '25px'}}/>
                         </label>
                         <input
                             id="imgupload"
@@ -97,55 +95,41 @@ class UserDashboardPage extends Component {
                         />
                       </form>
                     </div>
-                  </div>
                   <div className="profileInfoCont">
-                    <div className="profileInfoItem">
-                      <h2>Class</h2>
-                      <p>{studentClass}</p>
+
+                    <div className="profileInfoItemOne">
+                      {/*<h2>First Name</h2>*/}
+                      <h2>{firstName} {lastName}</h2>
                     </div>
-                    <div className="profileInfoItem">
-                      <h2>Available from</h2>
-                      <p>September 21, 2019</p>
-                    </div>
-                    <div className="profileInfoItem">
-                      <h2>First Name</h2>
-                      <p>{firstName}</p>
-                    </div>
-                    <div className="profileInfoItem">
-                      <h2>Lats Name</h2>
-                      <p>{lastName}</p>
-                    </div>
-                    <div className="profileInfoItem">
+                    <div className="profileInfoItemTwo">
                       <h2>Location</h2>
                       <p>{location}</p>
+                    </div>
+                    <div className="profileInfoItemThree">
+                      <div className="profileInfoItemFive">
+                        <h2>Class</h2>
+                        <p>{studentClass}</p>
+                      </div>
+                      <div className="profileInfoItemFour">
+                        <h2>Available from</h2> <p>September 21, 2019</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="linksBoxCont">
-                <div>
-                <span>
-                  <h3>LinkedIn</h3>
-                </span>
-                  <input type="text"/>
-                </div>
-                <div>
-                <span>
-                  <h3>XING</h3>
-                </span>
-                  <input type="text"/>
-                </div>
-                <div>
-                <span>
-                  <h3>GitHub</h3>
-                </span>
-                  <input type="text"/>
-                </div>
-                <div>
-                <span>
-                  <h3>Portfolio</h3>
-                </span>
-                  <input type="text"/>
+                <h1>Links</h1>
+                <div className="linksBoxItems">
+                  <div>
+                  <a href={linkedInLink} target="_blank" rel="noopener noreferrer"><img src={require('../../img/linkedin-icon.png')} alt=""/></a>
+
+                  </div>
+                  <div><a href={xingLink} target="_blank" rel="noopener noreferrer"><img src={require('../../img/xing-icon.png')} alt=""/></a>
+                  </div>
+                  <div><a href={githubLink} target="_blank" rel="noopener noreferrer"><img src={require('../../img/github-icon.png')} alt=""/></a>
+                  </div>
+                  <div><a href={portfolioLink} target="_blank" rel="noopener noreferrer"><img src={require('../../img/briefcase-icon.png')} alt=""/></a>
+                  </div>
                 </div>
               </div>
             </div>

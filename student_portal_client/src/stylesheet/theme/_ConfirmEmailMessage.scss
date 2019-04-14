@@ -3,7 +3,7 @@
   height: 100vh;
   position: absolute;
   z-index: 99;
-  background: darkgrey;
+  background: white;
   overflow: hidden;
   .ConfirmEmailMessage {
     max-width: 800px;
@@ -11,7 +11,7 @@
     margin: 100px auto;
     padding: 40px;
     border-radius: 13px;
-    background: white;
+    background: lightgray;
     display: flex;
     justify-items: center;
     justify-content: center;
@@ -25,4 +25,7 @@
     }
   }
 
+  .ConfirmationNavigationBar {
+    background-color: #1d3b8b;
+  }
 }

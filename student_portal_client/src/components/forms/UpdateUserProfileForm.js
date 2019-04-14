@@ -17,6 +17,7 @@ class UpdateUserProfileForm extends Component {
     this.githubLinkRef = React.createRef();
     this.xingLinkRef = React.createRef();
     this.portfolioLinkRef = React.createRef();
+    // this.availabilityRef = React.createRef();
   }
   state = {
     show: false
@@ -66,7 +67,7 @@ class UpdateUserProfileForm extends Component {
       <div>
         <div variant="primary" onClick={this.handleShow}>
 
-          <img src={require('../../img/edit.svg')} alt=""/>
+          <img src={require('../../img/edit-icon.png')} alt=""/>
 
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>

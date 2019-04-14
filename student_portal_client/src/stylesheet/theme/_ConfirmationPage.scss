@@ -1,13 +1,25 @@
 .ConfirmationPageCont {
-  width: 722px;
+  width: 100%;
+  height: 100vh;
   //height: 636px;
   background: #ffffff;
   border-radius: 15px;
   position: relative;
-  margin: 200px auto;
-  display: flex;
-  justify-content: center;
-  justify-self: center;
+
+
+  .ValidatingAndVerifiedCont {
+    max-width: 800px;
+    position: relative;
+    margin: 100px auto;
+    padding: 40px;
+    border-radius: 13px;
+    background: lightgray;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
   .invalidToken {
     color: #da9446;
     margin: 50px auto;
@@ -19,5 +31,8 @@
   .verifiedCont {
     color: #da9446;
     margin: 50px auto;
+  }
+  .ConfirmationNavigationBar {
+    background-color: #1d3b8b;
   }
 }
