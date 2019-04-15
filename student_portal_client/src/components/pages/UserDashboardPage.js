@@ -1,12 +1,11 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
 import TopNavigation from "../navigation/TopNavigation";
 
-
 import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
-import {getUserData, updateProfile, updateImage} from "../../actions/user";
+import { getUserData, updateProfile, updateImage } from "../../actions/user";
 
 class UserDashboardPage extends Component {
   constructor(props, context) {
@@ -17,7 +16,7 @@ class UserDashboardPage extends Component {
   updateProfile = data => this.props.updateProfile(data);
 
   componentDidMount() {
-    const {email} = this.props.user;
+    const { email } = this.props.user;
     this.props.getUserData(email);
   }
 
@@ -97,35 +96,38 @@ class UserDashboardPage extends Component {
               </div>
               <div className="linksBoxCont">
                 <div>
-                <span>
-                  <h3>LinkedIn</h3>
-                </span>
-                  <input type="text"/>
+                  <span>
+                    <h3>LinkedIn</h3>
+                  </span>
+                  <input type="text" />
                 </div>
                 <div>
-                <span>
-                  <h3>XING</h3>
-                </span>
-                  <input type="text"/>
+                  <span>
+                    <h3>XING</h3>
+                  </span>
+                  <input type="text" />
                 </div>
                 <div>
-                <span>
-                  <h3>GitHub</h3>
-                </span>
-                  <input type="text"/>
+                  <span>
+                    <h3>GitHub</h3>
+                  </span>
+                  <input type="text" />
                 </div>
                 <div>
-                <span>
-                  <h3>Portfolio</h3>
-                </span>
-                  <input type="text"/>
+                  <span>
+                    <h3>Portfolio</h3>
+                  </span>
+                  <input type="text" />
                 </div>
               </div>
             </div>
-            <button className="updateButton" style={{position: 'absolute', right: '0', bottom: '0'}}>
-              <UpdateUserProfileForm updateProfile={this.updateProfile}/>
+            <button
+              className="updateButton"
+              style={{ position: "absolute", right: "0", bottom: "0" }}
+            >
+              <UpdateUserProfileForm updateProfile={this.updateProfile} />
             </button>
-            <hr/>
+            <hr />
           </div>
           <hr />
         </div>
@@ -146,6 +148,7 @@ class UserDashboardPage extends Component {
             <UpdateUserProfileForm updateProfile={this.updateProfile} />
           </button>
         </div>
+      </div>
     );
   }
 }
@@ -167,6 +170,6 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-    mapStateToProps,
-    {getUserData, updateProfile, updateImage}
+  mapStateToProps,
+  { getUserData, updateProfile, updateImage }
 )(UserDashboardPage);
