@@ -41,6 +41,11 @@ export default {
     getAllUsers: () =>
       axios.get("http://localhost:8080/api/users").then(res => res.data),
 
+    filterLocation: location =>
+      axios
+        .post("http://localhost:8080/api/users", { location })
+        .then(res => res.data),
+
     getUserData: email =>
       axios
         .post("http://localhost:8080/api/users/dashboard", { email })

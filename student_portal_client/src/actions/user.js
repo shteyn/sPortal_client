@@ -16,7 +16,7 @@ export const registration = data => dispatch =>
   api.user.registration(data).then(user => {
     localStorage.userJWT = user.token;
     dispatch(userLoggedIn(user));
-    console.log('registered')
+    console.log("registered");
   });
 
 //export const approveUser = () => dispatch => api.user.approveUser();
@@ -85,4 +85,13 @@ export const updateImage = formData => dispatch =>
     })
     .catch(err => {
       console.log("Error updateImage", updateImage, err);
+    });
+export const filterLocation = location => dispatch =>
+  api.user
+    .filterLocation(location)
+    .then(filteredUsersByLocation => {
+      dispatch(allUsersList(filteredUsersByLocation));
+    })
+    .catch(err => {
+      console.log("Error updateImage", err);
     });

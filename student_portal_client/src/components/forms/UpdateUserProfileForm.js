@@ -181,8 +181,7 @@ UpdateUserProfileForm.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log("state profile form", state.oneUser);
-
+  //console.log("state profile form", state.oneUser);
   return {
     oneUser: state.oneUser
   };

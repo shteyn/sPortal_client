@@ -1,7 +1,9 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
-import TopNavigation from '../navigation/TopNavigation'
+
+import { connect } from "react-redux";
+import TopNavigation from "../navigation/TopNavigation";
+
 
 import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
 import {getUserData, updateProfile, updateImage} from "../../actions/user";
@@ -34,92 +36,63 @@ class UserDashboardPage extends Component {
       // email,
       location,
       studentClass,
-      userImage,
-      availability,
-      githubLink,
-      linkedInLink,
-      portfolioLink,
-      xingLink
+
+      // availability,
+      // githubLink,
+      // linkedInLink,
+      // portfolioLink,
+      // xingLink,
+      userImage
     } = this.props.oneUser;
     return (
-        <div className="UserPage">
-          <div className="navigationBarUserPage">
-            <TopNavigation/>
-          </div>
-          <div className="UserPageCont">
-            <div className="InfoCont">
-              <div className="infoBoxCont">
-                <h3>Info Box</h3>
-                <div className="SubBoxCont">
-                  <div className="SubBoxItem">
-                    <div className="userImageUploadCont"
-                         style={{
-                           position: 'relative',
-                           width: '150px',
-                           height: '240px'
-                         }}>
-                      {!userImage ? (
-                          <img
-                              src={require("../../img/empty-profile.png")}
-                              alt=""
-                              style={{
-                                width: '150px',
-                                height: '150px'}}/>
-                      ) : (
-                          <img
-                              src={`http://localhost:8080/uploads/${userImage}`}
-                              alt=""
-                              style={{
-                                width: '150px',
-                                height: '240px'}}/>
-                      )}
-                      <form style={{
-                        position: 'absolute',
-                        right: '0',
-                        bottom: '0',
-                        cursor: 'pointer'
-                      }}>
-                        <label
-                            htmlFor="imgupload"
-                            style={{
-                              cursor: 'pointer'
-                            }}
-                        >
-                          <img src={require('../../img/edit.svg')} alt="" style={{width: '25px'}}/>
-                        </label>
-                        <input
-                            id="imgupload"
-                            ref={this.userImageRef}
-                            type="file"
-                            name="userImageRef"
-                            onChange={this.submitUploadImage}
-                            style={{display: "none"}}
-                        />
-                      </form>
-                    </div>
-                  </div>
-                  <div className="profileInfoCont">
-                    <div className="profileInfoItem">
-                      <h2>Class</h2>
-                      <p>{studentClass}</p>
-                    </div>
-                    <div className="profileInfoItem">
-                      <h2>Available from</h2>
-                      <p>September 21, 2019</p>
-                    </div>
-                    <div className="profileInfoItem">
-                      <h2>First Name</h2>
-                      <p>{firstName}</p>
-                    </div>
-                    <div className="profileInfoItem">
-                      <h2>Lats Name</h2>
-                      <p>{lastName}</p>
-                    </div>
-                    <div className="profileInfoItem">
-                      <h2>Location</h2>
-                      <p>{location}</p>
-                    </div>
-                  </div>
+      <div className="UserPage">
+        <div className="navigationBarUserPage">
+          <TopNavigation />
+        </div>
+        <div className="UserPageCont">
+          <div className="InfoCont">
+            <div className="infoBoxCont">
+              <h3>Info Box</h3>
+              <div className="SubBoxCont">
+                <div className="SubBoxItem">
+                  <h2>Class</h2>
+                  <p>{studentClass}</p>
+                </div>
+                <div className="SubBoxItem">
+                  <h2>Available from</h2>
+                  <p>September 21, 2019</p>
+                </div>
+                <div>
+                  <form>
+                    <h1>File Upload</h1>
+
+                    <label
+                      htmlFor="imgupload"
+                      style={{
+                        width: "100px",
+                        height: "100px",
+                        border: "solid 1px red"
+                      }}
+                    >
+                      upload
+                    </label>
+                    <input
+                      id="imgupload"
+                      ref={this.userImageRef}
+                      type="file"
+                      name="userImageRef"
+                      onChange={this.submitUploadImage}
+                      style={{ display: "none" }}
+                    />
+                  </form>
+                </div>
+                <div className="ImageUploadCont">
+                  <h3>Image</h3>
+                  <img
+                    alt="user-profile"
+                    src={`http://localhost:8080/uploads/${userImage}`}
+                    style={{ width: "200px" }}
+                  />
                 </div>
               </div>
               <div className="linksBoxCont">
@@ -154,6 +127,24 @@ class UserDashboardPage extends Component {
             </button>
             <hr/>
           </div>
+          <hr />
+        </div>
+        <div className="profileInfoCont">
+          <div className="profileInfoItem">
+            <h2>First Name</h2>
+            <p>{firstName}</p>
+          </div>
+          <div className="profileInfoItem">
+            <h2>Lats Name</h2>
+            <p>{lastName}</p>
+          </div>
+          <div className="profileInfoItem">
+            <h2>Location</h2>
+            <p>{location}</p>
+          </div>
+          <button className="updateButton">
+            <UpdateUserProfileForm updateProfile={this.updateProfile} />
+          </button>
         </div>
     );
   }

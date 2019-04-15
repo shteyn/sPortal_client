@@ -179,6 +179,25 @@ router.get("/users", (req, res) => {
   });
 });
 
+//Get Users By Location
+router.post("/users", (req, res) => {
+  console.log("router", req.body.location);
+  User.find(
+    { location: req.body.location },
+    {
+      passwordHash: 0,
+      isAdmin: 0,
+      confirmationToken: 0,
+      confirmed: 0,
+      confirmationEmailSend: 0,
+      createdAt: 0,
+      updatedAt: 0
+    }
+  ).then(user => {
+    res.json(user);
+  });
+});
+
 //Get One User
 router.post("/users/dashboard", (req, res) => {
   User.findOne(
