@@ -2,27 +2,29 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import TopNavigation from '../navigation/TopNavigation'
+import TopNavigation from "../navigation/TopNavigation";
 import * as actions from "../../actions/auth";
 
 const HomePage = ({ isAuthenticated, logout }) => (
   <div>
-    {isAuthenticated && <TopNavigation/>}
-    {!isAuthenticated &&
+    {isAuthenticated && <TopNavigation />}
+    {!isAuthenticated && (
       <div className="navigationBar">
         <Link to="/" className="label">
           <span>DCI</span>
         </Link>
         <ul>
           <li>
-            <Link to="/login"><span>Sign In</span> | <span>Sign Up</span></Link>
+            <Link to="/login">
+              <span style={{ color: "black" }}>Login</span>
+            </Link>
           </li>
           {/*<li>*/}
           {/*  <Link to="/registration">Registration</Link>*/}
           {/*</li>*/}
         </ul>
       </div>
-    }
+    )}
     <div className="centerWelcomeCont">
       <div className="textCont">
         <h1>WELCOME TO DCI.</h1>

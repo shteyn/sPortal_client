@@ -9,31 +9,33 @@ import { getAllUsers } from "../../actions/user";
 import TopNavigation from "../navigation/TopNavigation";
 
 class AdminDashboardPage extends Component {
-    componentDidMount() {
-        this.props.getAllUsers();
-    }
-    render() {
-        return (
-            <div>
-                <TopNavigation />
-                <Tabs defaultActiveKey="waitingStudents" id="uncontrolled-tab-example">
-                    <Tab eventKey="waitingStudents" title="Waiting Students">
-                        <WaitingUsersForm />
-                    </Tab>
-                    <Tab eventKey="confirmedStudents" title="Confirmed Students">
-                        <ConfirmedUsersForm />
-                    </Tab>
-                </Tabs>
-            </div>
-        );
-    }
+  componentDidMount() {
+    this.props.getAllUsers();
+  }
+  render() {
+    return (
+      <div>
+        <div className="adminDashboardNav">
+          <TopNavigation />
+        </div>
+        <Tabs defaultActiveKey="waitingStudents" id="uncontrolled-tab-example">
+          <Tab eventKey="waitingStudents" title="Waiting Students">
+            <WaitingUsersForm />
+          </Tab>
+          <Tab eventKey="confirmedStudents" title="Confirmed Students">
+            <ConfirmedUsersForm />
+          </Tab>
+        </Tabs>
+      </div>
+    );
+  }
 }
 
 AdminDashboardPage.propTypes = {
-    getAllUsers: PropTypes.func.isRequired
+  getAllUsers: PropTypes.func.isRequired
 };
 
 export default connect(
-    null,
-    { getAllUsers }
+  null,
+  { getAllUsers }
 )(AdminDashboardPage);

@@ -1,6 +1,10 @@
 import api from "../api";
 import { userLoggedIn } from "./auth";
-import { GET_ALL_USERS, GET_ONE_USER } from "../types";
+import {
+  GET_ALL_USERS,
+  GET_ONE_USER,
+  FILTER_USERS_BY_LOCATION
+} from "../types";
 
 export const allUsersList = allUsers => ({
   type: GET_ALL_USERS,
@@ -12,6 +16,14 @@ export const oneUser = oneUserData => ({
   oneUserData
 });
 
+export const filterLocation = userLocation => dispatch => {
+  console.log("event from action user", userLocation);
+  return dispatch({
+    type: FILTER_USERS_BY_LOCATION,
+    userLocation
+  });
+};
+
 export const registration = data => dispatch =>
   api.user.registration(data).then(user => {
     localStorage.userJWT = user.token;
@@ -19,7 +31,6 @@ export const registration = data => dispatch =>
     console.log("registered");
   });
 
-//export const approveUser = () => dispatch => api.user.approveUser();
 export const approveUser = id => dispatch =>
   api.user.approveUser(id).then(response => {
     if (response.data && response.data.success) {
@@ -85,13 +96,4 @@ export const updateImage = formData => dispatch =>
     })
     .catch(err => {
       console.log("Error updateImage", updateImage, err);
-    });
-export const filterLocation = location => dispatch =>
-  api.user
-    .filterLocation(location)
-    .then(filteredUsersByLocation => {
-      dispatch(allUsersList(filteredUsersByLocation));
-    })
-    .catch(err => {
-      console.log("Error updateImage", err);
     });

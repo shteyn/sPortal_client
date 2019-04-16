@@ -21,10 +21,12 @@ class UserDashboardPage extends Component {
   }
 
   submitUploadImage = event => {
+    console.log("formData", event.target);
     event.preventDefault();
     const formData = new FormData();
     formData.set("id", this.props.oneUser._id);
     formData.append("userImage", this.userImageRef.current.files[0]);
+
     this.props.updateImage(formData);
   };
 

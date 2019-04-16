@@ -18,6 +18,8 @@ class RegistrationForm extends Component {
     errors: {}
   };
 
+  types = ["Berlin", "Düseeldorf", "Köln", "Hamburg"];
+
   onChange = event =>
     this.setState({
       data: {
@@ -95,17 +97,17 @@ class RegistrationForm extends Component {
             onChange={this.onChange}
           />
           <br />
-          <input
-            type="text"
-            id="location"
-            name="location"
-            placeholder="insert your location..."
-            value={data.location}
-            onChange={this.onChange}
-          />
+          <select name="location" onChange={this.onChange}>
+            <option defaultValue>Choose your location...</option>
+            {this.types.map((item, i) => (
+              <option key={i}>{item}</option>
+            ))}
+          </select>
+
           <br />
           <input
             type="number"
+            min="0"
             id="studentClass"
             name="studentClass"
             placeholder="insert your class number..."
