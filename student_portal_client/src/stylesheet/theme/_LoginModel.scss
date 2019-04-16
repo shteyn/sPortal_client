@@ -51,8 +51,8 @@
     }
   }
   .LoginModel {
-    width: 830px;
-    height: 460px;
+    width: 645px;
+    height: 461px;
     padding: 60px 20px;
     margin-top: 150px;
     left: 50%;
@@ -63,13 +63,13 @@
     position: absolute;
     transform: translateX(-50%);
     background: rgba(29, 59, 139, 0.1);
-    border-radius: 15px;
+    // border-radius: 15px;
     input {
-      width: 689px;
-      height: 79px;
-      margin: 20px auto;
+      width: 555px;
+      height: 60px;
+      margin: 10px auto;
       padding: 10px;
-      border-radius: 10px;
+      // border-radius: 10px;
       font-family: Ropa Sans, sans-serif;
       font-style: normal;
       font-weight: normal;
@@ -89,11 +89,11 @@
       }
     }
     button {
-      width: 229px;
-      height: 65px;
+      width: 165px;
+      height: 55px;
       margin: auto;
-      background: rgba(218, 148, 70, 0.5);
-      border-radius: 11px;
+      background: rgba(255, 179, 93, 0.808);
+      border: none;
       &:focus {
         outline: none;
       }

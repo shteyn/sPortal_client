@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Validator from "validator";
+import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
 
 import InlineError from "../messages/InlineError";
+import RegistrationForm from "./RegistrationForm";
 
 class LoginForm extends Component {
   state = {
@@ -48,14 +50,20 @@ class LoginForm extends Component {
     const { data, errors, loading } = this.state;
     return (
       <div className="loginForm">
+      <Tabs className="LoginModel">
+        <TabList className="TabsList">
+            <Tab className="tab-form-log"><button><b>Login</b></button></Tab>
+            <Tab className="tab-form-reg"><button><b>Registration</b></button></Tab>
+        </TabList>
+        <TabPanel>
         <form onSubmit={this.onSubmit} loading={loading.toString()}>
           {errors.global && <p id="globalError">{alert(errors.global)}</p>}
-
+          
           <input
             type="email"
             id="email"
             name="email"
-            placeholder="example@example.com"
+            placeholder="email..."
             autoComplete="email"
             value={data.email}
             onChange={this.onChange}
@@ -66,7 +74,7 @@ class LoginForm extends Component {
             type="password"
             id="password"
             name="password"
-            placeholder="inserts password"
+            placeholder="password"
             autoComplete="current-password"
             value={data.password}
             onChange={this.onChange}
@@ -75,6 +83,13 @@ class LoginForm extends Component {
           <br />
           <button>Submit</button>
         </form>
+        </TabPanel>
+
+            <TabPanel>
+              <RegistrationForm />
+            </TabPanel>
+          </Tabs>
+
       </div>
     );
   }

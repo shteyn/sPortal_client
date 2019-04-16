@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+// import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
+// import { NavLink } from "react-router-dom";
 
 import LoginForm from "../forms/LoginForm";
+// import RegistrationForm from "../forms/RegistrationForm";
 import { login } from "../../actions/auth";
 
 class LoginPage extends Component {
@@ -22,15 +25,31 @@ class LoginPage extends Component {
             </Link>
           </div>
         </div>
-        <div className="LoginModel">
+        {/* <div>
+          <Tabs className="LoginModel">
+            <TabList className="TabsList">
+              <Tab className="tab-form-log"><button><b>Login</b></button></Tab>
+              <Tab className="tab-form-reg"><button><b>Registration</b></button></Tab>
+            </TabList>
+
+            <TabPanel>
+              <LoginForm />
+            </TabPanel>
+            <TabPanel>
+              <RegistrationForm />
+            </TabPanel>
+          </Tabs>
+        </div> */}
+        <div>
           <LoginForm submit={this.submit} />
           <br />
           <Link to="/forgot_password">Forgot Password</Link>
         </div>
-      </div>
+      </div >
     );
   }
 }
+
 
 LoginPage.propTypes = {
   history: PropTypes.shape({

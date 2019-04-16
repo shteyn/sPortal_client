@@ -7,26 +7,31 @@
 .nav-tabs {
     color: green;
 }
+.top {
+    font-family: Ropa Sans,sans-serif;
+    font-size: 35px;
+    color: rgb(241, 155, 85);
+    text-align: left;
+    margin-left: 10px;
+  }
 
 .celled.table tr th {
     font-size: 17px;
-    color: rgb(0, 0, 0);
+    color: rgb(0, 4, 255);
     background-color: rgb(255, 255, 255);
-    // border: 3px solid red;
+    border-bottom: 1px solid rgb(0, 38, 255);
 }
 
 .ui.celled {
+    margin: 20px 15% auto;
     color: rgb(0, 0, 0);
-    width: 100%;
+    width: 70%;
     background: rgb(255, 255, 255);
     position: absolute;
     overflow: auto;
     block-size: 43px;
-    background-color: rgba(139, 159, 250, 0.2);
-}
-
-.ui.red.button {
-    width: 90px;
+    background-color: rgba(182, 193, 243, 0.24);
+    border: 1px solid #f19b55;
 }
 
 .ui.celled.table {
@@ -38,4 +43,22 @@
 
 nav .nav-tabs {
     border-bottom: none;
+}
+
+.td {
+    justify-content: center;
+    font-size: 15px;
+    font-family: Ropa Sans,sans-serif;
+    width: 50px;
+    height: 50px;
+  }
+
+  
+.ui.secondary.button {
+    font-size: 13px;
+    width: 90px;
+}
+.ui.red.button {
+    font-size: 13px;
+    width: 90px;
 }
