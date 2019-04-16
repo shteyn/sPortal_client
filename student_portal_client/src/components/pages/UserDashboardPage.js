@@ -35,11 +35,11 @@ class UserDashboardPage extends Component {
       location,
       studentClass,
       userImage,
-      // availability,
       githubLink,
       linkedInLink,
       portfolioLink,
-      xingLink
+      xingLink,
+      availability
     } = this.props.oneUser;
     return (
         <div className="UserPage">
@@ -111,7 +111,7 @@ class UserDashboardPage extends Component {
                         <p>{studentClass}</p>
                       </div>
                       <div className="profileInfoItemFour">
-                        <h2>Available from</h2> <p>September 21, 2019</p>
+                        <h2>Available from</h2> <p>{availability}</p>
                       </div>
                     </div>
                   </div>

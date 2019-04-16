@@ -53,7 +53,7 @@ class RegistrationForm extends Component {
     const { data, errors, loading } = this.state;
     return (
       <div className="RegistrationForm">
-        <form onSubmit={this.onSubmit} loading={loading.toString()}>
+        <form onSubmit={this.onSubmit} loading={loading.toString()} className="RegistrationFormContent">
           <input
             type="email"
             id="email"

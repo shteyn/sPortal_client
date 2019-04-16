@@ -14,7 +14,7 @@ class AdminDashboardPage extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="AdminDashboardPage">
                 <TopNavigation />
                 <Tabs defaultActiveKey="waitingStudents" id="uncontrolled-tab-example">
                     <Tab eventKey="waitingStudents" title="Waiting Students">

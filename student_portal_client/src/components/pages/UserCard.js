@@ -13,12 +13,14 @@ class UserCard extends Component {
     render() {
         let {allUsers} = this.props.allUsers;
         let {isConfirmedUser} = this.props.isConfirmed;
+        // let {isAuthenticated} = this.props.isAuthenticated;
 
         return (
             <div className="UserCardsCont">
                 <div className="navigationBarUserCardPage">
-                    {!isConfirmedUser && <TopNavigation/>}
-                    {isConfirmedUser &&
+                    {/*{!isAuthenticated && <TopNavigation/>}*/}
+                    {isConfirmedUser && <TopNavigation/>}
+                    {!isConfirmedUser &&
                     <div className="navigationBar">
                         <Link to="/" className="label">
                             <span>DCI</span>
@@ -81,13 +83,15 @@ class UserCard extends Component {
 UserCard.propTypes = {
     allUsers: PropTypes.object.isRequired,
     getAllUsers: PropTypes.func.isRequired,
-    isConfirmed: PropTypes.bool.isRequired
+    isConfirmed: PropTypes.bool.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state) {
     return {
         allUsers: state.allUsers,
-        isConfirmed: !!state.user.confirmed
+        isConfirmed: !!state.user.confirmed,
+        isAuthenticated: !!state.user.token
     };
 }
 

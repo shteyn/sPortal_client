@@ -37,8 +37,9 @@ const UserSchema = new mongoose.Schema(
       required: true
     },
     availability: {
-      type: Number,
-      default: ""
+      type: Date,
+      default: "",
+      required: true
     },
     linkedInLink: {
       type: String,
