@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {Button, Modal, Form} from "react-bootstrap";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css"
+import "react-datepicker/dist/react-datepicker.css";
+// import moment from 'moment';
 
 class UpdateUserProfileForm extends Component {
   constructor(props, context) {
@@ -36,9 +37,9 @@ class UpdateUserProfileForm extends Component {
 
 
   handleChange(date) {
-    const month = new Date().getMonth();
-    const year = new Date().getFullYear();
-    date = month + year;
+    // const month = new Date().getMonth();
+    // const year = new Date().getFullYear();
+    // date = month + year;
     this.setState({
       startDate: date
     });
@@ -156,7 +157,7 @@ class UpdateUserProfileForm extends Component {
                       ref={this.availabilityRef}
                       type="text"
                       name="availability"
-                      dateFormat="yyyy/MM/dd"
+                      dateFormat="MM/yyyy"
                       showYearDropdown
                       dateFormatCalendar="MMMM YYYY"
                       scrollableYearDropdown
