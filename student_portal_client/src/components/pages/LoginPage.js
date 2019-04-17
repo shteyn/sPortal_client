@@ -7,18 +7,23 @@ import { Tabs, Tab } from "react-bootstrap";
 import LoginForm from "../forms/LoginForm";
 import RegistrationForm from "../forms/RegistrationForm";
 import { login } from "../../actions/auth";
-import {registration} from "../../actions/user";
+import { registration, getAllUsers } from "../../actions/user";
 
 class LoginPage extends Component {
+  componentDidMount() {
+    this.props.getAllUsers();
+  }
+
   submit = data =>
     this.props.login(data).then(() => this.props.history.push("/dashboard"));
 
   submitRegister = data =>
-      this.props
-          .registration(data)
-          .then(() => this.props.history.push("/dashboard"));
+    this.props
+      .registration(data)
+      .then(() => this.props.history.push("/dashboard"));
 
   render() {
+    const { allUsers } = this.props.allUsers;
     return (
       <div className="LoginCont">
         <div className="navigation">
@@ -37,10 +42,12 @@ class LoginPage extends Component {
               </div>
             </Tab>
             <Tab eventKey="registrationUser" title="Sign Up">
-              <RegistrationForm submit={this.submitRegister}/>
+              <RegistrationForm
+                allUsers={allUsers}
+                submit={this.submitRegister}
+              />
             </Tab>
           </Tabs>
-
         </div>
       </div>
     );
@@ -55,9 +62,12 @@ LoginPage.propTypes = {
   registration: PropTypes.func.isRequired
 };
 
-
-
+function mapStateToProps(state) {
+  return {
+    allUsers: state.allUsers
+  };
+}
 export default connect(
-  null,
-  { login, registration }
+  mapStateToProps,
+  { login, registration, getAllUsers }
 )(LoginPage);

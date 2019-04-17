@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class UserLocationFilter extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { allUsers } = this.props.allUsers;
     const filteredLocations = allUsers.filter(user => {

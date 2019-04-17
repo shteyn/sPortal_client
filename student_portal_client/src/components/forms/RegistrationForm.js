@@ -18,7 +18,7 @@ class RegistrationForm extends Component {
     errors: {}
   };
 
-  types = ["Berlin", "Düseeldorf", "Köln", "Hamburg"];
+  //types = ["Berlin", "Düseeldorf", "Köln", "Hamburg"];
 
   onChange = event =>
     this.setState({
@@ -53,6 +53,16 @@ class RegistrationForm extends Component {
 
   render() {
     const { data, errors, loading } = this.state;
+    const { allUsers } = this.props;
+    const locations = [];
+    allUsers.map(user => {
+      if (locations.indexOf(user.location) < 0) {
+        locations.push(user.location);
+      }
+      return null;
+    });
+    console.log("state from Reg Form", this.state);
+
     return (
       <div className="RegistrationForm">
         <form onSubmit={this.onSubmit} loading={loading.toString()}>
@@ -98,9 +108,9 @@ class RegistrationForm extends Component {
           />
           <br />
           <select name="location" onChange={this.onChange}>
-            <option defaultValue>Choose your location...</option>
-            {this.types.map((item, i) => (
-              <option key={i}>{item}</option>
+            <option value="">All Locations</option>
+            {locations.map((item, i) => (
+              <option key={item}>{item}</option>
             ))}
           </select>
 
