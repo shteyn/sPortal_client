@@ -7,8 +7,6 @@ const initialState = {
 };
 
 export default function(state = initialState, action = {}) {
-  console.log("initial state", state);
-
   switch (action.type) {
     case GET_ALL_USERS:
       return {
