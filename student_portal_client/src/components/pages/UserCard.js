@@ -21,6 +21,8 @@ class UserCard extends Component {
   }
 
   searchChanged = query => {
+    console.log("query", query);
+
     this.setState({ query: query });
   };
 
@@ -30,6 +32,7 @@ class UserCard extends Component {
   };*/
   render() {
     let { isAuthenticated } = this.props;
+    const { allUsers } = this.props.allUsers;
 
     return (
       <div className="UserCardsCont">
@@ -55,7 +58,7 @@ class UserCard extends Component {
           <h1>OUR STUDENTS</h1>
           <h3>GRADUATED</h3>
           <h4>ALL LOCATIONS</h4>
-          <Search searchChanged={this.searchChanged} />
+          <Search allUsers={allUsers} searchChanged={this.searchChanged} />
           <UserLocationFilter query={this.state.query} />
         </div>
       </div>

@@ -1,12 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
-import {Link} from "react-router-dom";
-import {Image} from "semantic-ui-react";
-import {logout} from "../../actions/auth";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { Image } from "semantic-ui-react";
+import { logout } from "../../actions/auth";
 // import gravatarUrl from "gravatar-url";
 
-const TopNavigation = ({user, logout, isAdmin}) => (
+const TopNavigation = ({ user, logout, isAdmin }) => (
+  console.log("user top nav", user.userImage),
+  (
     <div className="navigationBar">
       <Link to="/">
         <div className="label">
@@ -15,36 +17,35 @@ const TopNavigation = ({user, logout, isAdmin}) => (
       </Link>
       <ul>
         <li>
-          <Link to="" onClick={() => logout()}>
+          <Link style={{ color: "black" }} to="" onClick={() => logout()}>
             Logout
           </Link>
         </li>
         <li>
-          {isAdmin && <Link to="/dashboard">
-
-            <Image
+          {isAdmin && (
+            <Link to="/dashboard">
+              <Image
                 id="gravatar-img"
-                // src={gravatarUrl(user.email)}
-                src={require('../../img/admin.png')}
+                src={require("../../img/admin.png")}
                 width="50"
                 alt="avatar"
-            />
-          </Link>
-          }
-          {!isAdmin && <Link to="/dashboard">
-
-            <Image
+              />
+            </Link>
+          )}
+          {!isAdmin && (
+            <Link to="/dashboard">
+              <Image
                 id="gravatar-img"
-                // src={gravatarUrl(user.email)}
-                src={require('../../img/student.png')}
+                src={`http://localhost:8080/uploads/${user.userImage}`}
                 width="50"
                 alt="avatar"
-            />
-          </Link>
-          }
+              />
+            </Link>
+          )}
         </li>
       </ul>
     </div>
+  )
 );
 
 TopNavigation.propTypes = {
@@ -55,13 +56,14 @@ TopNavigation.propTypes = {
 };
 
 function mapStateToProps(state) {
+  //console.log("user top nav", state.oneUser);
   return {
-    user: state.user,
+    user: state.oneUser,
     isAdmin: !!state.user.isAdmin
   };
 }
 
 export default connect(
-    mapStateToProps,
-    {logout}
+  mapStateToProps,
+  { logout }
 )(TopNavigation);

@@ -11,7 +11,10 @@ class UserLocationFilter extends Component {
   render() {
     const { allUsers } = this.props.allUsers;
     const filteredLocations = allUsers.filter(user => {
-      return user.location.toLowerCase().indexOf(this.props.query) !== -1;
+      if (this.props.query === "") {
+        return true;
+      }
+      return user.location.indexOf(this.props.query) !== -1;
     });
 
     let placeholderUrl = require("../../img/placeholderUser.png");
