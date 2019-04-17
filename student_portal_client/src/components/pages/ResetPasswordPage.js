@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import {Link} from "react-router-dom";
 
 import { validateToken, resetPassword } from "../../actions/auth";
 import ResetPasswordForm from "../forms/ResetPasswordForm";
@@ -28,9 +29,15 @@ class ResetPasswordPage extends Component {
       const token = this.props.match.params.token;
 
     return (
-      <div>
-        ResetPasswordPage Parent Component
-        { loading && <p>Loading...</p>} 
+      <div className="ResetPasswordPageCont">
+        <div className="navigationResetPasswordPage">
+          <Link to="/">
+            <div className="label">
+              <span>DCI</span>
+            </div>
+          </Link>
+        </div>
+        { loading && <p>Loading...</p>}
         { !loading && success && <ResetPasswordForm submit={this.submit} token={token}/> }
         { !loading && !success && <p>Invalid Token</p> }
       </div>

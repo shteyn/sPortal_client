@@ -48,7 +48,7 @@ class ResetPasswordForm extends Component {
   render() {
     const { data, errors, loading } = this.state;
     return (
-      <div>
+      <div className="ResetPasswordPageForm">
         {errors.global && <p id="globalError">{errors.global}</p>}
         <form onSubmit={this.onSubmit} loading={loading.toString()}>
           <div error={!!errors.password}>
