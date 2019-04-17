@@ -50,51 +50,53 @@ class UserDashboardPage extends Component {
             <div className="InfoCont">
               <div className="infoBoxCont">
                 <div className="SubBoxCont">
-                    <div className="userImageUploadCont"
-                         style={{
-                           position: 'relative',
-                           width: '150px',
-                           height: '240px'
-                         }}>
-                      {!userImage ? (
-                          <img
-                              src={require("../../img/empty-profile.png")}
-                              alt=""
-                              style={{
-                                width: '150px',
-                                height: '150px'}}/>
-                      ) : (
-                          <img
-                              src={`http://localhost:8080/uploads/${userImage}`}
-                              alt=""
-                              style={{
-                                width: '150px',
-                                height: '240px'}}/>
-                      )}
-                      <form style={{
-                        position: 'absolute',
-                        right: '0',
-                        bottom: '0',
-                        cursor: 'pointer'
-                      }}>
-                        <label
-                            htmlFor="imgupload"
+                  <div className="userImageUploadCont"
+                       style={{
+                         position: 'relative',
+                         width: '150px',
+                         height: '240px'
+                       }}>
+                    {!userImage ? (
+                        <img
+                            src={require("../../img/empty-profile.png")}
+                            alt=""
                             style={{
-                              cursor: 'pointer'
-                            }}
-                        >
-                          <img src={require('../../img/edit-icon.png')} alt="" style={{width: '25px'}}/>
-                        </label>
-                        <input
-                            id="imgupload"
-                            ref={this.userImageRef}
-                            type="file"
-                            name="userImageRef"
-                            onChange={this.submitUploadImage}
-                            style={{display: "none"}}
-                        />
-                      </form>
-                    </div>
+                              width: '150px',
+                              height: '150px'
+                            }}/>
+                    ) : (
+                        <img
+                            src={`http://localhost:8080/uploads/${userImage}`}
+                            alt=""
+                            style={{
+                              width: '150px',
+                              height: '240px'
+                            }}/>
+                    )}
+                    <form style={{
+                      position: 'absolute',
+                      right: '0',
+                      bottom: '0',
+                      cursor: 'pointer'
+                    }}>
+                      <label
+                          htmlFor="imgupload"
+                          style={{
+                            cursor: 'pointer'
+                          }}
+                      >
+                        <img src={require('../../img/edit-icon.png')} alt="" style={{width: '25px'}}/>
+                      </label>
+                      <input
+                          id="imgupload"
+                          ref={this.userImageRef}
+                          type="file"
+                          name="userImageRef"
+                          onChange={this.submitUploadImage}
+                          style={{display: "none"}}
+                      />
+                    </form>
+                  </div>
                   <div className="profileInfoCont">
 
                     <div className="profileInfoItemOne">
@@ -120,15 +122,25 @@ class UserDashboardPage extends Component {
               <div className="linksBoxCont">
                 <h1>Links</h1>
                 <div className="linksBoxItems">
-                  <div>
-                  <a href={linkedInLink} target="_blank" rel="noopener noreferrer"><img src={require('../../img/linkedin-icon.png')} alt=""/></a>
-
+                  <div className="linksBoxItem">
+                    <a href={linkedInLink} target="_blank" rel="noopener noreferrer"><img
+                        src={require('../../img/linkedin-icon.png')} alt=""/></a>
+                    <p>{linkedInLink}</p>
                   </div>
-                  <div><a href={xingLink} target="_blank" rel="noopener noreferrer"><img src={require('../../img/xing-icon.png')} alt=""/></a>
+                  <div className="linksBoxItem">
+                    <a href={xingLink} target="_blank" rel="noopener noreferrer"><img
+                      src={require('../../img/xing-icon.png')} alt=""/></a>
+                    <p>{xingLink}</p>
                   </div>
-                  <div><a href={githubLink} target="_blank" rel="noopener noreferrer"><img src={require('../../img/github-icon.png')} alt=""/></a>
+                  <div className="linksBoxItem">
+                    <a href={githubLink} target="_blank" rel="noopener noreferrer"><img
+                      src={require('../../img/github-icon.png')} alt=""/></a>
+                    <p>{githubLink}</p>
                   </div>
-                  <div><a href={portfolioLink} target="_blank" rel="noopener noreferrer"><img src={require('../../img/briefcase-icon.png')} alt=""/></a>
+                  <div className="linksBoxItem">
+                    <a href={portfolioLink} target="_blank" rel="noopener noreferrer"><img
+                      src={require('../../img/briefcase-icon.png')} alt=""/></a>
+                    <p>{portfolioLink}</p>
                   </div>
                 </div>
               </div>
