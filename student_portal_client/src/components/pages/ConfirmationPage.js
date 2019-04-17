@@ -21,12 +21,12 @@ class ConfirmationPage extends Component {
   render() {
     const { loading, success } = this.state;
     return (
-      <div className="UserCardsCont">
-        <div>
+      <div className="ConfirmationPageCont">
+        <div className="ConfirmationNavigationBar">
           <TopNavigation />
         </div>
         <div className="ConfirmationPageCont">
-          <div>
+          <div className="ValidatingAndVerifiedCont">
             {loading && (
               <div className="ValidatingCont">
                 <p>Validating your email</p>

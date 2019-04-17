@@ -52,16 +52,16 @@ class UserLocationFilter extends Component {
                 </div>
                 <div className="CardLinks">
                   <NavLink title="Linked In" to="#">
-                    <img src={require("../../img/linkedin.png")} alt="" />
+                    <img src={require("../../img/linkedin-icon.png")} alt="" />
                   </NavLink>
                   <NavLink title="GitHub" to="#">
-                    <img src={require("../../img/github.png")} alt="" />
+                    <img src={require("../../img/github-icon.png")} alt="" />
                   </NavLink>
                   <NavLink title="Xing" to="#">
-                    <img src={require("../../img/xing.png")} alt="" />
+                    <img src={require("../../img/xing-icon.png")} alt="" />
                   </NavLink>
                   <NavLink title="Portfolio" to="#">
-                    <img src={require("../../img/briefcase.png")} alt="" />
+                    <img src={require("../../img/briefcase-icon.png")} alt="" />
                   </NavLink>
                 </div>
               </div>

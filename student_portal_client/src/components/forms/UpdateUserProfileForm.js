@@ -65,9 +65,7 @@ class UpdateUserProfileForm extends Component {
     return (
       <div>
         <div variant="primary" onClick={this.handleShow}>
-
-          <img src={require('../../img/edit.svg')} alt=""/>
-
+          <img src={require("../../img/edit-icon.svg")} alt="" />
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>

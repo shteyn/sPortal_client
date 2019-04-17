@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
 import { connect } from "react-redux";
 import TopNavigation from "../navigation/TopNavigation";
 
@@ -21,12 +20,10 @@ class UserDashboardPage extends Component {
   }
 
   submitUploadImage = event => {
-    console.log("formData", event.target);
     event.preventDefault();
     const formData = new FormData();
     formData.set("id", this.props.oneUser._id);
     formData.append("userImage", this.userImageRef.current.files[0]);
-
     this.props.updateImage(formData);
   };
 
@@ -37,13 +34,12 @@ class UserDashboardPage extends Component {
       // email,
       location,
       studentClass,
-
-      // availability,
-      // githubLink,
-      // linkedInLink,
-      // portfolioLink,
-      // xingLink,
-      userImage
+      userImage,
+      githubLink,
+      linkedInLink,
+      portfolioLink,
+      xingLink,
+      availability
     } = this.props.oneUser;
     return (
       <div className="UserPage">
@@ -53,29 +49,53 @@ class UserDashboardPage extends Component {
         <div className="UserPageCont">
           <div className="InfoCont">
             <div className="infoBoxCont">
-              <h3>Info Box</h3>
               <div className="SubBoxCont">
-                <div className="SubBoxItem">
-                  <h2>Class</h2>
-                  <p>{studentClass}</p>
-                </div>
-                <div className="SubBoxItem">
-                  <h2>Available from</h2>
-                  <p>September 21, 2019</p>
-                </div>
-                <div>
-                  <form>
-                    <h1>File Upload</h1>
-
+                <div
+                  className="userImageUploadCont"
+                  style={{
+                    position: "relative",
+                    width: "150px",
+                    height: "240px"
+                  }}
+                >
+                  {!userImage ? (
+                    <img
+                      src={require("../../img/empty-profile.png")}
+                      alt=""
+                      style={{
+                        width: "150px",
+                        height: "150px"
+                      }}
+                    />
+                  ) : (
+                    <img
+                      src={`http://localhost:8080/uploads/${userImage}`}
+                      alt=""
+                      style={{
+                        width: "150px",
+                        height: "240px"
+                      }}
+                    />
+                  )}
+                  <form
+                    style={{
+                      position: "absolute",
+                      right: "0",
+                      bottom: "0",
+                      cursor: "pointer"
+                    }}
+                  >
                     <label
                       htmlFor="imgupload"
                       style={{
-                        width: "100px",
-                        height: "100px",
-                        border: "solid 1px red"
+                        cursor: "pointer"
                       }}
                     >
-                      upload
+                      <img
+                        src={require("../../img/edit-icon.svg")}
+                        alt=""
+                        style={{ width: "25px" }}
+                      />
                     </label>
                     <input
                       id="imgupload"
@@ -87,68 +107,78 @@ class UserDashboardPage extends Component {
                     />
                   </form>
                 </div>
-                <div className="ImageUploadCont">
-                  <h3>Image</h3>
-                  <img
-                    alt="user-profile"
-                    src={`http://localhost:8080/uploads/${userImage}`}
-                    style={{ width: "200px" }}
-                  />
-                </div>
-              </div>
-              <div className="linksBoxCont">
-                <div>
-                  <span>
-                    <h3>LinkedIn</h3>
-                  </span>
-                  <input type="text" />
-                </div>
-                <div>
-                  <span>
-                    <h3>XING</h3>
-                  </span>
-                  <input type="text" />
-                </div>
-                <div>
-                  <span>
-                    <h3>GitHub</h3>
-                  </span>
-                  <input type="text" />
-                </div>
-                <div>
-                  <span>
-                    <h3>Portfolio</h3>
-                  </span>
-                  <input type="text" />
+                <div className="profileInfoCont">
+                  <div className="profileInfoItemOne">
+                    {/*<h2>First Name</h2>*/}
+                    <h2>
+                      {firstName} {lastName}
+                    </h2>
+                  </div>
+                  <div className="profileInfoItemTwo">
+                    <h2>Location</h2>
+                    <p>{location}</p>
+                  </div>
+                  <div className="profileInfoItemThree">
+                    <div className="profileInfoItemFive">
+                      <h2>Class</h2>
+                      <p>{studentClass}</p>
+                    </div>
+                    <div className="profileInfoItemFour">
+                      <h2>Available from</h2> <p>{availability}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <button
-              className="updateButton"
-              style={{ position: "absolute", right: "0", bottom: "0" }}
-            >
-              <UpdateUserProfileForm updateProfile={this.updateProfile} />
-            </button>
-            <hr />
+            <div className="linksBoxCont">
+              <h1>Links</h1>
+              <div className="linksBoxItems">
+                <div className="linksBoxItem">
+                  <a
+                    href={linkedInLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={require("../../img/linkedin-icon.png")} alt="" />
+                  </a>
+                  <p>{linkedInLink}</p>
+                </div>
+                <div className="linksBoxItem">
+                  <a href={xingLink} target="_blank" rel="noopener noreferrer">
+                    <img src={require("../../img/xing-icon.png")} alt="" />
+                  </a>
+                  <p>{xingLink}</p>
+                </div>
+                <div className="linksBoxItem">
+                  <a
+                    href={githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={require("../../img/github-icon.png")} alt="" />
+                  </a>
+                  <p>{githubLink}</p>
+                </div>
+                <div className="linksBoxItem">
+                  <a
+                    href={portfolioLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={require("../../img/briefcase-icon.png")} alt="" />
+                  </a>
+                  <p>{portfolioLink}</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <hr />
-        </div>
-        <div className="profileInfoCont">
-          <div className="profileInfoItem">
-            <h2>First Name</h2>
-            <p>{firstName}</p>
-          </div>
-          <div className="profileInfoItem">
-            <h2>Lats Name</h2>
-            <p>{lastName}</p>
-          </div>
-          <div className="profileInfoItem">
-            <h2>Location</h2>
-            <p>{location}</p>
-          </div>
-          <button className="updateButton">
+          <button
+            className="updateButton"
+            style={{ position: "absolute", right: "0", bottom: "0" }}
+          >
             <UpdateUserProfileForm updateProfile={this.updateProfile} />
           </button>
+          <hr />
         </div>
       </div>
     );
