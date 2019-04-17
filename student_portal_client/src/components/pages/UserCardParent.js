@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getAllUsers, filterLocation } from "../../actions/user";
 import TopNavigation from "../navigation/TopNavigation";
-import UserLocationFilter from "../forms/UserLocationFilter";
+import UserLocationFilter from "../forms/UsersCards";
 import Search from "../forms/Search";
 
-class UserCard extends Component {
+class UserCardParent extends Component {
   constructor() {
     super();
 
@@ -21,15 +21,9 @@ class UserCard extends Component {
   }
 
   searchChanged = query => {
-    console.log("query", query);
-
     this.setState({ query: query });
   };
 
-  /*filterLocation = e => {
-    console.log("filterLocation", e.target.value);
-    this.props.filterLocation(e.target.value);
-  };*/
   render() {
     let { isAuthenticated } = this.props;
     const { allUsers } = this.props.allUsers;
@@ -66,7 +60,7 @@ class UserCard extends Component {
   }
 }
 
-UserCard.propTypes = {
+UserCardParent.propTypes = {
   allUsers: PropTypes.object.isRequired,
   getAllUsers: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired
@@ -82,4 +76,4 @@ function mapStateToProps(state) {
 export default connect(
   mapStateToProps,
   { getAllUsers, filterLocation }
-)(UserCard);
+)(UserCardParent);

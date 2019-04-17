@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TopNavigation from "../navigation/TopNavigation";
-
-import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
 import { getUserData, updateProfile, updateImage } from "../../actions/user";
+import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
 
 class UserDashboardPage extends Component {
   constructor(props, context) {
@@ -41,6 +40,13 @@ class UserDashboardPage extends Component {
       xingLink,
       availability
     } = this.props.oneUser;
+
+    let formattedAvailability = "";
+    if (availability && typeof availability === "string") {
+      let tmp = new Date(availability);
+      formattedAvailability = tmp.getMonth() + "/" + tmp.getFullYear();
+    }
+
     return (
       <div className="UserPage">
         <div className="navigationBarUserPage">
@@ -124,7 +130,8 @@ class UserDashboardPage extends Component {
                       <p>{studentClass}</p>
                     </div>
                     <div className="profileInfoItemFour">
-                      <h2>Available from</h2> <p>{availability}</p>
+                      <h2>Available from</h2>
+                      <p>{formattedAvailability}</p>
                     </div>
                   </div>
                 </div>
