@@ -41,51 +41,50 @@
     padding-top: 20px;
     position: relative;
     .InfoCont {
+      max-width: 1620px;
       display: flex;
       justify-content: space-between;
     }
     .SubBoxCont {
-      width: 425px;
-      border: 1px solid #e5e5e5;
-      box-sizing: border-box;
-      border-radius: 9px;
+      width: 100%;
+      min-width: 700px;
+      margin-right: 20px;
       padding: 20px;
       display: flex;
-      justify-content: space-between;
+      justify-content: left;
       justify-items: center;
+      box-sizing: border-box;
+      border-radius: 9px;
+      border: 1px solid #e5e5e5;
       text-align: center;
-      .SubBoxItem {
-        display: flex;
-        flex-direction: column;
-        h2 {
-          font-family: Ropa Sans, sans-serif;
-          font-style: normal;
-          font-weight: normal;
-          line-height: normal;
-          font-size: 36px;
-          margin-bottom: 21px;
-        }
-      }
     }
     .linksBoxCont {
-      width: 800px;
-      span {
-        width: 100px;
-        color: rgba(29, 59, 139, 0.5);
-      }
-      div {
+      width: 100%;
+      min-width: 600px;
+      max-width: 800px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      .linksBoxItems {
         display: flex;
-        justify-content: space-between;
-        justify-items: center;
-        align-items: center;
-        input {
-          width: 379px;
-          height: 64px;
-          margin: 10px auto;
-          background: #ffffff;
-          border: 1px solid #e5e5e5;
-          box-sizing: border-box;
-          border-radius: 9px;
+        flex-direction: column;
+        border-radius: 5px;
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 10px;
+        }
+        .linksBoxItem {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 10px;
+        }
+        a {
+          display: flex;
+          justify-items: center;
         }
       }
       h1 {
@@ -100,6 +99,8 @@
     }
   }
   .userImageUploadCont {
+    width: 30%;
+    margin-right: 20px;
     display: flex;
     justify-content: space-between;
     justify-items: center;
@@ -166,29 +167,65 @@
     color: #5c5c5c;
   }
   .profileInfoCont {
-    width: 50%;
-    margin-left: 100px;
+    width: 70%;
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    justify-items: center;
+    justify-content: end;
     position: relative;
-    .profileInfoItem {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-items: center;
+    .profileInfoItemOne {
+      text-align: left;
       h2 {
-        margin-right: 20px;
-        font-family: Ropa Sans, sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        line-height: unset;
-        color: #da9446;
+        display: inline;
       }
+    }
+    .profileInfoItemTwo {
+      text-align: left;
+      grid-column: 1 / 2;
+      grid-row: 2;
+      h2 {
+        display: inline;
+      }
+      p {
+        display: inline;
+      }
+    }
+    .profileInfoItemThree {
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      h2 {
+        display: inline;
+      }
+      p {
+        display: inline;
+      }
+    }
+    .profileInfoItemFour {
+      text-align: left;
+      grid-column: 1 / 4;
+      grid-row: 3;
+      h2 {
+        display: inline;
+      }
+      p {
+        display: inline;
+      }
+    }
+    h2 {
+      margin-right: 20px;
+      font-family: Ropa Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      color: #da9446;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      align-self: center;
     }
   }
   hr {
+    margin: 20px;
     background-color: #da9446;
   }
 }
