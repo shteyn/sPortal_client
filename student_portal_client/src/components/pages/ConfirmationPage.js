@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import TopNavigation from '../navigation/TopNavigation'
+import TopNavigation from "../navigation/TopNavigation";
 import { confirm } from "../../actions/auth";
 
 class ConfirmationPage extends Component {
@@ -21,24 +21,30 @@ class ConfirmationPage extends Component {
   render() {
     const { loading, success } = this.state;
     return (
-      <div className="ConfirmationPageCont">
+      <div className="UserCardsCont">
         <div>
-          <TopNavigation/>
+          <TopNavigation />
         </div>
-        <div>
-          {loading && (
+        <div className="ConfirmationPageCont">
+          <div>
+            {loading && (
               <div className="ValidatingCont">
                 <p>Validating your email</p>
               </div>
-          )}
-          {!loading && success && (
+            )}
+            {!loading && success && (
               <div className="verifiedCont">
                 Your account is verified
                 <Link to="/dashboard"> Go to your dashboard</Link>
               </div>
-          )}
+            )}
 
-          {!loading && !success && <div className="invalidToken"><h1>Oops. Invalid Token</h1></div>}
+            {!loading && !success && (
+              <div className="invalidToken">
+                <h1>Oops. Invalid Token</h1>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     );

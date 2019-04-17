@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+/*import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 // import TopNavigation from '../navigation/TopNavigation'
 import RegistrationForm from "../forms/RegistrationForm";
 import { registration } from "../../actions/user";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
 class RegistrationPage extends Component {
   submit = data =>
     this.props
@@ -37,10 +36,11 @@ RegistrationPage.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
   }).isRequired,
-  registration: PropTypes.func.isRequired
+  registration: PropTypes.func.isRequired,
+  getAllUsers: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
   { registration }
-)(RegistrationPage);
+)(RegistrationPage);*/
