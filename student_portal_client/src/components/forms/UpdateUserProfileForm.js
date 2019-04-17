@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {Button, Modal, Form} from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import moment from 'moment';
+import moment from 'moment';
 
 class UpdateUserProfileForm extends Component {
   constructor(props, context) {
@@ -27,7 +27,7 @@ class UpdateUserProfileForm extends Component {
 
   state = {
     show: false,
-    startDate: new Date()
+    startDate: moment().format('LL')
   };
 
 
