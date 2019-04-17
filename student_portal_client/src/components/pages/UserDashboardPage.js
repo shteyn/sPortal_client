@@ -37,7 +37,6 @@ class UserDashboardPage extends Component {
       // email,
       location,
       studentClass,
-
       // availability,
       // githubLink,
       // linkedInLink,

@@ -14,10 +14,11 @@ class AdminDashboardPage extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="container-app">
         <div className="adminDashboardNav">
           <TopNavigation />
         </div>
+        <div className="aaaa">
         <Tabs defaultActiveKey="waitingStudents" id="uncontrolled-tab-example">
           <Tab eventKey="waitingStudents" title="Waiting Students">
             <WaitingUsersForm />
@@ -26,6 +27,7 @@ class AdminDashboardPage extends Component {
             <ConfirmedUsersForm />
           </Tab>
         </Tabs>
+      </div>
       </div>
     );
   }

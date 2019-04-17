@@ -27,8 +27,7 @@ const TopNavigation = ({ user, logout, isAdmin }) => (
               <Image
                 id="gravatar-img"
                 src={require("../../img/admin.png")}
-                width="50"
-                alt="avatar"
+                // alt="avatar"
               />
             </Link>
           )}
@@ -37,8 +36,7 @@ const TopNavigation = ({ user, logout, isAdmin }) => (
               <Image
                 id="gravatar-img"
                 src={`http://localhost:8080/uploads/${user.userImage}`}
-                width="50"
-                alt="avatar"
+                // alt="avatar"
               />
             </Link>
           )}

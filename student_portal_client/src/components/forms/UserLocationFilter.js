@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import TopNavigation from "../navigation/TopNavigation";
 
 class UserLocationFilter extends Component {
   constructor(props) {
