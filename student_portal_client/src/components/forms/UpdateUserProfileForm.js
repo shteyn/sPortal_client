@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Button, Modal, Form } from "react-bootstrap";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 class UpdateUserProfileForm extends Component {
   constructor(props, context) {
@@ -17,9 +19,12 @@ class UpdateUserProfileForm extends Component {
     this.githubLinkRef = React.createRef();
     this.xingLinkRef = React.createRef();
     this.portfolioLinkRef = React.createRef();
+    this.availabilityRef = React.createRef();
+    this.handleChange = this.handleChange.bind(this);
   }
   state = {
-    show: false
+    show: false,
+    startDate: new Date()
   };
   static defaultProps = {
     initialValue: 0
@@ -31,11 +36,17 @@ class UpdateUserProfileForm extends Component {
   handleShow() {
     this.setState({ show: true });
   }
-
+  handleChange(date) {
+    this.setState({
+      startDate: date
+    });
+    console.log("from handleSubmit", date);
+  }
   handleSubmit = event => {
     event.preventDefault();
     const updatedUser = {
       id: this.props.oneUser._id,
+      availability: this.state.startDate,
       firstName: this.firstNameRef.current.value,
       lastName: this.lastNameRef.current.value,
       email: this.emailRef.current.value,
@@ -59,7 +70,8 @@ class UpdateUserProfileForm extends Component {
       githubLink,
       linkedInLink,
       portfolioLink,
-      xingLink
+      xingLink,
+      availability
     } = this.props.oneUser;
 
     return (
@@ -116,6 +128,25 @@ class UpdateUserProfileForm extends Component {
                   type="text"
                   name="location"
                   defaultValue={location}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Availability</Form.Label>
+                <br />
+                <DatePicker
+                  ref={this.availabilityRef}
+                  type="text"
+                  name="availability"
+                  dateFormat="MM/yyyy"
+                  showYearDropdown
+                  dateFormatCalendar="MMMM YYYY"
+                  scrollableYearDropdown
+                  yearDropdownItemNumber={10}
+                  selected={this.state.startDate}
+                  defaultValue={availability}
+                  onChange={this.handleChange}
+                  dropdownMode={"select"}
+                  todayButton={"Today"}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">

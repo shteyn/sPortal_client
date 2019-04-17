@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 
-import HomePage from "./components/pages/Homepage";
+import HomePage from "./components/pages/HomePage";
 import ConfirmationPage from "./components/pages/ConfirmationPage";
 import LoginPage from "./components/pages/LoginPage";
 //import RegistrationPage from "./components/pages/old_not_used_RegistrationPage";
 import ForgotPasswordPage from "./components/pages/ForgotPasswordPage";
 import ResetPasswordPage from "./components/pages/ResetPasswordPage";
-import UserCard from "./components/pages/UserCard";
+import UserCardParent from "./components/pages/UserCardParent";
 import Dashboard from "./components/pages/Dashboard";
 import UserRoutes from "./components/routes/UserRoutes";
 import GuestRoutes from "./components/routes/GuestRoutes";
@@ -17,7 +17,12 @@ import GuestRoutes from "./components/routes/GuestRoutes";
 const App = ({ location, isAuthenticated }) => (
   <div className="container-app">
     <Route location={location} path="/" exact component={HomePage} />
-    <Route location={location} path="/user-card" exact component={UserCard} />
+    <Route
+      location={location}
+      path="/user-card"
+      exact
+      component={UserCardParent}
+    />
     <Route
       location={location}
       path="/confirmation/:token"
