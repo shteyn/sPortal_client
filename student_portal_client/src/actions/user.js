@@ -17,7 +17,6 @@ export const oneUser = oneUserData => ({
 });
 
 export const filterLocation = userLocation => dispatch => {
-  console.log("event from action user", userLocation);
   return dispatch({
     type: FILTER_USERS_BY_LOCATION,
     userLocation
@@ -28,7 +27,6 @@ export const registration = data => dispatch =>
   api.user.registration(data).then(user => {
     localStorage.userJWT = user.token;
     dispatch(userLoggedIn(user));
-    console.log("registered");
   });
 
 export const approveUser = id => dispatch =>
@@ -91,7 +89,6 @@ export const updateImage = formData => dispatch =>
   api.user
     .updateImage(formData)
     .then(updateImage => {
-      console.log(" updateImage", updateImage);
       dispatch(oneUser(updateImage));
     })
     .catch(err => {

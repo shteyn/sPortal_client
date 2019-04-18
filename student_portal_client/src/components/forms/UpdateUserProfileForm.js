@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Button, Modal, Form } from "react-bootstrap";
 import DatePicker from "react-datepicker";
+
 import "react-datepicker/dist/react-datepicker.css";
 
 class UpdateUserProfileForm extends Component {
@@ -24,8 +25,22 @@ class UpdateUserProfileForm extends Component {
   }
   state = {
     show: false,
-    startDate: new Date()
+    startDate: new Date(),
+    data: {
+      location: ""
+    }
   };
+
+  types = ["Berlin", "Düsseldorf", "Köln", "Hamburg"];
+
+  onChange = event =>
+    this.setState({
+      data: {
+        ...this.state.data,
+        [event.target.name]: event.target.value
+      }
+    });
+
   static defaultProps = {
     initialValue: 0
   };
@@ -40,7 +55,6 @@ class UpdateUserProfileForm extends Component {
     this.setState({
       startDate: date
     });
-    console.log("from handleSubmit", date);
   }
   handleSubmit = event => {
     event.preventDefault();
@@ -52,7 +66,7 @@ class UpdateUserProfileForm extends Component {
       email: this.emailRef.current.value,
       githubLink: this.githubLinkRef.current.value,
       linkedInLink: this.linkedInLinkRef.current.value,
-      location: this.locationRef.current.value,
+      location: this.state.data.location,
       portfolioLink: this.portfolioLinkRef.current.value,
       studentClass: this.studentClassRef.current.value,
       xingLink: this.xingLinkRef.current.value
@@ -74,6 +88,7 @@ class UpdateUserProfileForm extends Component {
       availability
     } = this.props.oneUser;
 
+    let convertedDate = new Date(availability);
     return (
       <div>
         <div variant="primary" onClick={this.handleShow}>
@@ -121,67 +136,85 @@ class UpdateUserProfileForm extends Component {
                   defaultValue={studentClass}
                 />
               </Form.Group>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Location</Form.Label>
-                <Form.Control
-                  ref={this.locationRef}
-                  type="text"
-                  name="location"
-                  defaultValue={location}
-                />
-              </Form.Group>
+              <select name="location" onChange={this.onChange}>
+                <option defaultValue>Change your location...</option>
+                {this.types.map((item, i) => (
+                  <option key={i}>{item}</option>
+                ))}
+              </select>
+
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Availability</Form.Label>
                 <br />
                 <DatePicker
                   ref={this.availabilityRef}
+                  autoComplete="off"
                   type="text"
                   name="availability"
-                  dateFormat="MM/yyyy"
+                  dateFormat="MMMM d, yyyy"
                   showYearDropdown
                   dateFormatCalendar="MMMM YYYY"
                   scrollableYearDropdown
                   yearDropdownItemNumber={10}
                   selected={this.state.startDate}
-                  defaultValue={availability}
+                  //defaultValue={availability}
                   onChange={this.handleChange}
-                  dropdownMode={"select"}
-                  todayButton={"Today"}
+                  placeholderText="Select your availability..."
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>LinkedIn</Form.Label>
+                <p>
+                  Please use only the following
+                  format(https://www.linkedin.com/yourprofile)
+                </p>
                 <Form.Control
                   ref={this.linkedInLinkRef}
-                  type="text"
+                  type="url"
                   name="linkedInLink"
+                  pattern="https://.*"
                   defaultValue={linkedInLink}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Github</Form.Label>
+                <p>
+                  Please use only the following
+                  format(https://www.github.com/yourprofile)
+                </p>
                 <Form.Control
                   ref={this.githubLinkRef}
-                  type="text"
+                  type="url"
                   name="githubLink"
+                  pattern="https://.*"
                   defaultValue={githubLink}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Xing</Form.Label>
+                <p>
+                  Please use only the following
+                  format(https://www.xing.com/yourprofile)
+                </p>
                 <Form.Control
                   ref={this.xingLinkRef}
-                  type="text"
+                  type="url"
                   name="xingLink"
+                  pattern="https://.*"
                   defaultValue={xingLink}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Portfolio</Form.Label>
+                <p>
+                  Please use only the following
+                  format(https://www.youportfolio.com)
+                </p>
                 <Form.Control
                   ref={this.portfolioLinkRef}
-                  type="text"
+                  type="url"
                   name="portfolioLink"
+                  pattern="https://.*"
                   defaultValue={portfolioLink}
                 />
               </Form.Group>
@@ -210,7 +243,6 @@ UpdateUserProfileForm.propTypes = {
 };
 
 function mapStateToProps(state) {
-  //console.log("state profile form", state.oneUser);
   return {
     oneUser: state.oneUser
   };
