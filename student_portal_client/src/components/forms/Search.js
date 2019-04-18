@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 class Search extends Component {
   updateSearch = selectedOption => {
-    console.log("selected option", selectedOption.target.value);
     this.setState({ search: selectedOption /* .substring(0, 7) */ });
     this.props.searchChanged(selectedOption.target.value);
   };

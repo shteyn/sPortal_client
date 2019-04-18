@@ -78,7 +78,6 @@ TopNavigation.propTypes = {
 };
 
 function mapStateToProps(state) {
-  //console.log("user top nav", state.oneUser);
   return {
     oneUser: state.oneUser,
     user: state.user,

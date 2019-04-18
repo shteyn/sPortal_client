@@ -23,7 +23,6 @@ class LoginPage extends Component {
       .then(() => this.props.history.push("/dashboard"));
 
   render() {
-    const { allUsers } = this.props.allUsers;
     return (
       <div className="LoginCont">
         <div className="navigation">
@@ -42,10 +41,7 @@ class LoginPage extends Component {
               </div>
             </Tab>
             <Tab eventKey="registrationUser" title="Sign Up">
-              <RegistrationForm
-                allUsers={allUsers}
-                submit={this.submitRegister}
-              />
+              <RegistrationForm submit={this.submitRegister} />
             </Tab>
           </Tabs>
         </div>
@@ -62,12 +58,7 @@ LoginPage.propTypes = {
   registration: PropTypes.func.isRequired
 };
 
-function mapStateToProps(state) {
-  return {
-    allUsers: state.allUsers
-  };
-}
 export default connect(
-  mapStateToProps,
+  null,
   { login, registration, getAllUsers }
 )(LoginPage);

@@ -47,9 +47,7 @@ const unlinkAsync = promisify(fs.unlink);
 
 //Update Image
 router.post("/users/update-img/:id", upload.single("userImage"), (req, res) => {
-  console.log("req.imageFileName", `/public/uploads/${req.imageFileName}`);
   const newImage = req.imageFileName;
-  console.log("newImage", newImage);
   User.findById(req.body.id).then(user => {
     const oldImage = user.userImage;
     User.findByIdAndUpdate(
@@ -62,7 +60,6 @@ router.post("/users/update-img/:id", upload.single("userImage"), (req, res) => {
       }
     ).then(updatedImg => {
       unlinkAsync(`./public/uploads/${oldImage}`);
-      console.log("user router back", updatedImg);
       res.json(updatedImg);
     });
   });
@@ -70,7 +67,6 @@ router.post("/users/update-img/:id", upload.single("userImage"), (req, res) => {
 
 //Update user profile
 router.put("/users/update-user/:id", (req, res) => {
-  //console.log("REQ.BODY", req.body);
   User.findByIdAndUpdate(req.params.id, req.body.user, {
     new: true,
     passwordHash: 0,
@@ -80,7 +76,6 @@ router.put("/users/update-user/:id", (req, res) => {
     confirmationEmailSend: 0
   })
     .then(updatedUser => {
-      //console.log("user router back", updatedUser);
       res.json(updatedUser);
     })
     .catch(error =>
@@ -181,7 +176,6 @@ router.get("/users", (req, res) => {
 
 //Get Users By Location
 router.post("/users", (req, res) => {
-  console.log("router", req.body.location);
   User.find(
     { location: req.body.location },
     {
@@ -211,7 +205,6 @@ router.post("/users/dashboard", (req, res) => {
     }
   )
     .then(user => {
-      // console.log("//Get One User", user);
       res.json(user);
     })
     .catch(error =>
