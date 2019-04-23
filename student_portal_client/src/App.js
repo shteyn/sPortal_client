@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import HomePage from "./components/pages/HomePage";
 import ConfirmationPage from "./components/pages/ConfirmationPage";
 import LoginPage from "./components/pages/LoginPage";
-//import RegistrationPage from "./components/pages/old_not_used_RegistrationPage";
 import ForgotPasswordPage from "./components/pages/ForgotPasswordPage";
 import ResetPasswordPage from "./components/pages/ResetPasswordPage";
 import UserCardParent from "./components/pages/UserCardParent";
@@ -14,7 +13,7 @@ import Dashboard from "./components/pages/Dashboard";
 import UserRoutes from "./components/routes/UserRoutes";
 import GuestRoutes from "./components/routes/GuestRoutes";
 
-const App = ({ location, isAuthenticated }) => (
+const App = ({ location }) => (
   <div className="container-app">
     <Route location={location} path="/" exact component={HomePage} />
     <Route
@@ -35,12 +34,6 @@ const App = ({ location, isAuthenticated }) => (
       exact
       component={LoginPage}
     />
-    {/*<GuestRoutes
-      location={location}
-      path="/registration"
-      exact
-      component={RegistrationPage}
-    />*/}
     <GuestRoutes
       location={location}
       path="/forgot_password"

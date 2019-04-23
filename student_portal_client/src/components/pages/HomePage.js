@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import TopNavigation from "../navigation/TopNavigation";
+import Footer from "../navigation/Footer";
 import * as actions from "../../actions/auth";
 
 const HomePage = ({ isAuthenticated, logout }) => (
@@ -36,6 +37,7 @@ const HomePage = ({ isAuthenticated, logout }) => (
         </Link>
       </button>
     </div>
+    <Footer />
   </div>
 );
 

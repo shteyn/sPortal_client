@@ -19,7 +19,7 @@ class Search extends Component {
     return (
       <select name="location" onChange={this.updateSearch}>
         <option value="">All Locations</option>
-        {locations.map((item, i) => (
+        {locations.map(item => (
           <option key={item}>{item}</option>
         ))}
       </select>
