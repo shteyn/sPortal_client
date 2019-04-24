@@ -63,29 +63,49 @@ class RegistrationForm extends Component {
     });*/
 
     return (
-      <div className="RegistrationForm">
+      <div className="loginForm">
         <form onSubmit={this.onSubmit} loading={loading.toString()}>
+
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="first name"
+            value={data.firstName}
+            onChange={this.onChange}
+          />
+
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="last name"
+            value={data.lastName}
+            onChange={this.onChange}
+          />
+
           <input
             type="email"
             id="email"
             name="email"
-            placeholder="example@example.com"
+            placeholder="email"
             autoComplete="email"
             value={data.email}
             onChange={this.onChange}
           />
           {/* InlineError server side validation */}
           {errors.email && <InlineError text={errors.email} />}
-          <br />
+          
           <input
             type="password"
             id="password"
             name="password"
-            placeholder="inserts password"
+            placeholder="password"
             autoComplete="current-password"
             value={data.password}
             onChange={this.onChange}
           />
+
           {errors.password && <InlineError text={errors.password} />}
           <br />
           <input
@@ -106,28 +126,23 @@ class RegistrationForm extends Component {
             onChange={this.onChange}
           />
           <br />
-          <select name="location" onChange={this.onChange}>
+          <select name="location" onChange={this.onChange} className="RegistrationSelectCont">
             {this.types.map((item, i) => (
               <option key={i}>{item}</option>
             ))}
           </select>
-          {/*<select name="location" onChange={this.onChange}>
-            {locations.map((item, i) => (
-              <option key={item}>{item}</option>
-            ))}
-          </select>*/}
-
+          
           <br />
           <input
             type="number"
             min="0"
             id="studentClass"
             name="studentClass"
-            placeholder="insert your class number..."
+            placeholder="insert your Class Number..."
             value={data.studentClass}
             onChange={this.onChange}
           />
-          <br />
+          
           <button>Submit</button>
         </form>
       </div>

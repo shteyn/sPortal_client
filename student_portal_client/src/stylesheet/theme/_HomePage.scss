@@ -1,6 +1,14 @@
 .container-app {
   width: 100%;
+  // @media (max-width: 100%){
+  //   width: 400px;
+  // }
+  
   height: 100vh;
+  @media (max-height: 100vh){
+  height: 100vh;
+  }
+  
   //background-color: grey;
   background: url("../img/header.jpg") no-repeat;
   background-size: cover;

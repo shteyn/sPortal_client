@@ -17,7 +17,7 @@ class Search extends Component {
     });
 
     return (
-      <select name="location" onChange={this.updateSearch}>
+      <select className="RegistrationSelectCont" name="location" onChange={this.updateSearch}>
         <option value="">All Locations</option>
         {locations.map(item => (
           <option key={item}>{item}</option>

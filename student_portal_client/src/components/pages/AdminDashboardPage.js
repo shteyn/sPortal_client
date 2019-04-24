@@ -14,7 +14,7 @@ class AdminDashboardPage extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="admindashboard-cont">
         <div className="adminDashboardNav">
           <TopNavigation />
         </div>

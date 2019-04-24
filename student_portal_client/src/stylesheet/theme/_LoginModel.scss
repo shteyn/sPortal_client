@@ -1,7 +1,7 @@
 .LoginCont {
   width: 100%;
   height: 100%;
-  background: white;
+  background: #ffffff;
 
   .loginForm {
     margin: auto;
@@ -22,7 +22,7 @@
     justify-content: space-between;
 
     .labelUserPage {
-      color: white;
+      color: #ffffff;
       text-decoration: none;
       margin-left: 20px;
       position: absolute;
@@ -59,7 +59,10 @@
   }
 
   .LoginModel {
-    width: 830px;
+    width: 630px;
+    @media (max-width: 630px){
+      width: 400px;
+    }
     padding: 60px 20px;
     margin-top: 150px;
     left: 50%;
@@ -71,21 +74,30 @@
     transform: translateX(-50%);
     background: rgba(29, 59, 139, 0.1);
     border-radius: 15px;
+
     .forgotPassDiv {
-      margin:  30px auto 0;
-      text-align: center;
+      margin: 30px 20px 0;
+      text-align: right;
+      a {
+        color: #1d3b8b;
+      }
     }
+    
     input {
-      width: 689px;
-      height: 79px;
-      margin: 20px auto;
+      width: 515px;
+      @media (max-width: 630px){
+        width: 305px;
+      }
+      height: 50px;
+      margin: 15px auto 0 0;
       padding: 10px;
-      border-radius: 10px;
+      border: none;
+      border-radius: 8px;
       font-family: Ropa Sans, sans-serif;
       font-style: normal;
       font-weight: normal;
       line-height: normal;
-      font-size: 30px;
+      font-size: 18px;
       color: #5c5c5c;
 
       &:focus {
@@ -97,17 +109,19 @@
         font-style: normal;
         font-weight: normal;
         line-height: normal;
-        font-size: 30px;
+        font-size: 20px;
         color: #5c5c5c;
       }
     }
 
     button {
-      width: 229px;
-      height: 65px;
-      margin: auto;
-      background: rgba(218, 148, 70, 0.5);
-      border-radius: 11px;
+      color: #ffffff;
+      width: 160px;
+      height: 55px;
+      margin: 30px auto 0 0;
+      background: /* rgba(218, 148, 70, 0.5) */#1d3b8b;
+      border: none;
+      border-radius: 7px;
 
       &:focus {
         outline: none;
@@ -128,11 +142,11 @@
     border-bottom: 1px solid #da9446;
     display: flex;
     justify-content: space-evenly;
-
+    margin-bottom: 30px;
     .nav-link {
-      width: 50%;
-      height: 100px;
-      margin-bottom: 20px;
+      width: 40%;
+      height: 70px;
+      margin-bottom: 5px;
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -145,6 +159,7 @@
       font-weight: normal;
       line-height: normal;
       font-size: 30px;
+      color: #1d3b8b;
     }
     .nav-link.active {
       background: none;

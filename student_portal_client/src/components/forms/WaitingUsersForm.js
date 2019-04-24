@@ -20,6 +20,8 @@ class WaitingUsersForm extends Component {
   render() {
     const { allUsers } = this.props.allUsers;
     return (
+      <div>
+        <h2 className="top"><b>Students Requests</b></h2>
       <Table celled>
         <Table.Header>
           <Table.Row>
@@ -75,6 +77,7 @@ class WaitingUsersForm extends Component {
           )}
         </Table.Body>
       </Table>
+      </div>
     );
   }
 }

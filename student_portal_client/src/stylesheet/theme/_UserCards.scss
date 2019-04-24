@@ -200,3 +200,23 @@
     background: #1d3b8b;
   }
 }
+
+.RegistrationSelectCont{
+  font-weight: bold;
+  width: 515px;
+  margin: 10px 0 0 0;
+  height: 50px;
+  background-color: #ffffff;
+  color: #5c5c5c;
+  border: 1px solid #5c5c5c;
+  border-radius: 8px;
+  @media (max-width: 630px){
+    width: 305px;
+  }
+
+}
+
+.location {
+  margin: 10px 0 10px 13px;
+  text-align: center;
+}
