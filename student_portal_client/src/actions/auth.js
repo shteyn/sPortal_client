@@ -12,6 +12,7 @@ export const userLoggedOut = () => ({
 
 export const login = credentials => dispatch =>
   api.user.login(credentials).then(user => {
+    console.log("user.token from action", user);
     localStorage.userJWT = user.token;
     dispatch(userLoggedIn(user));
   });

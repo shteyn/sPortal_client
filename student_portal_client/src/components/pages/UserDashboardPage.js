@@ -61,11 +61,11 @@ class UserDashboardPage extends Component {
       ];
       let tmp = new Date(availability);
       formattedAvailability =
-          tmp.getDate() +
-          " " +
-          monthNames[tmp.getMonth()] +
-          ", " +
-          tmp.getFullYear();
+        monthNames[tmp.getMonth()] +
+        " " +
+        tmp.getDate() +
+        ", " +
+        tmp.getFullYear();
     }
 
     return (
@@ -279,6 +279,18 @@ class UserDashboardPage extends Component {
             </button>
             <hr/>
           </div>
+          <button
+            className="updateButton"
+            style={{ position: "absolute", right: "0", bottom: "0" }}
+          >
+            {this.props.oneUser._id ? (
+              <UpdateUserProfileForm
+                user={this.props.oneUser}
+                updateProfile={this.updateProfile}
+              />
+            ) : null}
+          </button>
+          <hr />
         </div>
     );
   }

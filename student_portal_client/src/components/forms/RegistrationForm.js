@@ -107,7 +107,6 @@ class RegistrationForm extends Component {
           />
           <br />
           <select name="location" onChange={this.onChange}>
-            <option defaultValue>Choose your location...</option>
             {this.types.map((item, i) => (
               <option key={i}>{item}</option>
             ))}

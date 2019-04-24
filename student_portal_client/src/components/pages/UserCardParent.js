@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getAllUsers, filterLocation } from "../../actions/user";
 import TopNavigation from "../navigation/TopNavigation";
+import UsersCards from "../forms/UsersCards";
 import Footer from "../navigation/Footer";
-import UserLocationFilter from "../forms/UsersCards";
 import Search from "../forms/Search";
 
 class UserCardParent extends Component {
@@ -22,6 +22,7 @@ class UserCardParent extends Component {
   }
 
   searchChanged = query => {
+    console.log("location query", query);
     this.setState({ query: query });
   };
 
@@ -54,7 +55,7 @@ class UserCardParent extends Component {
           <h1>OUR STUDENTS</h1>
           <h3>GRADUATED</h3>
           <Search allUsers={allUsers} searchChanged={this.searchChanged} />
-          <UserLocationFilter query={this.state.query} />
+          <UsersCards query={this.state.query} />
         </div>
         <div className="UserCardFooter">
           <Footer/>
