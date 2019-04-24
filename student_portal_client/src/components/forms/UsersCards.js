@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { NavLink, Link } from "react-router-dom";
+// import { NavLink, Link } from "react-router-dom";
 
 class UserLocationFilter extends Component {
   render() {
@@ -23,7 +23,7 @@ class UserLocationFilter extends Component {
           if (oneUser.confirmed) {
             return (
               <div className="CardItem" key={oneUser._id}>
-                {oneUser.userImage.length === 0 ? (
+                {oneUser.userImage === "" ? (
                   <div
                     className="profileImg"
                     style={{

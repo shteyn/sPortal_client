@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getAllUsers, filterLocation } from "../../actions/user";
 import TopNavigation from "../navigation/TopNavigation";
+import Footer from "../navigation/Footer";
 import UserLocationFilter from "../forms/UsersCards";
 import Search from "../forms/Search";
 
@@ -28,6 +29,7 @@ class UserCardParent extends Component {
     let { isAuthenticated } = this.props;
     const { allUsers } = this.props.allUsers;
 
+
     return (
       <div className="UserCardsCont">
         <div className="navigationBarUserCardPage">
@@ -51,9 +53,11 @@ class UserCardParent extends Component {
         <div className="UserCardsListCont">
           <h1>OUR STUDENTS</h1>
           <h3>GRADUATED</h3>
-          <h4>ALL LOCATIONS</h4>
           <Search allUsers={allUsers} searchChanged={this.searchChanged} />
           <UserLocationFilter query={this.state.query} />
+        </div>
+        <div className="UserCardFooter">
+          <Footer/>
         </div>
       </div>
     );
