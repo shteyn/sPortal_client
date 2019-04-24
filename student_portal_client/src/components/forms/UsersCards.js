@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { NavLink, Link } from "react-router-dom";
 
-class UserLocationFilter extends Component {
+class UserCards extends Component {
   render() {
     const { allUsers } = this.props.allUsers;
     const filteredLocations = allUsers.filter(user => {
@@ -17,8 +16,11 @@ class UserLocationFilter extends Component {
     return (
       <div className="UserCardsItems">
         {filteredLocations.map(oneUser => {
-          var ts = new Date(oneUser.availability);
-          const availability = ts.toDateString();
+          let currentDate = new Date().toLocaleString();
+          let date = new Date(oneUser.availability);
+          let newUserDate = date.toLocaleString();
+          const availability = date.toDateString();
+          console.log("oneUser.availability", oneUser.availability);
 
           if (oneUser.confirmed) {
             return (
@@ -50,7 +52,23 @@ class UserLocationFilter extends Component {
                   <div className="location">{oneUser.location}</div>
                   <div className="Availability">
                     <p>Availability</p>
-                    <p style={{ color: "white" }}>{availability}</p>
+                    {oneUser.availability === null ? (
+                      <p key="0" style={{ color: "grey" }}>
+                        No info yeat
+                      </p>
+                    ) : (
+                      [
+                        newUserDate > currentDate ? (
+                          <p key="1" style={{ color: "white" }}>
+                            {availability}
+                          </p>
+                        ) : (
+                          <p key="2" style={{ color: "green" }}>
+                            Available for offers
+                          </p>
+                        )
+                      ]
+                    )}
                   </div>
                 </div>
                 <div className="CardLinks">
@@ -118,4 +136,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(UserLocationFilter);
+export default connect(mapStateToProps)(UserCards);

@@ -19,7 +19,7 @@ export function sendConfirmationEmail(user) {
     from,
     to: user.email,
     subject: "DCi Students Portal | Registration Confirmation",
-    text: `Now you can login. Please confirm your email .
+    text: `Now you can login. Please follow this link .
     ${user.generateConfirmationUrl()}`
   };
   transport.sendMail(email);
@@ -31,7 +31,7 @@ export function sendResetPasswordEmail(user) {
     from,
     to: user.email,
     subject: "DCi Students Portal | Reset Password",
-    text: `Please click this link to reset your password.
+    text: `Please click follow this link to reset your password.
     ${user.generateResetPasswordUrl()}`
   };
   transport.sendMail(email);

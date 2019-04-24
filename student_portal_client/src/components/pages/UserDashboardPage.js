@@ -61,9 +61,9 @@ class UserDashboardPage extends Component {
       ];
       let tmp = new Date(availability);
       formattedAvailability =
-        tmp.getDate() +
-        " " +
         monthNames[tmp.getMonth()] +
+        " " +
+        tmp.getDate() +
         ", " +
         tmp.getFullYear();
     }
@@ -275,7 +275,12 @@ class UserDashboardPage extends Component {
             className="updateButton"
             style={{ position: "absolute", right: "0", bottom: "0" }}
           >
-            <UpdateUserProfileForm updateProfile={this.updateProfile} />
+            {this.props.oneUser._id ? (
+              <UpdateUserProfileForm
+                user={this.props.oneUser}
+                updateProfile={this.updateProfile}
+              />
+            ) : null}
           </button>
           <hr />
         </div>

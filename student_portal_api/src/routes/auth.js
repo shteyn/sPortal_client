@@ -20,6 +20,8 @@ router.post("/", (req, res) => {
 //find user and update user record
 router.post("/confirmation", (req, res) => {
   const token = req.body.token;
+  console.log("ROUTES CONFIRMATION", token);
+
   User.findOneAndUpdate(
     //first param: what we are searching for
     //second param: what we want to update
