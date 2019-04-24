@@ -14,7 +14,7 @@ class UpdateUserProfileForm extends Component {
     this.firstNameRef = React.createRef();
     this.lastNameRef = React.createRef();
     // this.emailRef = React.createRef();
-    // this.locationRef = React.createRef();
+    this.locationRef = React.createRef();
     this.studentClassRef = React.createRef();
     this.linkedInLinkRef = React.createRef();
     this.githubLinkRef = React.createRef();

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import TopNavigation from "../navigation/TopNavigation";
 import { getUserData, updateProfile, updateImage } from "../../actions/user";
 import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
+import Footer from "../navigation/Footer";
 
 class UserDashboardPage extends Component {
   constructor(props, context) {
@@ -284,6 +285,9 @@ class UserDashboardPage extends Component {
             ) : null}
           </button>
           <hr />
+        </div>
+        <div className="UserDashBoardFooter">
+          <Footer/>
         </div>
       </div>
     );
