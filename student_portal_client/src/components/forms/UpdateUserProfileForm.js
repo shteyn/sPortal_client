@@ -13,8 +13,8 @@ class UpdateUserProfileForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.firstNameRef = React.createRef();
     this.lastNameRef = React.createRef();
-    this.emailRef = React.createRef();
-    this.locationRef = React.createRef();
+    // this.emailRef = React.createRef();
+    // this.locationRef = React.createRef();
     this.studentClassRef = React.createRef();
     this.linkedInLinkRef = React.createRef();
     this.githubLinkRef = React.createRef();
@@ -29,7 +29,6 @@ class UpdateUserProfileForm extends Component {
       ? new Date(this.props.user.availability)
       : null,
     id: this.props.user._id,
-    location: this.props.user.location,
     firstName: this.props.user.firstName,
     lastName: this.props.user.lastName,
     location: this.props.user.location,
@@ -149,7 +148,6 @@ class UpdateUserProfileForm extends Component {
                   dateFormatCalendar="MMMM YYYY"
                   scrollableYearDropdown
                   yearDropdownItemNumber={10}
-                  //value={this.state.startDate}
                   onChange={this.handleChange}
                   placeholderText="Select your availability..."
                   selected={this.state.startDate}

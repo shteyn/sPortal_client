@@ -25,7 +25,7 @@ class TopNavigation extends Component {
         </Link>
         <ul>
           <li>
-            <Link style={{ color: "black" }} to="" onClick={() => logout()}>
+            <Link to="" onClick={() => logout()}>
               Logout
             </Link>
           </li>
