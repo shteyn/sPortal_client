@@ -39,8 +39,6 @@ app.use("/api/auth", auth);
 app.use("/api", users);
 app.use("/uploads", express.static("./public/uploads/"));
 
-console.log("dirname", __dirname + "/public/uploads/");
-
 const PORT = process.env.PORT || 8080;
 
 /*app.get("/*", (req, res) => {

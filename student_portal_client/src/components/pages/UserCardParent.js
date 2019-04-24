@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getAllUsers, filterLocation } from "../../actions/user";
 import TopNavigation from "../navigation/TopNavigation";
-import UserLocationFilter from "../forms/UsersCards";
+import UsersCards from "../forms/UsersCards";
+import Footer from "../navigation/Footer";
 import Search from "../forms/Search";
 
 class UserCardParent extends Component {
@@ -21,13 +22,14 @@ class UserCardParent extends Component {
   }
 
   searchChanged = query => {
+    console.log("location query", query);
     this.setState({ query: query });
   };
-
 
   render() {
     let { isAuthenticated } = this.props;
     const { allUsers } = this.props.allUsers;
+
 
     return (
       <div className="UserCardsCont">
@@ -52,12 +54,11 @@ class UserCardParent extends Component {
         <div className="UserCardsListCont">
           <h1>OUR STUDENTS</h1>
           <h3>GRADUATED</h3>
-
-          <div className="location">
           <Search allUsers={allUsers} searchChanged={this.searchChanged} />
-          </div>
-
-          <UserLocationFilter query={this.state.query} />
+          <UsersCards query={this.state.query} />
+        </div>
+        <div className="UserCardFooter">
+          <Footer/>
         </div>
       </div>
     );

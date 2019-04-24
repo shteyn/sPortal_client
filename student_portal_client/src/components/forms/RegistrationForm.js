@@ -18,7 +18,7 @@ class RegistrationForm extends Component {
     errors: {}
   };
 
-  //types = ["Berlin", "Düseeldorf", "Köln", "Hamburg"];
+  types = ["Berlin", "Düsseldorf", "Köln", "Hamburg"];
 
   onChange = event =>
     this.setState({
@@ -53,15 +53,14 @@ class RegistrationForm extends Component {
 
   render() {
     const { data, errors, loading } = this.state;
-    const { allUsers } = this.props;
+    /*const { allUsers } = this.props;
     const locations = [];
     allUsers.map(user => {
       if (locations.indexOf(user.location) < 0) {
         locations.push(user.location);
       }
       return null;
-    });
-    console.log("state from Reg Form", this.state);
+    });*/
 
     return (
       <div className="loginForm">
@@ -106,15 +105,34 @@ class RegistrationForm extends Component {
             value={data.password}
             onChange={this.onChange}
           />
-          {errors.password && <InlineError text={errors.password} />}         
-          
+
+          {errors.password && <InlineError text={errors.password} />}
+          <br />
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="insert your first name..."
+            value={data.firstName}
+            onChange={this.onChange}
+          />
+          <br />
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="insert your last name..."
+            value={data.lastName}
+            onChange={this.onChange}
+          />
+          <br />
           <select name="location" onChange={this.onChange} className="RegistrationSelectCont">
-            <option value="">All Locations</option>
-            {locations.map((item, i) => (
-              <option key={item}>{item}</option>
+            {this.types.map((item, i) => (
+              <option key={i}>{item}</option>
             ))}
           </select>
           
+          <br />
           <input
             type="number"
             min="0"

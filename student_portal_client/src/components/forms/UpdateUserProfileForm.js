@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import { Button, Modal, Form } from "react-bootstrap";
 import DatePicker from "react-datepicker";
+
 import "react-datepicker/dist/react-datepicker.css";
 
 class UpdateUserProfileForm extends Component {
@@ -10,6 +10,7 @@ class UpdateUserProfileForm extends Component {
     super(props, context);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.firstNameRef = React.createRef();
     this.lastNameRef = React.createRef();
     this.emailRef = React.createRef();
@@ -20,39 +21,64 @@ class UpdateUserProfileForm extends Component {
     this.xingLinkRef = React.createRef();
     this.portfolioLinkRef = React.createRef();
     this.availabilityRef = React.createRef();
-    this.handleChange = this.handleChange.bind(this);
   }
+
   state = {
     show: false,
-    startDate: new Date()
+    startDate: this.props.user.availability
+      ? new Date(this.props.user.availability)
+      : null,
+    id: this.props.user._id,
+    location: this.props.user.location,
+    firstName: this.props.user.firstName,
+    lastName: this.props.user.lastName,
+    location: this.props.user.location,
+    studentClass: this.props.user.studentClass,
+    userImage: this.props.user.userImage,
+    githubLink: this.props.user.githubLink,
+    linkedInLink: this.props.user.linkedInLink,
+    portfolioLink: this.props.user.portfolioLink,
+    xingLink: this.props.user.xingLink,
+    availability: this.props.user.availability
   };
+
+  types = ["Berlin", "Düsseldorf", "Köln", "Hamburg"];
+
+  onChange = event => {
+    this.setState({
+      ...this.state,
+      [event.target.name]: event.target.value
+    });
+  };
+
   static defaultProps = {
     initialValue: 0
   };
+
   handleClose() {
     this.setState({ show: false });
   }
 
   handleShow() {
-    this.setState({ show: true });
+    this.setState({
+      show: true
+    });
   }
-  handleChange(date) {
+  handleChange = date => {
     this.setState({
       startDate: date
     });
-    console.log("from handleSubmit", date);
-  }
+  };
   handleSubmit = event => {
     event.preventDefault();
     const updatedUser = {
-      id: this.props.oneUser._id,
+      id: this.state.id,
       availability: this.state.startDate,
       firstName: this.firstNameRef.current.value,
       lastName: this.lastNameRef.current.value,
-      email: this.emailRef.current.value,
       githubLink: this.githubLinkRef.current.value,
       linkedInLink: this.linkedInLinkRef.current.value,
-      location: this.locationRef.current.value,
+      location: this.state.location,
       portfolioLink: this.portfolioLinkRef.current.value,
       studentClass: this.studentClassRef.current.value,
       xingLink: this.xingLinkRef.current.value
@@ -61,19 +87,6 @@ class UpdateUserProfileForm extends Component {
   };
 
   render() {
-    const {
-      firstName,
-      lastName,
-      email,
-      studentClass,
-      location,
-      githubLink,
-      linkedInLink,
-      portfolioLink,
-      xingLink,
-      availability
-    } = this.props.oneUser;
-
     return (
       <div>
         <div variant="primary" onClick={this.handleShow}>
@@ -91,7 +104,7 @@ class UpdateUserProfileForm extends Component {
                   ref={this.firstNameRef}
                   type="text"
                   name="firstName"
-                  defaultValue={firstName}
+                  defaultValue={this.state.firstName}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
@@ -100,93 +113,103 @@ class UpdateUserProfileForm extends Component {
                   ref={this.lastNameRef}
                   type="text"
                   name="lastName"
-                  defaultValue={lastName}
+                  defaultValue={this.state.lastName}
                 />
               </Form.Group>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  ref={this.emailRef}
-                  type="email"
-                  name="email"
-                  defaultValue={email}
-                />
-              </Form.Group>
+
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Class</Form.Label>
                 <Form.Control
                   ref={this.studentClassRef}
                   type="text"
                   name="studentClass"
-                  defaultValue={studentClass}
+                  defaultValue={this.state.studentClass}
                 />
               </Form.Group>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Location</Form.Label>
-                <Form.Control
-                  ref={this.locationRef}
-                  type="text"
-                  name="location"
-                  defaultValue={location}
-                />
-              </Form.Group>
+              <select name="location" onChange={this.onChange}>
+                <option defaultValue>{this.state.location}</option>
+                {this.types.map((item, i) => {
+                  if (item !== this.state.location) {
+                    return <option key={i}>{item}</option>;
+                  }
+                })}
+              </select>
+
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Availability</Form.Label>
                 <br />
                 <DatePicker
                   ref={this.availabilityRef}
+                  popperClassName="drv-datepicker-popper"
+                  autoComplete="off"
                   type="text"
                   name="availability"
-                  dateFormat="MM/yyyy"
+                  dateFormat="MMMM d, yyyy"
                   showYearDropdown
                   dateFormatCalendar="MMMM YYYY"
                   scrollableYearDropdown
                   yearDropdownItemNumber={10}
-                  selected={this.state.startDate}
-                  defaultValue={availability}
+                  //value={this.state.startDate}
                   onChange={this.handleChange}
-                  dropdownMode={"select"}
-                  todayButton={"Today"}
+                  placeholderText="Select your availability..."
+                  selected={this.state.startDate}
+                  showDisabledMonthNavigation
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>LinkedIn</Form.Label>
+                <p>
+                  Please use only the following
+                  format(https://www.linkedin.com/yourprofile)
+                </p>
                 <Form.Control
                   ref={this.linkedInLinkRef}
-                  type="text"
+                  type="url"
                   name="linkedInLink"
-                  // pattern="https://.*"
-                  defaultValue={linkedInLink}
-                />
-              </Form.Group>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Xing</Form.Label>
-                <Form.Control
-                  ref={this.xingLinkRef}
-                  type="text"
-                  name="xingLink"
-                  // pattern="https://.*"
-                  defaultValue={xingLink}
+                  pattern="https://.*"
+                  defaultValue={this.state.linkedInLink}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Github</Form.Label>
+                <p>
+                  Please use only the following
+                  format(https://www.github.com/yourprofile)
+                </p>
                 <Form.Control
                   ref={this.githubLinkRef}
-                  type="text"
+                  type="url"
                   name="githubLink"
-                  // pattern="https://.*"
-                  defaultValue={githubLink}
+                  pattern="https://.*"
+                  defaultValue={this.state.githubLink}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Xing</Form.Label>
+                <p>
+                  Please use only the following
+                  format(https://www.xing.com/yourprofile)
+                </p>
+                <Form.Control
+                  ref={this.xingLinkRef}
+                  type="url"
+                  name="xingLink"
+                  pattern="https://.*"
+                  defaultValue={this.state.xingLink}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Portfolio</Form.Label>
+                <p>
+                  Please use only the following
+                  format(https://www.youportfolio.com)
+                </p>
                 <Form.Control
                   ref={this.portfolioLinkRef}
-                  type="text"
+                  type="url"
                   name="portfolioLink"
-                  // pattern="https://.*"
-                  defaultValue={portfolioLink}
+                  pattern="https://.*"
+                  defaultValue={this.state.portfolioLink}
                 />
               </Form.Group>
 
@@ -209,15 +232,7 @@ class UpdateUserProfileForm extends Component {
 }
 
 UpdateUserProfileForm.propTypes = {
-  oneUser: PropTypes.object.isRequired,
   updateProfile: PropTypes.func.isRequired
 };
 
-function mapStateToProps(state) {
-  //console.log("state profile form", state.oneUser);
-  return {
-    oneUser: state.oneUser
-  };
-}
-
-export default connect(mapStateToProps)(UpdateUserProfileForm);
+export default UpdateUserProfileForm;

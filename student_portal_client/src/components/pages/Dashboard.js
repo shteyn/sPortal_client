@@ -6,7 +6,6 @@ import ConfirmEmailMessage from "../messages/ConfirmEmailMessage";
 import UserDashboardPage from "./UserDashboardPage";
 import AdminDashboardPage from "./AdminDashboardPage";
 
-
 class Dashboard extends Component {
   render() {
     const { isConfirmed, isAdmin } = this.props;
@@ -20,18 +19,15 @@ class Dashboard extends Component {
   }
 }
 
-
 Dashboard.propTypes = {
   isConfirmed: PropTypes.bool.isRequired,
-  isAdmin: PropTypes.bool.isRequired,
-  user: PropTypes.object.isRequired
+  isAdmin: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state) {
   return {
     isConfirmed: !!state.user.confirmed,
-    isAdmin: !!state.user.isAdmin,
-    user: state.user
+    isAdmin: !!state.user.isAdmin
   };
 }
 

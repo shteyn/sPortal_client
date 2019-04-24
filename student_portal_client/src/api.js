@@ -24,13 +24,9 @@ export default {
         .then(res => res.data.user),
 
     resetPasswordRequest: email =>
-      axios.post(
-        "http://localhost:8080/api/auth/reset_password_request",
-        {
-          email
-        },
-        console.log("reset Password api", email)
-      ),
+      axios.post("http://localhost:8080/api/auth/reset_password_request", {
+        email
+      }),
 
     validateToken: token =>
       axios.post("http://localhost:8080/api/auth/validate_token", { token }),

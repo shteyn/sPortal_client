@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
 
-class UserLocationFilter extends Component {
+
+class UserCards extends Component {
   render() {
     const { allUsers } = this.props.allUsers;
     const filteredLocations = allUsers.filter(user => {
@@ -17,10 +17,16 @@ class UserLocationFilter extends Component {
     return (
       <div className="UserCardsItems">
         {filteredLocations.map(oneUser => {
+          let currentDate = new Date().toLocaleString();
+          let date = new Date(oneUser.availability);
+          let newUserDate = date.toLocaleString();
+          const availability = date.toDateString();
+          console.log("oneUser.availability", oneUser.availability);
+
           if (oneUser.confirmed) {
             return (
               <div className="CardItem" key={oneUser._id}>
-                {oneUser.userImage.length === 0 ? (
+                {oneUser.userImage === "" ? (
                   <div
                     className="profileImg"
                     style={{
@@ -47,22 +53,72 @@ class UserLocationFilter extends Component {
                   <div className="location">{oneUser.location}</div>
                   <div className="Availability">
                     <p>Availability</p>
-                    <p style={{ color: "white" }}>Available for offers</p>
+                    {oneUser.availability === null ? (
+                      <p key="0" style={{ color: "grey" }}>
+                        No info yeat
+                      </p>
+                    ) : (
+                      [
+                        newUserDate > currentDate ? (
+                          <p key="1" style={{ color: "white" }}>
+                            {availability}
+                          </p>
+                        ) : (
+                          <p key="2" style={{ color: "green" }}>
+                            Available for offers
+                          </p>
+                        )
+                      ]
+                    )}
                   </div>
                 </div>
                 <div className="CardLinks">
-                  <NavLink title="Linked In" to="#">
-                    <img src={require("../../img/linkedin-icon.png")} alt="" />
-                  </NavLink>
-                  <NavLink title="GitHub" to="#">
-                    <img src={require("../../img/github-icon.png")} alt="" />
-                  </NavLink>
-                  <NavLink title="Xing" to="#">
-                    <img src={require("../../img/xing-icon.png")} alt="" />
-                  </NavLink>
-                  <NavLink title="Portfolio" to="#">
-                    <img src={require("../../img/briefcase-icon.png")} alt="" />
-                  </NavLink>
+                  {oneUser.linkedInLink !== "" ? (
+                    <a
+                      title="Linked In"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={`${oneUser.linkedInLink}`}
+                    >
+                      <img
+                        src={require("../../img/linkedin-icon.png")}
+                        alt=""
+                      />
+                    </a>
+                  ) : null}
+                  {oneUser.githubLink !== "" ? (
+                    <a
+                      title="GitHub"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={`${oneUser.githubLink}`}
+                    >
+                      <img src={require("../../img/github-icon.png")} alt="" />
+                    </a>
+                  ) : null}
+                  {oneUser.xingLink !== "" ? (
+                    <a
+                      title="Xing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={`${oneUser.xingLink}`}
+                    >
+                      <img src={require("../../img/xing-icon.png")} alt="" />
+                    </a>
+                  ) : null}
+                  {oneUser.portfolioLink !== "" ? (
+                    <a
+                      title="Portfolio"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={`${oneUser.portfolioLink}`}
+                    >
+                      <img
+                        src={require("../../img/briefcase-icon.png")}
+                        alt=""
+                      />
+                    </a>
+                  ) : null}
                 </div>
               </div>
             );
@@ -81,4 +137,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(UserLocationFilter);
+export default connect(mapStateToProps)(UserCards);

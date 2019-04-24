@@ -1,24 +1,22 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
-import {Table, Button} from "semantic-ui-react";
+import { connect } from "react-redux";
+import { Table, Button } from "semantic-ui-react";
 
-import {deleteUser} from "../../actions/user";
+import { deleteUser } from "../../actions/user";
 
 class ConfirmedUsersForm extends Component {
   constructor(props) {
     super(props);
-    this.deleteUserHandler.bind(this)
+    this.deleteUserHandler.bind(this);
   }
 
-
   deleteUserHandler = id => {
-    console.log("deleteUser user CALLED", id);
     this.props.deleteUser(id);
   };
 
   render() {
-    const {allUsers} = this.props.allUsers;
+    const { allUsers } = this.props.allUsers;
 
     return (
       <div>
@@ -80,7 +78,6 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-    mapStateToProps,
-    {deleteUser}
+  mapStateToProps,
+  { deleteUser }
 )(ConfirmedUsersForm);
-

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { Image } from "semantic-ui-react";
 import { logout } from "../../actions/auth";
 
 import { getUserData } from "../../actions/user";
@@ -15,6 +14,7 @@ class TopNavigation extends Component {
   render() {
     const { oneUser, logout, isAdmin } = this.props;
     let placeholderUrl = require("../../img/placeholderUser.png");
+    //console.log("oneUser image", oneUser);
 
     return (
       <div className="navigationBar">
@@ -30,15 +30,7 @@ class TopNavigation extends Component {
             </Link>
           </li>
           <li>
-            {isAdmin && (
-              <Link to="/dashboard" key="0">
-                <Image
-                  id="gravatar-img"
-                  src={require("../../img/admin.png")}
-                  alt="avatar"
-                />
-              </Link>
-            )}
+            {isAdmin && <Link to="/dashboard" key="0" />}
             {!isAdmin && [
               oneUser.userImage === "" ? (
                 <Link to="/dashboard" key="1">
@@ -78,7 +70,8 @@ TopNavigation.propTypes = {
 };
 
 function mapStateToProps(state) {
-  //console.log("user top nav", state.oneUser);
+  //console.log("state from Navigation", state);
+
   return {
     oneUser: state.oneUser,
     user: state.user,
