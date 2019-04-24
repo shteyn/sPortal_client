@@ -99,7 +99,8 @@
     .UserCardsItems {
       width: 100%;
       max-width: 1500px;
-      margin: 0 auto 20px 0;
+      margin: 0 auto 20px auto;
+      position: relative;
       display: flex;
       justify-content: left;
       flex-wrap: wrap;
@@ -195,8 +196,7 @@
   }
   .UserCardFooter {
     width: 100%;
-    height: 250px;
-    //background: #1d3b8b;
-    background: rgba(0, 0, 0, .5);
+    //height: 250px;
+    background: #1d3b8b;
   }
 }
