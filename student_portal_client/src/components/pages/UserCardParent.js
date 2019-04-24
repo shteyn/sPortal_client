@@ -24,6 +24,7 @@ class UserCardParent extends Component {
     this.setState({ query: query });
   };
 
+
   render() {
     let { isAuthenticated } = this.props;
     const { allUsers } = this.props.allUsers;
@@ -51,8 +52,11 @@ class UserCardParent extends Component {
         <div className="UserCardsListCont">
           <h1>OUR STUDENTS</h1>
           <h3>GRADUATED</h3>
-          <h4>ALL LOCATIONS</h4>
+
+          <div className="location">
           <Search allUsers={allUsers} searchChanged={this.searchChanged} />
+          </div>
+
           <UserLocationFilter query={this.state.query} />
         </div>
       </div>

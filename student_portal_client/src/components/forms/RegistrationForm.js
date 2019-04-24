@@ -64,67 +64,67 @@ class RegistrationForm extends Component {
     console.log("state from Reg Form", this.state);
 
     return (
-      <div className="RegistrationForm">
+      <div className="loginForm">
         <form onSubmit={this.onSubmit} loading={loading.toString()}>
+
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="first name"
+            value={data.firstName}
+            onChange={this.onChange}
+          />
+
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="last name"
+            value={data.lastName}
+            onChange={this.onChange}
+          />
+
           <input
             type="email"
             id="email"
             name="email"
-            placeholder="example@example.com"
+            placeholder="email"
             autoComplete="email"
             value={data.email}
             onChange={this.onChange}
           />
           {/* InlineError server side validation */}
           {errors.email && <InlineError text={errors.email} />}
-          <br />
+          
           <input
             type="password"
             id="password"
             name="password"
-            placeholder="inserts password"
+            placeholder="password"
             autoComplete="current-password"
             value={data.password}
             onChange={this.onChange}
           />
-          {errors.password && <InlineError text={errors.password} />}
-          <br />
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            placeholder="insert your first name..."
-            value={data.firstName}
-            onChange={this.onChange}
-          />
-          <br />
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            placeholder="insert your last name..."
-            value={data.lastName}
-            onChange={this.onChange}
-          />
-          <br />
-          <select name="location" onChange={this.onChange}>
+          {errors.password && <InlineError text={errors.password} />}         
+          
+          <select name="location" onChange={this.onChange} className="RegistrationSelectCont">
             <option value="">All Locations</option>
             {locations.map((item, i) => (
               <option key={item}>{item}</option>
             ))}
           </select>
-
-          <br />
+          
           <input
             type="number"
             min="0"
             id="studentClass"
             name="studentClass"
-            placeholder="insert your class number..."
+            placeholder="insert your Class Number..."
             value={data.studentClass}
             onChange={this.onChange}
           />
-          <br />
+          
           <button>Submit</button>
         </form>
       </div>

@@ -142,6 +142,7 @@ class UserDashboardPage extends Component {
               <div className="linksBoxItems">
                 <div className="linksBoxItem">
                   <a
+                  title="linked"
                     href={linkedInLink}
                     target="_blank"
                     rel="noopener noreferrer"

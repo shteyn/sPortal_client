@@ -155,16 +155,8 @@ class UpdateUserProfileForm extends Component {
                   ref={this.linkedInLinkRef}
                   type="text"
                   name="linkedInLink"
+                  // pattern="https://.*"
                   defaultValue={linkedInLink}
-                />
-              </Form.Group>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Github</Form.Label>
-                <Form.Control
-                  ref={this.githubLinkRef}
-                  type="text"
-                  name="githubLink"
-                  defaultValue={githubLink}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
@@ -173,7 +165,18 @@ class UpdateUserProfileForm extends Component {
                   ref={this.xingLinkRef}
                   type="text"
                   name="xingLink"
+                  // pattern="https://.*"
                   defaultValue={xingLink}
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Github</Form.Label>
+                <Form.Control
+                  ref={this.githubLinkRef}
+                  type="text"
+                  name="githubLink"
+                  // pattern="https://.*"
+                  defaultValue={githubLink}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
@@ -182,6 +185,7 @@ class UpdateUserProfileForm extends Component {
                   ref={this.portfolioLinkRef}
                   type="text"
                   name="portfolioLink"
+                  // pattern="https://.*"
                   defaultValue={portfolioLink}
                 />
               </Form.Group>
