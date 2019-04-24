@@ -14,7 +14,7 @@ import UserRoutes from "./components/routes/UserRoutes";
 import GuestRoutes from "./components/routes/GuestRoutes";
 
 const App = ({ location }) => (
-  <div className="container-app">
+  <div>
     <Route location={location} path="/" exact component={HomePage} />
     <Route
       location={location}

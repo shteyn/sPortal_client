@@ -23,7 +23,6 @@
       max-width: 1180px;
       //min-height: 514px;
       margin: 0 auto 0 auto;
-      background: rgba(196, 196, 196, 0.6);
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -85,4 +84,7 @@
       }
     }
   }
+}
+.HomePageFooter {
+  position: relative;
 }
