@@ -2,18 +2,13 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TopNavigation from "../navigation/TopNavigation";
-import { getUserData, updateProfile, updateImage } from "../../actions/user";
+import { updateProfile, updateImage } from "../../actions/user";
 import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
 
 class UserDashboardPage extends Component {
   constructor(props, context) {
     super(props, context);
     this.userImageRef = React.createRef();
-  }
-
-  componentDidMount() {
-    const { email } = this.props.user;
-    this.props.getUserData(email);
   }
 
   updateProfile = data => this.props.updateProfile(data);
@@ -291,21 +286,18 @@ class UserDashboardPage extends Component {
 }
 
 UserDashboardPage.propTypes = {
-  getUserData: PropTypes.func.isRequired,
   updateProfile: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
   oneUser: PropTypes.object.isRequired,
   updateImage: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    user: state.user,
     oneUser: state.oneUser
   };
 }
 
 export default connect(
   mapStateToProps,
-  { getUserData, updateProfile, updateImage }
+  { updateProfile, updateImage }
 )(UserDashboardPage);

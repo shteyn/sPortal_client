@@ -41,6 +41,28 @@ class UpdateUserProfileForm extends Component {
     availability: this.props.user.availability
   };
 
+  static getDerivedStateFromProps(nextProps, prevState){
+    if (nextProps.user._id !== prevState.id){
+      return {
+        startDate: nextProps.user.availability
+        ? new Date(nextProps.user.availability)
+        : null,
+        id: nextProps.user._id,
+        firstName: nextProps.user.firstName,
+        lastName: nextProps.user.lastName,
+        location: nextProps.user.location,
+        studentClass: nextProps.user.studentClass,
+        userImage: nextProps.user.userImage,
+        githubLink: nextProps.user.githubLink,
+        linkedInLink: nextProps.user.linkedInLink,
+        portfolioLink: nextProps.user.portfolioLink,
+        xingLink: nextProps.user.xingLink,
+        availability: nextProps.user.availability
+      };
+    }
+    else return null;
+  }
+
   types = ["Berlin", "Düsseldorf", "Köln", "Hamburg"];
 
   onChange = event => {
@@ -83,6 +105,7 @@ class UpdateUserProfileForm extends Component {
       xingLink: this.xingLinkRef.current.value
     };
     this.props.updateProfile(updatedUser);
+    this.handleClose();
   };
 
   render() {
@@ -217,7 +240,6 @@ class UpdateUserProfileForm extends Component {
               <Button
                 variant="primary"
                 type="submit"
-                onClick={this.handleClose}
               >
                 Save Changes
               </Button>

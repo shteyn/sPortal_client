@@ -4,11 +4,9 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../../actions/auth";
 
-import { getUserData } from "../../actions/user";
 class TopNavigation extends Component {
   componentDidMount() {
     const { email } = this.props.user;
-    this.props.getUserData(email);
   }
 
   render() {
@@ -81,5 +79,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { logout, getUserData }
+  { logout }
 )(TopNavigation);
