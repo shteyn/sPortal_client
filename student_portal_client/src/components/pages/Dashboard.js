@@ -5,8 +5,15 @@ import { connect } from "react-redux";
 import ConfirmEmailMessage from "../messages/ConfirmEmailMessage";
 import UserDashboardPage from "./UserDashboardPage";
 import AdminDashboardPage from "./AdminDashboardPage";
+import { getUserData } from "../../actions/user";
 
 class Dashboard extends Component {
+  componentDidMount() {
+    console.log('this.props.user', this.props.user);
+    const { email } = this.props.user;
+    this.props.getUserData(email);
+  }
+
   render() {
     const { isConfirmed, isAdmin } = this.props;
     return (
@@ -21,14 +28,16 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   isConfirmed: PropTypes.bool.isRequired,
-  isAdmin: PropTypes.bool.isRequired
+  isAdmin: PropTypes.bool.isRequired,
+  getUserData: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
   return {
+    user: state.user,
     isConfirmed: !!state.user.confirmed,
     isAdmin: !!state.user.isAdmin
   };
 }
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps, {getUserData})(Dashboard);
