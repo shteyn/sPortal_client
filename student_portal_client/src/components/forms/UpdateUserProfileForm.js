@@ -83,6 +83,7 @@ class UpdateUserProfileForm extends Component {
       xingLink: this.xingLinkRef.current.value
     };
     this.props.updateProfile(updatedUser);
+    this.handleClose();
   };
 
   render() {
@@ -214,11 +215,7 @@ class UpdateUserProfileForm extends Component {
               <Button variant="secondary" onClick={this.handleClose}>
                 Close
               </Button>
-              <Button
-                variant="primary"
-                type="submit"
-                onClick={this.handleClose}
-              >
+              <Button variant="primary" type="submit">
                 Save Changes
               </Button>
             </Form>

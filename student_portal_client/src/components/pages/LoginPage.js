@@ -7,13 +7,9 @@ import { Tabs, Tab } from "react-bootstrap";
 import LoginForm from "../forms/LoginForm";
 import RegistrationForm from "../forms/RegistrationForm";
 import { login } from "../../actions/auth";
-import { registration, getAllUsers } from "../../actions/user";
+import { registration } from "../../actions/user";
 
 class LoginPage extends Component {
-  componentDidMount() {
-    this.props.getAllUsers();
-  }
-
   submit = data =>
     this.props.login(data).then(() => this.props.history.push("/dashboard"));
 
@@ -60,5 +56,5 @@ LoginPage.propTypes = {
 
 export default connect(
   null,
-  { login, registration, getAllUsers }
+  { login, registration }
 )(LoginPage);
