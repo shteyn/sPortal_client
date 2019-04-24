@@ -1,27 +1,63 @@
 .FooterCont {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   .FooterContentBox {
     max-width: 1010px;
     width: 100%;
-    margin: auto;
-    //margin: 150px auto 0 auto;
+    //margin: auto;
+    margin: 45px auto 45px auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     text-align: left;
+
     ul {
       list-style: none;
       display: flex;
       flex-direction: column;
+
       h3 {
         margin-bottom: 10px;
         color: #da9446;
       }
+
       a {
         text-decoration: none;
         color: #da9446;
+
         &:hover {
           color: white;
         }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .FooterContentBox {
+      max-width: 500px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      .FooterContentItem {
+        position: relative;
+        left: -100px;
+      }
+    }
+  }
+  @media only screen and (max-width: 401px) {
+    .FooterContentBox {
+      max-width: 200px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      .FooterContentItem {
+        position: relative;
+        left: 0;
       }
     }
   }
