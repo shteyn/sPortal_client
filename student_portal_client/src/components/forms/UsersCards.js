@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+
 class UserCards extends Component {
   render() {
     const { allUsers } = this.props.allUsers;
@@ -25,7 +26,7 @@ class UserCards extends Component {
           if (oneUser.confirmed) {
             return (
               <div className="CardItem" key={oneUser._id}>
-                {oneUser.userImage.length === 0 ? (
+                {oneUser.userImage === "" ? (
                   <div
                     className="profileImg"
                     style={{
