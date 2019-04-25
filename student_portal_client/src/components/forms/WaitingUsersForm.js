@@ -8,7 +8,7 @@ import { approveUser, deleteUser } from "../../actions/user";
 class WaitingUsersForm extends Component {
   constructor(props) {
     super(props);
-    this.deleteUserHandler.bind(this)
+    this.deleteUserHandler.bind(this);
   }
   approveUser = id => {
     this.props.approveUser(id).then(this.setState({}));
@@ -21,25 +21,22 @@ class WaitingUsersForm extends Component {
     const { allUsers } = this.props.allUsers;
     return (
       <div>
-        <h2 className="top"><b>Students Requests</b></h2>
-      <Table celled>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>Location</Table.HeaderCell>
-            <Table.HeaderCell>Class</Table.HeaderCell>
-            <Table.HeaderCell>First Name</Table.HeaderCell>
-            <Table.HeaderCell>Last Name</Table.HeaderCell>
-            <Table.HeaderCell>E-Mail</Table.HeaderCell>
-            <Table.HeaderCell>User Status</Table.HeaderCell>
-            <Table.HeaderCell />
-          </Table.Row>
-        </Table.Header>
+        <Table celled>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Location</Table.HeaderCell>
+              <Table.HeaderCell>Class</Table.HeaderCell>
+              <Table.HeaderCell>First Name</Table.HeaderCell>
+              <Table.HeaderCell>Last Name</Table.HeaderCell>
+              <Table.HeaderCell>E-Mail</Table.HeaderCell>
+              <Table.HeaderCell>User Status</Table.HeaderCell>
+              <Table.HeaderCell>Approve Student</Table.HeaderCell>
+              <Table.HeaderCell>Reject Student</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
 
-        <Table.Body>
-          {allUsers.map(
-            (
-               oneUser
-            ) => {
+          <Table.Body>
+            {allUsers.map(oneUser => {
               if (!oneUser.confirmed) {
                 return (
                   <Table.Row key={oneUser._id}>
@@ -49,21 +46,35 @@ class WaitingUsersForm extends Component {
                     <Table.Cell>{oneUser.lastName}</Table.Cell>
                     <Table.Cell>{oneUser.email}</Table.Cell>
                     <Table.Cell>
-                      {oneUser.confirmationEmailSend ? "Approved" : "Not Approved"}
+                      {oneUser.confirmationEmailSend
+                        ? "Approved"
+                        : "Not Approved"}
+                    </Table.Cell>
+
+                    <Table.Cell>
+                      <Button
+                        onClick={this.approveUser.bind(this, oneUser._id)}
+                        style={{
+                          color: oneUser.confirmationEmailSend
+                            ? "green"
+                            : "#da9446"
+                        }}
+                      >
+                        {oneUser.confirmationEmailSend
+                          ? "Resend Email"
+                          : "Approve"}
+                      </Button>
                     </Table.Cell>
                     <Table.Cell>
                       <Button
-                        secondary
-                        onClick={this.approveUser.bind(this, oneUser._id)}
                         style={{
-                          color: oneUser.confirmationEmailSend ? "green" : "white"
+                          "background-color": "#da9446",
+                          color: "white"
                         }}
-                      >
-                        {oneUser.confirmationEmailSend ? "Resend Email" : "Approve"}
-                      </Button>
-                      <Button
-                        color="red"
-                        onClick={(deleteUser) => {if(window.confirm("Are you sure?")) this.deleteUserHandler(oneUser._id, deleteUser)}}
+                        onClick={deleteUser => {
+                          if (window.confirm("Are you sure?"))
+                            this.deleteUserHandler(oneUser._id, deleteUser);
+                        }}
                       >
                         Reject
                       </Button>
@@ -73,10 +84,9 @@ class WaitingUsersForm extends Component {
               } else {
                 return null;
               }
-            }
-          )}
-        </Table.Body>
-      </Table>
+            })}
+          </Table.Body>
+        </Table>
       </div>
     );
   }

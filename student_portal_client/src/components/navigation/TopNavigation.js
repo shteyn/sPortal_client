@@ -3,32 +3,42 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../../actions/auth";
+import { getUserData } from "../../actions/user";
 
 class TopNavigation extends Component {
   componentDidMount() {
     const { email } = this.props.user;
+    this.props.getUserData(email);
   }
-
   render() {
     const { oneUser, logout, isAdmin } = this.props;
     let placeholderUrl = require("../../img/placeholderUser.png");
-    //console.log("oneUser image", oneUser);
+    let adminImg = require("../../img/admin2.png");
 
     return (
       <div className="navigationBar">
-        <Link to="/">
+        <Link to="/user-card">
           <div className="label">
             <span>DCI</span>
           </div>
         </Link>
         <ul>
           <li>
-            <Link to="" onClick={() => logout()}>
+            <Link to="/user-card" onClick={() => logout()}>
               Logout
             </Link>
           </li>
           <li>
-            {isAdmin && <Link to="/dashboard" key="0" />}
+            {isAdmin && (
+              <Link to="/dashboard" key="1">
+                <div
+                  id="gravatar-img"
+                  style={{
+                    backgroundImage: "url(" + adminImg + ")"
+                  }}
+                />
+              </Link>
+            )}
             {!isAdmin && [
               oneUser.userImage === "" ? (
                 <Link to="/dashboard" key="1">
@@ -61,23 +71,19 @@ class TopNavigation extends Component {
 }
 
 TopNavigation.propTypes = {
-  user: PropTypes.shape({
-    email: PropTypes.string.isRequired
-  }).isRequired,
-  logout: PropTypes.func.isRequired
+  logout: PropTypes.func.isRequired,
+  getUserData: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
-  //console.log("state from Navigation", state);
-
   return {
-    oneUser: state.oneUser,
     user: state.user,
+    oneUser: state.oneUser,
     isAdmin: !!state.user.isAdmin
   };
 }
 
 export default connect(
   mapStateToProps,
-  { logout }
+  { logout, getUserData }
 )(TopNavigation);

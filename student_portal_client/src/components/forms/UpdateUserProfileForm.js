@@ -21,6 +21,7 @@ class UpdateUserProfileForm extends Component {
     this.xingLinkRef = React.createRef();
     this.portfolioLinkRef = React.createRef();
     this.availabilityRef = React.createRef();
+    this.mainFocusRef = React.createRef();
   }
 
   state = {
@@ -38,15 +39,16 @@ class UpdateUserProfileForm extends Component {
     linkedInLink: this.props.user.linkedInLink,
     portfolioLink: this.props.user.portfolioLink,
     xingLink: this.props.user.xingLink,
-    availability: this.props.user.availability
+    availability: this.props.user.availability,
+    mainFocus: this.props.user.mainFocus
   };
 
-  static getDerivedStateFromProps(nextProps, prevState){
-    if (nextProps.user._id !== prevState.id){
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.user._id !== prevState.id) {
       return {
         startDate: nextProps.user.availability
-        ? new Date(nextProps.user.availability)
-        : null,
+          ? new Date(nextProps.user.availability)
+          : null,
         id: nextProps.user._id,
         firstName: nextProps.user.firstName,
         lastName: nextProps.user.lastName,
@@ -57,13 +59,14 @@ class UpdateUserProfileForm extends Component {
         linkedInLink: nextProps.user.linkedInLink,
         portfolioLink: nextProps.user.portfolioLink,
         xingLink: nextProps.user.xingLink,
-        availability: nextProps.user.availability
+        availability: nextProps.user.availability,
+        mainFocus: nextProps.user.mainFocus
       };
-    }
-    else return null;
+    } else return null;
   }
 
   types = ["Berlin", "Düsseldorf", "Köln", "Hamburg"];
+  focus = ["No info", "Front-End", "Back-End", "Full-Stack"];
 
   onChange = event => {
     this.setState({
@@ -102,7 +105,8 @@ class UpdateUserProfileForm extends Component {
       location: this.state.location,
       portfolioLink: this.portfolioLinkRef.current.value,
       studentClass: this.studentClassRef.current.value,
-      xingLink: this.xingLinkRef.current.value
+      xingLink: this.xingLinkRef.current.value,
+      mainFocus: this.state.mainFocus
     };
     this.props.updateProfile(updatedUser);
     this.handleClose();
@@ -148,6 +152,21 @@ class UpdateUserProfileForm extends Component {
                   defaultValue={this.state.studentClass}
                 />
               </Form.Group>
+
+              {/*Main Focus*/}
+              <select name="mainFocus" onChange={this.onChange}>
+                {this.state.mainFocus === "" ? (
+                  <option>Not updated</option>
+                ) : (
+                  <option defaultValue>{this.state.mainFocus}</option>
+                )}
+                {this.focus.map((item, i) => {
+                  if (item !== this.state.mainFocus) {
+                    return <option key={i}>{item}</option>;
+                  }
+                })}
+              </select>
+              {/*Location*/}
               <select name="location" onChange={this.onChange}>
                 <option defaultValue>{this.state.location}</option>
                 {this.types.map((item, i) => {
@@ -237,10 +256,7 @@ class UpdateUserProfileForm extends Component {
               <Button variant="secondary" onClick={this.handleClose}>
                 Close
               </Button>
-              <Button
-                variant="primary"
-                type="submit"
-              >
+              <Button variant="primary" type="submit">
                 Save Changes
               </Button>
             </Form>
