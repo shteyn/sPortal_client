@@ -102,6 +102,7 @@ class RegistrationForm extends Component {
             value={data.email}
             onChange={this.onChange}
           />
+          <br />
           {/* InlineError server side validation */}
           {errors.email && <InlineError text={errors.email} />}
 
@@ -123,7 +124,9 @@ class RegistrationForm extends Component {
             name="location"
             onChange={this.onChange}
             className="DropDownSelect"
+            required
           >
+            <option value="">Choose location</option>
             {this.types.map((item, i) => (
               <option key={i}>{item}</option>
             ))}

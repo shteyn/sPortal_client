@@ -1,18 +1,23 @@
-import React from "react";
-import TopNavigation from '../navigation/TopNavigation'
+import React, { Component } from "react";
+import TopNavigation from "../navigation/TopNavigation";
 
-const ConfirmEmailMessage = () => {
-  return (
-    <div className="ConfirmEmailMessageCont">
-        <TopNavigation/>
+class ConfirmEmailMessage extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div className="ConfirmEmailMessageCont">
+        <TopNavigation />
         <div className="ConfirmEmailMessage">
-            <h1>
-                Your profile is still locked. Please check your email to verify your
-                email address
-            </h1>
+          <h1>
+            Hi {this.props.user.firstName}.<p>Your profile is still locked.</p>
+            <p>Please check your email to verify your email address</p>
+          </h1>
         </div>
-    </div>
-  )
-};
+      </div>
+    );
+  }
+}
 
 export default ConfirmEmailMessage;

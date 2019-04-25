@@ -18,7 +18,10 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  background: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(246, 245, 243, 1);
   a {
     align-self: center;
     &:focus {
@@ -56,9 +59,7 @@
       color: #ffffff;
     }
   }
-  //#gravatar-img {
-  //  border-radius: 50%;
-  //}
+
   ul {
     align-self: center;
     display: flex;
@@ -74,8 +75,8 @@
         font-style: normal;
         font-weight: normal;
         line-height: normal;
-        font-size: 24px;
-        color: #ffffff;
+        font-size: 28px;
+        color: #ec7f37;
       }
     }
   }

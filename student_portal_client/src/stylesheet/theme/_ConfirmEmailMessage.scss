@@ -1,11 +1,13 @@
 .ConfirmEmailMessageCont {
   width: 100%;
+  margin-top: 200px;
   height: 100vh;
   position: absolute;
   z-index: 99;
-  background: darkgrey;
+  //background: darkgrey;
   overflow: hidden;
   .ConfirmEmailMessage {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     max-width: 800px;
     position: relative;
     margin: 100px auto;
@@ -21,8 +23,12 @@
       margin: 0;
       padding: 0;
       position: relative;
-      color: #da9446;
+      color: #ec7f37;
+    }
+    p {
+      margin: 20px;
+      font-size: 24px;
+      color: #393939;
     }
   }
-
 }

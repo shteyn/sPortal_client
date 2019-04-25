@@ -14,10 +14,12 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { isConfirmed, isAdmin } = this.props;
+    const { isConfirmed, isAdmin, user } = this.props;
+    console.log("user from dashboard", user);
+
     return (
       <div>
-        {!isConfirmed && <ConfirmEmailMessage />}
+        {!isConfirmed && <ConfirmEmailMessage user={user} />}
         {!isAdmin && isConfirmed ? <UserDashboardPage /> : null}
         {isAdmin ? <AdminDashboardPage /> : null}
       </div>

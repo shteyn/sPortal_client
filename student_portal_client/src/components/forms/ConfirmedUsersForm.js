@@ -45,7 +45,7 @@ class ConfirmedUsersForm extends Component {
                     <Table.Cell className="adminTableBtn">
                       <Button
                         style={{
-                          backgroundColor: "#da9446",
+                          backgroundColor: "#ec7f37",
                           color: "white"
                         }}
                         onClick={deleteUser => {
