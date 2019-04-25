@@ -7,12 +7,12 @@
   position: relative;
 
   .ValidatingAndVerifiedCont {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     max-width: 800px;
     position: relative;
-    margin: 100px auto;
+    margin: 300px auto;
     padding: 40px;
     border-radius: 13px;
-    background: lightgray;
     display: flex;
     justify-items: center;
     justify-content: center;
@@ -29,7 +29,12 @@
   }
   .verifiedCont {
     color: #da9446;
+    font-size: 36px;
     margin: 50px auto;
+    p {
+      margin: 20px 0;
+      font-size: 22px;
+    }
   }
   .ConfirmationNavigationBar {
     background-color: #1d3b8b;

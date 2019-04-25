@@ -1,63 +1,3 @@
-// .AdminDashboardPage {
-//   width: 100%;
-//   height: 100vh;
-//   background-color: rgb(255, 255, 255);
-
-//   .navigationBar {
-//     background-color: #1d3b8b;
-//   }
-
-//   .top {
-//     position: relative;
-//     font-family: Ropa Sans, sans-serif;
-//     font-size: 35px;
-//     color: rgb(241, 155, 85);
-//     text-align: center;
-//     padding-top: 30px;
-//   }
-//   .celled.table tr th {
-//     font-size: 17px;
-//     color: rgb(0, 4, 255);
-//     background-color: rgb(255, 255, 255);
-//     border-bottom: 1px solid rgb(0, 38, 255);
-//   }
-//   .ui.celled {
-//     margin: 20px 15% auto;
-//     color: rgb(0, 0, 0);
-//     width: 70%;
-//     position: absolute;
-//     overflow: auto;
-//     block-size: 43px;
-//     background-color: rgba(182, 193, 243, 0.24);
-//     border: 1px solid #f19b55;
-//   }
-//   .ui.celled.table {
-//     font-size: 15px;
-//     font-style: normal;
-//     font-weight: normal;
-//     line-height: normal;
-//   }
-//   nav .nav-tabs {
-//     border-bottom: none;
-//   }
-//   .td {
-//     justify-content: center;
-//     font-size: 15px;
-//     font-family: Ropa Sans, sans-serif;
-//     width: 50px;
-//     height: 50px;
-//   }
-
-//   .ui.secondary.button {
-//     font-size: 13px;
-//     width: 90px;
-//   }
-//   .ui.red.button {
-//     font-size: 13px;
-//     width: 90px;
-//   }
-// }
-
 .nav {
   margin-top: 20px;
 
@@ -70,23 +10,26 @@
   background: rgb(255, 255, 255);
   border: none;
   .navigationBar {
-    background-color: #1d3b8b;
+    background-color: white;
   }
 
   .celled.table tr th {
     font-size: 18px;
-    color: #1d3b8b;
-    //background-color: #da9446;
+    color: #393939;
+    height: 80px;
   }
   .center-block {
     text-align: center;
   }
 
   .nav-tabs .nav-link.active,
-  .nav-tabs .nav-item.show .nav-link {
+  .nav-tabs .nav-item.show {
     color: #fff;
-    background-color: #1d3b8b;
-    border-color: #dee2e6 #dee2e6 #fff;
+    background-color: #ec7f37;
+    border: none;
+  }
+  .nav-link {
+    color: #969696;
   }
 
   .ui.celled {
@@ -112,7 +55,9 @@
     margin: auto;
   }
   .ui.table td {
+    padding: 20px 0;
     text-align: center;
+    color: #393939;
   }
 
   .ui.table thead th {

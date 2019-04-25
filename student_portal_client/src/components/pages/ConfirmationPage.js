@@ -35,7 +35,10 @@ class ConfirmationPage extends Component {
             {!loading && success && (
               <div className="verifiedCont">
                 Your account is verified
-                <Link to="/dashboard"> Go to your dashboard</Link>
+                <br />
+                <p>
+                  <Link to="/dashboard"> Go to your dashboard</Link>
+                </p>
               </div>
             )}
 

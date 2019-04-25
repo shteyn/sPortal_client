@@ -57,7 +57,7 @@ class WaitingUsersForm extends Component {
                         style={{
                           color: oneUser.confirmationEmailSend
                             ? "green"
-                            : "#da9446"
+                            : "#ec7f37"
                         }}
                       >
                         {oneUser.confirmationEmailSend
@@ -68,7 +68,7 @@ class WaitingUsersForm extends Component {
                     <Table.Cell>
                       <Button
                         style={{
-                          backgroundColor: "#da9446",
+                          backgroundColor: "#ec7f37",
                           color: "white"
                         }}
                         onClick={deleteUser => {

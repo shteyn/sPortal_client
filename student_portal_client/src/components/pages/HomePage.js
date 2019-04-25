@@ -17,7 +17,7 @@ class HomePage extends Component {
                 <div className="backgroundCircle" />
                 <h1>Digital Career Institute</h1>
                 <hr />
-                <h3>Click to See Our Students</h3>
+                <h3>Alumni Book</h3>
               </Link>
             </button>
           </div>
