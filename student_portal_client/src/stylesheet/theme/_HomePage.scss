@@ -1,90 +1,131 @@
+/*.container-app {
+  height: 100vh;
+  background: url("../img/header.jpg") no-repeat;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.textCont {
+  background-color: rgb(0, 0, 0); 
+  background-color: rgba(0, 0, 0, 0.4); 
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  height: 20%;
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+*/
+
 .container-app {
   width: 100%;
   // @media (max-width: 100%){
   //   width: 400px;
   // }
-  
+
   height: 100vh;
-  @media (max-height: 100vh){
-  height: 100vh;
+  @media (max-height: 100vh) {
+    height: 100vh;
   }
-  
+
   //background-color: grey;
   background: url("../img/header.jpg") no-repeat;
   background-size: cover;
-  .centerWelcomeCont {
-    width: 100%;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.centerWelcomeCont {
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  .textCont {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #da9446;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+
+    padding: 20px;
     text-align: center;
-    z-index: 1;
-    .textCont {
-      position: relative;
-      top: 100px;
-      width: 100%;
-      max-width: 1180px;
-      //min-height: 514px;
-      margin: 0 auto 0 auto;
+    vertical-align: middle;
+
+    h1 {
+      margin-top: 10%;
       text-align: center;
+      font-family: Ropa Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 144px;
+      line-height: normal;
+      color: #ffffff;
+    }
+  }
+  button {
+    position: relative;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    margin: 100px;
+    &:focus {
+      outline: none;
+    }
+    a {
+      text-decoration: none;
+      background: rgba(0, 0, 0, 0);
+      color: #ffffff;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      justify-items: center;
-      h1 {
+      align-items: center;
+      h3 {
         margin: 0;
-        text-align: center;
+      }
+      .letterLeft {
         font-family: Ropa Sans, sans-serif;
         font-style: normal;
         font-weight: normal;
-        font-size: 144px;
+        font-size: 72px;
         line-height: normal;
         color: #ffffff;
       }
-    }
-    button {
-      position: relative;
-      background: rgba(0, 0, 0, 0);
-      border: none;
-      margin: 100px;
-      &:focus {
-        outline: none;
-      }
-      a {
-        text-decoration: none;
-        background: rgba(0, 0, 0, 0);
+      .letterV {
+        font-family: Ropa Sans, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 48px;
+        line-height: normal;
         color: #ffffff;
-        display: flex;
-        align-items: center;
-        h3 {
-          margin: 0;
-        }
-        .letterLeft {
-          font-family: Ropa Sans, sans-serif;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 72px;
-          line-height: normal;
-          color: #ffffff;
-        }
-        .letterV {
-          font-family: Ropa Sans, sans-serif;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 48px;
-          line-height: normal;
-          color: #ffffff;
-        }
-        .letterRight {
-          font-family: Ropa Sans, sans-serif;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 72px;
-          line-height: normal;
-          color: #ffffff;
-          transform: scale(-1, 1);
-        }
+      }
+      .letterRight {
+        font-family: Ropa Sans, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 72px;
+        line-height: normal;
+        color: #ffffff;
+        transform: scale(-1, 1);
       }
     }
   }
 }
 .HomePageFooter {
   position: relative;
+  background: #1a1c1d;
 }

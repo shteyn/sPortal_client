@@ -56,7 +56,7 @@ router.post("/users/update-img/:id", upload.single("userImage"), (req, res) => {
       {
         new: true,
         select:
-          "_id location availability createdAt email firstName lastName studentClass linkedInLink xingLink githubLink portfolioLink userImage confirmationEmailSend confirmed isAdmin"
+          "_id location availability createdAt email firstName lastName studentClass linkedInLink xingLink githubLink portfolioLink userImage confirmationEmailSend confirmed isAdmin mainFocus"
       }
     ).then(updatedImg => {
       unlinkAsync(`./public/uploads/${oldImage}`);

@@ -20,7 +20,6 @@ class ConfirmedUsersForm extends Component {
 
     return (
       <div>
-          <h2 className="top"><b>Approved Students</b></h2>
         <Table celled>
           <Table.Header>
             <Table.Row>
@@ -29,7 +28,7 @@ class ConfirmedUsersForm extends Component {
               <Table.HeaderCell>First Name</Table.HeaderCell>
               <Table.HeaderCell>Last Name</Table.HeaderCell>
               <Table.HeaderCell>E-Mail</Table.HeaderCell>
-              <Table.HeaderCell/>
+              <Table.HeaderCell>Delete Student</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
 
@@ -37,23 +36,27 @@ class ConfirmedUsersForm extends Component {
             {allUsers.map(oneUser => {
               if (oneUser.confirmed) {
                 return (
-                    <Table.Row key={oneUser._id}>
-                      <Table.Cell>{oneUser.location}</Table.Cell>
-                      <Table.Cell>{oneUser.studentClass}</Table.Cell>
-                      <Table.Cell>{oneUser.firstName}</Table.Cell>
-                      <Table.Cell>{oneUser.lastName}</Table.Cell>
-                      <Table.Cell>{oneUser.email}</Table.Cell>
-                      <Table.Cell>
-                        <Button
-                            color="red"
-                            onClick={(deleteUser) => {
-                              if (window.confirm("Are you sure?")) this.deleteUserHandler(oneUser._id, deleteUser)
-                            }}
-                        >
-                          Delete User
-                        </Button>
-                      </Table.Cell>
-                    </Table.Row>
+                  <Table.Row key={oneUser._id}>
+                    <Table.Cell>{oneUser.location}</Table.Cell>
+                    <Table.Cell>{oneUser.studentClass}</Table.Cell>
+                    <Table.Cell>{oneUser.firstName}</Table.Cell>
+                    <Table.Cell>{oneUser.lastName}</Table.Cell>
+                    <Table.Cell>{oneUser.email}</Table.Cell>
+                    <Table.Cell className="adminTableBtn">
+                      <Button
+                        style={{
+                          "background-color": "#da9446",
+                          color: "white"
+                        }}
+                        onClick={deleteUser => {
+                          if (window.confirm("Are you sure?"))
+                            this.deleteUserHandler(oneUser._id, deleteUser);
+                        }}
+                      >
+                        Delete Student
+                      </Button>
+                    </Table.Cell>
+                  </Table.Row>
                 );
               } else {
                 return null;
@@ -61,7 +64,7 @@ class ConfirmedUsersForm extends Component {
             })}
           </Table.Body>
         </Table>
-        </div>
+      </div>
     );
   }
 }

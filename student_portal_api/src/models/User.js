@@ -36,6 +36,10 @@ const UserSchema = new mongoose.Schema(
       default: "",
       required: true
     },
+    mainFocus: {
+      type: String,
+      default: ""
+    },
     availability: {
       type: Date,
       default: ""

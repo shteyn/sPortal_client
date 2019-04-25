@@ -33,7 +33,8 @@ class UserDashboardPage extends Component {
       linkedInLink,
       portfolioLink,
       xingLink,
-      availability
+      availability,
+      mainFocus
     } = this.props.oneUser;
 
     let placeholderUrl = require("../../img/empty-profile.png");
@@ -158,6 +159,14 @@ class UserDashboardPage extends Component {
                   <div className="profileInfoItem">
                     <h2>Class</h2>
                     <p>{studentClass}</p>
+                  </div>
+                  <div className="profileInfoItem">
+                    <h2>Main Focus</h2>
+                    {mainFocus === "" ? (
+                      <p style={{ color: "#da9446" }}>Not updated yet</p>
+                    ) : (
+                      <p>{mainFocus}</p>
+                    )}
                   </div>
                   <div className="profileInfoItem">
                     <h2>Available from</h2>
@@ -292,6 +301,8 @@ UserDashboardPage.propTypes = {
 };
 
 function mapStateToProps(state) {
+  console.log("state from dashboard", state.oneUser);
+
   return {
     oneUser: state.oneUser
   };

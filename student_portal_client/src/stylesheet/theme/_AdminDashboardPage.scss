@@ -58,69 +58,72 @@
 //   }
 // }
 
+.nav {
+  margin-top: 20px;
+
+  a {
+    font-size: 18px;
+  }
+}
+
 .admindashboard-cont {
   background: rgb(255, 255, 255);
+  border: none;
+  .navigationBar {
+    background-color: #1d3b8b;
+  }
 
-.navigationBar {
-  background-color: #1d3b8b;
-}
+  .celled.table tr th {
+    font-size: 18px;
+    color: #1d3b8b;
+    //background-color: #da9446;
+  }
+  .center-block {
+    text-align: center;
+  }
 
-.top {
-  font-family: Ropa Sans,sans-serif;
-  font-size: 35px;
-  color: #da9446;
-  text-align: center;
-  margin: 30px 0 0 0;
-}
+  .nav-tabs .nav-link.active,
+  .nav-tabs .nav-item.show .nav-link {
+    color: #fff;
+    background-color: #1d3b8b;
+    border-color: #dee2e6 #dee2e6 #fff;
+  }
 
-.celled.table tr th {
-  font-size: 17px;
-  color: #1d3b8b;
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid #1d3b8b;
-}
-.center-block {
-  text-align: center;
-}
+  .ui.celled {
+    width: 70%;
+    margin: 50px 15% auto;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    position: absolute;
+    overflow: auto;
+    block-size: 43px;
+  }
+  .ui.celled.table {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    margin-top: 50px;
+  }
+  .ui.table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    margin: auto;
+  }
+  .ui.table td {
+    text-align: center;
+  }
 
-.ui.celled {
-  width: 70%;
-  margin: 50px 15% auto;
-  color: rgb(0, 0, 0);
-  background: rgb(255, 255, 255);
-  position: absolute;
-  overflow: auto;
-  block-size: 43px;
-  background-color: #da95463a;
-  border: 1px solid #1d3b8b;
-}
-
-.ui.celled.table {
-  font-size: 15px;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
-}
-
-nav .nav-tabs {
-  border-bottom: none;
-}
-
-.td {
-  justify-content: center;
-  font-size: 15px;
-  font-family: Ropa Sans,sans-serif;
-  width: 50px;
-  height: 50px;
-}
-
-
-.ui.secondary.button {
-  font-size: 13px;
-  width: 90px;
-}
-.ui.red.button {
-  font-size: 13px;
-  width: 90px;
-}
+  .ui.table thead th {
+    text-align: center;
+  }
+  .ui.secondary.button {
+    font-size: 13px;
+    width: 90px;
+  }
+  .ui.red.button {
+    font-size: 13px;
+    width: 90px;
+  }
 }

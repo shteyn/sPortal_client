@@ -65,12 +65,12 @@ class RegistrationForm extends Component {
     return (
       <div className="loginForm">
         <form onSubmit={this.onSubmit} loading={loading.toString()}>
-
+          <br />
           <input
             type="text"
             id="firstName"
             name="firstName"
-            placeholder="first name"
+            placeholder="First name..."
             value={data.firstName}
             onChange={this.onChange}
           />
@@ -79,70 +79,58 @@ class RegistrationForm extends Component {
             type="text"
             id="lastName"
             name="lastName"
-            placeholder="last name"
+            placeholder="Last name..."
             value={data.lastName}
             onChange={this.onChange}
           />
-
           <input
+            type="number"
+            min="0"
+            id="studentClass"
+            name="studentClass"
+            placeholder="Class Number..."
+            value={data.studentClass}
+            onChange={this.onChange}
+          />
+          <input
+            autoComplete="off"
             type="email"
             id="email"
             name="email"
-            placeholder="email"
+            placeholder="Email..."
             autoComplete="email"
             value={data.email}
             onChange={this.onChange}
           />
           {/* InlineError server side validation */}
           {errors.email && <InlineError text={errors.email} />}
-          
+
           <input
+            autoComplete="off"
             type="password"
             id="password"
             name="password"
-            placeholder="password"
+            placeholder="Password..."
             autoComplete="current-password"
             value={data.password}
             onChange={this.onChange}
           />
 
           {errors.password && <InlineError text={errors.password} />}
+
           <br />
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            placeholder="insert your first name..."
-            value={data.firstName}
+          <select
+            name="location"
             onChange={this.onChange}
-          />
-          <br />
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            placeholder="insert your last name..."
-            value={data.lastName}
-            onChange={this.onChange}
-          />
-          <br />
-          <select name="location" onChange={this.onChange} className="RegistrationSelectCont">
+            className="DropDownSelect"
+          >
             {this.types.map((item, i) => (
               <option key={i}>{item}</option>
             ))}
           </select>
-          
+
           <br />
-          <input
-            type="number"
-            min="0"
-            id="studentClass"
-            name="studentClass"
-            placeholder="insert your Class Number..."
-            value={data.studentClass}
-            onChange={this.onChange}
-          />
-          
+
           <button>Submit</button>
         </form>
       </div>
