@@ -68,7 +68,7 @@ class WaitingUsersForm extends Component {
                     <Table.Cell>
                       <Button
                         style={{
-                          "background-color": "#da9446",
+                          backgroundColor: "#da9446",
                           color: "white"
                         }}
                         onClick={deleteUser => {
