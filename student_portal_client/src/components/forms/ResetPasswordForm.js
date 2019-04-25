@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
 import InlineError from "../messages/InlineError";
-
 class ResetPasswordForm extends Component {
   state = {
     data: {
@@ -13,7 +11,6 @@ class ResetPasswordForm extends Component {
     loading: false,
     errors: {}
   };
-
   onChange = event =>
     this.setState({
       data: {
@@ -21,7 +18,6 @@ class ResetPasswordForm extends Component {
         [event.target.name]: event.target.value
       }
     });
-
   onSubmit = event => {
     event.preventDefault();
     const errors = this.validate(this.state.data);
@@ -36,7 +32,6 @@ class ResetPasswordForm extends Component {
       );
     }
   };
-
   validate = data => {
     const errors = {};
     if (!data.password) errors.password = "Can't be blank";
@@ -44,42 +39,44 @@ class ResetPasswordForm extends Component {
       errors.password = "Passwords must match";
     return errors;
   };
-
   render() {
     const { data, errors, loading } = this.state;
     return (
-      <div>
+      <div className="ResetModel">
         {errors.global && <p id="globalError">{errors.global}</p>}
-        <form onSubmit={this.onSubmit} loading={loading.toString()}>
-          <div error={!!errors.password}>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="your new password..."
-              value={data.password}
-              onChange={this.onChange}
-            />
-            {errors.password && <InlineError text={errors.password} />}
-          </div>
-          <br />
-          <div error={!!errors.passwordConfirmation}>
-            <input
-              type="password"
-              id="passwordConfirmation"
-              name="passwordConfirmation"
-              placeholder="confirm new password..."
-              autoComplete="current-password"
-              value={data.passwordConfirmation}
-              onChange={this.onChange}
-            />
-            {errors.passwordConfirmation && (
-              <InlineError text={errors.passwordConfirmation} />
-            )}
-          </div>
-          <br />
-          <button>Reset</button>
-        </form>
+        <div className="resetform">
+          <form onSubmit={this.onSubmit} loading={loading.toString()}>
+            <div>
+              <p className="Reset-Password">Reset Password</p>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="your new password..."
+                value={data.password}
+                onChange={this.onChange}
+              />
+              {errors.password && <InlineError text={errors.password} />}
+            </div>
+            <br />
+            <div>
+              <input
+                type="password"
+                id="passwordConfirmation"
+                name="passwordConfirmation"
+                placeholder="confirm new password..."
+                autoComplete="current-password"
+                value={data.passwordConfirmation}
+                onChange={this.onChange}
+              />
+              {errors.passwordConfirmation && (
+                <InlineError text={errors.passwordConfirmation} />
+              )}
+            </div>
+            <br />
+            <button>Reset</button>
+          </form>
+        </div>
       </div>
     );
   }
@@ -88,5 +85,4 @@ ResetPasswordForm.propTypes = {
   submit: PropTypes.func.isRequired,
   token: PropTypes.string.isRequired
 };
-
 export default ResetPasswordForm;

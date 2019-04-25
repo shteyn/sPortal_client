@@ -7,6 +7,7 @@ class UserCards extends Component {
     this.locationsRef = React.createRef();
     this.availabilityRef = React.createRef();
     this.mainFocusRef = React.createRef();
+
     this.state = {
       location: "",
       availability: "",
@@ -17,36 +18,41 @@ class UserCards extends Component {
   updateSearch = selectedOption => {
     this.setState({
       location: this.locationsRef.current.value,
-      availability: this.availabilityRef.current.value
+      availability: this.availabilityRef.current.value,
+      mainFocus: this.mainFocusRef.current.value
     });
-    //this.props.searchChanged(selectedOption.target.value);
-    //console.log("availabilityRef current value", this.availabilityRef.current.value);
-    //console.log("locations current value", this.locationsRef.current.value);
   };
   render() {
     const { allUsers } = this.props.allUsers;
-    console.log("mainFocus", allUsers);
     const locations = [];
     const mainFocus = [];
 
     const filteredLocations = allUsers.filter(user => {
-      //console.log("availabilityRef current value", this.state.availability);
-      console.log(
-        "user.location.indexOf(this.state.location)",
-        user.location.indexOf(this.state.location)
-      );
-      if (this.state.availability !== "" && this.state.location !== "") {
-        if (user.location.indexOf(this.state.location) !== -1) {
-          return true;
-        }
-      } else if (this.state.availability !== "") {
-        return true;
-      } else if (this.state.location !== "") {
-        return user.location.indexOf(this.state.location) !== -1;
-      } else {
-        return true;
+      let validLocation = true;
+      let validAvailability = true;
+      let validMainFocus = true;
+
+      if (this.state.location !== "") {
+        validLocation = user.location.indexOf(this.state.location) !== -1;
       }
-      //user.location.indexOf(this.props.query) !== -1;
+      if (this.state.availability !== "") {
+        if (typeof user.availability == "string") {
+          let currentDate = new Date();
+          let userDate = new Date(user.availability);
+          if (this.state.availability === "current") {
+            validAvailability = currentDate >= userDate;
+          } else {
+            validAvailability = userDate > currentDate;
+          }
+        } else {
+          validAvailability = false;
+        }
+      }
+
+      if (this.state.mainFocus !== "") {
+        validMainFocus = user.mainFocus.indexOf(this.state.mainFocus) !== -1;
+      }
+      return validLocation && validAvailability && validMainFocus;
     });
 
     allUsers.map(user => {
@@ -58,7 +64,6 @@ class UserCards extends Component {
 
     allUsers.map(user => {
       if (mainFocus.indexOf(user.mainFocus) < 0 && user.mainFocus !== "") {
-        console.log("main focus", mainFocus.indexOf(user.mainFocus));
         mainFocus.push(user.mainFocus);
       }
       return null;
@@ -88,7 +93,9 @@ class UserCards extends Component {
           >
             <option value="">All Focus</option>
             {mainFocus.map(item => (
-              <option key={item}>{item}</option>
+              <option key={item} value={item}>
+                {item}
+              </option>
             ))}
           </select>
 
