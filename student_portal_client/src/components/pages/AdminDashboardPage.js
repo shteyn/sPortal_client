@@ -15,11 +15,11 @@ class AdminDashboardPage extends Component {
   render() {
     return (
       <div className="admindashboard-cont">
-        <div>
+        <div className="navigationBarUserPage">
           <TopNavigation />
         </div>
         <Tabs
-          style={{ marginTop: "100px" }}
+          style={{ marginTop: "150px" }}
           defaultActiveKey="waitingStudents"
           id="uncontrolled-tab-example"
         >

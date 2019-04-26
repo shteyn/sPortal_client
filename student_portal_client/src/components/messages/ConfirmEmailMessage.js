@@ -8,11 +8,24 @@ class ConfirmEmailMessage extends Component {
   render() {
     return (
       <div className="ConfirmEmailMessageCont">
-        <TopNavigation />
+        <div className="navigationBarUserPage">
+          <TopNavigation />
+        </div>
         <div className="ConfirmEmailMessage">
           <h1>
-            Hi {this.props.user.firstName}.<p>Your profile is still locked.</p>
-            <p>Please check your email to verify your email address</p>
+            <div style={{ color: "#da9446" }}>
+              Dear {this.props.user.firstName},
+            </div>
+            <p style={{ marginTop: "50px" }}>
+              Thank you for taking time to register with DCI Students Book.
+              <p>We will now verify your profile.</p>
+            </p>
+            <p>
+              You will get a notification as soon as your profile has been
+              verified.
+            </p>
+            <p style={{ marginTop: "50px" }}>Best regards,</p>
+            <p style={{ color: "#da9446" }}>DCI-Team</p>
           </h1>
         </div>
       </div>
