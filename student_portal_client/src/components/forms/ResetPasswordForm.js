@@ -52,7 +52,7 @@ class ResetPasswordForm extends Component {
                 type="password"
                 id="password"
                 name="password"
-                placeholder="your new password..."
+                placeholder="Insert new password..."
                 value={data.password}
                 onChange={this.onChange}
               />
@@ -64,7 +64,7 @@ class ResetPasswordForm extends Component {
                 type="password"
                 id="passwordConfirmation"
                 name="passwordConfirmation"
-                placeholder="confirm new password..."
+                placeholder="Confirm new password..."
                 autoComplete="current-password"
                 value={data.passwordConfirmation}
                 onChange={this.onChange}

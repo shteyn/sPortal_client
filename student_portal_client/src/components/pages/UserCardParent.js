@@ -15,6 +15,7 @@ class UserCardParent extends Component {
   render() {
     let { isAuthenticated } = this.props;
     const { allUsers } = this.props.allUsers;
+    let logoDCI = require("../../img/newDCILogo.png");
 
     return (
       <div className="UserCardsCont">
@@ -22,8 +23,15 @@ class UserCardParent extends Component {
           {isAuthenticated && <TopNavigation />}
           {!isAuthenticated && (
             <div className="navigationBar">
-              <Link to="/" className="label">
-                <span>DCI</span>
+              <Link to="/user-card">
+                <div className="label">
+                  <div
+                    id="dciLogo"
+                    style={{
+                      backgroundImage: "url(" + logoDCI + ")"
+                    }}
+                  />
+                </div>
               </Link>
               <ul>
                 <li>

@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-
+import Footer from "../navigation/Footer";
 import ForgotPasswordForm from "../forms/ForgotPasswordForm";
 import { resetPasswordRequest } from "../../actions/auth";
-// import TopNavigation from '../navigation/TopNavigation'
 import { Link } from "react-router-dom";
 
 class ForgotPasswordPage extends Component {
@@ -18,11 +17,18 @@ class ForgotPasswordPage extends Component {
       .then(() => this.setState({ success: true }));
 
   render() {
+    let logoDCI = require("../../img/newDCILogo.png");
     return (
       <div className="ForgotPasswordFormCont">
         <div className="navigationBar">
-          <Link to="/" className="label">
-            <span>DCI</span>
+          <Link to="/user-card">
+            <div
+              id="dciLogoLogin"
+              style={{
+                backgroundImage: "url(" + logoDCI + ")",
+                backgroundPosition: "none"
+              }}
+            />
           </Link>
           <ul>
             <li>

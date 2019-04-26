@@ -171,53 +171,64 @@ class UserCards extends Component {
                   </div>
                   <div className="CardLinks">
                     {oneUser.linkedInLink !== "" ? (
-                      <a
-                        title="Linked In"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        href={`${oneUser.linkedInLink}`}
-                      >
-                        <img
-                          src={require("../../img/linkedin-icon.png")}
-                          alt=""
-                        />
-                      </a>
+                      <div>
+                        <a
+                          title="Linked In"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          href={`${oneUser.linkedInLink}`}
+                        >
+                          <img
+                            src={require("../../img/linkedin-icon.png")}
+                            alt=""
+                          />
+                        </a>
+                      </div>
                     ) : null}
                     {oneUser.githubLink !== "" ? (
-                      <a
-                        title="GitHub"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        href={`${oneUser.githubLink}`}
-                      >
-                        <img
-                          src={require("../../img/github-icon.png")}
-                          alt=""
-                        />
-                      </a>
+                      <div>
+                        <a
+                          title="GitHub"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          href={`${oneUser.githubLink}`}
+                        >
+                          <img
+                            src={require("../../img/github-icon.png")}
+                            alt=""
+                          />
+                        </a>
+                      </div>
                     ) : null}
                     {oneUser.xingLink !== "" ? (
-                      <a
-                        title="Xing"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={`${oneUser.xingLink}`}
-                      >
-                        <img src={require("../../img/xing-icon.png")} alt="" />
-                      </a>
+                      <div>
+                        <a
+                          title="Xing"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={`${oneUser.xingLink}`}
+                        >
+                          <img
+                            src={require("../../img/xing-icon.png")}
+                            alt=""
+                          />
+                        </a>
+                      </div>
                     ) : null}
                     {oneUser.portfolioLink !== "" ? (
-                      <a
-                        title="Portfolio"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={`${oneUser.portfolioLink}`}
-                      >
-                        <img
-                          src={require("../../img/briefcase-icon.png")}
-                          alt=""
-                        />
-                      </a>
+                      <div>
+                        <a
+                          title="Portfolio"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={`${oneUser.portfolioLink}`}
+                        >
+                          <img
+                            src={require("../../img/briefcase-icon.png")}
+                            alt=""
+                          />
+                        </a>
+                      </div>
                     ) : null}
                   </div>
                 </div>

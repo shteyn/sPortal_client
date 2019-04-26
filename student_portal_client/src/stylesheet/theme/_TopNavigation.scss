@@ -2,11 +2,21 @@
   background: #1d3b8b;
 }
 
+#dciLogo {
+  //border-radius: 50%;
+  //border: 2px solid rgb(255, 255, 255);
+  width: 180px;
+  height: 180px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+}
 #gravatar-img {
   border-radius: 50%;
   border: 2px solid rgb(255, 255, 255);
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -14,6 +24,8 @@
 }
 .navigationBar {
   width: 100%;
+  //max-width: 2000px;
+  //margin: auto;
   height: 85px;
   display: flex;
   justify-content: space-between;

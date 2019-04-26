@@ -14,57 +14,65 @@ class TopNavigation extends Component {
     const { oneUser, logout, isAdmin } = this.props;
     let placeholderUrl = require("../../img/placeholderUser.png");
     let adminImg = require("../../img/admin2.png");
+    let logoDCI = require("../../img/newDCILogo.png");
 
     return (
       <div className="navigationBar">
-        <Link to="/user-card">
-          <div className="label">
-            <span>DCI</span>
-          </div>
-        </Link>
-        <ul>
-          <li>
-            <Link to="/user-card" onClick={() => logout()}>
-              Logout
-            </Link>
-          </li>
-          <li>
-            {isAdmin && (
-              <Link to="/dashboard" key="1">
-                <div
-                  id="gravatar-img"
-                  style={{
-                    backgroundImage: "url(" + adminImg + ")"
-                  }}
-                />
+        <div className="navigationBarSubCont">
+          <Link to="/user-card">
+            <div className="label">
+              <div
+                id="dciLogo"
+                style={{
+                  backgroundImage: "url(" + logoDCI + ")"
+                }}
+              />
+            </div>
+          </Link>
+          <ul>
+            <li>
+              <Link to="/user-card" onClick={() => logout()}>
+                Logout
               </Link>
-            )}
-            {!isAdmin && [
-              oneUser.userImage === "" ? (
+            </li>
+            <li>
+              {isAdmin && (
                 <Link to="/dashboard" key="1">
                   <div
                     id="gravatar-img"
                     style={{
-                      backgroundImage: "url(" + placeholderUrl + ")"
+                      backgroundImage: "url(" + adminImg + ")"
                     }}
                   />
                 </Link>
-              ) : (
-                <Link to="/dashboard" key="1">
-                  <div
-                    id="gravatar-img"
-                    style={{
-                      backgroundImage:
-                        "url(" +
-                        `http://localhost:8080/uploads/${oneUser.userImage}` +
-                        ")"
-                    }}
-                  />
-                </Link>
-              )
-            ]}
-          </li>
-        </ul>
+              )}
+              {!isAdmin && [
+                oneUser.userImage === "" ? (
+                  <Link to="/dashboard" key="1">
+                    <div
+                      id="gravatar-img"
+                      style={{
+                        backgroundImage: "url(" + placeholderUrl + ")"
+                      }}
+                    />
+                  </Link>
+                ) : (
+                  <Link to="/dashboard" key="1">
+                    <div
+                      id="gravatar-img"
+                      style={{
+                        backgroundImage:
+                          "url(" +
+                          `http://localhost:8080/uploads/${oneUser.userImage}` +
+                          ")"
+                      }}
+                    />
+                  </Link>
+                )
+              ]}
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }
