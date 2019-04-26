@@ -1,17 +1,22 @@
 .UserCardsCont {
   .navigationBarUserCardPage {
     height: 85px;
-    //background: #1d3b8b;
-    //background: #e3e3e3;
-    //background: #393939;
     top: 0;
     position: absolute;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
     z-index: 999;
+    .navigationBarSubCont {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1835px;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      padding: 0;
+    }
+
     .labelUserPage {
-      //color: white;
       text-decoration: none;
       margin-left: 20px;
       position: absolute;
@@ -52,8 +57,8 @@
     }
     .UserCardsItems {
       width: 100%;
-      max-width: 1500px;
-      margin: 0 auto 100px auto;
+      max-width: 2000px;
+      margin: auto auto 100px auto;
       position: relative;
       display: flex;
       justify-content: center;
@@ -96,11 +101,23 @@
         }
         .CardLinks {
           margin: auto;
-          img {
-            width: 31px;
-            height: 31px;
-            color: rgba(29, 59, 139, 0.5);
-            margin: 10px;
+          display: flex;
+          justify-content: center;
+          div {
+            height: 45px;
+            width: 45px;
+            display: flex;
+            justify-content: center;
+            img {
+              width: 31px;
+              height: 31px;
+              color: rgba(29, 59, 139, 0.5);
+              margin: 10px;
+              &:hover {
+                width: 41px;
+                height: 41px;
+              }
+            }
           }
         }
         .locationAndAvailability {
@@ -161,7 +178,7 @@
       }
     }
   }
-  /*.UserCardFooter {
+  /*.ForgotPageFooter {
     width: 100%;
     height: 250px;
     background: white;
@@ -170,6 +187,7 @@
 }
 
 .DropDownSelect {
+  font-size: 20px;
   font-weight: bold;
   width: 225px;
   margin: 50px 20px;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { validateToken, resetPassword } from "../../actions/auth";
 import ResetPasswordForm from "../forms/ResetPasswordForm";
@@ -26,9 +27,25 @@ class ResetPasswordPage extends Component {
   render() {
     const { loading, success } = this.state;
     const token = this.props.match.params.token;
-
+    let logoDCI = require("../../img/newDCILogo.png");
     return (
       <div className="ResetCont">
+        <div className="navigationBar">
+          <Link to="/user-card">
+            <div
+              id="dciLogoLogin"
+              style={{
+                backgroundImage: "url(" + logoDCI + ")",
+                backgroundPosition: "none"
+              }}
+            />
+          </Link>
+          <ul>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          </ul>
+        </div>
         {loading && <p>Loading...</p>}
         {!loading && success && (
           <ResetPasswordForm submit={this.submit} token={token} />

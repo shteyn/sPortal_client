@@ -7,7 +7,7 @@ import Footer from "../navigation/Footer";
 import LoginForm from "../forms/LoginForm";
 import RegistrationForm from "../forms/RegistrationForm";
 import { login } from "../../actions/auth";
-import { registration, getAllUsers } from "../../actions/user";
+import { registration } from "../../actions/user";
 
 class LoginPage extends Component {
   submit = data =>
@@ -19,13 +19,22 @@ class LoginPage extends Component {
       .then(() => this.props.history.push("/dashboard"));
 
   render() {
+    let logoDCI = require("../../img/newDCILogo.png");
     return (
       <div>
         <div className="LoginCont">
           <div className="navigation">
             <div>
-              <Link to="/user-card" className="labelUserPage">
-                <span className="labelD">DCI</span>
+              <Link to="/user-card">
+                <div className="label">
+                  <div
+                    id="dciLogoLogin"
+                    style={{
+                      backgroundImage: "url(" + logoDCI + ")",
+                      backgroundPosition: "none"
+                    }}
+                  />
+                </div>
               </Link>
             </div>
           </div>
