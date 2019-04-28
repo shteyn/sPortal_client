@@ -47,7 +47,7 @@
       font-size: 48px;
       line-height: normal;
       text-align: center;
-      color: #173396;
+      color: #5c5c5c;
     }
 
     .selectFilter {
@@ -74,6 +74,7 @@
         border-radius: 19px;
         margin: 10px;
         .profileImg {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           border-radius: 50%;
           border: 8px solid white;
           width: 150px;
@@ -87,7 +88,7 @@
           margin-top: 15px;
           p {
             text-align: center;
-            color: #1d3b8b;
+            color: #5c5c5c;
             font-size: 36px;
           }
           .mainFocusCont {
@@ -109,11 +110,14 @@
             display: flex;
             justify-content: center;
             img {
+              
               width: 31px;
               height: 31px;
               color: rgba(29, 59, 139, 0.5);
               margin: 10px;
               &:hover {
+                border-radius: 50%;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 width: 41px;
                 height: 41px;
               }
@@ -131,14 +135,14 @@
           flex-direction: row;
           justify-content: left;
           .location {
-            margin-top: 15px;
+            margin: 15px 10px 0 10px;
             width: 50%;
             font-family: Ropa Sans, sans-serif;
             font-style: normal;
             font-weight: normal;
-            font-size: 18px;
+            font-size: 22px;
             line-height: normal;
-            color: #1d3b8b;
+            color: #5c5c5c;
           }
           .Availability {
             border-left: 2px solid white;
@@ -154,9 +158,9 @@
               font-family: Ropa Sans, sans-serif;
               font-style: normal;
               font-weight: normal;
-              font-size: 18px;
+              font-size: 22px;
               line-height: normal;
-              color: #1d3b8b;
+              color: #5c5c5c;
             }
           }
         }
@@ -204,6 +208,6 @@
 }
 
 .location {
-  margin: 10px 0 10px 13px;
+  //margin: 10px 0 10px 13px;
   text-align: center;
 }

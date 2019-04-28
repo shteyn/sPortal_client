@@ -66,7 +66,7 @@ class UpdateUserProfileForm extends Component {
   }
 
   types = ["Berlin", "Düsseldorf", "Köln", "Hamburg"];
-  focus = ["No info", "Front-End", "Back-End", "Full-Stack"];
+  focus = ["Front-End", "Back-End", "Full-Stack"];
 
   onChange = event => {
     this.setState({
@@ -116,7 +116,8 @@ class UpdateUserProfileForm extends Component {
     return (
       <div>
         <div variant="primary" onClick={this.handleShow}>
-          <img src={require("../../img/edit-icon.svg")} alt="" />
+          {/*<img src={require("../../img/edit-icon.svg")} alt="" />*/}
+          UPDATE PROFILE
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>

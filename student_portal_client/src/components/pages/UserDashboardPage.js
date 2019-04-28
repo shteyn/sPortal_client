@@ -25,7 +25,7 @@ class UserDashboardPage extends Component {
     const {
       firstName,
       lastName,
-      // email,
+      email,
       location,
       studentClass,
       userImage,
@@ -70,9 +70,23 @@ class UserDashboardPage extends Component {
           <TopNavigation />
         </div>
         <div className="UserPageCont">
+          <div className="headerUserPage">
+            <div className="profileInfoItem">
+                <p>{firstName} {lastName}</p>
+            </div>
+            <button
+              className="updateProfileButton"   
+            > 
+              {this.props.oneUser._id ? (
+                <UpdateUserProfileForm
+                  user={this.props.oneUser}
+                  updateProfile={this.updateProfile}
+                />
+              ) : null}
+            </button>
+          </div>
           <div className="InfoCont">
             <div className="infoBoxCont">
-              <h3>Info Box</h3>
               <div className="SubBoxCont">
                 <div className="userImageUploadCont">
                   {!userImage ? (
@@ -145,23 +159,27 @@ class UserDashboardPage extends Component {
                 </div>
                 <div className="profileInfoCont">
                   <div className="profileInfoItem">
-                    <h2>First Name</h2>
+                    <h4>First Name</h4>
                     <p>{firstName}</p>
                   </div>
                   <div className="profileInfoItem">
-                    <h2>Last Name</h2>
+                    <h4>Last Name</h4>
                     <p>{lastName}</p>
                   </div>
                   <div className="profileInfoItem">
-                    <h2>Location</h2>
+                    <h4>Email</h4>
+                    <p>{email}</p>
+                  </div>
+                  <div className="profileInfoItem">
+                    <h4>Location</h4>
                     <p>{location}</p>
                   </div>
                   <div className="profileInfoItem">
-                    <h2>Class</h2>
+                    <h4>Class</h4>
                     <p>{studentClass}</p>
                   </div>
                   <div className="profileInfoItem">
-                    <h2>Main Focus</h2>
+                    <h4>Main Focus</h4>
                     {mainFocus === "" ? (
                       <p style={{ color: "#da9446" }}>Not updated yet</p>
                     ) : (
@@ -169,7 +187,7 @@ class UserDashboardPage extends Component {
                     )}
                   </div>
                   <div className="profileInfoItem">
-                    <h2>Available from</h2>
+                    <h4>Available from</h4>
                     <p>{formattedAvailability}</p>
                   </div>
                 </div>
@@ -180,7 +198,7 @@ class UserDashboardPage extends Component {
               <div className="linksBoxItems">
                 {!linkedInLink ? (
                   <div className="linksBoxItem">
-                    <img src={require("../../img/linkedin-icon.png")} alt="" />
+                    <img src={require("../../img/linkedin.png")} alt="" />
                     <p style={{ color: "#da9446" }}>
                       Please add your LinkedIn ....
                     </p>
@@ -193,7 +211,7 @@ class UserDashboardPage extends Component {
                   </div>
                 ) : (
                   <div className="linksBoxItem">
-                    <img src={require("../../img/linkedin-icon.png")} alt="" />
+                    <img src={require("../../img/linkedin.png")} alt="" />
                     <a
                       href={linkedInLink}
                       target="_blank"
@@ -205,7 +223,7 @@ class UserDashboardPage extends Component {
                 )}
                 {!xingLink ? (
                   <div className="linksBoxItem">
-                    <img src={require("../../img/xing-icon.png")} alt="" />
+                    <img src={require("../../img/xing.png")} alt="" />
                     <p style={{ color: "#da9446" }}>Please add your Xing....</p>
                     <a
                       href={xingLink}
@@ -215,7 +233,7 @@ class UserDashboardPage extends Component {
                   </div>
                 ) : (
                   <div className="linksBoxItem">
-                    <img src={require("../../img/xing-icon.png")} alt="" />
+                    <img src={require("../../img/xing.png")} alt="" />
                     <a
                       href={xingLink}
                       target="_blank"
@@ -227,7 +245,7 @@ class UserDashboardPage extends Component {
                 )}
                 {!githubLink ? (
                   <div className="linksBoxItem">
-                    <img src={require("../../img/github-icon.png")} alt="" />
+                    <img src={require("../../img/github.png")} alt="" />
                     <p style={{ color: "#da9446" }}>
                       Please add your Github....
                     </p>
@@ -239,7 +257,7 @@ class UserDashboardPage extends Component {
                   </div>
                 ) : (
                   <div className="linksBoxItem">
-                    <img src={require("../../img/github-icon.png")} alt="" />
+                    <img src={require("../../img/github.png")} alt="" />
                     <a
                       href={githubLink}
                       target="_blank"
@@ -251,7 +269,7 @@ class UserDashboardPage extends Component {
                 )}
                 {!portfolioLink ? (
                   <div className="linksBoxItem">
-                    <img src={require("../../img/briefcase-icon.png")} alt="" />
+                    <img src={require("../../img/briefcase.png")} alt="" />
                     <p style={{ color: "#da9446" }}>
                       Please add your Portfolio....
                     </p>
@@ -263,7 +281,7 @@ class UserDashboardPage extends Component {
                   </div>
                 ) : (
                   <div className="linksBoxItem">
-                    <img src={require("../../img/briefcase-icon.png")} alt="" />
+                    <img src={require("../../img/briefcase.png")} alt="" />
                     <a
                       href={portfolioLink}
                       target="_blank"
@@ -276,7 +294,7 @@ class UserDashboardPage extends Component {
               </div>
             </div>
           </div>
-          <button
+       {/* <button
             className="updateButton"
             style={{ position: "absolute", right: "0", bottom: "0" }}
           >
@@ -286,10 +304,10 @@ class UserDashboardPage extends Component {
                 updateProfile={this.updateProfile}
               />
             ) : null}
-          </button>
-          <hr />
-        </div>
+          </button>*/}
+          </div>
       </div>
+
     );
   }
 }
@@ -301,8 +319,6 @@ UserDashboardPage.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log("state from dashboard", state.oneUser);
-
   return {
     oneUser: state.oneUser
   };

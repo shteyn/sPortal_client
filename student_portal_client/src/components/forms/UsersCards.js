@@ -179,7 +179,7 @@ class UserCards extends Component {
                           href={`${oneUser.linkedInLink}`}
                         >
                           <img
-                            src={require("../../img/linkedin-icon.png")}
+                            src={require("../../img/linkedin.png")}
                             alt=""
                           />
                         </a>
@@ -194,7 +194,7 @@ class UserCards extends Component {
                           href={`${oneUser.githubLink}`}
                         >
                           <img
-                            src={require("../../img/github-icon.png")}
+                            src={require("../../img/github.png")}
                             alt=""
                           />
                         </a>
@@ -209,7 +209,7 @@ class UserCards extends Component {
                           href={`${oneUser.xingLink}`}
                         >
                           <img
-                            src={require("../../img/xing-icon.png")}
+                            src={require("../../img/xing.png")}
                             alt=""
                           />
                         </a>
@@ -224,7 +224,7 @@ class UserCards extends Component {
                           href={`${oneUser.portfolioLink}`}
                         >
                           <img
-                            src={require("../../img/briefcase-icon.png")}
+                            src={require("../../img/briefcase.png")}
                             alt=""
                           />
                         </a>

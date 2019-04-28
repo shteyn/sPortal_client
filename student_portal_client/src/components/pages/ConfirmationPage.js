@@ -20,12 +20,14 @@ class ConfirmationPage extends Component {
 
   render() {
     const { loading, success } = this.state;
+    const { firstName} = this.props.user;
+    
     return (
-      <div className="ConfirmationPageCont">
-        <div className="ConfirmationNavigationBar">
-          <TopNavigation />
-        </div>
+      
         <div className="ConfirmationPageCont">
+          <div className="ConfirmationNavigationBar">
+            <TopNavigation />
+          </div>
           <div className="ValidatingAndVerifiedCont">
             {loading && (
               <div className="ValidatingCont">
@@ -34,11 +36,13 @@ class ConfirmationPage extends Component {
             )}
             {!loading && success && (
               <div className="verifiedCont">
-                Your account is verified
+                <h1>Dear {firstName},</h1>
                 <br />
-                <p>
+                <p>Your account is verified.</p>
+                <br />
+                
                   <Link to="/dashboard"> Go to your dashboard</Link>
-                </p>
+                
               </div>
             )}
 
@@ -49,7 +53,6 @@ class ConfirmationPage extends Component {
             )}
           </div>
         </div>
-      </div>
     );
   }
 }
@@ -63,7 +66,14 @@ ConfirmationPage.propTypes = {
   }).isRequired
 };
 
+function mapStateToProps(state) {
+
+  return {
+    user: state.user
+  };
+}
+
 export default connect(
-  null,
+  mapStateToProps,
   { confirm }
 )(ConfirmationPage);

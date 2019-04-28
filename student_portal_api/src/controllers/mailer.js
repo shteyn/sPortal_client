@@ -19,8 +19,18 @@ export function sendConfirmationEmail(user) {
     from,
     to: user.email,
     subject: "DCi Students Portal | Registration Confirmation",
-    text: `Now you can login. Please follow this link .
-    ${user.generateConfirmationUrl()}`
+    text: 
+    `Dear ${user.firstName},
+
+    Thank you again for your registration with DCI Students Book.
+    
+    Your profile has been verified and you now have access to complete the requested information.
+    
+    Edit your profile here ${user.generateConfirmationUrl()}
+
+
+    Best regards,
+    DCI-Team`,
   };
   transport.sendMail(email);
 }
@@ -44,7 +54,14 @@ export function sendRejectEmail(user) {
     to: user.email,
     subject: "DCi Students Portal | Registration Request",
     text:
-      "We are sorry, but your registration request is not approved. Please contact our administration team for more info."
+    `Dear ${user.firstName},
+
+    Unfortunately your registration with DCI Alumni Book has been rejected.
+    
+    For more information please contact ​graduates@digitalcareerinstitute.org​.
+    
+    Best regards,
+    DCI-Team`
   };
   transport.sendMail(email);
 }
@@ -56,7 +73,14 @@ export function sendDeleteUserEmail(user) {
     to: user.email,
     subject: "DCi Students Portal | Account Status Notification",
     text:
-      "It seems that your user has been deleted from our DB. Please contact our administration team for more info. "
+    `Dear ${user.firstName},
+
+    Your profile at DCI Alumni Book has been deleted.
+    
+    For more information please contact ​graduates@digitalcareerinstitute.org​.
+    
+    Best regards,
+    DCI-Team`
   };
   transport.sendMail(email);
 }

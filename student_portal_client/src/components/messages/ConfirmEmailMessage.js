@@ -18,8 +18,8 @@ class ConfirmEmailMessage extends Component {
             </div>
             <p style={{ marginTop: "50px" }}>
               Thank you for taking time to register with DCI Students Book.
-              <p>We will now verify your profile.</p>
             </p>
+              <p>We will now verify your profile.</p>
             <p>
               You will get a notification as soon as your profile has been
               verified.
