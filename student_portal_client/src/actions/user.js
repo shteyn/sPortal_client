@@ -1,5 +1,5 @@
 import api from "../api";
-import { userLoggedIn } from "./auth";
+import { userLoggedIn, userLoggedOut } from "./auth";
 import {
   GET_ALL_USERS,
   GET_ONE_USER,
@@ -60,20 +60,37 @@ export const deleteUser = id => dispatch =>
       console.log(err);
     });
 
+export const deleteUserByUser = id => dispatch =>
+  api.user
+    .deleteUserByUser(id)
+    .then(localStorage.removeItem("userJWT"), dispatch(userLoggedOut()));
+
 export const getAllUsers = () => dispatch =>
   api.user.getAllUsers().then(allUsers => {
     dispatch(allUsersList(allUsers));
   });
 
+//TBD add message to user, that account is not found
 export const getUserData = email => dispatch =>
+  api.user.getUserData(email).then(user => {
+    if (user !== null) {
+      dispatch(oneUser(user));
+    } else {
+      dispatch(userLoggedOut());
+    }
+  });
+
+/*export const getUserData = email => dispatch =>
   api.user
     .getUserData(email)
     .then(user => {
+      console.log("getUserData FNC", user);
+
       dispatch(oneUser(user));
     })
     .catch(err => {
       console.log("Error getUserData", err);
-    });
+    });*/
 
 export const updateProfile = userData => dispatch =>
   api.user

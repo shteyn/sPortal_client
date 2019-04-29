@@ -18,16 +18,30 @@ router.post("/", (req, res) => {
 });
 
 //find user and update user record
-router.post("/confirmation", (req, res) => {
+/*router.post("/confirmation", (req, res) => {
   const token = req.body.token;
-  console.log("ROUTES CONFIRMATION", token);
-
   User.findOneAndUpdate(
     //first param: what we are searching for
     //second param: what we want to update
     //third param: options
     { confirmationToken: token },
-    { confirmationToken: "", confirmed: true },
+    //{ confirmationToken: "", confirmed: true },
+    { confirmationToken: "" },
+    { new: true }
+  ).then(user =>
+    user ? res.json({ user: user.toAuthJSON() }) : res.status(400).json({})
+  );
+});*/
+
+router.post("/confirmation", (req, res) => {
+  const token = req.body.token;
+  User.findOneAndUpdate(
+    //first param: what we are searching for
+    //second param: what we want to update
+    //third param: options
+    { confirmationToken: token },
+    //{ confirmationToken: "", confirmed: true },
+    { confirmationToken: "", confirmationEmailSend: true },
     { new: true }
   ).then(user =>
     user ? res.json({ user: user.toAuthJSON() }) : res.status(400).json({})
@@ -47,6 +61,8 @@ router.post("/reset_password_request", (req, res) => {
 });
 
 router.post("/validate_token", (req, res) => {
+  console.log("token validation auth routers", req.body.token);
+
   jwt.verify(req.body.token, process.env.JWT_SECRET, err => {
     if (err) {
       res.status(401).json({});

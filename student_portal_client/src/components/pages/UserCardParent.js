@@ -61,14 +61,14 @@ UserCardParent.propTypes = {
   allUsers: PropTypes.object.isRequired,
   getAllUsers: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
-  oneUser: PropTypes.object.isRequired,
+  //oneUser: PropTypes.object.isRequired,
   getUserData: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
   return {
     allUsers: state.allUsers,
-    oneUser: state.oneUser,
+    //oneUser: state.oneUser,
     isAuthenticated: !!state.user.token
   };
 }

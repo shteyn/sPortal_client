@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TopNavigation from "../navigation/TopNavigation";
-import { updateProfile, updateImage } from "../../actions/user";
+import {
+  updateProfile,
+  updateImage,
+  deleteUserByUser
+} from "../../actions/user";
+
 import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
 
 class UserDashboardPage extends Component {
@@ -10,6 +15,8 @@ class UserDashboardPage extends Component {
     super(props, context);
     this.userImageRef = React.createRef();
   }
+
+  deleteUserHandler = id => this.props.deleteUserByUser(id);
 
   updateProfile = data => this.props.updateProfile(data);
 
@@ -72,11 +79,21 @@ class UserDashboardPage extends Component {
         <div className="UserPageCont">
           <div className="headerUserPage">
             <div className="profileInfoItem">
-                <p>{firstName} {lastName}</p>
+              <p>
+                {firstName} {lastName}
+              </p>
             </div>
             <button
-              className="updateProfileButton"   
-            > 
+              className="updateProfileButton"
+              style={{ marginRight: "30px" }}
+              onClick={() => {
+                if (window.confirm("Are you sure?"))
+                  this.deleteUserHandler(this.props.oneUser._id);
+              }}
+            >
+              DELETE PROFILE
+            </button>
+            <button className="updateProfileButton">
               {this.props.oneUser._id ? (
                 <UpdateUserProfileForm
                   user={this.props.oneUser}
@@ -294,7 +311,7 @@ class UserDashboardPage extends Component {
               </div>
             </div>
           </div>
-       {/* <button
+          {/* <button
             className="updateButton"
             style={{ position: "absolute", right: "0", bottom: "0" }}
           >
@@ -305,9 +322,8 @@ class UserDashboardPage extends Component {
               />
             ) : null}
           </button>*/}
-          </div>
+        </div>
       </div>
-
     );
   }
 }
@@ -315,7 +331,8 @@ class UserDashboardPage extends Component {
 UserDashboardPage.propTypes = {
   updateProfile: PropTypes.func.isRequired,
   oneUser: PropTypes.object.isRequired,
-  updateImage: PropTypes.func.isRequired
+  updateImage: PropTypes.func.isRequired,
+  deleteUserByUser: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
@@ -326,5 +343,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { updateProfile, updateImage }
+  { updateProfile, updateImage, deleteUserByUser }
 )(UserDashboardPage);

@@ -132,6 +132,7 @@ UserSchema.methods.generateJTW = function generateJTW() {
       lastName: this.lastName,
       email: this.email,
       confirmed: this.confirmed,
+      confirmationEmailSend: this.confirmationEmailSend,
       isAdmin: this.isAdmin
     },
     process.env.JWT_SECRET
@@ -146,6 +147,7 @@ UserSchema.methods.toAuthJSON = function toAuthJSON() {
     email: this.email,
     confirmed: this.confirmed,
     isAdmin: this.isAdmin,
+    confirmationEmailSend: this.confirmationEmailSend,
     token: this.generateJTW()
   };
 };

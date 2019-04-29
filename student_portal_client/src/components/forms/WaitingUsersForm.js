@@ -19,6 +19,7 @@ class WaitingUsersForm extends Component {
   };
   render() {
     const { allUsers } = this.props.allUsers;
+
     return (
       <div>
         <Table celled>
@@ -37,7 +38,16 @@ class WaitingUsersForm extends Component {
 
           <Table.Body>
             {allUsers.map(oneUser => {
-              if (!oneUser.confirmed) {
+              console.log(
+                "waiting users",
+                oneUser.firstName,
+                oneUser.confirmationEmailSend,
+                oneUser.confirmed
+              );
+              if (
+                oneUser.confirmationEmailSend === true &&
+                !oneUser.confirmed
+              ) {
                 return (
                   <Table.Row key={oneUser._id}>
                     <Table.Cell>{oneUser.location}</Table.Cell>
@@ -46,23 +56,17 @@ class WaitingUsersForm extends Component {
                     <Table.Cell>{oneUser.lastName}</Table.Cell>
                     <Table.Cell>{oneUser.email}</Table.Cell>
                     <Table.Cell>
-                      {oneUser.confirmationEmailSend
-                        ? "Approved"
-                        : "Not Approved"}
+                      {oneUser.confirmed ? "Approved" : "Not Approved"}
                     </Table.Cell>
 
                     <Table.Cell>
                       <Button
                         onClick={this.approveUser.bind(this, oneUser._id)}
                         style={{
-                          color: oneUser.confirmationEmailSend
-                            ? "green"
-                            : "#ec7f37"
+                          color: "#ec7f37"
                         }}
                       >
-                        {oneUser.confirmationEmailSend
-                          ? "Resend Email"
-                          : "Approve"}
+                        {"Approve"}
                       </Button>
                     </Table.Cell>
                     <Table.Cell>
@@ -98,6 +102,10 @@ WaitingUsersForm.propTypes = {
 };
 
 function mapStateToProps(state) {
+  /*const confirmaEmail = state.allUsers.allUsers;
+  confirmaEmail.map(user => {
+    return console.log("state from Admin waiting", user.confirmationEmailSend);
+  });*/
   return {
     allUsers: state.allUsers
   };
