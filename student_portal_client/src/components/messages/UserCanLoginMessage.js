@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TopNavigation from "../navigation/TopNavigation";
 
-class ConfirmEmailMessage extends Component {
+class UserCanLoginMessage extends Component {
   constructor(props) {
     super(props);
   }
@@ -14,12 +14,13 @@ class ConfirmEmailMessage extends Component {
         <div className="ConfirmEmailMessage">
           <div>
             <h1 style={{ color: "#da9446", marginBottom: "50px" }}>
-              Dear {this.props.user.firstName},
+              Dear {this.props.oneUser.firstName},
             </h1>
-            <p>Thank you for taking time to register with DCI Students Book.</p>
+
+            <p>Your profile is still not verified. </p>
             <p>
-              Please confirm your email, so the administration team can receive
-              and review your request.
+              You will get a notification via email as soon as your profile will
+              be verified.
             </p>
             <p style={{ marginTop: "50px" }}>Best regards,</p>
             <p style={{ color: "#da9446" }}>DCI-Team</p>
@@ -30,4 +31,4 @@ class ConfirmEmailMessage extends Component {
   }
 }
 
-export default ConfirmEmailMessage;
+export default UserCanLoginMessage;

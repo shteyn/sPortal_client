@@ -47,11 +47,23 @@ const App = ({ location }) => (
       component={ResetPasswordPage}
     />
     <UserRoutes
+      path="/dashboard"
+      exact
+      component={props => (
+        <Dashboard
+          timestamp={new Date().toString()}
+          {...props}
+          location={location}
+        />
+      )}
+    />
+
+    {/* <UserRoutes
       location={location}
       path="/dashboard"
       exact
       component={Dashboard}
-    />
+    />*/}
   </div>
 );
 
@@ -63,6 +75,7 @@ App.propTypes = {
 };
 
 function mapStateToProps(state) {
+  //console.log("state from App", state);
   return {
     isAuthenticated: !!state.user.email
   };

@@ -19,18 +19,32 @@ export function sendConfirmationEmail(user) {
     from,
     to: user.email,
     subject: "DCi Students Portal | Registration Confirmation",
-    text: 
-    `Dear ${user.firstName},
+    text: `Dear ${user.firstName},
 
     Thank you again for your registration with DCI Students Book.
     
+    Please confirm your email following the link bellow , so the administration team will be able to get get and review your request.
+    ${user.generateConfirmationUrl()}
+    Best regards,
+    DCI-Team`
+  };
+  transport.sendMail(email);
+}
+
+export function approvedUserEmail(user) {
+  const transport = setup();
+  const email = {
+    from,
+    to: user.email,
+    subject: "DCi Students Portal | Registration Confirmation",
+    text: `Dear ${user.firstName},
+    
     Your profile has been verified and you now have access to complete the requested information.
     
-    Edit your profile here ${user.generateConfirmationUrl()}
-
+    http://localhost:3000/
 
     Best regards,
-    DCI-Team`,
+    DCI-Team`
   };
   transport.sendMail(email);
 }
@@ -53,8 +67,7 @@ export function sendRejectEmail(user) {
     from,
     to: user.email,
     subject: "DCi Students Portal | Registration Request",
-    text:
-    `Dear ${user.firstName},
+    text: `Dear ${user.firstName},
 
     Unfortunately your registration with DCI Alumni Book has been rejected.
     
@@ -72,12 +85,27 @@ export function sendDeleteUserEmail(user) {
     from,
     to: user.email,
     subject: "DCi Students Portal | Account Status Notification",
-    text:
-    `Dear ${user.firstName},
+    text: `Dear ${user.firstName},
 
     Your profile at DCI Alumni Book has been deleted.
     
     For more information please contact ​graduates@digitalcareerinstitute.org​.
+    
+    Best regards,
+    DCI-Team`
+  };
+  transport.sendMail(email);
+}
+
+export function userDeletedHisAccountEmail(user) {
+  const transport = setup();
+  const email = {
+    from,
+    to: user.email,
+    subject: "DCi Students Portal | Account Status Notification",
+    text: `Dear ${user.firstName},
+
+    Your profile at DCI Alumni Book has been deleted.
     
     Best regards,
     DCI-Team`

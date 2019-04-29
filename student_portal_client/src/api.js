@@ -29,7 +29,9 @@ export default {
       }),
 
     validateToken: token =>
-      axios.post("http://localhost:8080/api/auth/validate_token", { token }),
+      axios
+        .post("http://localhost:8080/api/auth/validate_token", { token })
+        .then(res => console.log("validateToken api", res)),
 
     resetPassword: data =>
       axios.post("http://localhost:8080/api/auth/reset_password", { data }),
@@ -52,6 +54,9 @@ export default {
 
     deleteUser: id =>
       axios.delete(`http://localhost:8080/api/users/delete-users/${id}`),
+
+    deleteUserByUser: id =>
+      axios.delete(`http://localhost:8080/api/users/delete-user/${id}`),
 
     updateImage: user =>
       axios({

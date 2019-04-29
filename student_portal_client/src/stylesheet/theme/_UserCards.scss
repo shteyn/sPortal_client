@@ -74,7 +74,8 @@
         border-radius: 19px;
         margin: 10px;
         .profileImg {
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
           border-radius: 50%;
           border: 8px solid white;
           width: 150px;
@@ -110,14 +111,14 @@
             display: flex;
             justify-content: center;
             img {
-              
               width: 31px;
               height: 31px;
               color: rgba(29, 59, 139, 0.5);
               margin: 10px;
               &:hover {
                 border-radius: 50%;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                  0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 width: 41px;
                 height: 41px;
               }
@@ -154,7 +155,7 @@
             p {
               width: 100%;
               text-align: left;
-              margin: 15px 0 0 15px;
+              margin: 15px 0 0 5px;
               font-family: Ropa Sans, sans-serif;
               font-style: normal;
               font-weight: normal;
