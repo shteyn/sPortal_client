@@ -3,15 +3,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
-  height: 250px;
   background: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  //background: #1a1c1d;
   .FooterContentBox {
-    max-width: 1800px;
+    max-width: 1450px;
     width: 100%;
-    //margin: auto;
     margin: 45px auto 45px auto;
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +19,7 @@
       flex-direction: column;
       h3 {
         margin-bottom: 10px;
-        color: #5c5c5c;
+        color: #1a1c1d;
       }
       a {
         text-decoration: none;
@@ -39,25 +35,26 @@
       max-width: 500px;
       margin: 20px auto;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       text-align: left;
-      .FooterContentItem {
+      .FooterContentItemFour {
         position: relative;
         left: -100px;
       }
     }
   }
-  @media only screen and (max-width: 401px) {
+  @media only screen and (max-width: 470px) {
     .FooterContentBox {
-      max-width: 200px;
+      max-width: 250px;
       margin: 20px auto;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
       text-align: left;
-      .FooterContentItem {
+      .FooterContentItemFour {
         position: relative;
         left: 0;
-
       }
     }
   }

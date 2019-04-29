@@ -92,43 +92,30 @@
     }
   }
   .UserPageCont {
-    //padding-top: 20px;
-    //position: relative;
-    //max-width: 1800px;
     .headerUserPage{
-      margin: 130px 30px 0 30px;
+      max-width: 1450px;
+      margin: 130px auto 0 auto;
       height: 100px;
-      //border: 1px solid #e5e5e5;
       .updateProfileButton {
         border: none;
         padding: 0;
         margin-top: 30px; 
         color: #da9446;
+        background: white;
       }
     }
     .InfoCont {
-      margin:0 30px 0 30px;
-      height: 100vh;
-      //max-width: 1620px;
+      max-width: 1450px;
+      margin:0 auto 30px auto;
       display: flex;
-      //justify-content: space-between;
       .infoBoxCont {
         display: flex;
-        //flex-direction: column;
-        //justify-content: space-between;
       }
     }
     .SubBoxCont {
       width: 100%;
       min-width: 400px;
       padding:20px;
-      //margin-right: 20px;
-      //padding: 20px;
-      //display: flex;
-      //justify-content: left;
-      //justify-items: center;
-      //box-sizing: border-box;
-      //border-radius: 9px;
       border: 1px solid #e5e5e5;
       text-align: center;
     }
@@ -136,13 +123,6 @@
       border: 1px solid #e5e5e5;
       width: 100%;
       padding:20px;
-      //min-width: 600px;
-      //max-width: 800px;
-      //padding-left: 20px;
-      //padding-bottom: 20px;
-      //display: flex;
-      //flex-direction: column;
-      //justify-content: end;
       .linksBoxItems {
         display: flex;
         flex-direction: column;
@@ -163,8 +143,12 @@
         }
         a {
           display: flex;
-          margin-left: 0px;
           justify-items: center;
+          cursor: pointer;
+          &:hover {
+            cursor: pointer;
+            color: #ec7f37;
+          }
         }
       }
       h1 {
@@ -269,6 +253,33 @@
   hr {
     margin: 20px;
     background-color: #da9446;
+  }
+  @media only screen and (max-width: 722px) {
+    .UserPageCont {
+      max-width: 500px;
+      margin: auto;
+      .InfoCont {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        .SubBoxCont {
+          min-width: 400px;
+        }
+      }
+      .linksBoxCont {
+        width: 100%;
+        max-width: 400px;
+        .linksBoxItems {
+          box-sizing: border-box;
+          padding: 0;
+          max-width: 400px;
+          .linksBoxItem {
+            width: 380px;
+            text-align: left;
+          }
+        }
+      }
+    }
   }
 }
 

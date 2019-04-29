@@ -5,7 +5,7 @@ class Footer extends Component {
     return (
         <div className="FooterCont">
             <div className="FooterContentBox">
-              <div className="FooterContentItem">
+              <div className="FooterContentItemOne">
                 <ul>
                   <li><h3>COMPANY</h3></li>
                   <li><a href="https://digitalcareerinstitute.org/en/about-us/">About Us</a></li>
@@ -15,7 +15,7 @@ class Footer extends Component {
                   <li><a href="https://dci-jobs.personio.de/">Jobs at DCI</a></li>
                 </ul>
               </div>
-              <div className="FooterContentItem">
+              <div className="FooterContentItemTwo">
                 <ul>
                   <li><h3>COMMUNITY</h3></li>
                   <li><a href="https://digitalcareerinstitute.org/en/scholarship/">Scholarship</a></li>
@@ -23,7 +23,7 @@ class Footer extends Component {
                   <li><a href="https://digitalcareerinstitute.org/en/stories/">Stories</a></li>
                 </ul>
               </div>
-              <div className="FooterContentItem">
+              <div className="FooterContentItemThree">
                 <ul>
                   <li><h3>COURSES</h3></li>
                   <li><a href="https://digitalcareerinstitute.org/en/onetoone-coaching/">One to One Coaching</a></li>
@@ -32,7 +32,7 @@ class Footer extends Component {
                   <li><a href="https://digitalcareerinstitute.org/en/courses/digital-marketing-e-commerce/">Digital Marketing / E-Commerce</a></li>
                 </ul>
               </div>
-              <div className="FooterContentItem">
+              <div className="FooterContentItemFour">
                 <ul>
                   <li><h3>FOLLOW</h3></li>
                   <li><a href="https://www.facebook.com/devugees">Facebook</a></li>

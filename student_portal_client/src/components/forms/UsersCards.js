@@ -72,7 +72,7 @@ class UserCards extends Component {
 
     return (
       <div>
-        <div>
+        <div className="SelectCont">
           <select
             className="DropDownSelect"
             name="location"

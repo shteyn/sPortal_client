@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getAllUsers, filterLocation, getUserData } from "../../actions/user";
 import TopNavigation from "../navigation/TopNavigation";
+import ToggleMenuNonLogin from "../navigation/ToggleMenuNonLogin";
 import UsersCards from "../forms/UsersCards";
 import Footer from "../navigation/Footer";
 
@@ -22,24 +23,27 @@ class UserCardParent extends Component {
         <div className="navigationBarUserCardPage">
           {isAuthenticated && <TopNavigation />}
           {!isAuthenticated && (
-            <div className="navigationBar">
-              <Link to="/user-card">
-                <div className="label">
-                  <div
-                    id="dciLogo"
-                    style={{
-                      backgroundImage: "url(" + logoDCI + ")"
-                    }}
-                  />
-                </div>
-              </Link>
-              <ul>
-                <li>
-                  <Link to="/login">
-                    <span>Login</span>
-                  </Link>
-                </li>
-              </ul>
+            <div>
+              <ToggleMenuNonLogin/>
+              <div className="navigationBar">
+                <Link to="/user-card">
+                  <div className="label">
+                    <div
+                        id="dciLogo"
+                        style={{
+                          backgroundImage: "url(" + logoDCI + ")"
+                        }}
+                    />
+                  </div>
+                </Link>
+                <ul>
+                  <li>
+                    <Link to="/login">
+                      <span>Login</span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           )}
         </div>
