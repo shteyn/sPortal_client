@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../../actions/auth";
 import { getUserData } from "../../actions/user";
+import ToggleMenu from './ToggleMenu';
 
 class TopNavigation extends Component {
   componentDidMount() {
@@ -17,61 +18,64 @@ class TopNavigation extends Component {
     let logoDCI = require("../../img/newDCILogo.png");
 
     return (
-      <div className="navigationBar">
-        <div className="navigationBarSubCont">
-          <Link to="/user-card">
-            <div className="label">
-              <div
-                id="dciLogo"
+      <div>
+        <ToggleMenu/>
+        <div className="navigationBar">
+          <div className="navigationBarSubCont">
+            <Link to="/user-card">
+              <div className="label">
+                <div
+                  id="dciLogo"
                 style={{
                   backgroundImage: "url(" + logoDCI + ")"
                 }}
-              />
-            </div>
-          </Link>
-          <ul>
-            <li>
-              <Link to="/user-card" onClick={() => logout()}>
-                Logout
-              </Link>
-            </li>
-            <li>
-              {isAdmin && (
-                <Link to="/dashboard" key="1">
-                  <div
-                    id="gravatar-img"
-                    style={{
-                      backgroundImage: "url(" + adminImg + ")"
-                    }}
-                  />
+                />
+              </div>
+            </Link>
+            <ul>
+              <li>
+                <Link to="/user-card" onClick={() => logout()}>
+                  Logout
                 </Link>
-              )}
-              {!isAdmin && [
-                oneUser.userImage === "" ? (
+              </li>
+              <li>
+                {isAdmin && (
                   <Link to="/dashboard" key="1">
                     <div
                       id="gravatar-img"
                       style={{
-                        backgroundImage: "url(" + placeholderUrl + ")"
+                        backgroundImage: "url(" + adminImg + ")"
                       }}
                     />
                   </Link>
-                ) : (
-                  <Link to="/dashboard" key="1">
-                    <div
-                      id="gravatar-img"
-                      style={{
-                        backgroundImage:
-                          "url(" +
-                          `http://localhost:8080/uploads/${oneUser.userImage}` +
-                          ")"
-                      }}
-                    />
-                  </Link>
-                )
-              ]}
-            </li>
-          </ul>
+                )}
+                {!isAdmin && [
+                  oneUser.userImage === "" ? (
+                    <Link to="/dashboard" key="1">
+                      <div
+                        id="gravatar-img"
+                        style={{
+                          backgroundImage: "url(" + placeholderUrl + ")"
+                        }}
+                      />
+                    </Link>
+                  ) : (
+                    <Link to="/dashboard" key="1">
+                      <div
+                        id="gravatar-img"
+                        style={{
+                          backgroundImage:
+                            "url(" +
+                            `http://localhost:8080/uploads/${oneUser.userImage}` +
+                            ")"
+                        }}
+                      />
+                    </Link>
+                  )
+                ]}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     );

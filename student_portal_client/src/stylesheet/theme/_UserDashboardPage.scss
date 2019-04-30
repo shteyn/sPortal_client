@@ -8,6 +8,7 @@
   border-radius: 50%;
   width: 100%;
   height: 100%;
+
   .addHoverImg {
     visibility: hidden;
     border-radius: 50%;
@@ -16,6 +17,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.73);
+
     img {
       width: 100px;
       height: 100px;
@@ -25,6 +27,7 @@
       transform: translate(-50%, -50%);
     }
   }
+
   &:hover {
     .addHoverImg {
       visibility: visible;
@@ -33,6 +36,7 @@
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.73);
+
       img {
         width: 100px;
         height: 100px;
@@ -49,12 +53,14 @@
   background: #ffffff;
   width: 100%;
   height: 100vh;
+
   .navigationBarUserPage {
     height: 85px;
     top: 0;
     position: absolute;
     width: 100%;
     z-index: 999;
+
     .navigationBarSubCont {
       display: flex;
       justify-content: space-between;
@@ -65,21 +71,25 @@
       position: relative;
       padding: 0;
     }
+
     .label {
       color: white;
       text-decoration: none;
       margin-left: 20px;
       align-self: center;
     }
+
     ul {
       align-self: center;
       display: flex;
       list-style: none;
       margin: 0;
       padding: 0;
+
       li {
         margin-right: 20px;
         align-self: center;
+
         a {
           text-decoration: none;
           font-family: Ropa Sans, sans-serif;
@@ -91,14 +101,13 @@
       }
     }
   }
+
   .UserPageCont {
-    //padding-top: 20px;
-    //position: relative;
-    //max-width: 1800px;
     .headerUserPage {
-      margin: 130px 30px 0 30px;
+      max-width: 1450px;
+      margin: 130px auto 0 auto;
       height: 100px;
-      //border: 1px solid #e5e5e5;
+
       .updateProfileButton {
         background-color: #ffffff;
         border: none;
@@ -107,67 +116,62 @@
         color: #da9446;
       }
     }
+
     .InfoCont {
-      margin: 0 30px 0 30px;
-      height: 100vh;
-      //max-width: 1620px;
+      max-width: 1450px;
+      margin: 0 auto 30px auto;
       display: flex;
-      //justify-content: space-between;
+
       .infoBoxCont {
         display: flex;
-        //flex-direction: column;
-        //justify-content: space-between;
       }
     }
+
     .SubBoxCont {
       width: 100%;
       min-width: 400px;
       padding: 20px;
-      //margin-right: 20px;
-      //padding: 20px;
-      //display: flex;
-      //justify-content: left;
-      //justify-items: center;
-      //box-sizing: border-box;
-      //border-radius: 9px;
       border: 1px solid #e5e5e5;
       text-align: center;
     }
+
     .linksBoxCont {
       border: 1px solid #e5e5e5;
       width: 100%;
       padding: 20px;
-      //min-width: 600px;
-      //max-width: 800px;
-      //padding-left: 20px;
-      //padding-bottom: 20px;
-      //display: flex;
-      //flex-direction: column;
-      //justify-content: end;
+
       .linksBoxItems {
         display: flex;
         flex-direction: column;
-        border-radius: 5px;
         img {
           width: 50px;
           height: 50px;
           border-radius: 10px;
         }
+
         .linksBoxItem {
           display: flex;
           justify-content: left;
           align-items: center;
           margin: 10px;
+
           p {
             margin-left: 20px;
           }
         }
+
         a {
           display: flex;
-          margin-left: 0px;
           justify-items: center;
+          cursor: pointer;
+
+          &:hover {
+            cursor: pointer;
+            color: #ec7f37;
+          }
         }
       }
+
       h1 {
         font-family: Ropa Sans, sans-serif;
         font-style: normal;
@@ -179,6 +183,7 @@
       }
     }
   }
+
   .userImageUploadCont {
     position: relative;
     //margin-right: 20px;
@@ -187,12 +192,15 @@
       height: 240px;
       margin: auto;
       display: block;
+
       &:hover {
         cursor: pointer;
       }
+
       input {
         width: 183px;
         visibility: hidden;
+
         &[type="file"] {
           &:focus {
             outline: none;
@@ -201,6 +209,7 @@
       }
     }
   }
+
   h2 {
     font-family: Ropa Sans, sans-serif;
     font-style: normal;
@@ -208,6 +217,7 @@
     line-height: normal;
     color: #da9446;
   }
+
   h3 {
     font-family: Ropa Sans, sans-serif;
     font-style: normal;
@@ -216,6 +226,7 @@
     font-size: 30px;
     color: rgba(29, 59, 139, 0.5);
   }
+
   h1 {
     font-family: Ropa Sans, sans-serif;
     font-style: normal;
@@ -224,6 +235,7 @@
     font-size: 36px;
     color: #da9446;
   }
+
   p {
     margin: 0;
     font-family: Ropa Sans, sans-serif;
@@ -233,6 +245,7 @@
     font-size: 24px;
     color: #5c5c5c;
   }
+
   .profileInfoCont {
     //width: 70%;
     display: flex;
@@ -240,20 +253,24 @@
     justify-content: flex-end;
     position: relative;
     padding-top: 30px;
+
     .profileInfoItem {
       text-align: left;
       display: flex;
       justify-content: space-between;
       margin: 10px 0;
+
       h4 {
         display: inline;
         font-weight: bold;
         color: #5c5c5c;
       }
+
       p {
         display: inline;
       }
     }
+
     h2 {
       margin-right: 20px;
       font-family: Ropa Sans, sans-serif;
@@ -261,14 +278,59 @@
       font-weight: normal;
       color: #da9446;
     }
+
     p {
       margin: 0;
       padding: 0;
       align-self: center;
     }
   }
+
   hr {
     margin: 20px;
     background-color: #da9446;
+  }
+
+  @media only screen and (max-width: 722px) {
+
+    .UserPageCont {
+      margin: auto;
+      .headerUserPage {
+        max-width: 100%;
+        margin: 130px auto 0 10px;
+        height: 100px;
+      }
+      .InfoCont {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: auto;
+        .infoBoxCont {
+          margin: auto;
+          .SubBoxCont {
+            min-width: 400px;
+            margin-left: auto;
+          }
+        }
+      }
+
+      .linksBoxCont {
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+        .linksBoxItems {
+          box-sizing: border-box;
+          padding: 0;
+          max-width: 400px;
+          display: flex;
+          flex-direction: column;
+
+          .linksBoxItem {
+            width: 380px;
+            text-align: left;
+          }
+        }
+      }
+    }
   }
 }

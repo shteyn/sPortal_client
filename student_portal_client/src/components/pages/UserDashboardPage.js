@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TopNavigation from "../navigation/TopNavigation";
+import Footer from "../navigation/Footer";
 import {
   updateProfile,
   updateImage,
@@ -234,7 +235,7 @@ class UserDashboardPage extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>{linkedInLink}</p>
+                      <p>www.linkedin.com</p>
                     </a>
                   </div>
                 )}
@@ -256,7 +257,7 @@ class UserDashboardPage extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>{xingLink}</p>
+                      <p>www.xing.com</p>
                     </a>
                   </div>
                 )}
@@ -280,7 +281,7 @@ class UserDashboardPage extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>{githubLink}</p>
+                      <p>www.github.com</p>
                     </a>
                   </div>
                 )}
@@ -304,25 +305,15 @@ class UserDashboardPage extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>{portfolioLink}</p>
+                      <p>www.portfolio.com</p>
                     </a>
                   </div>
                 )}
               </div>
             </div>
           </div>
-          {/* <button
-            className="updateButton"
-            style={{ position: "absolute", right: "0", bottom: "0" }}
-          >
-            {this.props.oneUser._id ? (
-              <UpdateUserProfileForm
-                user={this.props.oneUser}
-                updateProfile={this.updateProfile}
-              />
-            ) : null}
-          </button>*/}
         </div>
+        <Footer/>
       </div>
     );
   }
