@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Tabs, Tab } from "react-bootstrap";
+import ToggleMenuNonLogin from "../navigation/ToggleMenuNonLogin";
 import Footer from "../navigation/Footer";
 import LoginForm from "../forms/LoginForm";
 import RegistrationForm from "../forms/RegistrationForm";
@@ -22,6 +23,7 @@ class LoginPage extends Component {
     let logoDCI = require("../../img/newDCILogo.png");
     return (
       <div>
+        <ToggleMenuNonLogin/>
         <div className="LoginCont">
           <div className="navigation">
             <div>
