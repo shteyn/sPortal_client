@@ -37,3 +37,30 @@ Create a basic alumni book portal for the [DCI Digital Career Institute](https:/
   * $ npm run dev 
   
   > Client and server runs concurrently
+  
+  
+  
+# Dependencies(tech-stacks)
+Client-side | Server-side
+--- | ---
+axios: 0.18.0 | bcrypt: 3.0.4
+bootstrap: 4.3.1 | bluebird: 3.5.3
+gravatar-url: 2.0.0 | body-parser: 1.18.3
+jwt-decode: 2.2.0 | concurrently: 4.1.0
+node-sass: 4.12.0 | cors: 2.8.5
+prop-types: 15.7.2 | dotenv: 7.0.0
+react: 16.8.6 | express: 4.16.4
+react-bootstrap: 1.0.0-beta.6 | jsonwebtoken: 8.5.1
+react-datepicker: 2.4.0 | lodash: 4.17.11
+react-dom: 16.8.6 | mongoose: 5.4.19
+react-redux: 6.0.1 | mongoose-unique-validator: 2.0.2
+react-router: 4.3.1 | multer: 1.4.1
+react-router-dom: 4.3.1 | nodemailer: 5.1.1
+react-scripts: 3.0.0 | nodemon: 1.18.10
+react-select: 2.4.2 | uuid: 3.3.2
+reactstrap: 7.1.0 | 
+redux: 4.0.1 | 
+redux-thunk: 2.3.0 | 
+semantic-ui-css: 2.4.1 | 
+semantic-ui-react: 0.86.0 | 
+validator: 10.11.0 | 
