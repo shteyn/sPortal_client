@@ -104,7 +104,7 @@
 
   .UserPageCont {
     .headerUserPage {
-      max-width: 1450px;
+      max-width: 1750px;
       margin: 130px auto 0 auto;
       height: 100px;
 
@@ -118,7 +118,8 @@
     }
 
     .InfoCont {
-      max-width: 1450px;
+      width: 100%;
+      max-width: 1750px;
       margin: 0 auto 30px auto;
       display: flex;
 
@@ -217,7 +218,6 @@
     line-height: normal;
     color: #da9446;
   }
-
   h3 {
     font-family: Ropa Sans, sans-serif;
     font-style: normal;
@@ -292,14 +292,15 @@
   }
 
   @media only screen and (max-width: 722px) {
-
     .UserPageCont {
       margin: auto;
       .headerUserPage {
-        max-width: 100%;
-        margin: 130px auto 0 10px;
+        max-width: 400px;
+        margin: 130px auto 0 auto;
         height: 100px;
+        padding: 0;
       }
+
       .InfoCont {
         width: 100%;
         display: flex;
@@ -313,7 +314,6 @@
           }
         }
       }
-
       .linksBoxCont {
         width: 100%;
         max-width: 400px;
@@ -329,6 +329,29 @@
             width: 380px;
             text-align: left;
           }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1750px) {
+    .headerUserPage {
+      padding: 0 30px;
+    }
+    .InfoCont {
+      max-width: 1450px;
+      width: 100%;
+      padding: 0 30px;
+      display: flex;
+      //flex-wrap: wrap;
+      margin: 0 auto 30px auto;
+      //margin-left: auto;
+
+      .infoBoxCont {
+        margin: auto;
+        .SubBoxCont {
+          min-width: 400px;
+          margin-left: auto;
         }
       }
     }

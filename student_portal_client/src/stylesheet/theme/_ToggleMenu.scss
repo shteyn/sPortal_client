@@ -28,13 +28,13 @@
   0% {
     width: 70%;
   }
-  100% {background-position: center center;
+  100% {
+    background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
     width: 60%;
   }
 }
-
 
 @media only screen and (min-width: 722px) {
   .ToggleMenu {
@@ -46,6 +46,15 @@
 }
 
 @media only screen and (max-width: 722px) {
+  .logoToggleMenu {
+    width: 140px;
+    height: 50px;
+    margin: 20px auto 0 5%;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 20px;
+  }
   .ToggleMenu {
     margin: auto;
     padding: 0;
@@ -57,12 +66,12 @@
     justify-content: flex-start;
     color: #ec7f37;
     cursor: pointer;
-    transition: all, left .22s ease;
+    transition: all, left 0.22s ease;
     opacity: 1;
 
     &:hover {
       opacity: 1;
-      color: white;
+      color: #5c5c5c;
     }
   }
   .ToggleMenu.open {
@@ -71,6 +80,10 @@
     top: 30px;
     left: 80%;
     z-index: 99;
+    &:hover {
+      opacity: 1;
+      color: #ffffff;
+    }
   }
   .DrawerNavigationBar {
     position: fixed;
@@ -83,13 +96,13 @@
     box-sizing: border-box;
     background: #5c5c5c;
     transform: translateX(-722px);
-    transition: transform .22s ease-in;
+    transition: transform 0.22s ease-in;
     padding: 20px 10px;
     .DrawerItem {
       display: flex;
       align-items: center;
       margin-bottom: 100px;
-      a{
+      a {
         text-decoration: none;
         font-size: 28px;
         color: #ec7f37;
@@ -100,7 +113,7 @@
         }
       }
     }
-    ul{
+    ul {
       list-style: none;
       margin: 150px auto;
       padding: 0;
@@ -139,7 +152,7 @@
     opacity: 1;
     transform: translateX(0px);
     padding: 20px 10px;
-    ul{
+    ul {
       list-style: none;
       margin: 150px auto;
       padding: 0;
@@ -164,7 +177,7 @@
     .DrawerItem {
       display: flex;
       align-items: center;
-      a{
+      a {
         text-decoration: none;
         font-size: 28px;
         color: #ec7f37;
@@ -181,7 +194,7 @@
       height: 1px;
       background: white;
       margin: 10px auto 40px auto;
-      animation: 0,5s shrink forwards;
+      animation: 0, 5s shrink forwards;
     }
   }
 }

@@ -18,7 +18,7 @@ class RegistrationForm extends Component {
     errors: {}
   };
 
-  types = ["Berlin", "Düsseldorf", "Köln", "Hamburg"];
+  types = ["Berlin", "Düsseldorf", "Leipzig", "Hamburg"];
 
   onChange = event =>
     this.setState({

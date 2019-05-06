@@ -15,17 +15,17 @@
 
   #dciLogoLogin {
     width: 180px;
-    height: 50px;
+    height: 80px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    margin: 7px 0 0 20px;
+    margin: 0px 0 0 20px;
   }
 
   .navigation {
     overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(246, 245, 243, 1),
-    0 6px 20px 0 rgba(246, 245, 243, 1);
+      0 6px 20px 0 rgba(246, 245, 243, 1);
     height: 85px;
     background: white;
     //background: #e3e3e3;
@@ -127,8 +127,7 @@
       width: 160px;
       height: 55px;
       margin: 20px 0 30px 0;
-      background: /* rgba(218, 148, 70, 0.5) */
-              #ec7f37;
+      background: /* rgba(218, 148, 70, 0.5) */ #ec7f37;
       border: none;
       border-radius: 7px;
 
@@ -175,7 +174,7 @@
 
     .nav-link.active {
       box-shadow: 0 -4px 5px 0 rgba(0, 0, 0, 0.2),
-      0 -5px 5px -150px rgba(0, 0, 0, 0.19);
+        0 -5px 5px -150px rgba(0, 0, 0, 0.19);
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
       text-decoration: none;

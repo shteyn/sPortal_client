@@ -65,7 +65,7 @@ class UpdateUserProfileForm extends Component {
     } else return null;
   }
 
-  types = ["Berlin", "Düsseldorf", "Köln", "Hamburg"];
+  types = ["Berlin", "Düsseldorf", "Leipzig", "Hamburg"];
   focus = ["Front-End", "Back-End", "Full-Stack"];
 
   onChange = event => {
