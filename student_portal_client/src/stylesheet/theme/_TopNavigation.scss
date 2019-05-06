@@ -13,8 +13,7 @@
   margin: auto;
 }
 #gravatar-img {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 50%;
   border: 2px solid rgb(255, 255, 255);
   width: 70px;
@@ -26,8 +25,9 @@
 }
 .navigationBar {
   width: 100%;
-  //max-width: 2000px;
   //margin: auto;
+  //width: 1500px;
+  z-index: 1;
   height: 85px;
   display: flex;
   justify-content: space-between;
@@ -42,6 +42,10 @@
       outline: none;
     }
   }
+  /*.navigationBarSubCont {
+    max-width: 1500px;
+    margin: auto;
+  }*/
 
   .label {
     color: white;

@@ -24,7 +24,7 @@ class UserCardParent extends Component {
           {isAuthenticated && <TopNavigation />}
           {!isAuthenticated && (
             <div>
-              <ToggleMenuNonLogin/>
+              <ToggleMenuNonLogin />
               <div className="navigationBar">
                 <Link to="/user-card">
                   <div className="label">
@@ -53,7 +53,7 @@ class UserCardParent extends Component {
 
           <UsersCards allUsers={allUsers} />
         </div>
-        <div className="UserCardFooter">
+        <div>
           <Footer />
         </div>
       </div>

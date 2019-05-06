@@ -91,7 +91,7 @@ class UserCards extends Component {
             onChange={this.updateSearch}
             ref={this.mainFocusRef}
           >
-            <option value="">All Focus</option>
+            <option value="">All Main Focuses</option>
             {mainFocus.map(item => (
               <option key={item} value={item}>
                 {item}
@@ -178,10 +178,7 @@ class UserCards extends Component {
                           target="_blank"
                           href={`${oneUser.linkedInLink}`}
                         >
-                          <img
-                            src={require("../../img/linkedin.png")}
-                            alt=""
-                          />
+                          <img src={require("../../img/linkedin.png")} alt="" />
                         </a>
                       </div>
                     ) : null}
@@ -193,10 +190,7 @@ class UserCards extends Component {
                           target="_blank"
                           href={`${oneUser.githubLink}`}
                         >
-                          <img
-                            src={require("../../img/github.png")}
-                            alt=""
-                          />
+                          <img src={require("../../img/github.png")} alt="" />
                         </a>
                       </div>
                     ) : null}
@@ -208,10 +202,7 @@ class UserCards extends Component {
                           rel="noopener noreferrer"
                           href={`${oneUser.xingLink}`}
                         >
-                          <img
-                            src={require("../../img/xing.png")}
-                            alt=""
-                          />
+                          <img src={require("../../img/xing.png")} alt="" />
                         </a>
                       </div>
                     ) : null}

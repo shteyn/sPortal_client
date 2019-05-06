@@ -23,7 +23,7 @@ class LoginPage extends Component {
     let logoDCI = require("../../img/newDCILogo.png");
     return (
       <div>
-        <ToggleMenuNonLogin/>
+        <ToggleMenuNonLogin />
         <div className="LoginCont">
           <div className="navigation">
             <div>
@@ -54,9 +54,8 @@ class LoginPage extends Component {
             </Tabs>
           </div>
         </div>
-        <div className="UserCardFooter">
-          <Footer />
-        </div>
+
+        <Footer />
       </div>
     );
   }
