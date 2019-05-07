@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import TopNavigation from "../navigation/TopNavigation";
 
 class ConfirmEmailMessage extends Component {
   constructor(props) {
@@ -8,9 +7,6 @@ class ConfirmEmailMessage extends Component {
   render() {
     return (
       <div className="ConfirmEmailMessageCont">
-        <div className="navigationBarUserPage">
-          <TopNavigation />
-        </div>
         <div className="ConfirmEmailMessage">
           <div>
             <h1 style={{ color: "#da9446", marginBottom: "50px" }}>

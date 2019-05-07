@@ -6,7 +6,6 @@ import { Tabs, Tab } from "react-bootstrap";
 import WaitingUsersForm from "../forms/WaitingUsersForm";
 import ConfirmedUsersForm from "../forms/ConfirmedUsersForm";
 import { getAllUsers } from "../../actions/user";
-import TopNavigation from "../navigation/TopNavigation";
 
 class AdminDashboardPage extends Component {
   componentDidMount() {
@@ -15,9 +14,6 @@ class AdminDashboardPage extends Component {
   render() {
     return (
       <div className="admindashboard-cont">
-        <div className="navigationBarUserPage">
-          <TopNavigation />
-        </div>
         <Tabs
           style={{ marginTop: "150px" }}
           defaultActiveKey="waitingStudents"

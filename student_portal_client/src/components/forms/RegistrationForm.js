@@ -98,7 +98,6 @@ class RegistrationForm extends Component {
             id="email"
             name="email"
             placeholder="Email..."
-            autoComplete="email"
             value={data.email}
             onChange={this.onChange}
           />
@@ -112,7 +111,6 @@ class RegistrationForm extends Component {
             id="password"
             name="password"
             placeholder="Password..."
-            autoComplete="current-password"
             value={data.password}
             onChange={this.onChange}
           />

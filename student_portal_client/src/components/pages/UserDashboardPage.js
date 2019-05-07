@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import TopNavigation from "../navigation/TopNavigation";
-import Footer from "../navigation/Footer";
 import {
   updateProfile,
   updateImage,
@@ -74,9 +72,6 @@ class UserDashboardPage extends Component {
 
     return (
       <div className="UserPage">
-        <div className="navigationBarUserPage">
-          <TopNavigation />
-        </div>
         <div className="UserPageCont">
           <div className="headerUserPage">
             <div className="profileInfoItem">
@@ -313,7 +308,6 @@ class UserDashboardPage extends Component {
             </div>
           </div>
         </div>
-        <Footer/>
       </div>
     );
   }

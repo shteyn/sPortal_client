@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Footer from "../navigation/Footer";
 import { validateToken, resetPassword } from "../../actions/auth";
 import ResetPasswordForm from "../forms/ResetPasswordForm";
 
@@ -53,7 +52,6 @@ class ResetPasswordPage extends Component {
           )}
           {!loading && !success && <p>Invalid Token</p>}
         </div>
-        <Footer />
       </div>
     );
   }

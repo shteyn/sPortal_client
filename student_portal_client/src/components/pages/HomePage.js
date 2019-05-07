@@ -2,14 +2,12 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
 import * as actions from "../../actions/auth";
 class HomePage extends Component {
   render() {
     const { isAuthenticated, logout } = this.props;
     return (
-      <div>
-        <div className="container-app" />
+      <div className="container-app">
         <div className="centerWelcomeCont">
           <div className="textCont">
             <button>
