@@ -163,7 +163,11 @@ class UpdateUserProfileForm extends Component {
                 )}
                 {this.focus.map((item, i) => {
                   if (item !== this.state.mainFocus) {
-                    return <option key={i}>{item}</option>;
+                    return (
+                      <option value="" key={i}>
+                        {item}
+                      </option>
+                    );
                   }
                 })}
               </select>

@@ -1,5 +1,7 @@
 .FooterCont {
   width: 100%;
+  //position: absolute;
+  //bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +47,26 @@
       }
     }
   }
-  @media only screen and (max-width: 470px) {
+  /*@media only screen and (max-width: 470px) {
+    .FooterCont {
+      width: 100px;
+    }
+    .FooterContentBox {
+      max-width: 250px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      .FooterContentItemFour {
+        position: relative;
+        left: 0;
+      }
+    }
+  }*/
+  @media only screen and (min-width: 120px) and (max-width: 400px) {
+    .FooterCont {
+      width: 100vw;
+    }
     .FooterContentBox {
       max-width: 250px;
       margin: 20px auto;

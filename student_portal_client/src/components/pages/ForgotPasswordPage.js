@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import Footer from "../navigation/Footer";
 import ForgotPasswordForm from "../forms/ForgotPasswordForm";
 import { resetPasswordRequest } from "../../actions/auth";
 import { Link } from "react-router-dom";
@@ -19,7 +18,7 @@ class ForgotPasswordPage extends Component {
   render() {
     let logoDCI = require("../../img/newDCILogo.png");
     return (
-      <div style={{ height: "100%" }}>
+      <div>
         <div className="ForgotPasswordFormCont">
           <div className="navigationBar">
             <Link to="/user-card">
@@ -47,8 +46,6 @@ class ForgotPasswordPage extends Component {
             )}
           </div>
         </div>
-
-        <Footer />
       </div>
     );
   }

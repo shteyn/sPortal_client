@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Table, Button } from "semantic-ui-react";
-
 import { approveUser, deleteUser } from "../../actions/user";
 
 class WaitingUsersForm extends Component {
@@ -102,10 +101,6 @@ WaitingUsersForm.propTypes = {
 };
 
 function mapStateToProps(state) {
-  /*const confirmaEmail = state.allUsers.allUsers;
-  confirmaEmail.map(user => {
-    return console.log("state from Admin waiting", user.confirmationEmailSend);
-  });*/
   return {
     allUsers: state.allUsers
   };

@@ -6,7 +6,6 @@ import { getAllUsers, filterLocation, getUserData } from "../../actions/user";
 import TopNavigation from "../navigation/TopNavigation";
 import ToggleMenuNonLogin from "../navigation/ToggleMenuNonLogin";
 import UsersCards from "../forms/UsersCards";
-import Footer from "../navigation/Footer";
 
 class UserCardParent extends Component {
   componentDidMount() {
@@ -50,11 +49,7 @@ class UserCardParent extends Component {
 
         <div className="UserCardsListCont">
           <h1>OUR STUDENTS</h1>
-
           <UsersCards allUsers={allUsers} />
-        </div>
-        <div>
-          <Footer />
         </div>
       </div>
     );

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../../actions/auth";
 import { getUserData } from "../../actions/user";
-import ToggleMenu from './ToggleMenu';
+import ToggleMenu from "./ToggleMenu";
 
 class TopNavigation extends Component {
   componentDidMount() {
@@ -19,16 +19,16 @@ class TopNavigation extends Component {
 
     return (
       <div>
-        <ToggleMenu/>
+        <ToggleMenu />
         <div className="navigationBar">
           <div className="navigationBarSubCont">
             <Link to="/user-card">
               <div className="label">
                 <div
                   id="dciLogo"
-                style={{
-                  backgroundImage: "url(" + logoDCI + ")"
-                }}
+                  style={{
+                    backgroundImage: "url(" + logoDCI + ")"
+                  }}
                 />
               </div>
             </Link>
@@ -66,7 +66,9 @@ class TopNavigation extends Component {
                         style={{
                           backgroundImage:
                             "url(" +
-                            `http://localhost:8080/uploads/${oneUser.userImage}` +
+                            `http://localhost:8080/uploads/${
+                              oneUser.userImage
+                            }` +
                             ")"
                         }}
                       />

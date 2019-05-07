@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TopNavigation from "../navigation/TopNavigation";
@@ -24,7 +23,7 @@ class ConfirmationPage extends Component {
 
     return (
       <div className="ConfirmationPageCont">
-        <div className="ConfirmationNavigationBar">
+        <div>
           <TopNavigation />
         </div>
         <div className="ValidatingAndVerifiedCont">

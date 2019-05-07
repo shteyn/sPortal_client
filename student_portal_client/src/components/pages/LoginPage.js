@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Tabs, Tab } from "react-bootstrap";
 import ToggleMenuNonLogin from "../navigation/ToggleMenuNonLogin";
-import Footer from "../navigation/Footer";
 import LoginForm from "../forms/LoginForm";
 import RegistrationForm from "../forms/RegistrationForm";
 import { login } from "../../actions/auth";
@@ -54,8 +53,6 @@ class LoginPage extends Component {
             </Tabs>
           </div>
         </div>
-
-        <Footer />
       </div>
     );
   }
