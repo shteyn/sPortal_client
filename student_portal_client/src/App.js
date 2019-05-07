@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
-
 import HomePage from "./components/pages/HomePage";
 import ConfirmationPage from "./components/pages/ConfirmationPage";
 import LoginPage from "./components/pages/LoginPage";
