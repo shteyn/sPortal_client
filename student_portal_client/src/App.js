@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Route } from "react-router-dom";
-import { connect } from "react-redux";
+import {Link, Route} from "react-router-dom";
+import {connect} from "react-redux";
 import HomePage from "./components/pages/HomePage";
 import ConfirmationPage from "./components/pages/ConfirmationPage";
 import LoginPage from "./components/pages/LoginPage";
@@ -11,64 +11,120 @@ import UserCardParent from "./components/pages/UserCardParent";
 import Dashboard from "./components/pages/Dashboard";
 import UserRoutes from "./components/routes/UserRoutes";
 import GuestRoutes from "./components/routes/GuestRoutes";
+import TopNavigation from "./components/navigation/TopNavigation";
 import Footer from "./components/navigation/Footer";
+import AboutUsPage from "./components/footer_pages/AboutUsPage";
+import CoachingPage from "./components/footer_pages/CoachingPage";
+import ContactPage from "./components/footer_pages/ContactPage";
+import DigitalMarketingPage from "./components/footer_pages/DigitalMarketingPage";
+import FAQPage from "./components/footer_pages/FAQPage";
+import HireDigitalTalentsPage from "./components/footer_pages/HireDigitalTalentsPage";
+import JobAtDCIPage from "./components/footer_pages/JobAtDCIPage";
+import OrientationCoursePage from "./components/footer_pages/OrientationCoursePage";
+import PressPage from "./components/footer_pages/PressPage";
+import ScholarshipPage from "./components/footer_pages/ScholarshipPage";
+import StoriesPage from "./components/footer_pages/StoriesPage";
+import WebDevelopmentCoursePage from "./components/footer_pages/WebDevelopmentCoursePage";
+import ToggleMenuNonLogin from "./components/navigation/ToggleMenuNonLogin";
 
-const App = ({ location, isAdmin }) => (
-  <div
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      height: "100vh",
-      width: "100vw",
-      justifyContent: "space-between"
-    }}
-  >
-    <div>
-      <Route location={location} path="/" exact component={HomePage} />
-      <Route
-        location={location}
-        path="/user-card"
-        exact
-        component={UserCardParent}
-      />
-      <Route
-        location={location}
-        path="/confirmation/:token"
-        exact
-        component={ConfirmationPage}
-      />
-      <GuestRoutes
-        location={location}
-        path="/login"
-        exact
-        component={LoginPage}
-      />
-      <GuestRoutes
-        location={location}
-        path="/forgot_password"
-        exact
-        component={ForgotPasswordPage}
-      />
-      <GuestRoutes
-        location={location}
-        path="/reset_password/:token"
-        exact
-        component={ResetPasswordPage}
-      />
-      <UserRoutes
-        path="/dashboard"
-        exact
-        component={props => (
-          <Dashboard
-            timestamp={new Date().toString()}
-            {...props}
+let logoDCI = require('./img/dciLogo.png');
+
+const App = ({location, isAdmin, isAuthenticated}) => (
+
+    <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100vh",
+          width: "100vw",
+          justifyContent: "space-between"
+        }}
+    >
+        {isAuthenticated && location.pathname !== "/" ? <TopNavigation/> : null}
+        {!isAuthenticated && location.pathname !== "/" ? (
+            <div>
+              {/*<ToggleMenuNonLogin/>*/}
+              <div className="navigationBar">
+                <Link to="/user-card">
+                  <div className="label">
+                    <div
+                        id="dciLogo"
+                        style={{
+                          backgroundImage: "url(" + logoDCI + ")"
+                        }}
+                    />
+                  </div>
+                </Link>
+                <ul>
+                  <li>
+                    <Link to="/login">
+                      <span>Login</span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        ) : null}
+      <div>
+        <Route location={location} path="/" exact component={HomePage}/>
+        <Route location={location} path="/about-us" exact component={AboutUsPage}/>
+        <Route location={location} path="/coaching" exact component={CoachingPage}/>
+        <Route location={location} path="/contact" exact component={ContactPage}/>
+        <Route location={location} path="/digital-marketing" exact component={DigitalMarketingPage}/>
+        <Route location={location} path="/faq" exact component={FAQPage}/>
+        <Route location={location} path="/hire-digital-talents" exact component={HireDigitalTalentsPage}/>
+        <Route location={location} path="/jobs-dci" exact component={JobAtDCIPage}/>
+        <Route location={location} path="/orientation-course" exact component={OrientationCoursePage}/>
+        <Route location={location} path="/press" exact component={PressPage}/>
+        <Route location={location} path="/scholarship" exact component={ScholarshipPage}/>
+        <Route location={location} path="/stories" exact component={StoriesPage}/>
+        <Route location={location} path="/web-development-course" exact component={WebDevelopmentCoursePage}/>
+
+        <Route
             location={location}
-          />
-        )}
-      />
+            path="/user-card"
+            exact
+            component={UserCardParent}
+        />
+        <Route
+            location={location}
+            path="/confirmation/:token"
+            exact
+            component={ConfirmationPage}
+        />
+        <GuestRoutes
+            location={location}
+            path="/login"
+            exact
+            component={LoginPage}
+        />
+        <GuestRoutes
+            location={location}
+            path="/forgot_password"
+            exact
+            component={ForgotPasswordPage}
+        />
+        <GuestRoutes
+            location={location}
+            path="/reset_password/:token"
+            exact
+            component={ResetPasswordPage}
+        />
+        <UserRoutes
+            path="/dashboard"
+            exact
+            component={props => (
+                <Dashboard
+                    timestamp={new Date().toString()}
+                    {...props}
+                    location={location}
+                />
+            )}
+        />
+      </div>
+
+      {!isAdmin && location.pathname !== "/" ? <Footer/> : null}
     </div>
-    {!isAdmin ? <Footer /> : null}
-  </div>
 );
 
 App.propTypes = {
@@ -80,7 +136,6 @@ App.propTypes = {
 };
 
 function mapStateToProps(state) {
-  //console.log("state from App", state.user.isAdmin);
   return {
     isAdmin: !!state.user.isAdmin,
     isAuthenticated: !!state.user.email

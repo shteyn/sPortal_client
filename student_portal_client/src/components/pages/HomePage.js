@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/auth";
 class HomePage extends Component {
   render() {
-    const { isAuthenticated, logout } = this.props;
+    // const { isAuthenticated, logout } = this.props;
     return (
       <div className="container-app">
         <div className="centerWelcomeCont">

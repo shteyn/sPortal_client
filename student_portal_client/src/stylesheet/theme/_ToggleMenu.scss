@@ -37,7 +37,7 @@
 }
 
 @media only screen and (min-width: 722px) {
-  .ToggleMenu {
+  .ToggleMenuCont {
     display: none;
   }
   .DrawerNavigationBar {
@@ -54,6 +54,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     top: 20px;
+    z-index: 2000;
   }
   .ToggleMenu {
     margin: auto;
@@ -68,7 +69,6 @@
     cursor: pointer;
     transition: all, left 0.22s ease;
     opacity: 1;
-
     &:hover {
       opacity: 1;
       color: #5c5c5c;
@@ -79,7 +79,7 @@
     opacity: 1;
     top: 30px;
     left: 80%;
-    z-index: 99;
+    z-index: 2000;
     &:hover {
       opacity: 1;
       color: #ffffff;
