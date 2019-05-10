@@ -31,10 +31,19 @@ const UserSchema = new mongoose.Schema(
       default: "",
       required: true
     },
+    studentCourse: {
+      type: String,
+      default: "",
+      required: true
+    },
     studentClass: {
       type: Number,
       default: "",
       required: true
+    },
+    aboutMeSection: {
+      type: String,
+      default: ""
     },
     mainFocus: {
       type: String,

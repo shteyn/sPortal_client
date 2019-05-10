@@ -59,7 +59,9 @@ class LoginForm extends Component {
             // autoComplete="email"
             value={data.email}
             onChange={this.onChange}
+            required
           />
+          <br />
           {errors.email && <InlineError text={errors.email} />}
           <br />
           <input
@@ -70,6 +72,7 @@ class LoginForm extends Component {
             autoComplete="current-password"
             value={data.password}
             onChange={this.onChange}
+            required
           />
           {errors.password && <InlineError text={errors.password} />}
           <br />

@@ -24,7 +24,7 @@ const store = createStore(
 );
 
 if (localStorage.userJWT) {
-  console.log("localStorage.userJWT", localStorage.userJWT);
+  //console.log("localStorage.userJWT", localStorage.userJWT);
 
   const payload = decode(localStorage.userJWT);
   const user = {

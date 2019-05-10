@@ -58,7 +58,7 @@ router.post("/users/update-img/:id", upload.single("userImage"), (req, res) => {
       {
         new: true,
         select:
-          "_id location availability createdAt email firstName lastName studentClass linkedInLink xingLink githubLink portfolioLink userImage confirmationEmailSend confirmed isAdmin mainFocus"
+          "_id location availability createdAt email firstName lastName studentClass linkedInLink xingLink githubLink portfolioLink userImage confirmationEmailSend confirmed isAdmin mainFocus aboutMeSection"
       }
     ).then(updatedImg => {
       unlinkAsync(`./public/uploads/${oldImage}`);
@@ -125,14 +125,16 @@ router.post("/users/registration", (req, res) => {
     firstName,
     lastName,
     location,
-    studentClass
+    studentClass,
+    studentCourse
   } = req.body.user;
   const user = new User({
     email,
     firstName,
     lastName,
     location,
-    studentClass
+    studentClass,
+    studentCourse
   });
   user.setPassword(password);
   user.setConfirmationToken();
