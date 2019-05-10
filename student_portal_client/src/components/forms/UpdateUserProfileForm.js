@@ -30,15 +30,15 @@ class UpdateUserProfileForm extends Component {
       ? new Date(this.props.user.availability)
       : null,
     id: this.props.user._id,
-    firstName: this.props.user.firstName,
-    lastName: this.props.user.lastName,
+    firstName: "",
+    lastName: "",
     location: this.props.user.location,
-    studentClass: this.props.user.studentClass,
+    studentClass: "",
     userImage: this.props.user.userImage,
-    githubLink: this.props.user.githubLink,
-    linkedInLink: this.props.user.linkedInLink,
-    portfolioLink: this.props.user.portfolioLink,
-    xingLink: this.props.user.xingLink,
+    githubLink: "",
+    linkedInLink: "",
+    portfolioLink: "",
+    xingLink: "",
     availability: this.props.user.availability,
     mainFocus: this.props.user.mainFocus
   };
@@ -113,6 +113,8 @@ class UpdateUserProfileForm extends Component {
   };
 
   render() {
+    console.log("state update form", this.state);
+
     return (
       <div>
         <div variant="primary" onClick={this.handleShow}>
@@ -131,7 +133,7 @@ class UpdateUserProfileForm extends Component {
                   ref={this.firstNameRef}
                   type="text"
                   name="firstName"
-                  defaultValue={this.state.firstName}
+                  defaultValue={this.props.user.firstName}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
@@ -140,7 +142,7 @@ class UpdateUserProfileForm extends Component {
                   ref={this.lastNameRef}
                   type="text"
                   name="lastName"
-                  defaultValue={this.state.lastName}
+                  defaultValue={this.props.user.lastName}
                 />
               </Form.Group>
 
@@ -148,9 +150,10 @@ class UpdateUserProfileForm extends Component {
                 <Form.Label>Class</Form.Label>
                 <Form.Control
                   ref={this.studentClassRef}
-                  type="text"
+                  onkeydown="return event.keyCode !== 69"
+                  type="number"
                   name="studentClass"
-                  defaultValue={this.state.studentClass}
+                  defaultValue={this.props.user.studentClass}
                 />
               </Form.Group>
 
@@ -163,11 +166,9 @@ class UpdateUserProfileForm extends Component {
                 )}
                 {this.focus.map((item, i) => {
                   if (item !== this.state.mainFocus) {
-                    return (
-                      <option value="" key={i}>
-                        {item}
-                      </option>
-                    );
+                    return <option key={i}>{item}</option>;
+                  } else {
+                    return null;
                   }
                 })}
               </select>
@@ -177,6 +178,8 @@ class UpdateUserProfileForm extends Component {
                 {this.types.map((item, i) => {
                   if (item !== this.state.location) {
                     return <option key={i}>{item}</option>;
+                  } else {
+                    return null;
                   }
                 })}
               </select>
@@ -212,7 +215,7 @@ class UpdateUserProfileForm extends Component {
                   type="url"
                   name="linkedInLink"
                   pattern="https://.*"
-                  defaultValue={this.state.linkedInLink}
+                  defaultValue={this.props.user.linkedInLink}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
@@ -226,7 +229,7 @@ class UpdateUserProfileForm extends Component {
                   type="url"
                   name="githubLink"
                   pattern="https://.*"
-                  defaultValue={this.state.githubLink}
+                  defaultValue={this.props.user.githubLink}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
@@ -240,7 +243,7 @@ class UpdateUserProfileForm extends Component {
                   type="url"
                   name="xingLink"
                   pattern="https://.*"
-                  defaultValue={this.state.xingLink}
+                  defaultValue={this.props.user.xingLink}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicEmail">
@@ -254,7 +257,7 @@ class UpdateUserProfileForm extends Component {
                   type="url"
                   name="portfolioLink"
                   pattern="https://.*"
-                  defaultValue={this.state.portfolioLink}
+                  defaultValue={this.props.user.portfolioLink}
                 />
               </Form.Group>
 

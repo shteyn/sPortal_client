@@ -230,7 +230,7 @@ class UserDashboardPage extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>www.linkedin.com</p>
+                      <p>{linkedInLink}</p>
                     </a>
                   </div>
                 )}
@@ -252,7 +252,7 @@ class UserDashboardPage extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>www.xing.com</p>
+                      <p>{xingLink}</p>
                     </a>
                   </div>
                 )}
@@ -276,7 +276,7 @@ class UserDashboardPage extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>www.github.com</p>
+                      <p>{githubLink}</p>
                     </a>
                   </div>
                 )}
@@ -300,7 +300,7 @@ class UserDashboardPage extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <p>www.portfolio.com</p>
+                      <p>{portfolioLink}</p>
                     </a>
                   </div>
                 )}
