@@ -24,6 +24,7 @@ class ConfirmedUsersForm extends Component {
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Location</Table.HeaderCell>
+              <Table.HeaderCell>Course</Table.HeaderCell>
               <Table.HeaderCell>Class</Table.HeaderCell>
               <Table.HeaderCell>First Name</Table.HeaderCell>
               <Table.HeaderCell>Last Name</Table.HeaderCell>
@@ -34,10 +35,12 @@ class ConfirmedUsersForm extends Component {
 
           <Table.Body>
             {allUsers.map(oneUser => {
+              console.log("one user confirmed", oneUser);
               if (oneUser.confirmed) {
                 return (
                   <Table.Row key={oneUser._id}>
                     <Table.Cell>{oneUser.location}</Table.Cell>
+                    <Table.Cell>{oneUser.studentCourse}</Table.Cell>
                     <Table.Cell>{oneUser.studentClass}</Table.Cell>
                     <Table.Cell>{oneUser.firstName}</Table.Cell>
                     <Table.Cell>{oneUser.lastName}</Table.Cell>
