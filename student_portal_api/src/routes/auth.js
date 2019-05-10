@@ -43,9 +43,14 @@ router.post("/confirmation", (req, res) => {
     //{ confirmationToken: "", confirmed: true },
     { confirmationToken: "", confirmationEmailSend: true },
     { new: true }
-  ).then(user =>
-    user ? res.json({ user: user.toAuthJSON() }) : res.status(400).json({})
-  );
+  ).then(user => {
+    console.log("user from confirmation rout", user);
+    user ? res.json({ user: user.toAuthJSON() }) : res.status(400).json({});
+    console.log(
+      "user from confirmation rout user.toAuthJSON()",
+      user.toAuthJSON()
+    );
+  });
 });
 
 //reset password rout
@@ -62,7 +67,6 @@ router.post("/reset_password_request", (req, res) => {
 
 router.post("/validate_token", (req, res) => {
   console.log("token validation auth routers", req.body.token);
-
   jwt.verify(req.body.token, process.env.JWT_SECRET, err => {
     if (err) {
       res.status(401).json({});
@@ -74,7 +78,6 @@ router.post("/validate_token", (req, res) => {
 
 router.post("/reset_password", (req, res) => {
   const { password, token } = req.body.data;
-
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {
       res.status(401).json({ errors: { global: "Invalid Token" } });

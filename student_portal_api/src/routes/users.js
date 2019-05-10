@@ -89,7 +89,8 @@ router.put("/users/update-user/:id", (req, res) => {
 });
 
 //REGISTRATION
-/*router.post("/users/registration", (req, res) => {
+/*
+router.post("/users/registration", (req, res) => {
   const {
     email,
     password,
@@ -114,7 +115,8 @@ router.put("/users/update-user/:id", (req, res) => {
       res.json({ user: user.toAuthJSON() });
     })
     .catch(err => res.status(400).json({ errors: parseErrors(err.errors) }));
-});*/
+});
+*/
 
 router.post("/users/registration", (req, res) => {
   const {
@@ -139,6 +141,7 @@ router.post("/users/registration", (req, res) => {
     .then(user => {
       sendConfirmationEmail(user);
       res.json({ user: user.toAuthJSON() });
+      console.log("res.json registration after toAuthJSON", user.toAuthJSON());
     })
     .catch(err => res.status(400).json({ errors: parseErrors(err.errors) }));
 });

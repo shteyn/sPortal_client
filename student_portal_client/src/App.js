@@ -13,7 +13,7 @@ import UserRoutes from "./components/routes/UserRoutes";
 import GuestRoutes from "./components/routes/GuestRoutes";
 import Footer from "./components/navigation/Footer";
 
-const App = ({ location, isAdmin }) => (
+const App = ({ location, isAdmin, isAuthenticated }) => (
   <div
     style={{
       display: "flex",
@@ -37,6 +37,7 @@ const App = ({ location, isAdmin }) => (
         exact
         component={ConfirmationPage}
       />
+
       <GuestRoutes
         location={location}
         path="/login"
@@ -67,7 +68,7 @@ const App = ({ location, isAdmin }) => (
         )}
       />
     </div>
-    {!isAdmin ? <Footer /> : null}
+    {!isAdmin && location.pathname !== "/" ? <Footer /> : null}
   </div>
 );
 

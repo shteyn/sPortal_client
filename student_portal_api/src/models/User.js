@@ -132,8 +132,8 @@ UserSchema.methods.generateJTW = function generateJTW() {
       lastName: this.lastName,
       email: this.email,
       confirmed: this.confirmed,
-      confirmationEmailSend: this.confirmationEmailSend,
-      isAdmin: this.isAdmin
+      isAdmin: this.isAdmin,
+      confirmationEmailSend: this.confirmationEmailSend
     },
     process.env.JWT_SECRET
   );
