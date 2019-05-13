@@ -45,8 +45,6 @@ class UserDashboardPage extends Component {
       mainFocus
     } = this.props.oneUser;
 
-    console.log('userImage ', userImage);
-
     let placeholderUrl = require("../../img/empty-profile.png");
 
     let formattedAvailability = "";
@@ -225,7 +223,7 @@ class UserDashboardPage extends Component {
                 <h1>About Me</h1>
                 {!aboutMeSection ? (
                   <p style={{ color: "#da9446" }}>
-                    Please add your LinkedIn URL ...
+                    Please tell about yourself ...
                   </p>
                 ) : (
                   <div>{aboutMeSection}</div>

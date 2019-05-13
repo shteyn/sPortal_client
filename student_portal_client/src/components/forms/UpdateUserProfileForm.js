@@ -10,7 +10,11 @@ import {
   DropdownButton
 } from "react-bootstrap";
 import DatePicker from "react-datepicker";
-
+import {
+  locationsArray,
+  devFocusArray,
+  marketingFocusArray
+} from "../../helpers";
 import "react-datepicker/dist/react-datepicker.css";
 
 class UpdateUserProfileForm extends Component {
@@ -76,8 +80,8 @@ class UpdateUserProfileForm extends Component {
     } else return null;
   }
 
-  types = ["Berlin", "Düsseldorf", "Leipzig", "Hamburg"];
-  focus = ["Front-End", "Back-End", "Full-Stack"];
+  //types = ["Berlin", "Düsseldorf", "Leipzig", "Hamburg"];
+  //focus = ["Front-End", "Back-End", "Full-Stack"];
 
   onChange = event => {
     this.setState({
@@ -125,7 +129,7 @@ class UpdateUserProfileForm extends Component {
   };
 
   render() {
-    //console.log("state update form", this.state);
+    const { studentCourse } = this.props.user;
 
     return (
       <div>
@@ -249,13 +253,21 @@ class UpdateUserProfileForm extends Component {
                       ) : (
                         <option defaultValue>{this.state.mainFocus}</option>
                       )}
-                      {this.focus.map((item, i) => {
-                        if (item !== this.state.mainFocus) {
-                          return <option key={i}>{item}</option>;
-                        } else {
-                          return null;
-                        }
-                      })}
+                      {studentCourse === "Web Development"
+                        ? devFocusArray.map((item, i) => {
+                            if (item !== this.state.mainFocus) {
+                              return <option key={i}>{item}</option>;
+                            } else {
+                              return null;
+                            }
+                          })
+                        : marketingFocusArray.map((item, i) => {
+                            if (item !== this.state.mainFocus) {
+                              return <option key={i}>{item}</option>;
+                            } else {
+                              return null;
+                            }
+                          })}
                     </select>
                   </InputGroup>
                 </Form.Group>
@@ -271,7 +283,7 @@ class UpdateUserProfileForm extends Component {
                       onChange={this.onChange}
                     >
                       <option defaultValue>{this.state.location}</option>
-                      {this.types.map((item, i) => {
+                      {locationsArray.map((item, i) => {
                         if (item !== this.state.location) {
                           return <option key={i}>{item}</option>;
                         } else {
