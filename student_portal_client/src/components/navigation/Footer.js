@@ -37,12 +37,3 @@ class Footer extends Component {
 }
 
 export default Footer;
-
-
-{/*<Route location={location} path="/coaching" exact component={CoachingPage} />*/}
-{/*<Route location={location} path="/digital-marketing" exact component={DigitalMarketingPage} />*/}
-{/*<Route location={location} path="/hire-digital-talents" exact component={HireDigitalTalentsPage} />*/}
-{/*<Route location={location} path="/orientation-course" exact component={OrientationCoursePage} />*/}
-{/*<Route location={location} path="/scholarship" exact component={ScholarshipPage} />*/}
-{/*<Route location={location} path="/stories" exact component={StoriesPage} />*/}
-{/*<Route location={location} path="/web-development-course" exact component={WebDevelopmentCoursePage} />*/}
