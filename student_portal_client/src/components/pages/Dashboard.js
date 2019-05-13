@@ -6,7 +6,7 @@ import UserCanLoginMessage from "../messages/UserCanLoginMessage";
 import UserDashboardPage from "./UserDashboardPage";
 import AdminDashboardPage from "./AdminDashboardPage";
 import { getUserData } from "../../actions/user";
-import TopNavigation from "../navigation/TopNavigation";
+// import TopNavigation from "../navigation/TopNavigation";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -24,7 +24,7 @@ class Dashboard extends Component {
     } = this.props;
     return (
       <div>
-        <TopNavigation />
+        {/*<TopNavigation />*/}
 
         {!isConfirmationEmailConfirmed && !isConfirmed ? (
           <ConfirmEmailMessage user={user} />

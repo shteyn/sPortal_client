@@ -34,7 +34,7 @@
 }
 
 @media only screen and (min-width: 722px) {
-  .ToggleMenu {
+  .ToggleMenuCont {
     display: none;
   }
   .DrawerNavigationBar {
@@ -46,6 +46,7 @@
   .ToggleMenuNonLogin {
     margin: 0;
     padding: 0;
+    z-index: 2000;
     position: absolute;
     left: 80%;
     top: 25px;
@@ -67,7 +68,7 @@
     opacity: 1;
     top: 30px;
     left: 80%;
-    z-index: 99;
+    z-index: 2000;
     &:hover {
       opacity: 1;
       color: #ffffff;
@@ -75,6 +76,7 @@
   }
   .DrawerNavigationBar {
     position: fixed;
+    z-index: 1050;
     left: 0;
     top: 0;
     right: 0;

@@ -1,0 +1,59 @@
+
+
+@media (min-width: 576px) {
+  .show .modal-dialog {
+    max-width: 1100px;
+    padding: 20px;
+    .modal-header {
+      padding: 30px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      border: none;
+    }
+
+    .modal-body {
+      width: 100%;
+      max-width: 1060px;
+      margin: auto;
+      padding: 20px 50px;
+
+      h5 {
+        text-align: center;
+        margin-top: 50px;
+        text-decoration: none;
+        font-family: Ropa Sans, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 21px;
+        color: #ec7f37;
+        word-break: break-word;
+        word-wrap: break-word;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+      }
+
+      .ContactFormPersonalInfo {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  .checkboxContainerItem {
+    margin: 20px 0;
+    display: flex;
+    .form-check {
+      margin-right: 20px;
+    }
+  }
+  .btn.btn-primary {
+    width: 100%;
+    color: #5c5c5c;
+    outline: none;
+    border: none;
+    background-color: #ec7f37;
+  }
+}
