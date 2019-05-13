@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import moment from "moment";
+
 
 class UserCards extends Component {
   constructor(props, context) {
@@ -112,10 +114,9 @@ class UserCards extends Component {
         </div>
         <div className="UserCardsItems">
           {filteredLocations.map(oneUser => {
-            let currentDate = new Date().toLocaleString();
+            let currentDate = new Date();
             let date = new Date(oneUser.availability);
-            let newUserDate = date.toLocaleString();
-            const availability = date.toDateString();
+            const newdate = moment(date).format("MMMM D, YYYY");
 
             if (oneUser.confirmed) {
               return (
@@ -156,9 +157,9 @@ class UserCards extends Component {
                         </p>
                       ) : (
                         [
-                          newUserDate > currentDate ? (
+                          date > currentDate ? (
                             <p key="1" style={{ color: "white" }}>
-                              {availability}
+                              {newdate}
                             </p>
                           ) : (
                             <p key="2" style={{ color: "green" }}>

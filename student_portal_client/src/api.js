@@ -14,7 +14,11 @@ export default {
         .post("http://localhost:8080/api/users/registration", {
           user
         })
-        .then(res => res.data.user), //call users.js routes backend
+        .then(
+          res =>
+            //console.log("user after registration", res.data.user)
+            res.data.user
+        ), //call users.js routes backend
 
     confirm: token =>
       axios

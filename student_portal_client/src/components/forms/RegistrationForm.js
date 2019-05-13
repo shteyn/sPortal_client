@@ -12,13 +12,15 @@ class RegistrationForm extends Component {
       firstName: "",
       lastName: "",
       location: "",
-      studentClass: ""
+      studentClass: "",
+      studentCourse: ""
     },
     loading: false,
     errors: {}
   };
 
-  types = ["Berlin", "Düsseldorf", "Leipzig", "Hamburg"];
+  locationTypes = ["Berlin", "Düsseldorf", "Leipzig", "Hamburg"];
+  courseTypes = ["Web Development", "Digital Marketing / E-Commerce"];
 
   onChange = event =>
     this.setState({
@@ -73,6 +75,7 @@ class RegistrationForm extends Component {
             placeholder="First name..."
             value={data.firstName}
             onChange={this.onChange}
+            required
           />
 
           <input
@@ -82,6 +85,7 @@ class RegistrationForm extends Component {
             placeholder="Last name..."
             value={data.lastName}
             onChange={this.onChange}
+            required
           />
           <input
             type="number"
@@ -91,6 +95,7 @@ class RegistrationForm extends Component {
             placeholder="Class Number..."
             value={data.studentClass}
             onChange={this.onChange}
+            required
           />
           <input
             autoComplete="off"
@@ -100,6 +105,7 @@ class RegistrationForm extends Component {
             placeholder="Email..."
             value={data.email}
             onChange={this.onChange}
+            required
           />
           <br />
           {/* InlineError server side validation */}
@@ -113,6 +119,7 @@ class RegistrationForm extends Component {
             placeholder="Password..."
             value={data.password}
             onChange={this.onChange}
+            required
           />
 
           {errors.password && <InlineError text={errors.password} />}
@@ -124,14 +131,23 @@ class RegistrationForm extends Component {
             className="DropDownSelect"
             required
           >
-            <option value="">Choose location</option>
-            {this.types.map((item, i) => (
+            <option value="">Choose Location</option>
+            {this.locationTypes.map((item, i) => (
               <option key={i}>{item}</option>
             ))}
           </select>
-
+          <select
+            name="studentCourse"
+            onChange={this.onChange}
+            className="DropDownSelect"
+            required
+          >
+            <option value="">Choose Course</option>
+            {this.courseTypes.map((item, i) => (
+              <option key={i}>{item}</option>
+            ))}
+          </select>
           <br />
-
           <button>Submit</button>
         </form>
       </div>

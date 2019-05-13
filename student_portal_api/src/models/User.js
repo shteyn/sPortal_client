@@ -31,10 +31,19 @@ const UserSchema = new mongoose.Schema(
       default: "",
       required: true
     },
+    studentCourse: {
+      type: String,
+      default: "",
+      required: true
+    },
     studentClass: {
       type: Number,
       default: "",
       required: true
+    },
+    aboutMeSection: {
+      type: String,
+      default: ""
     },
     mainFocus: {
       type: String,
@@ -132,8 +141,8 @@ UserSchema.methods.generateJTW = function generateJTW() {
       lastName: this.lastName,
       email: this.email,
       confirmed: this.confirmed,
-      confirmationEmailSend: this.confirmationEmailSend,
-      isAdmin: this.isAdmin
+      isAdmin: this.isAdmin,
+      confirmationEmailSend: this.confirmationEmailSend
     },
     process.env.JWT_SECRET
   );

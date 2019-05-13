@@ -58,7 +58,7 @@ router.post("/users/update-img/:id", upload.single("userImage"), (req, res) => {
       {
         new: true,
         select:
-          "_id location availability createdAt email firstName lastName studentClass linkedInLink xingLink githubLink portfolioLink userImage confirmationEmailSend confirmed isAdmin mainFocus"
+          "_id location availability createdAt email firstName lastName studentClass linkedInLink xingLink githubLink portfolioLink userImage confirmationEmailSend confirmed isAdmin mainFocus aboutMeSection"
       }
     ).then(updatedImg => {
       unlinkAsync(`./public/uploads/${oldImage}`);
@@ -89,7 +89,8 @@ router.put("/users/update-user/:id", (req, res) => {
 });
 
 //REGISTRATION
-/*router.post("/users/registration", (req, res) => {
+/*
+router.post("/users/registration", (req, res) => {
   const {
     email,
     password,
@@ -114,7 +115,8 @@ router.put("/users/update-user/:id", (req, res) => {
       res.json({ user: user.toAuthJSON() });
     })
     .catch(err => res.status(400).json({ errors: parseErrors(err.errors) }));
-});*/
+});
+*/
 
 router.post("/users/registration", (req, res) => {
   const {
@@ -123,14 +125,16 @@ router.post("/users/registration", (req, res) => {
     firstName,
     lastName,
     location,
-    studentClass
+    studentClass,
+    studentCourse
   } = req.body.user;
   const user = new User({
     email,
     firstName,
     lastName,
     location,
-    studentClass
+    studentClass,
+    studentCourse
   });
   user.setPassword(password);
   user.setConfirmationToken();
@@ -139,6 +143,7 @@ router.post("/users/registration", (req, res) => {
     .then(user => {
       sendConfirmationEmail(user);
       res.json({ user: user.toAuthJSON() });
+      console.log("res.json registration after toAuthJSON", user.toAuthJSON());
     })
     .catch(err => res.status(400).json({ errors: parseErrors(err.errors) }));
 });
@@ -275,6 +280,7 @@ router.post("/users/dashboard", (req, res) => {
     }
   )
     .then(user => {
+      console.log('user', user)
       res.json(user);
     })
     .catch(error =>
