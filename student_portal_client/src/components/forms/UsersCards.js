@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import moment from "moment";
-
+import {
+  courseTypesArray,
+  devFocusArray,
+  marketingFocusArray
+} from "../../helpers";
 
 class UserCards extends Component {
   constructor(props, context) {
@@ -9,19 +13,31 @@ class UserCards extends Component {
     this.locationsRef = React.createRef();
     this.availabilityRef = React.createRef();
     this.mainFocusRef = React.createRef();
+    this.studentCourseRef = React.createRef();
 
     this.state = {
       location: "",
       availability: "",
-      mainFocus: ""
+      mainFocus: "",
+      studentCourse: ""
     };
   }
 
-  updateSearch = selectedOption => {
+  updateSearch = () => {
     this.setState({
       location: this.locationsRef.current.value,
       availability: this.availabilityRef.current.value,
-      mainFocus: this.mainFocusRef.current.value
+      mainFocus: this.mainFocusRef.current.value,
+      studentCourse: this.studentCourseRef.current.value
+    });
+  };
+
+  clearAllFilters = () => {
+    this.setState({
+      location: "",
+      availability: "",
+      mainFocus: "",
+      studentCourse: ""
     });
   };
   render() {
@@ -29,14 +45,60 @@ class UserCards extends Component {
     const locations = [];
     const mainFocus = [];
 
+    const studentCourse = courseTypesArray;
+    console.log("this.state", this.state);
+
+    allUsers.map(user => {
+      if (locations.indexOf(user.location) < 0) {
+        locations.push(user.location);
+      }
+      return null;
+    });
+
+    allUsers.map(user => {
+      if (mainFocus.indexOf(user.mainFocus) < 0 && user.mainFocus !== "") {
+        mainFocus.push(user.mainFocus);
+      } else if (this.state.studentCourse === "Web Development") {
+        let compareArray = mainFocus.filter(
+          i => devFocusArray.indexOf(i) !== -1
+        );
+        mainFocus.length = 0;
+        compareArray.map(devFocus => {
+          mainFocus.push(devFocus);
+        });
+      } else if (
+        this.state.studentCourse === "Digital Marketing / E-Commerce"
+      ) {
+        let compareArray = mainFocus.filter(
+          i => marketingFocusArray.indexOf(i) !== -1
+        );
+        mainFocus.length = 0;
+        compareArray.map(marketingFocus => {
+          mainFocus.push(marketingFocus);
+        });
+      }
+      return null;
+    });
+
     const filteredLocations = allUsers.filter(user => {
       let validLocation = true;
       let validAvailability = true;
       let validMainFocus = true;
+      let validStudentCourse = true;
 
       if (this.state.location !== "") {
         validLocation = user.location.indexOf(this.state.location) !== -1;
       }
+
+      if (this.state.studentCourse !== "") {
+        validStudentCourse =
+          user.studentCourse.indexOf(this.state.studentCourse) !== -1;
+      }
+
+      if (this.state.mainFocus !== "") {
+        validMainFocus = user.mainFocus.indexOf(this.state.mainFocus) !== -1;
+      }
+
       if (this.state.availability !== "") {
         if (typeof user.availability == "string") {
           let currentDate = new Date();
@@ -50,26 +112,14 @@ class UserCards extends Component {
           validAvailability = false;
         }
       }
-
-      if (this.state.mainFocus !== "") {
-        validMainFocus = user.mainFocus.indexOf(this.state.mainFocus) !== -1;
-      }
-      return validLocation && validAvailability && validMainFocus;
+      return (
+        validLocation &&
+        validAvailability &&
+        validMainFocus &&
+        validStudentCourse
+      );
     });
 
-    allUsers.map(user => {
-      if (locations.indexOf(user.location) < 0) {
-        locations.push(user.location);
-      }
-      return null;
-    });
-
-    allUsers.map(user => {
-      if (mainFocus.indexOf(user.mainFocus) < 0 && user.mainFocus !== "") {
-        mainFocus.push(user.mainFocus);
-      }
-      return null;
-    });
     let placeholderUrl = require("../../img/placeholderUser.png");
 
     return (
@@ -89,13 +139,24 @@ class UserCards extends Component {
 
           <select
             className="DropDownSelect"
+            name="studentCourse"
+            onChange={this.updateSearch}
+            ref={this.studentCourseRef}
+          >
+            <option value="">All Courses</option>
+            {studentCourse.map(item => (
+              <option key={item}>{item}</option>
+            ))}
+          </select>
+          <select
+            className="DropDownSelect"
             name="mainFocus"
             onChange={this.updateSearch}
             ref={this.mainFocusRef}
           >
             <option value="">All Main Focuses</option>
-            {mainFocus.map(item => (
-              <option key={item} value={item}>
+            {mainFocus.map((item, i) => (
+              <option key={i} value={item}>
                 {item}
               </option>
             ))}
@@ -112,11 +173,15 @@ class UserCards extends Component {
             <option value="future">Future Available</option>
           </select>
         </div>
+
+        <button className="ResetBnt" onClick={this.clearAllFilters}>
+          Reset Filters
+        </button>
         <div className="UserCardsItems">
           {filteredLocations.map(oneUser => {
             let currentDate = new Date();
             let date = new Date(oneUser.availability);
-            const newdate = moment(date).format("MMMM D, YYYY");
+            const newDate = moment(date).format("MMMM D, YYYY");
 
             if (oneUser.confirmed) {
               return (
@@ -140,11 +205,15 @@ class UserCards extends Component {
                     />
                   )}
 
-                  <div className="userName">
-                    <p>{oneUser.firstName}</p>
-                    <p> {oneUser.lastName}</p>
+                  <div className="userInfoCards">
+                    <div className="userName">
+                      <p>
+                        {oneUser.firstName} {oneUser.lastName}
+                      </p>
+                    </div>
                     <div className="mainFocusCont">
-                      {<p className="mainFocusItem">{oneUser.mainFocus}</p>}
+                      <div className="courseItem">{oneUser.studentCourse}</div>
+                      <div className="mainFocusItem">{oneUser.mainFocus}</div>
                     </div>
                   </div>
                   <div className="locationAndAvailability">
@@ -159,7 +228,7 @@ class UserCards extends Component {
                         [
                           date > currentDate ? (
                             <p key="1" style={{ color: "white" }}>
-                              {newdate}
+                              {newDate}
                             </p>
                           ) : (
                             <p key="2" style={{ color: "green" }}>

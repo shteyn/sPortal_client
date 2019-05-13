@@ -5,7 +5,7 @@
 # testing
 /coverage
 
-/public/uploads
+/public/uploads/*
 # production
 /build
 

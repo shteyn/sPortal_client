@@ -41,6 +41,7 @@
       line-height: normal;
       text-align: center;
       color: #ec7f37;
+      margin-bottom: 30px;
     }
 
     h3 {
@@ -73,7 +74,7 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
         width: 342px;
-        height: 542px;
+        height: 558px;
         padding: 30px;
         // background: rgba(23, 51, 150, 0.1);
         background: white;
@@ -93,22 +94,29 @@
           margin: auto;
         }
 
-        .userName {
-          margin-top: 15px;
-
-          p {
-            text-align: center;
-            color: #5c5c5c;
-            font-size: 36px;
+        .userInfoCards {
+          height: 150px;
+          .userName {
+            margin-top: 15px;
+            height: 70px;
+            p {
+              text-align: center;
+              color: #5c5c5c;
+              font-size: 36px;
+            }
           }
-
           .mainFocusCont {
-            height: 30px;
-
-            .mainFocusItem {
+            width: 100%;
+            margin: 15px 0;
+            //height: 45px;
+            .courseItem {
               color: #da9446;
-              margin: 15px;
-              font-size: 28px;
+              font-size: 18px;
+              margin-bottom: 15px;
+            }
+            .mainFocusItem {
+              color: #5c5c5c;
+              font-size: 17px;
             }
           }
         }
@@ -215,6 +223,23 @@
   background-color: #ffffff;
   color: #5c5c5c;
   border-radius: 8px;
+  text-align-last: center;
+
+  @media (max-width: 630px) {
+    width: 225px;
+  }
+}
+.ResetBnt {
+  font-size: 22px;
+  font-weight: bold;
+  width: 225px;
+  margin: 20px 0 40px 0;
+  height: 50px;
+  background-color: rgba(150, 150, 150, 0.62);
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: none;
+  border: none;
   text-align-last: center;
 
   @media (max-width: 630px) {

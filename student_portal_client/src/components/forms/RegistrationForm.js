@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Validator from "validator";
-
+import { locationsArray, courseTypesArray } from "../../helpers";
 import InlineError from "../messages/InlineError";
 
 class RegistrationForm extends Component {
@@ -19,8 +19,8 @@ class RegistrationForm extends Component {
     errors: {}
   };
 
-  locationTypes = ["Berlin", "Düsseldorf", "Leipzig", "Hamburg"];
-  courseTypes = ["Web Development", "Digital Marketing / E-Commerce"];
+  //locationTypes = ["Berlin", "Düsseldorf", "Leipzig", "Hamburg"];
+  //courseTypes = ["Web Development", "Digital Marketing / E-Commerce"];
 
   onChange = event =>
     this.setState({
@@ -132,7 +132,7 @@ class RegistrationForm extends Component {
             required
           >
             <option value="">Choose Location</option>
-            {this.locationTypes.map((item, i) => (
+            {locationsArray.map((item, i) => (
               <option key={i}>{item}</option>
             ))}
           </select>
@@ -143,7 +143,7 @@ class RegistrationForm extends Component {
             required
           >
             <option value="">Choose Course</option>
-            {this.courseTypes.map((item, i) => (
+            {courseTypesArray.map((item, i) => (
               <option key={i}>{item}</option>
             ))}
           </select>
