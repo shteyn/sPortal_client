@@ -45,6 +45,8 @@ class UserDashboardPage extends Component {
       mainFocus
     } = this.props.oneUser;
 
+    console.log('userImage ', userImage);
+
     let placeholderUrl = require("../../img/empty-profile.png");
 
     let formattedAvailability = "";

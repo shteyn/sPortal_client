@@ -38,6 +38,9 @@ class WaitingUsersForm extends Component {
 
           <Table.Body>
             {allUsers.map(oneUser => {
+              if(oneUser === null){
+                console.log('no users');
+              }
               if (
                 oneUser.confirmationEmailSend === true &&
                 !oneUser.confirmed

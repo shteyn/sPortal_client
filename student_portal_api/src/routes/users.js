@@ -280,6 +280,7 @@ router.post("/users/dashboard", (req, res) => {
     }
   )
     .then(user => {
+      console.log('user', user)
       res.json(user);
     })
     .catch(error =>

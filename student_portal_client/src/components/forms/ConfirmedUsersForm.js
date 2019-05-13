@@ -35,7 +35,6 @@ class ConfirmedUsersForm extends Component {
 
           <Table.Body>
             {allUsers.map(oneUser => {
-              console.log("one user confirmed", oneUser);
               if (oneUser.confirmed) {
                 return (
                   <Table.Row key={oneUser._id}>
