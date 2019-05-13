@@ -31,6 +31,7 @@ class FAQPage extends Component {
               <input type="text" id="inputEmail"/>
               <label htmlFor="textArea">Your Question</label>
               <textarea name="" id="textArea" cols="30" rows="10" onresize={false}/>
+              <button className="FaqPageButton">Send</button>
             </form>
           </div>
         </div>

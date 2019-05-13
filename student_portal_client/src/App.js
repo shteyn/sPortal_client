@@ -14,18 +14,10 @@ import GuestRoutes from "./components/routes/GuestRoutes";
 import TopNavigation from "./components/navigation/TopNavigation";
 import Footer from "./components/navigation/Footer";
 import AboutUsPage from "./components/footer_pages/AboutUsPage";
-import CoachingPage from "./components/footer_pages/CoachingPage";
-import ContactPage from "./components/footer_pages/ContactPage";
-import DigitalMarketingPage from "./components/footer_pages/DigitalMarketingPage";
+import ContactForm from "./components/footer_pages/ContactForm";
 import FAQPage from "./components/footer_pages/FAQPage";
-import HireDigitalTalentsPage from "./components/footer_pages/HireDigitalTalentsPage";
-import JobAtDCIPage from "./components/footer_pages/JobAtDCIPage";
-import OrientationCoursePage from "./components/footer_pages/OrientationCoursePage";
-import PressPage from "./components/footer_pages/PressPage";
-import ScholarshipPage from "./components/footer_pages/ScholarshipPage";
 import StoriesPage from "./components/footer_pages/StoriesPage";
-import WebDevelopmentCoursePage from "./components/footer_pages/WebDevelopmentCoursePage";
-import ToggleMenuNonLogin from "./components/navigation/ToggleMenuNonLogin";
+// import ToggleMenuNonLogin from "./components/navigation/ToggleMenuNonLogin";
 
 let logoDCI = require('./img/dciLogo.png');
 
@@ -68,17 +60,9 @@ const App = ({location, isAdmin, isAuthenticated}) => (
       <div>
         <Route location={location} path="/" exact component={HomePage}/>
         <Route location={location} path="/about-us" exact component={AboutUsPage}/>
-        <Route location={location} path="/coaching" exact component={CoachingPage}/>
-        <Route location={location} path="/contact" exact component={ContactPage}/>
-        <Route location={location} path="/digital-marketing" exact component={DigitalMarketingPage}/>
+        <Route location={location} path="/contact" exact component={ContactForm}/>
         <Route location={location} path="/faq" exact component={FAQPage}/>
-        <Route location={location} path="/hire-digital-talents" exact component={HireDigitalTalentsPage}/>
-        <Route location={location} path="/jobs-dci" exact component={JobAtDCIPage}/>
-        <Route location={location} path="/orientation-course" exact component={OrientationCoursePage}/>
-        <Route location={location} path="/press" exact component={PressPage}/>
-        <Route location={location} path="/scholarship" exact component={ScholarshipPage}/>
         <Route location={location} path="/stories" exact component={StoriesPage}/>
-        <Route location={location} path="/web-development-course" exact component={WebDevelopmentCoursePage}/>
 
         <Route
             location={location}

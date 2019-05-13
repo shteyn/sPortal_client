@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
-import AboutUsPage from '../footer_pages/AboutUsPage'
+import ContactForm from '../footer_pages/ContactForm'
 
 class Footer extends Component {
   render() {
@@ -10,28 +10,15 @@ class Footer extends Component {
               <div className="FooterContentItemOne">
                 <ul>
                   <li><h3>COMPANY</h3></li>
-                  <li><a><AboutUsPage/></a></li>
-                  <li><Link to="/faq" target="_blank">FAQ</Link></li>
-                  <li><Link to="/press" target="_blank">Press</Link></li>
-                  <li><Link to="/contact" target="_blank">Contact</Link></li>
-                  <li><Link to="/jobs-dci" target="_blank">Jobs at DCI</Link></li>
+                  <li><Link to="/about-us" >About Us</Link></li>
+                  <li><Link to="/faq">FAQ</Link></li>
+                  <li><a><ContactForm/></a></li>
                 </ul>
               </div>
               <div className="FooterContentItemTwo">
                 <ul>
                   <li><h3>COMMUNITY</h3></li>
-                  <li><Link to="/scholarship" target="_blank">Scholarship</Link></li>
-                  <li><Link to="/hire-digital-talents" target="_blank">Hire your digital talents with DCI</Link></li>
                   <li><Link to="/stories" target="_blank">Stories</Link></li>
-                </ul>
-              </div>
-              <div className="FooterContentItemThree">
-                <ul>
-                  <li><h3>COURSES</h3></li>
-                  <li><Link to="/coaching" target="_blank">One to One Coaching</Link></li>
-                  <li><Link to="/orientation-course" target="_blank">Orientation Course</Link></li>
-                  <li><Link to="/web-development-course" target="_blank">Web Development Course</Link></li>
-                  <li><Link to="/digital-marketing" target="_blank">Digital Marketing / E-Commerce</Link></li>
                 </ul>
               </div>
               <div className="FooterContentItemFour">
