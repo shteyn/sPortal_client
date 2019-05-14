@@ -47,9 +47,9 @@
 
 @media only screen and (max-width: 722px) {
   .logoToggleMenu {
-    width: 140px;
-    height: 50px;
-    margin: 20px auto 0 5%;
+    width: 180px;
+    height: 85px;
+    margin: 5px auto 0 5%;
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -101,6 +101,7 @@
     .DrawerItem {
       display: flex;
       align-items: center;
+      margin-left: 10%;
       margin-bottom: 100px;
       a {
         text-decoration: none;
@@ -205,14 +206,15 @@
     justify-content: space-between;
     padding: 0 20px 0 20px;
     .logoToggleMenu {
-      width: 140px;
-      height: 50px;
-      margin: auto;
-      position: relative;
-      background-position: center center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      top: 20px;
+      //width: 140px;
+      //height: 50px;
+      //margin: auto;
+      //position: relative;
+      //background-position: center center;
+      //background-size: contain;
+      //background-repeat: no-repeat;
+      //top: 20px;
+      display: none;
     }
   }
 }
@@ -222,14 +224,15 @@
     justify-content: space-between;
     padding: 0 20px 0 20px;
     .logoToggleMenu {
-      width: 140px;
-      height: 50px;
-      margin: auto;
-      position: relative;
-      background-position: center center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      top: 20px;
+      //width: 140px;
+      //height: 50px;
+      //margin: auto;
+      //position: relative;
+      //background-position: center center;
+      //background-size: contain;
+      //background-repeat: no-repeat;
+      //top: 20px;
+      display: none;
     }
   }
 }

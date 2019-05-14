@@ -17,36 +17,96 @@
     flex-wrap: wrap;
     justify-content: space-between;
     text-align: left;
-    ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      h3 {
-        margin-bottom: 10px;
-        color: #5c5c5c;
+    .FooterContentItemOne {
+      width: 50%;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: left;
+        flex-direction: row;
+        h3 {
+          margin-bottom: 10px;
+          color: #5c5c5c;
+        }
+        a {
+          font-size: 20px;
+          text-decoration: none;
+          color: #969696;
+          margin-right: 100px;
+          &:hover {
+            color: #ec7f37;
+            cursor: pointer;
+          }
+        }
       }
-      a {
-        text-decoration: none;
-        color: #969696;
-        &:hover {
-          color: blue;
+    }
+    .FooterContentItemTwo {
+      width: 50%;
+      flex-direction: column;
+      justify-items: self-start;
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        li{
+          margin-right: 20px;
+        }
+        h3 {
+          margin-bottom: 10px;
+          color: #5c5c5c;
+        }
+        a {
+          text-decoration: none;
+          color: #969696;
+          &:hover {
+            color: #ec7f37;
+            cursor: pointer;
+          }
         }
       }
     }
   }
-  @media only screen and (max-width: 800px) {
-    .FooterContentBox {
-      max-width: 500px;
-      margin: 20px auto;
+  .mainLegalContainerFooter {
+    width: 100%;
+    height: 50px;
+    background-color: #969696;
+    .legalContainerFooter {
+      align-items: center;
       display: flex;
       justify-content: space-between;
-      text-align: left;
-      .FooterContentItemFour {
-        position: relative;
-        left: -100px;
+      width: 100%;
+      height: 50px;
+      max-width: 1450px;
+      margin: auto;
+      color: #ffffff;
+
+      div {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        justify-content: space-between;
+        color: #ffffff;
       }
     }
   }
+
+  //@media only screen and (max-width: 800px) {
+    //.FooterContentBox {
+    //  max-width: 500px;
+    //  margin: 20px auto;
+    //  display: flex;
+    //  justify-content: space-between;
+    //  text-align: left;
+    //  .FooterContentItemFour {
+    //    position: relative;
+    //    left: -100px;
+    //  }
+    //}
+  //}
   /*@media only screen and (max-width: 470px) {
     .FooterCont {
       width: 100px;

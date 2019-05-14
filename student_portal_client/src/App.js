@@ -34,28 +34,28 @@ const App = ({location, isAdmin, isAuthenticated}) => (
     >
         {isAuthenticated && location.pathname !== "/" ? <TopNavigation/> : null}
         {!isAuthenticated && location.pathname !== "/" ? (
-            <div>
-              {/*<ToggleMenuNonLogin/>*/}
+
               <div className="navigationBar">
-                <Link to="/user-card">
-                  <div className="label">
-                    <div
+                <div className="navigationBarSubCont">
+                  <Link to="/user-card">
+                    <div className="label">
+                      <div
                         id="dciLogo"
                         style={{
                           backgroundImage: "url(" + logoDCI + ")"
                         }}
-                    />
-                  </div>
-                </Link>
-                <ul>
-                  <li>
-                    <Link to="/login">
-                      <span>Login</span>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+                      />
+                    </div>
+                  </Link>
+                  <ul>
+                    <li>
+                      <Link to="/login">
+                        <span>Login</span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                </div>
         ) : null}
       <div>
         <Route location={location} path="/" exact component={HomePage}/>
