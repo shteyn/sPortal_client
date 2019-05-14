@@ -28,8 +28,9 @@
       a {
         text-decoration: none;
         color: #969696;
+        cursor: pointer;
         &:hover {
-          color: blue;
+          color: #ec7f37;
         }
       }
     }

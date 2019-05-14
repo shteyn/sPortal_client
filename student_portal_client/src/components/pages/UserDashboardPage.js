@@ -100,6 +100,8 @@ class UserDashboardPage extends Component {
               ) : null}
             </button>
           </div>
+
+          {/*FIRST COLUMN*/}
           <div className="InfoCont">
             <div className="infoBoxCont">
               <div className="SubBoxCont">
@@ -218,8 +220,10 @@ class UserDashboardPage extends Component {
                 </div>
               </div>
             </div>
-            <div className="linksBoxCont">
-              <div style={{ marginBottom: "50px", width: "50%" }}>
+
+            {/*SECOND COLUMN*/}
+            <div className="infoBoxCont">
+              <div className="SubBoxCont">
                 <h1>About Me</h1>
                 {!aboutMeSection ? (
                   <p style={{ color: "#da9446" }}>
@@ -229,106 +233,113 @@ class UserDashboardPage extends Component {
                   <div>{aboutMeSection}</div>
                 )}
               </div>
-              <div style={{ marginBottom: "50px", width: "50%" }}>
-                <h1>Links</h1>
-                <div className="linksBoxItems">
-                  {!linkedInLink ? (
-                    <div className="linksBoxItem">
-                      <img src={require("../../img/linkedin.png")} alt="" />
-                      <p style={{ color: "#da9446" }}>
-                        Please add your LinkedIn URL ...
-                      </p>
-                      <a
-                        style={{ display: "none" }}
-                        href={linkedInLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      />
-                    </div>
-                  ) : (
-                    <div className="linksBoxItem">
-                      <img src={require("../../img/linkedin.png")} alt="" />
-                      <a
-                        href={linkedInLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <p>{linkedInLink}</p>
-                      </a>
-                    </div>
-                  )}
-                  {!githubLink ? (
-                    <div className="linksBoxItem">
-                      <img src={require("../../img/github.png")} alt="" />
-                      <p style={{ color: "#da9446" }}>
-                        Please add your Github URL ...
-                      </p>
-                      <a
-                        href={githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      />
-                    </div>
-                  ) : (
-                    <div className="linksBoxItem">
-                      <img src={require("../../img/github.png")} alt="" />
-                      <a
-                        href={githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <p>{githubLink}</p>
-                      </a>
-                    </div>
-                  )}
-                  {!xingLink ? (
-                    <div className="linksBoxItem">
-                      <img src={require("../../img/xing.png")} alt="" />
-                      <p style={{ color: "#da9446" }}>
-                        Please add your Xing URL ...
-                      </p>
-                      <a
-                        href={xingLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      />
-                    </div>
-                  ) : (
-                    <div className="linksBoxItem">
-                      <img src={require("../../img/xing.png")} alt="" />
-                      <a
-                        href={xingLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <p>{xingLink}</p>
-                      </a>
-                    </div>
-                  )}
-                  {!portfolioLink ? (
-                    <div className="linksBoxItem">
-                      <img src={require("../../img/briefcase.png")} alt="" />
-                      <p style={{ color: "#da9446" }}>
-                        Please add your Portfolio URL ...
-                      </p>
-                      <a
-                        href={portfolioLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      />
-                    </div>
-                  ) : (
-                    <div className="linksBoxItem">
-                      <img src={require("../../img/briefcase.png")} alt="" />
-                      <a
-                        href={portfolioLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <p>{portfolioLink}</p>
-                      </a>
-                    </div>
-                  )}
+            </div>
+
+            {/*THIRD COLUMN*/}
+
+            <div className="infoBoxCont">
+              <div className="SubBoxCont">
+                <div style={{ marginBottom: "50px", width: "50%" }}>
+                  <h1>Links</h1>
+                  <div className="linksBoxItems">
+                    {!linkedInLink ? (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/linkedin.png")} alt="" />
+                        <p style={{ color: "#da9446" }}>
+                          Please add your LinkedIn URL ...
+                        </p>
+                        <a
+                          style={{ display: "none" }}
+                          href={linkedInLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      </div>
+                    ) : (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/linkedin.png")} alt="" />
+                        <a
+                          href={linkedInLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p>{linkedInLink}</p>
+                        </a>
+                      </div>
+                    )}
+                    {!githubLink ? (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/github.png")} alt="" />
+                        <p style={{ color: "#da9446" }}>
+                          Please add your Github URL ...
+                        </p>
+                        <a
+                          href={githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      </div>
+                    ) : (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/github.png")} alt="" />
+                        <a
+                          href={githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p>{githubLink}</p>
+                        </a>
+                      </div>
+                    )}
+                    {!xingLink ? (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/xing.png")} alt="" />
+                        <p style={{ color: "#da9446" }}>
+                          Please add your Xing URL ...
+                        </p>
+                        <a
+                          href={xingLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      </div>
+                    ) : (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/xing.png")} alt="" />
+                        <a
+                          href={xingLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p>{xingLink}</p>
+                        </a>
+                      </div>
+                    )}
+                    {!portfolioLink ? (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/briefcase.png")} alt="" />
+                        <p style={{ color: "#da9446" }}>
+                          Please add your Portfolio URL ...
+                        </p>
+                        <a
+                          href={portfolioLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      </div>
+                    ) : (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/briefcase.png")} alt="" />
+                        <a
+                          href={portfolioLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p>{portfolioLink}</p>
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

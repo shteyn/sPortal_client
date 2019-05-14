@@ -215,7 +215,7 @@
 }
 
 .DropDownSelect {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   width: 225px;
   margin: 50px 20px;
@@ -223,24 +223,55 @@
   background-color: #ffffff;
   color: #5c5c5c;
   border-radius: 8px;
+  border-color: rgba(150, 150, 150, 0.62);
   text-align-last: center;
-
+  -webkit-appearance: none;
+  outline: none;
+  option {
+    border: none;
+    -webkit-appearance: none;
+    outline-color: #ffffff;
+    &:active {
+      -webkit-appearance: none;
+      outline-color: #ffffff;
+      border: none;
+    }
+  }
+  &:hover {
+    background-color: rgba(236, 127, 55, 0.5);
+    //color: #ffffff;
+    //border: none;
+    color: #ffffff;
+    font-weight: bold;
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    option {
+      color: #5c5c5c;
+      background-color: #ffffff;
+      outline-color: #ffffff;
+    }
+  }
   @media (max-width: 630px) {
     width: 225px;
   }
 }
 .ResetBnt {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: bold;
-  width: 225px;
+  width: 125px;
   margin: 20px 0 40px 0;
   height: 50px;
   background-color: rgba(150, 150, 150, 0.62);
+
   color: #ffffff;
   border-radius: 8px;
   box-shadow: none;
   border: none;
   text-align-last: center;
+  &:hover {
+    background-color: rgba(236, 127, 55, 0.5);
+  }
 
   @media (max-width: 630px) {
     width: 225px;

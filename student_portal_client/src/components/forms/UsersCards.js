@@ -131,7 +131,7 @@ class UserCards extends Component {
             onChange={this.updateSearch}
             ref={this.locationsRef}
           >
-            <option value="">All Locations</option>
+            <option value="">Location</option>
             {locations.map(item => (
               <option key={item}>{item}</option>
             ))}
@@ -143,7 +143,7 @@ class UserCards extends Component {
             onChange={this.updateSearch}
             ref={this.studentCourseRef}
           >
-            <option value="">All Courses</option>
+            <option value="">Course</option>
             {studentCourse.map(item => (
               <option key={item}>{item}</option>
             ))}
@@ -154,7 +154,7 @@ class UserCards extends Component {
             onChange={this.updateSearch}
             ref={this.mainFocusRef}
           >
-            <option value="">All Main Focuses</option>
+            <option value="">Main Focus</option>
             {mainFocus.map((item, i) => (
               <option key={i} value={item}>
                 {item}
@@ -168,14 +168,14 @@ class UserCards extends Component {
             onChange={this.updateSearch}
             ref={this.availabilityRef}
           >
-            <option value="">All Availabilities</option>
+            <option value="">Availability</option>
             <option value="current">Currently Available</option>
             <option value="future">Future Available</option>
           </select>
         </div>
 
         <button className="ResetBnt" onClick={this.clearAllFilters}>
-          Reset Filters
+          Clear Filters
         </button>
         <div className="UserCardsItems">
           {filteredLocations.map(oneUser => {
@@ -199,7 +199,9 @@ class UserCards extends Component {
                       style={{
                         backgroundImage:
                           "url(" +
-                          `http://localhost:8080/uploads/${oneUser.userImage}` +
+                          `${process.env.REACT_APP_API_HOST}/uploads/${
+                            oneUser.userImage
+                          }` +
                           ")"
                       }}
                     />

@@ -25,16 +25,14 @@ class Dashboard extends Component {
     return (
       <div>
         {/*<TopNavigation />*/}
-
+        {!isAdmin && isConfirmed ? <UserDashboardPage /> : null}
+        {isAdmin ? <AdminDashboardPage /> : null}
         {!isConfirmationEmailConfirmed && !isConfirmed ? (
           <ConfirmEmailMessage user={user} />
         ) : null}
-
         {isConfirmationEmailConfirmed && !isConfirmed ? (
           <UserCanLoginMessage oneUser={oneUser} />
         ) : null}
-        {!isAdmin && isConfirmed ? <UserDashboardPage /> : null}
-        {isAdmin ? <AdminDashboardPage /> : null}
       </div>
     );
   }

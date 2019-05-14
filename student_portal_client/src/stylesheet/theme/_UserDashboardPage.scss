@@ -70,69 +70,65 @@
     }
 
     .InfoCont {
-      width: 100%;
       max-width: 1750px;
       margin: 0 auto 30px auto;
       display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
       .infoBoxCont {
-        display: flex;
-      }
-    }
-
-    .SubBoxCont {
-      width: 100%;
-      min-width: 400px;
-      padding: 20px;
-      border: 1px solid #e5e5e5;
-      text-align: center;
-    }
-
-    .linksBoxCont {
-      border: 1px solid #e5e5e5;
-      width: 100%;
-      padding: 20px;
-
-      .linksBoxItems {
-        display: flex;
-        flex-direction: column;
-        img {
-          width: 20px;
-          height: 20px;
-          border-radius: 10px;
+        flex: 0 1 calc(33% - 1em);
+        .SubBoxCont {
+          height: 100%;
+          //width: 600px;
+          min-width: 300px;
+          padding: 20px;
+          border: 1px solid #e5e5e5;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          //margin: 10px;
         }
-
-        .linksBoxItem {
+        .linksBoxItems {
           display: flex;
-          justify-content: left;
-          align-items: center;
-          margin: 10px;
-
-          p {
-            margin-left: 20px;
+          flex-direction: column;
+          img {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
           }
-        }
 
-        a {
-          display: flex;
-          justify-items: center;
-          cursor: pointer;
+          .linksBoxItem {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            margin: 10px;
 
-          &:hover {
+            p {
+              margin-left: 20px;
+            }
+          }
+
+          a {
+            display: flex;
+            justify-items: center;
             cursor: pointer;
-            color: #ec7f37;
+
+            &:hover {
+              cursor: pointer;
+              color: #ec7f37;
+            }
+          }
+
+          h1 {
+            font-family: Ropa Sans, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            font-size: 36px;
+            color: #da9446;
+            margin-bottom: 10px;
           }
         }
-      }
-
-      h1 {
-        font-family: Ropa Sans, sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        line-height: normal;
-        font-size: 36px;
-        color: #da9446;
-        margin-bottom: 10px;
       }
     }
   }
@@ -253,36 +249,20 @@
         padding: 0;
       }
 
-      .InfoCont {
+      /*.InfoCont {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         margin-left: auto;
         .infoBoxCont {
-          margin: auto;
+          //margin: auto;
+          width: 33%;
           .SubBoxCont {
-            min-width: 400px;
+            //min-width: 400px;
             margin-left: auto;
           }
         }
-      }
-      .linksBoxCont {
-        width: 100%;
-        max-width: 400px;
-        margin: auto;
-        .linksBoxItems {
-          box-sizing: border-box;
-          padding: 0;
-          max-width: 400px;
-          display: flex;
-          flex-direction: column;
-
-          .linksBoxItem {
-            width: 380px;
-            text-align: left;
-          }
-        }
-      }
+      }*/
     }
   }
 
@@ -290,7 +270,7 @@
     .headerUserPage {
       padding: 0 30px;
     }
-    .InfoCont {
+    /*.InfoCont {
       max-width: 1450px;
       width: 100%;
       padding: 0 30px;
@@ -300,12 +280,12 @@
       //margin-left: auto;
 
       .infoBoxCont {
-        margin: auto;
+        //margin: auto;
         .SubBoxCont {
           min-width: 400px;
           margin-left: auto;
         }
       }
-    }
+    }*/
   }
 }
