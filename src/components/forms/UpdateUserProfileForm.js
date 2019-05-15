@@ -134,7 +134,6 @@ class UpdateUserProfileForm extends Component {
     return (
       <div>
         <div variant="primary" onClick={this.handleShow}>
-          {/*<img src={require("../../img/edit-icon.svg")} alt="" />*/}
           UPDATE PROFILE
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
@@ -372,16 +371,6 @@ class UpdateUserProfileForm extends Component {
                   textAlign: "right"
                 }}
               >
-                <Button
-                  variant="secondary"
-                  style={{
-                    backgroundColor: "rgba(150, 150, 150, 0.62)",
-                    border: "none"
-                  }}
-                  onClick={this.handleClose}
-                >
-                  Close
-                </Button>
                 <Button
                   variant="primary"
                   style={{

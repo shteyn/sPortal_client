@@ -19,7 +19,6 @@ import FAQPage from "./components/footer_pages/FAQPage";
 import StoriesPage from "./components/footer_pages/StoriesPage";
 
 let logoDCI = require("./img/dciLogo.png");
-console.log("process", process.env);
 
 const App = ({ location, isAdmin, isAuthenticated }) => (
   <div
