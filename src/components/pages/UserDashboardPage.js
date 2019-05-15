@@ -151,7 +151,9 @@ class UserDashboardPage extends Component {
                           style={{
                             backgroundImage:
                               "url(" +
-                              `http://localhost:8080/uploads/${userImage}` +
+                              `${
+                                process.env.REACT_APP_API_HOST
+                              }/uploads/${userImage}` +
                               ")"
                           }}
                         >

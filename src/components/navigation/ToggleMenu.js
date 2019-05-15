@@ -1,55 +1,48 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
-import {logout} from "../../actions/auth";
-import {getUserData} from "../../actions/user";
-import {Link} from "react-router-dom";
+import { connect } from "react-redux";
+import { logout } from "../../actions/auth";
+import { getUserData } from "../../actions/user";
+import { Link } from "react-router-dom";
 
 class ToggleMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
       openToggle: false
-    }
+    };
   }
 
   toggleHandler = () => {
     this.setState({
       openToggle: !this.state.openToggle
-    })
+    });
   };
 
   componentDidMount() {
-    const {email} = this.props.user;
+    const { email } = this.props.user;
     this.props.getUserData(email);
   }
 
   render() {
     let logoDCI = require("../../img/newDCILogo.png");
-    const clsMenu = [
-      'ToggleMenu',
-      'fa'
-    ];
+    const clsMenu = ["ToggleMenu", "fa"];
 
-    const clsDrawer = [
-      'DrawerNavigationBar'
-    ];
+    const clsDrawer = ["DrawerNavigationBar"];
 
-    const {oneUser, logout, isAdmin} = this.props;
+    const { oneUser, logout, isAdmin } = this.props;
     let placeholderUrl = require("../../img/placeholderUser.png");
     let adminImg = require("../../img/admin2.png");
 
-
     if (this.state.openToggle) {
-      clsMenu.push('fa-times');
-      clsMenu.push('open')
+      clsMenu.push("fa-times");
+      clsMenu.push("open");
     } else {
-      clsMenu.push('fa-bars')
+      clsMenu.push("fa-bars");
     }
 
-
     if (this.state.openToggle) {
-      clsDrawer.push('close')
+      clsDrawer.push("close");
     }
     return (
       <div className="ToggleMenuCont">
@@ -63,12 +56,9 @@ class ToggleMenu extends Component {
               }}
             />
           </Link>
-          <i
-            className={clsMenu.join(' ')}
-            onClick={this.toggleHandler}
-          />
+          <i className={clsMenu.join(" ")} onClick={this.toggleHandler} />
         </div>
-        <div className={clsDrawer.join(' ')} style={{opacity: '1'}}>
+        <div className={clsDrawer.join(" ")} style={{ opacity: "1" }}>
           <div>
             <div className="DrawerItem">
               {isAdmin && (
@@ -101,7 +91,9 @@ class ToggleMenu extends Component {
                       style={{
                         backgroundImage:
                           "url(" +
-                          `http://localhost:8080/uploads/${oneUser.userImage}` +
+                          `${process.env.REACT_APP_API_HOST}/${
+                            oneUser.userImage
+                          }` +
                           ")"
                       }}
                     />
@@ -115,14 +107,11 @@ class ToggleMenu extends Component {
           </div>
           <ul>
             <li>
-              <Link
-                to="/user-card"
-                onClick={this.toggleHandler}
-              >
+              <Link to="/user-card" onClick={this.toggleHandler}>
                 Alumni book
               </Link>
             </li>
-            <div className="DrawerItemLine"/>
+            <div className="DrawerItemLine" />
             <li>
               <a
                 href="https://digitalcareerinstitute.org/en/about-us/"
@@ -132,7 +121,7 @@ class ToggleMenu extends Component {
                 About Us
               </a>
             </li>
-            <div className="DrawerItemLine"/>
+            <div className="DrawerItemLine" />
             <li>
               <a
                 href="https://digitalcareerinstitute.org/en/press/"
@@ -142,7 +131,7 @@ class ToggleMenu extends Component {
                 Press
               </a>
             </li>
-            <div className="DrawerItemLine"/>
+            <div className="DrawerItemLine" />
             <li>
               <a
                 href="https://digitalcareerinstitute.org/contact/"
@@ -152,14 +141,11 @@ class ToggleMenu extends Component {
                 Contact
               </a>
             </li>
-            <div className="DrawerItemLine"/>
-            <li><a
-              href="https://dci-jobs.personio.de/"
-            >
-              Jobs at DCI
-            </a>
+            <div className="DrawerItemLine" />
+            <li>
+              <a href="https://dci-jobs.personio.de/">Jobs at DCI</a>
             </li>
-            <div className="DrawerItemLine"/>
+            <div className="DrawerItemLine" />
             <li>
               <a
                 href="https://digitalcareerinstitute.org/en/courses/"
@@ -169,39 +155,48 @@ class ToggleMenu extends Component {
                 Courses
               </a>
             </li>
-            <div className="DrawerItemLine"/>
+            <div className="DrawerItemLine" />
             <li>
               <div>
-                <a href="https://www.facebook.com/devugees"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <a
+                  href="https://www.facebook.com/devugees"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
-                    src={require('../../img/facebook.png')}
+                    src={require("../../img/facebook.png")}
                     alt="twitter"
                     title="Facebook"
-                    style={{width: '40px'}}/>
+                    style={{ width: "40px" }}
+                  />
                 </a>
-                <a href="https://twitter.com/DevugeesOrg"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <a
+                  href="https://twitter.com/DevugeesOrg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
-                    src={require('../../img/twitter.png')}
+                    src={require("../../img/twitter.png")}
                     alt="twitter"
                     title="Twitter"
-                    style={{width: '40px'}}/>
+                    style={{ width: "40px" }}
+                  />
                 </a>
-                <a href="https://www.youtube.com/channel/UCSM_3ldxjcclGTcXaJRBYTw"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <a
+                  href="https://www.youtube.com/channel/UCSM_3ldxjcclGTcXaJRBYTw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
-                    src={require('../../img/youtube.png')}
+                    src={require("../../img/youtube.png")}
                     alt="twitter"
                     title="You-Tube"
-                    style={{width: '40px'}}/>
+                    style={{ width: "40px" }}
+                  />
                 </a>
               </div>
             </li>
-            <div className="DrawerItemLine"/>
+            <div className="DrawerItemLine" />
           </ul>
         </div>
       </div>
@@ -224,5 +219,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  {logout, getUserData}
+  { logout, getUserData }
 )(ToggleMenu);

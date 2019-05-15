@@ -66,7 +66,7 @@ class TopNavigation extends Component {
                         style={{
                           backgroundImage:
                             "url(" +
-                            `http://localhost:8080/uploads/${
+                            `${process.env.REACT_APP_API_HOST}/uploads/${
                               oneUser.userImage
                             }` +
                             ")"
