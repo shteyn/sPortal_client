@@ -29,8 +29,6 @@
 //@import "theme/FooterPage";
 //@import "theme/FooterPage";
 
-
-
 body,
 html {
   margin: 0;
@@ -38,5 +36,9 @@ html {
   width: 100%;
   a:any-link {
     text-decoration: none;
+  }
+
+  .modal-open {
+    overflow: visible;
   }
 }

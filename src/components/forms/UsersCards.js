@@ -46,7 +46,6 @@ class UserCards extends Component {
     const mainFocus = [];
 
     const studentCourse = courseTypesArray;
-    console.log("this.state", this.state);
 
     allUsers.map(user => {
       if (locations.indexOf(user.location) < 0) {

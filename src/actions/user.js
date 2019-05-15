@@ -16,6 +16,8 @@ export const oneUser = oneUserData => ({
   oneUserData
 });
 
+export const contactUs = data => () => api.user.contactUs(data);
+
 export const filterLocation = userLocation => dispatch => {
   return dispatch({
     type: FILTER_USERS_BY_LOCATION,

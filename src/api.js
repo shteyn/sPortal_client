@@ -9,6 +9,10 @@ export default {
         })
         .then(res => res.data.user),
 
+    contactUs: contactUsData =>
+      axios.post("http://localhost:8080/api/users/contact-us", {
+        contactUsData
+      }),
     registration: user =>
       axios
         .post("http://localhost:8080/api/users/registration", {
