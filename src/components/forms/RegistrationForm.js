@@ -44,9 +44,16 @@ class RegistrationForm extends Component {
 
   //making syntax validation onSubmit();
   validate = data => {
+    console.log("data.password", data.password);
     const errors = {};
     if (!Validator.isEmail(data.email)) errors.email = "Invalid email";
     if (!data.password) errors.password = "Can't be blank";
+    if (data.password.length < 6)
+      errors.password = "Password should be at least 6 characters";
+    if (data.password.length > 50)
+      errors.password = "Password should no more then 20 characters";
+    if (data.password.search(/\d/) == -1)
+      errors.password = "Password should contain numbers ";
     return errors;
   };
 
@@ -110,7 +117,7 @@ class RegistrationForm extends Component {
             onChange={this.onChange}
             required
           />
-
+          <br />
           {errors.password && <InlineError text={errors.password} />}
 
           <br />

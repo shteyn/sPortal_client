@@ -4,72 +4,85 @@ export default {
   user: {
     login: credentials =>
       axios
-        .post("http://localhost:8080/api/auth", {
+        .post(`${process.env.REACT_APP_API_HOST}/api/auth`, {
           credentials
         })
         .then(res => res.data.user),
 
     contactUs: contactUsData =>
-      axios.post("http://localhost:8080/api/users/contact-us", {
+      axios.post(`${process.env.REACT_APP_API_HOST}/api/users/contact-us`, {
         contactUsData
       }),
     registration: user =>
       axios
-        .post("http://localhost:8080/api/users/registration", {
+        .post(`${process.env.REACT_APP_API_HOST}/api/users/registration`, {
           user
         })
-        .then(
-          res =>
-            //console.log("user after registration", res.data.user)
-            res.data.user
-        ), //call users.js routes backend
-
+        .then(res => res.data.user),
     confirm: token =>
       axios
-        .post("http://localhost:8080/api/auth/confirmation", {
+        .post(`${process.env.REACT_APP_API_HOST}/api/auth/confirmation`, {
           token
         })
         .then(res => res.data.user),
 
     resetPasswordRequest: email =>
-      axios.post("http://localhost:8080/api/auth/reset_password_request", {
-        email
-      }),
+      axios.post(
+        `${process.env.REACT_APP_API_HOST}/api/auth/reset_password_request`,
+        {
+          email
+        }
+      ),
 
     validateToken: token =>
       axios
-        .post("http://localhost:8080/api/auth/validate_token", { token })
+        .post(`${process.env.REACT_APP_API_HOST}/api/auth/validate_token`, {
+          token
+        })
         .then(res => console.log("validateToken api", res)),
 
     resetPassword: data =>
-      axios.post("http://localhost:8080/api/auth/reset_password", { data }),
-
+      axios.post(`${process.env.REACT_APP_API_HOST}/api/auth/reset_password`, {
+        data
+      }),
     getAllUsers: () =>
-      axios.get("http://localhost:8080/api/users").then(res => res.data),
+      axios
+        .get(`${process.env.REACT_APP_API_HOST}/api/users`)
+        .then(res => res.data),
 
     filterLocation: location =>
       axios
-        .post("http://localhost:8080/api/users", { location })
+        .post(`${process.env.REACT_APP_API_HOST}/api/users`, { location })
         .then(res => res.data),
 
     getUserData: email =>
       axios
-        .post("http://localhost:8080/api/users/dashboard", { email })
+        .post(`${process.env.REACT_APP_API_HOST}/api/users/dashboard`, {
+          email
+        })
         .then(res => res.data),
 
     approveUser: id =>
-      axios.post(`http://localhost:8080/api/users/waiting-users/${id}`),
+      axios.post(
+        `${process.env.REACT_APP_API_HOST}/api/users/waiting-users/${id}`
+      ),
 
     deleteUser: id =>
-      axios.delete(`http://localhost:8080/api/users/delete-users/${id}`),
+      axios.delete(
+        `${process.env.REACT_APP_API_HOST}/api/users/delete-users/${id}`
+      ),
 
     deleteUserByUser: id =>
-      axios.delete(`http://localhost:8080/api/users/delete-user/${id}`),
+      axios.delete(
+        `${process.env.REACT_APP_API_HOST}/api/users/delete-user/${id}`
+      ),
 
     updateImage: user =>
       axios({
         method: "post",
-        url: `http://localhost:8080/api/users/update-img/${user.get("id")}`,
+        url: `${process.env.REACT_APP_API_HOST}/api/users/update-img/${user.get(
+          "id"
+        )}`,
         data: user,
         headers: {
           "content-type": `multipart/form-data; boundary=${user._boundary}`
@@ -77,9 +90,12 @@ export default {
       }).then(res => res.data),
     updateProfile: user =>
       axios
-        .put(`http://localhost:8080/api/users/update-user/${user.id}`, {
-          user
-        })
+        .put(
+          `${process.env.REACT_APP_API_HOST}/api/users/update-user/${user.id}`,
+          {
+            user
+          }
+        )
         .then(res => res.data)
   }
 };
