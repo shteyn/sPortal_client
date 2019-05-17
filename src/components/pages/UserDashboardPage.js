@@ -45,6 +45,8 @@ class UserDashboardPage extends Component {
       mainFocus
     } = this.props.oneUser;
 
+    console.log(userImage);
+
     let placeholderUrl = require("../../img/empty-profile.png");
 
     let formattedAvailability = "";
@@ -94,7 +96,7 @@ class UserDashboardPage extends Component {
               <div className="SubBoxCont">
                 <div className="userImageUploadCont">
                   {!userImage ? (
-                    <form>
+                    <div>
                       <label
                         htmlFor="imgupload"
                         style={{
@@ -107,12 +109,7 @@ class UserDashboardPage extends Component {
                             backgroundImage: "url(" + placeholderUrl + ")"
                           }}
                         >
-                          <div className="addHoverImg">
-                            <img
-                              src={require("../../img/add-img.png")}
-                              alt=""
-                            />
-                          </div>
+                          <div className="addHoverImg" />
                         </div>
                       </label>
                       <input
@@ -123,9 +120,9 @@ class UserDashboardPage extends Component {
                         onChange={this.submitUploadImage}
                         style={{ display: "none" }}
                       />
-                    </form>
+                    </div>
                   ) : (
-                    <form>
+                    <div>
                       <label
                         htmlFor="imgupload"
                         style={{
@@ -144,12 +141,7 @@ class UserDashboardPage extends Component {
                               ")"
                           }}
                         >
-                          <div className="addHoverImg">
-                            <img
-                              src={require("../../img/add-img.png")}
-                              alt=""
-                            />
-                          </div>
+                          <div className="addHoverImg"/>
                         </div>
                       </label>
                       <input
@@ -160,7 +152,7 @@ class UserDashboardPage extends Component {
                         onChange={this.submitUploadImage}
                         style={{ display: "none" }}
                       />
-                    </form>
+                    </div>
                   )}
                 </div>
                 <div className="profileInfoCont">

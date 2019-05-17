@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Tabs, Tab } from "react-bootstrap";
-
+import TopNavigation from '../navigation/TopNavigation'
 import WaitingUsersForm from "../forms/WaitingUsersForm";
 import ConfirmedUsersForm from "../forms/ConfirmedUsersForm";
 import { getAllUsers } from "../../actions/user";
@@ -14,6 +14,7 @@ class AdminDashboardPage extends Component {
   render() {
     return (
       <div className="admindashboard-cont">
+        <TopNavigation/>
         <Tabs
           style={{ marginTop: "150px" }}
           defaultActiveKey="waitingStudents"

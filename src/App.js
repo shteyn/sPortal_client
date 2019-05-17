@@ -21,6 +21,7 @@ import StoriesPage from "./components/footer_pages/StoriesPage";
 let logoDCI = require("./img/dciLogo.png");
 
 const App = ({ location, isAdmin, isAuthenticated }) => (
+
   <div>
     {isAuthenticated && location.pathname !== "/" ? <TopNavigation /> : null}
     {!isAuthenticated && location.pathname !== "/" ? (
@@ -46,6 +47,9 @@ const App = ({ location, isAdmin, isAuthenticated }) => (
         </div>
       </div>
     ) : null}
+
+  <div>
+
     <div>
       <Route location={location} path="/" exact component={HomePage} />
       <Route
@@ -53,12 +57,6 @@ const App = ({ location, isAdmin, isAuthenticated }) => (
         path="/about-us"
         exact
         component={AboutUsPage}
-      />
-      <Route
-        location={location}
-        path="/contact"
-        exact
-        component={ContactForm}
       />
       <Route location={location} path="/faq" exact component={FAQPage} />
       <Route

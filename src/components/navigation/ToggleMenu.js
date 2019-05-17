@@ -162,6 +162,7 @@ class ToggleMenu extends Component {
                   href="https://www.facebook.com/devugees"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="toggleMenuIcon"
                 >
                   <img
                     src={require("../../img/facebook.png")}

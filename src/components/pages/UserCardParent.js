@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getAllUsers, filterLocation, getUserData } from "../../actions/user";
-//import TopNavigation from "../navigation/TopNavigation";
+import TopNavigation from "../navigation/TopNavigation";
 import ToggleMenuNonLogin from "../navigation/ToggleMenuNonLogin";
 import UsersCards from "../forms/UsersCards";
 
@@ -19,33 +19,33 @@ class UserCardParent extends Component {
 
     return (
       <div className="UserCardsCont">
-        {/* <div className="navigationBarUserCardPage">
+        <div className="navigationBarUserCardPage">
           {isAuthenticated && <TopNavigation />}
           {!isAuthenticated && (
             <div>
               <ToggleMenuNonLogin />
               <div className="navigationBar">
-                <Link to="/user-card">
-                  <div className="label">
-                    <div
-                      id="dciLogo"
-                      style={{
-                        backgroundImage: "url(" + logoDCI + ")"
-                      }}
-                    />
-                  </div>
-                </Link>
-                <ul>
-                  <li>
-                    <Link to="/login">
-                      <span>Login</span>
-                    </Link>
-                  </li>
-                </ul>
+                <div className="navigationBarSubCont">
+                  <Link to="/user-card">
+                    <div className="label">
+                      <div
+                        id="dciLogo"
+                        style={{
+                          backgroundImage: "url(" + logoDCI + ")"
+                        }}
+                      />
+                    </div>
+                  </Link>
+                  <ul>
+                    <li>
+                      <Link to="/login">Login</Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           )}
-        </div>*/}
+        </div>
 
         <div className="UserCardsListCont">
           <h1>OUR STUDENTS</h1>

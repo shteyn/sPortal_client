@@ -1,0 +1,189 @@
+
+#ModalUserCardForm {
+  width: 100%;
+  max-width: 900px;
+  margin: 100px auto;
+  .modal-content {
+    border-radius: 20px;
+  }
+  .parentContentContainer {
+
+
+    .secondDivModal {
+      width: 100%;
+      max-width: 960px;
+      display: flex;
+      justify-content: left;
+    }
+
+    .imgDiv {
+      width: 100%;
+      max-width: 300px;
+      height: 480px;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      //margin: -15% 100px 0 -100px;
+      margin-right: 10px;
+      position: relative;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+
+    .contentDiv {
+      width: 600px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h3 {
+        text-decoration: none;
+        font-family: Ropa Sans, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 28px;
+        color: #ec7f37;
+        margin-top: 10px;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0 auto 20px auto;
+        max-width: 800px;
+        .headerTitle {
+          span {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            font-family: Ropa Sans, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            font-size: 28px;
+            color: #ec7f37;
+          }
+        }
+        button {
+          margin: 10px 0 0 50px;
+          //margin: auto;
+          //align-self: start;
+          background: none;
+          border: none;
+          &:hover {
+            color: #ec7f37;
+          }
+        }
+      }
+    }
+    .CardLinks {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      justify-items: center;
+
+      div {
+        display: flex;
+        justify-content: center;
+        img {
+          width: 31px;
+          height: 31px;
+          color: rgba(29, 59, 139, 0.5);
+          border-radius: 50%;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          margin: 10px;
+
+          &:hover {
+            border-radius: 50%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width: 41px;
+            height: 41px;
+          }
+        }
+      }
+      .buttonContactUsFromUserCardModalForm {
+        margin: auto auto auto 0;
+        padding: 5px 20px 5px 20px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background-color: #ec7f37;
+        color: #ffffff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        &:hover {
+          background-color: #1d3b8b;
+        }
+      }
+    }
+  }
+  p {
+    color: #5c5c5c;
+  }
+
+  .classEndMainFocusContainer {
+    display: flex;
+    align-items: end;
+    span {
+      text-decoration: none;
+      font-family: Ropa Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      font-size: 20px;
+      color: #5c5c5c;
+      margin-right: 20px;
+      margin-bottom: 2px;
+
+    }
+    p {
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      font-family: Ropa Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      font-size: 28px;
+      color: #ec7f37;
+    }
+  }
+}
+@media only screen and (max-width: 722px) {
+  #ModalUserCardForm {
+    max-width: 500px;
+    .secondDivModal {
+
+      display: flex;
+      flex-direction: column;
+    }
+    .parentContentContainer {
+      .imgDiv {
+        width: 100%;
+        max-width: 200px;
+        height: 200px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 30px auto;
+        position: relative;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .contentDiv {
+        width: 100%;
+        max-width: 600px;
+      }
+    }
+  }
+}
+
+
+
+
+

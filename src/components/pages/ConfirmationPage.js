@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-//import TopNavigation from "../navigation/TopNavigation";
+import TopNavigation from "../navigation/TopNavigation";
 import { confirm } from "../../actions/auth";
 import { ReactComponent as LoadinSvg } from "../../img/loading.svg";
 
@@ -24,9 +24,9 @@ class ConfirmationPage extends Component {
 
     return (
       <div className="ConfirmationPageCont">
-        {/*<div>
+        <div>
           <TopNavigation />
-        </div>*/}
+        </div>
         <div className="ValidatingAndVerifiedCont">
           {loading && (
             <div className="ValidatingCont">

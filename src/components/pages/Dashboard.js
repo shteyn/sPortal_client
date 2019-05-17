@@ -6,8 +6,10 @@ import UserCanLoginMessage from "../messages/UserCanLoginMessage";
 import UserDashboardPage from "./UserDashboardPage";
 import AdminDashboardPage from "./AdminDashboardPage";
 import { getUserData } from "../../actions/user";
-// import TopNavigation from "../navigation/TopNavigation";
 import { ReactComponent as LoadinSvg } from "../../img/loading.svg";
+
+import TopNavigation from "../navigation/TopNavigation";
+
 
 class Dashboard extends Component {
   state = {
@@ -35,7 +37,12 @@ class Dashboard extends Component {
 
     return (
       <div>
-        {/*<TopNavigation />*/}
+        <div className="dashboardNavigationBar"
+        style={{position: 'fixed'}}>
+          <TopNavigation />
+        </div>
+        {!isAdmin && isConfirmed ? <UserDashboardPage /> : null}
+        {isAdmin ? <AdminDashboardPage /> : null}
         {!isConfirmationEmailConfirmed && !isConfirmed ? (
           <ConfirmEmailMessage user={user} />
         ) : null}

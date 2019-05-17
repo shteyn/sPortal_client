@@ -35,15 +35,15 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.73);
+      //background: rgba(0, 0, 0, 0.73);
+      background-image: url("../img/add-img.png");
+      background-position: center center;
+      background-size: 100px 100px;
+      background-repeat: no-repeat;
 
       img {
-        width: 100px;
-        height: 100px;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        margin: auto;
       }
     }
   }
@@ -56,7 +56,7 @@
 
   .UserPageCont {
     .headerUserPage {
-      max-width: 1750px;
+      max-width: 1450px;
       margin: 130px auto 0 auto;
       height: 100px;
 
@@ -70,7 +70,7 @@
     }
 
     .InfoCont {
-      max-width: 1750px;
+      max-width: 1450px;
       margin: 0 auto 30px auto;
       display: flex;
       flex-wrap: wrap;
@@ -78,6 +78,7 @@
 
       .infoBoxCont {
         flex: 0 1 calc(33% - 1em);
+        max-width: 460px;
         .SubBoxCont {
           height: 100%;
           //width: 600px;
@@ -134,8 +135,6 @@
   }
 
   .userImageUploadCont {
-    position: relative;
-    //margin-right: 20px;
     label {
       width: 240px;
       height: 240px;
@@ -199,7 +198,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    position: relative;
     padding-top: 30px;
 
     .profileInfoItem {
