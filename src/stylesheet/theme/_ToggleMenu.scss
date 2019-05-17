@@ -46,122 +46,70 @@
 }
 
 @media only screen and (max-width: 722px) {
-  .logoToggleMenu {
-    width: 140px;
-    height: 50px;
-    margin: 20px auto 0 5%;
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    top: 20px;
-    z-index: 2000;
-  }
-  .ToggleMenu {
-    margin: auto;
-    padding: 0;
-    position: absolute;
-    left: 80%;
-    top: 25px;
-    display: flex;
-    font-size: 40px;
-    justify-content: flex-start;
-    color: #ec7f37;
-    cursor: pointer;
-    transition: all, left 0.22s ease;
-    opacity: 1;
-    &:hover {
-      opacity: 1;
-      color: #5c5c5c;
-    }
-  }
-  .ToggleMenu.open {
+  .ToggleMenuCont {
     position: fixed;
-    opacity: 1;
-    top: 30px;
-    left: 80%;
-    z-index: 2000;
-    &:hover {
-      opacity: 1;
-      color: #ffffff;
-    }
-  }
-  .DrawerNavigationBar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
     width: 100%;
-    max-width: 100%;
-    height: 100vh;
-    box-sizing: border-box;
-    background: #5c5c5c;
-    transform: translateX(-722px);
-    transition: transform 0.22s ease-in;
-    padding: 20px 10px;
-    .DrawerItem {
-      display: flex;
-      align-items: center;
-      margin-bottom: 100px;
-      a {
-        text-decoration: none;
-        font-size: 28px;
-        color: #ec7f37;
-        margin-left: 20px;
-        text-shadow: none;
-        &:hover {
-          color: #ffffff;
-        }
-      }
-    }
-    ul {
-      list-style: none;
-      margin: 150px auto;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      li {
-        color: #ec7f37;
-        a {
-          text-decoration: none;
-          font-size: 28px;
-          color: #ec7f37;
-          margin-left: 20px;
-          text-shadow: none;
-          &:hover {
-            color: white;
-          }
-        }
-      }
-    }
-    .DrawerItemLine {
-      width: 60%;
-      height: 1px;
-      background: white;
-      margin: 10px auto 40px auto;
-      //animation: 0,5s shrink forwards;
-    }
-  }
-  .DrawerNavigationBar.close {
-    position: fixed;
-    left: 0;
+    height: 85px;
     top: 0;
-    right: 0;
-    height: 100vh;
-    background: #5c5c5c;
-    opacity: 1;
-    transform: translateX(0px);
-    padding: 20px 10px;
-    ul {
-      list-style: none;
-      margin: 150px auto;
+    background-color: white;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .logoToggleMenu {
+      width: 180px;
+      height: 85px;
+      position: fixed;
+      margin: 0 auto 0 5%;
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      //z-index: 2000;
+    }
+    .ToggleMenu {
+      margin: auto;
       padding: 0;
+      position: fixed;
+      left: 80%;
+      top: 22px;
       display: flex;
-      flex-direction: column;
+      font-size: 40px;
       justify-content: flex-start;
-      li {
-        color: #ec7f37;
-        animation: 2s slideOpacity forwards;
+      color: #ec7f37;
+      cursor: pointer;
+      transition: all, left 0.22s ease;
+      opacity: 1;
+      &:hover {
+        opacity: 1;
+        color: #5c5c5c;
+      }
+    }
+    .ToggleMenu.open {
+      position: fixed;
+      opacity: 1;
+      top: 22px;
+      left: 80%;
+      z-index: 2000;
+      &:hover {
+        opacity: 1;
+        color: #ffffff;
+      }
+    }
+    .DrawerNavigationBar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 100%;
+      height: 100vh;
+      box-sizing: border-box;
+      background: #5c5c5c;
+      transform: translateX(-722px);
+      transition: transform 0.22s ease-in;
+      padding: 0 10px 20px 10px;
+      .DrawerItem {
+        display: flex;
+        align-items: center;
+        margin-bottom: 100px;
         a {
           text-decoration: none;
           font-size: 28px;
@@ -169,67 +117,140 @@
           margin-left: 20px;
           text-shadow: none;
           &:hover {
-            color: white;
+            color: #ffffff;
+          }
+
+        }
+      }
+      ul {
+        list-style: none;
+        margin: 150px auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        li {
+          color: #ec7f37;
+          a {
+            text-decoration: none;
+            font-size: 28px;
+            color: #ec7f37;
+            margin-left: 20px;
+            text-shadow: none;
+            &:hover {
+              color: white;
+            }
+            img{
+              border-radius: 6px;
+              &:hover {
+                background-color: white;
+              }
+            }
           }
         }
       }
-    }
-    .DrawerItem {
-      display: flex;
-      align-items: center;
-      a {
-        text-decoration: none;
-        font-size: 28px;
-        color: #ec7f37;
-        margin-left: 20px;
-        text-shadow: none;
-        animation: 2s slideOpacity forwards;
-        &:hover {
-          color: #ffffff;
-        }
+      .DrawerItemLine {
+        width: 60%;
+        height: 1px;
+        background: white;
+        margin: 10px auto 40px auto;
+        //animation: 0,5s shrink forwards;
       }
     }
-    .DrawerItemLine {
-      width: 60%;
-      height: 1px;
-      background: white;
-      margin: 10px auto 40px auto;
-      animation: 0, 5s shrink forwards;
+    .DrawerNavigationBar.close {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      overflow: auto;
+      height: 100vh;
+      background: #5c5c5c;
+      opacity: 1;
+      transform: translateX(0px);
+      padding: 0 10px 20px 10px;
+      ul {
+        list-style: none;
+        margin: 150px auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        li {
+          color: #ec7f37;
+          animation: 2s slideOpacity forwards;
+          a {
+            text-decoration: none;
+            font-size: 28px;
+            color: #ec7f37;
+            margin-left: 20px;
+            text-shadow: none;
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+      .DrawerItem {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        margin-left: 10%;
+        margin-top: 5px;
+        a {
+          text-decoration: none;
+          font-size: 28px;
+          color: #ec7f37;
+          margin-left: 20px;
+          text-shadow: none;
+          animation: 2s slideOpacity forwards;
+          &:hover {
+            color: #ffffff;
+          }
+        }
+      }
+      .DrawerItemLine {
+        width: 60%;
+        height: 1px;
+        background: white;
+        margin: 10px auto 40px auto;
+        animation: 0, 5s shrink forwards;
+      }
     }
   }
 }
-
-@media only screen and (max-width: 375px) {
-  .HeaderToggleMenuCont {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px 0 20px;
-    .logoToggleMenu {
-      width: 140px;
-      height: 50px;
-      margin: auto;
-      position: relative;
-      background-position: center center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      top: 20px;
-    }
-  }
-}
-@media only screen and (max-width: 414px) {
-  .HeaderToggleMenuCont {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px 0 20px;
-    .logoToggleMenu {
-      width: 140px;
-      height: 50px;
-      margin: auto;
-      position: relative;
-      background-position: center center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      top: 20px;
-    }
-  }
-}
+//
+//@media only screen and (max-width: 375px) {
+//  .HeaderToggleMenuCont {
+//    display: none;
+//    justify-content: space-between;
+//    padding: 0 20px 0 20px;
+//    .logoToggleMenu {
+//      display: none;
+//      width: 140px;
+//      height: 50px;
+//      margin: auto;
+//      position: relative;
+//      background-position: center center;
+//      background-size: contain;
+//      background-repeat: no-repeat;
+//      top: 20px;
+//    }
+//  }
+//}
+//@media only screen and (max-width: 414px) {
+//  .HeaderToggleMenuCont {
+//    display: flex;
+//    justify-content: space-between;
+//    padding: 0 20px 0 20px;
+//    .logoToggleMenu {
+//      width: 140px;
+//      height: 50px;
+//      margin: auto;
+//      position: relative;
+//      background-position: center center;
+//      background-size: contain;
+//      background-repeat: no-repeat;
+//      top: 20px;
+//    }
+//  }
+//}

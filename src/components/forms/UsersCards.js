@@ -6,6 +6,7 @@ import {
   devFocusArray,
   marketingFocusArray
 } from "../../helpers";
+import UserCardModalForm from '../forms/UserCardModalForm'
 
 class UserCards extends Component {
   constructor(props, context) {
@@ -19,10 +20,24 @@ class UserCards extends Component {
       location: "",
       availability: "",
       mainFocus: "",
-      studentCourse: ""
+      studentCourse: "",
+      showDisplay: false,
+      oneUser: {}
     };
   }
 
+  showDisplayHandler = (oneUser, allUsers) => {
+    this.setState({
+      oneUser,
+      showDisplay: true
+    })
+  };
+
+  hideDisplayHandler = () => {
+    this.setState({
+      showDisplay: false
+    })
+  };
   updateSearch = () => {
     this.setState({
       location: this.locationsRef.current.value,
@@ -46,7 +61,6 @@ class UserCards extends Component {
     const mainFocus = [];
 
     const studentCourse = courseTypesArray;
-    console.log("this.state", this.state);
 
     allUsers.map(user => {
       if (locations.indexOf(user.location) < 0) {
@@ -124,6 +138,10 @@ class UserCards extends Component {
 
     return (
       <div>
+        <UserCardModalForm
+          show={this.state.showDisplay}
+          user={this.state.oneUser}
+          hide={this.hideDisplayHandler}/>
         <div className="SelectCont">
           <select
             className="DropDownSelect"
@@ -192,6 +210,9 @@ class UserCards extends Component {
                       style={{
                         backgroundImage: "url(" + placeholderUrl + ")"
                       }}
+                      onClick={() => {
+                        this.showDisplayHandler(oneUser)
+                      }}
                     />
                   ) : (
                     <div
@@ -203,6 +224,9 @@ class UserCards extends Component {
                             oneUser.userImage
                           }` +
                           ")"
+                      }}
+                      onClick={() => {
+                        this.showDisplayHandler(oneUser)
                       }}
                     />
                   )}

@@ -21,11 +21,14 @@ class ContactForm extends Component {
     this.setState({ show: true });
   }
   render() {
+    console.log( "from contact", this.props.user);
     return (
         <div>
           <div variant="primary" onClick={this.handleShow}>
-            Contact
+            {/*Contact {this.props.user.firstName}*/}
+            contact
           </div>
+
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header>
               <h1>Contact</h1>

@@ -18,25 +18,25 @@ class LoginPage extends Component {
       .then(() => this.props.history.push("/dashboard"));
 
   render() {
-    // let logoDCI = require("../../img/newDCILogo.png");
+    let logoDCI = require("../../img/newDCILogo.png");
     return (
       <div>
         <div className="LoginCont">
-          {/*<div className="navigation">*/}
-          {/*  <div>*/}
-          {/*    <Link to="/user-card">*/}
-          {/*      <div className="label">*/}
-          {/*        <div*/}
-          {/*          id="dciLogoLogin"*/}
-          {/*          style={{*/}
-          {/*            backgroundImage: "url(" + logoDCI + ")",*/}
-          {/*            backgroundPosition: "none"*/}
-          {/*          }}*/}
-          {/*        />*/}
-          {/*      </div>*/}
-          {/*    </Link>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
+          <div className="navigationBar">
+            <div>
+              <Link to="/user-card">
+                <div className="label">
+                  <div
+                    id="dciLogoLogin"
+                    style={{
+                      backgroundImage: "url(" + logoDCI + ")",
+                      backgroundPosition: "none"
+                    }}
+                  />
+                </div>
+              </Link>
+            </div>
+          </div>
           <div className="LoginModel">
             <Tabs defaultActiveKey="loginStudent" id="uncontrolled-tab-example">
               <Tab eventKey="loginStudent" title="Sign In">
