@@ -30,30 +30,6 @@ const App = ({ location, isAdmin, isAuthenticated }) => (
       justifyContent: "space-between"
     }}
   >
-    {isAuthenticated && location.pathname !== "/" ? <TopNavigation /> : null}
-    {!isAuthenticated && location.pathname !== "/" ? (
-      <div>
-        <div className="navigationBar">
-          <Link to="/user-card">
-            <div className="label">
-              <div
-                id="dciLogo"
-                style={{
-                  backgroundImage: "url(" + logoDCI + ")"
-                }}
-              />
-            </div>
-          </Link>
-          <ul>
-            <li>
-              <Link to="/login">
-                <span>Login</span>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    ) : null}
     <div>
       <Route location={location} path="/" exact component={HomePage} />
       <Route
@@ -61,12 +37,6 @@ const App = ({ location, isAdmin, isAuthenticated }) => (
         path="/about-us"
         exact
         component={AboutUsPage}
-      />
-      <Route
-        location={location}
-        path="/contact"
-        exact
-        component={ContactForm}
       />
       <Route location={location} path="/faq" exact component={FAQPage} />
       <Route

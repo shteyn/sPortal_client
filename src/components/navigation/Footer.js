@@ -5,44 +5,56 @@ import ContactForm from '../footer_pages/ContactForm'
 class Footer extends Component {
   render() {
     return (
-        <div className="FooterCont">
-            <div className="FooterContentBox">
-              <div className="FooterContentItemOne">
-                <ul>
-                  <li><h3>COMPANY</h3></li>
-                  <li><Link to="/about-us" >About Us</Link></li>
-                  <li><Link to="/faq">FAQ</Link></li>
-                  <li><a><ContactForm/></a></li>
-                </ul>
-              </div>
-              <div className="FooterContentItemTwo">
-                <ul>
-                  <li><h3>COMMUNITY</h3></li>
-                  <li><Link to="/stories" target="_blank">Stories</Link></li>
-                </ul>
-              </div>
-              <div className="FooterContentItemFour">
-                <ul>
-                  <li><h3>FOLLOW</h3></li>
-                  <li><a href="https://www.facebook.com/devugees">Facebook</a></li>
-                  <li><a href="https://twitter.com/DevugeesOrg">Twitter</a></li>
-                  <li><a href="https://medium.com/devugees">Medium</a></li>
-                  <li><a href="https://www.youtube.com/channel/UCSM_3ldxjcclGTcXaJRBYTw">YouTube</a></li>
-                </ul>
-              </div>
-            </div>
+      <div className="FooterCont">
+        <div className="FooterContentBox">
+          <div className="FooterContentItemTwo">
+            <h5><b>DCI Digitale Career Institute</b></h5>
+            <p>The Digital Career Institute was born as an initiative to integrate refugees into digital jobs.
+              Today it is committed to train anyone who wants to pursue a tech career.</p>
+            <ul>
+              <li><a href="https://www.facebook.com/devugees">
+                <i className="fab fa-facebook-square"
+                   style={{fontSize:"28px", color:"#ec7f37"}}/>
+              </a></li>
+              <li><a href="https://twitter.com/DevugeesOrg">
+                <i className="fab fa-twitter-square"
+                   style={{fontSize:"28px", color:"#ec7f37"}}/>
+              </a></li>
+              <li><a href="https://medium.com/devugees">
+                <i className="fab fa-medium"
+                   style={{fontSize:"28px", color:"#ec7f37"}}/>
+              </a></li>
+              <li><a href="https://www.youtube.com/channel/UCSM_3ldxjcclGTcXaJRBYTw">
+                <i className="fab fa-youtube-square"
+                   style={{fontSize:"28px", color:"#ec7f37"}}/>
+              </a></li>
+            </ul>
+          </div>
+          <div className="FooterContentItemOne">
+            <ul>
+              <li><Link to="/about-us" >About Us</Link></li>
+              <li><Link to="/faq">FAQ</Link></li>
+              <li><a><ContactForm/></a></li>
+              <li><Link to="/stories" target="_blank">Stories</Link></li>
+            </ul>
+          </div>
+
         </div>
+        <div className="mainLegalContainerFooter">
+          <div className="legalContainerFooter">
+            <h5>DCI Digitale Career Institute</h5>
+
+            <div>
+              <h5>Disclaimer</h5>
+              <h5>Imprint</h5>
+              <h5>Datenschutz</h5>
+              <h5>Data Privacy</h5>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }
 
 export default Footer;
-
-
-{/*<Route location={location} path="/coaching" exact component={CoachingPage} />*/}
-{/*<Route location={location} path="/digital-marketing" exact component={DigitalMarketingPage} />*/}
-{/*<Route location={location} path="/hire-digital-talents" exact component={HireDigitalTalentsPage} />*/}
-{/*<Route location={location} path="/orientation-course" exact component={OrientationCoursePage} />*/}
-{/*<Route location={location} path="/scholarship" exact component={ScholarshipPage} />*/}
-{/*<Route location={location} path="/stories" exact component={StoriesPage} />*/}
-{/*<Route location={location} path="/web-development-course" exact component={WebDevelopmentCoursePage} />*/}
