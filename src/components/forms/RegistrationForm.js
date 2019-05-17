@@ -19,9 +19,6 @@ class RegistrationForm extends Component {
     errors: {}
   };
 
-  //locationTypes = ["Berlin", "Düsseldorf", "Leipzig", "Hamburg"];
-  //courseTypes = ["Web Development", "Digital Marketing / E-Commerce"];
-
   onChange = event =>
     this.setState({
       data: {
@@ -55,14 +52,6 @@ class RegistrationForm extends Component {
 
   render() {
     const { data, errors, loading } = this.state;
-    /*const { allUsers } = this.props;
-    const locations = [];
-    allUsers.map(user => {
-      if (locations.indexOf(user.location) < 0) {
-        locations.push(user.location);
-      }
-      return null;
-    });*/
 
     return (
       <div className="loginForm">
