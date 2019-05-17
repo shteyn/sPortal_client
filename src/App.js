@@ -21,15 +21,7 @@ import StoriesPage from "./components/footer_pages/StoriesPage";
 let logoDCI = require("./img/dciLogo.png");
 
 const App = ({ location, isAdmin, isAuthenticated }) => (
-  <div
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      height: "100vh",
-      width: "100vw",
-      justifyContent: "space-between"
-    }}
-  >
+  <div>
     {isAuthenticated && location.pathname !== "/" ? <TopNavigation /> : null}
     {!isAuthenticated && location.pathname !== "/" ? (
       <div>

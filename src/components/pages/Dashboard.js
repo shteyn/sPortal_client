@@ -7,11 +7,20 @@ import UserDashboardPage from "./UserDashboardPage";
 import AdminDashboardPage from "./AdminDashboardPage";
 import { getUserData } from "../../actions/user";
 // import TopNavigation from "../navigation/TopNavigation";
+import { ReactComponent as LoadinSvg } from "../../img/loading.svg";
 
 class Dashboard extends Component {
+  state = {
+    loading: true,
+    success: false
+  };
+
   componentDidMount() {
     const { email } = this.props.user;
-    this.props.getUserData(email);
+    this.props
+      .getUserData(email)
+      .then(() => this.setState({ loading: false, success: true }))
+      .catch(() => this.setState({ loading: false, success: false }));
   }
 
   render() {
@@ -22,17 +31,24 @@ class Dashboard extends Component {
       oneUser,
       isConfirmationEmailConfirmed
     } = this.props;
+    const { loading, success } = this.state;
+
     return (
       <div>
         {/*<TopNavigation />*/}
-        {!isAdmin && isConfirmed ? <UserDashboardPage /> : null}
-        {isAdmin ? <AdminDashboardPage /> : null}
         {!isConfirmationEmailConfirmed && !isConfirmed ? (
           <ConfirmEmailMessage user={user} />
         ) : null}
         {isConfirmationEmailConfirmed && !isConfirmed ? (
           <UserCanLoginMessage oneUser={oneUser} />
         ) : null}
+        {loading && !isAdmin && isConfirmed ? (
+          <LoadinSvg loading />
+        ) : !loading && !isAdmin && isConfirmed ? (
+          <UserDashboardPage />
+        ) : null}
+
+        {isAdmin ? <AdminDashboardPage /> : null}
       </div>
     );
   }

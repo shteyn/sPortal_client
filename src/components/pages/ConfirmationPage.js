@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 //import TopNavigation from "../navigation/TopNavigation";
 import { confirm } from "../../actions/auth";
+import { ReactComponent as LoadinSvg } from "../../img/loading.svg";
 
 class ConfirmationPage extends Component {
   state = {
@@ -30,6 +31,7 @@ class ConfirmationPage extends Component {
           {loading && (
             <div className="ValidatingCont">
               <p>Validating your email</p>
+              <LoadinSvg loading />
             </div>
           )}
           {!loading && success && (
