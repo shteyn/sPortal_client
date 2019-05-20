@@ -282,10 +282,24 @@
   text-align: center;
 }
 
-@media only screen and (max-width: 795px) {
+@media only screen and (max-width: 722px) {
   .SelectCont {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    margin: auto;
+
+    .DropDownSelect {
+      margin: 10px auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .SelectCont {
+    max-width: 525px;
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
     margin: auto;
 

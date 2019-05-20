@@ -13,29 +13,23 @@
 @import "theme/AdminDashboardPage";
 @import "theme/Footer";
 @import "theme/ResetPasswordForm";
+@import "theme/App";
 @import "theme/FooterPage/AboutUsPage";
 @import "theme/FooterPage/FAQPage";
 @import "theme/FooterPage/ContactForm";
 
 
 @import "theme/Forms/UserCardModalForm";
-//@import "theme/FooterPage";
-//@import "theme/FooterPage";
-//@import "theme/FooterPage";
-//@import "theme/FooterPage";
-//@import "theme/FooterPage";
-//@import "theme/FooterPage";
-//@import "theme/FooterPage";
-//@import "theme/FooterPage";
-//@import "theme/FooterPage";
-//@import "theme/FooterPage";
-//@import "theme/FooterPage";
 
 body,
 html {
   margin: 0;
   padding: 0;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   a:any-link {
     text-decoration: none;
   }
