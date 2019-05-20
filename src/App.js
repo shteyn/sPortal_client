@@ -16,11 +16,11 @@ import AboutUsPage from "./components/footer_pages/AboutUsPage";
 import FAQPage from "./components/footer_pages/FAQPage";
 import StoriesPage from "./components/footer_pages/StoriesPage";
 
-
 const App = ({ location, isAdmin }) => (
   <div className="App">
     <div className="AppComponentsContainer">
       <Route location={location} path="/" exact component={HomePage}/>
+
       <Route
         location={location}
         path="/about-us"

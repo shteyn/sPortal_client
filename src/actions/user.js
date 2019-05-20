@@ -68,9 +68,14 @@ export const deleteUserByUser = id => dispatch =>
     .then(localStorage.removeItem("userJWT"), dispatch(userLoggedOut()));
 
 export const getAllUsers = () => dispatch =>
-  api.user.getAllUsers().then(allUsers => {
-    dispatch(allUsersList(allUsers));
-  });
+  api.user
+    .getAllUsers()
+    .then(allUsers => {
+      dispatch(allUsersList(allUsers));
+    })
+    .catch(err => {
+      console.log("getAllUsers", err);
+    });
 
 //TBD add message to user, that account is not found
 export const getUserData = email => dispatch =>

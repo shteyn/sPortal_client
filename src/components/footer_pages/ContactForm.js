@@ -68,7 +68,7 @@ class ContactForm extends Component {
   }
   render() {
     const { data, errors, loading } = this.state;
-
+    console.log("contact form props", this.props);
     return (
       <div>
         <div variant="primary" onClick={this.handleShow}>
@@ -169,12 +169,12 @@ class ContactForm extends Component {
                       onChange={this.onChange}
                       value={true}
                     />
-                    <p>
+                    <div className="legalLink">
                       I have read and agree to the
                       <a>
                         <LegalPrivacy />
                       </a>
-                    </p>
+                    </div>
                   </div>
                 </div>
               </Form.Group>

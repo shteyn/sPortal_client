@@ -80,28 +80,15 @@ class UserDashboardPage extends Component {
         <div className="UserPageCont">
           <div className="headerUserPage">
             <div className="profileInfoItem">
-              <p>
-                {firstName} {lastName}
-              </p>
+              <button className="updateProfileButton">
+                {this.props.oneUser._id ? (
+                  <UpdateUserProfileForm
+                    user={this.props.oneUser}
+                    updateProfile={this.updateProfile}
+                  />
+                ) : null}
+              </button>
             </div>
-            <button
-              className="updateProfileButton"
-              style={{ marginRight: "30px" }}
-              onClick={() => {
-                if (window.confirm("Are you sure?"))
-                  this.deleteUserHandler(this.props.oneUser._id);
-              }}
-            >
-              DELETE PROFILE
-            </button>
-            <button className="updateProfileButton">
-              {this.props.oneUser._id ? (
-                <UpdateUserProfileForm
-                  user={this.props.oneUser}
-                  updateProfile={this.updateProfile}
-                />
-              ) : null}
-            </button>
           </div>
 
           {/*FIRST COLUMN*/}

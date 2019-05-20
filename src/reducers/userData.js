@@ -19,7 +19,6 @@ export default function(state = initialState, action = {}) {
           user => user.location.toLowerCase() === action.userLocation
         )
       };
-
     default:
       return state;
   }
