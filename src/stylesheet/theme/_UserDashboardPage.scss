@@ -6,8 +6,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
 
   .addHoverImg {
     visibility: hidden;
@@ -56,7 +56,7 @@
 
   .UserPageCont {
     .headerUserPage {
-      max-width: 1450px;
+      max-width: 1470px;
       margin: 130px auto 0 auto;
       height: 100px;
 
@@ -70,24 +70,84 @@
     }
 
     .InfoCont {
-      max-width: 1450px;
-      margin: 0 auto 30px auto;
+      width: 100%;
+      margin: auto auto 100px auto;
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      justify-content: space-between;
-
+      height: 800px;
       .infoBoxCont {
-        flex: 0 1 calc(33% - 1em);
-        max-width: 460px;
-        .SubBoxCont {
-          height: 100%;
-          //width: 600px;
-          min-width: 300px;
-          padding: 20px;
-          border: 1px solid #e5e5e5;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          //margin: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 442px;
+        height: 100%;
+        padding: 30px;
+        background: white;
+        border-radius: 19px;
+        margin: 10px;
+        .nestedInfoBoxCont {
+          .linksBoxItems {
+            display: flex;
+            flex-direction: column;
+            img {
+              width: 20px;
+              height: 20px;
+              border-radius: 10px;
+            }
+
+            .linksBoxItem {
+              display: flex;
+              justify-content: left;
+              align-items: center;
+              margin: 10px;
+
+              p {
+                margin-left: 20px;
+              }
+            }
+
+            a {
+              display: flex;
+              justify-items: center;
+              cursor: pointer;
+
+              &:hover {
+                cursor: pointer;
+                color: #ec7f37;
+              }
+            }
+
+            h1 {
+              font-family: Ropa Sans, sans-serif;
+              font-style: normal;
+              font-weight: normal;
+              line-height: normal;
+              font-size: 36px;
+              color: #da9446;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+    .infoBoxContSecond {
+      width: 1000px;
+      height: 100%;
+      //padding: 30px;
+      background: white;
+      //border-radius: 19px;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .nestedInfoBoxCont {
+        border-radius: 19px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        height: 49%;
+        padding: 30px;
+        p {
+          word-wrap: break-word;
         }
         .linksBoxItems {
           display: flex;
@@ -97,7 +157,6 @@
             height: 20px;
             border-radius: 10px;
           }
-
           .linksBoxItem {
             display: flex;
             justify-content: left;

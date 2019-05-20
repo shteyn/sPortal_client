@@ -45,8 +45,6 @@ class UserDashboardPage extends Component {
       mainFocus
     } = this.props.oneUser;
 
-    console.log(userImage);
-
     let placeholderUrl = require("../../img/empty-profile.png");
 
     let formattedAvailability = "";
@@ -93,133 +91,129 @@ class UserDashboardPage extends Component {
           {/*FIRST COLUMN*/}
           <div className="InfoCont">
             <div className="infoBoxCont">
-              <div className="SubBoxCont">
-                <div className="userImageUploadCont">
-                  {!userImage ? (
-                    <div>
-                      <label
-                        htmlFor="imgupload"
+              <div className="userImageUploadCont">
+                {!userImage ? (
+                  <div>
+                    <label
+                      htmlFor="imgupload"
+                      style={{
+                        cursor: "pointer"
+                      }}
+                    >
+                      <div
+                        className="userProfileImage"
                         style={{
-                          cursor: "pointer"
+                          backgroundImage: "url(" + placeholderUrl + ")"
                         }}
                       >
-                        <div
-                          className="userProfileImage"
-                          style={{
-                            backgroundImage: "url(" + placeholderUrl + ")"
-                          }}
-                        >
-                          <div className="addHoverImg" />
-                        </div>
-                      </label>
-                      <input
-                        id="imgupload"
-                        ref={this.userImageRef}
-                        type="file"
-                        name="userImageRef"
-                        onChange={this.submitUploadImage}
-                        style={{ display: "none" }}
-                      />
-                    </div>
+                        <div className="addHoverImg" />
+                      </div>
+                    </label>
+                    <input
+                      id="imgupload"
+                      ref={this.userImageRef}
+                      type="file"
+                      name="userImageRef"
+                      onChange={this.submitUploadImage}
+                      style={{ display: "none" }}
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <label
+                      htmlFor="imgupload"
+                      style={{
+                        cursor: "pointer",
+                        display: "block"
+                      }}
+                    >
+                      <div
+                        className="userProfileImage"
+                        style={{
+                          backgroundImage:
+                            "url(" +
+                            `${
+                              process.env.REACT_APP_API_HOST
+                            }/uploads/${userImage}` +
+                            ")"
+                        }}
+                      >
+                        <div className="addHoverImg" />
+                      </div>
+                    </label>
+                    <input
+                      id="imgupload"
+                      ref={this.userImageRef}
+                      type="file"
+                      name="userImageRef"
+                      onChange={this.submitUploadImage}
+                      style={{ display: "none" }}
+                    />
+                  </div>
+                )}
+              </div>
+              <div className="profileInfoCont">
+                <div className="profileInfoItem">
+                  <h4>First Name</h4>
+                  <p>{firstName}</p>
+                </div>
+                <div className="profileInfoItem">
+                  <h4>Last Name</h4>
+                  <p>{lastName}</p>
+                </div>
+                <div className="profileInfoItem">
+                  <h4>Email</h4>
+                  <p>{email}</p>
+                </div>
+                <div className="profileInfoItem">
+                  <h4>Location</h4>
+                  <p>{location}</p>
+                </div>
+                <div className="profileInfoItem">
+                  <h4>Course</h4>
+                  <p>{studentCourse}</p>
+                </div>
+                <div className="profileInfoItem">
+                  <h4>Class</h4>
+                  <p>{studentClass}</p>
+                </div>
+
+                <div className="profileInfoItem">
+                  <h4>Main Focus</h4>
+                  {mainFocus === "" ? (
+                    <p style={{ color: "#da9446" }}>Not updated yet</p>
                   ) : (
-                    <div>
-                      <label
-                        htmlFor="imgupload"
-                        style={{
-                          cursor: "pointer",
-                          display: "block"
-                        }}
-                      >
-                        <div
-                          className="userProfileImage"
-                          style={{
-                            backgroundImage:
-                              "url(" +
-                              `${
-                                process.env.REACT_APP_API_HOST
-                              }/uploads/${userImage}` +
-                              ")"
-                          }}
-                        >
-                          <div className="addHoverImg"/>
-                        </div>
-                      </label>
-                      <input
-                        id="imgupload"
-                        ref={this.userImageRef}
-                        type="file"
-                        name="userImageRef"
-                        onChange={this.submitUploadImage}
-                        style={{ display: "none" }}
-                      />
-                    </div>
+                    <p>{mainFocus}</p>
                   )}
                 </div>
-                <div className="profileInfoCont">
-                  <div className="profileInfoItem">
-                    <h4>First Name</h4>
-                    <p>{firstName}</p>
-                  </div>
-                  <div className="profileInfoItem">
-                    <h4>Last Name</h4>
-                    <p>{lastName}</p>
-                  </div>
-                  <div className="profileInfoItem">
-                    <h4>Email</h4>
-                    <p>{email}</p>
-                  </div>
-                  <div className="profileInfoItem">
-                    <h4>Location</h4>
-                    <p>{location}</p>
-                  </div>
-                  <div className="profileInfoItem">
-                    <h4>Course</h4>
-                    <p>{studentCourse}</p>
-                  </div>
-                  <div className="profileInfoItem">
-                    <h4>Class</h4>
-                    <p>{studentClass}</p>
-                  </div>
 
-                  <div className="profileInfoItem">
-                    <h4>Main Focus</h4>
-                    {mainFocus === "" ? (
-                      <p style={{ color: "#da9446" }}>Not updated yet</p>
-                    ) : (
-                      <p>{mainFocus}</p>
-                    )}
-                  </div>
-
-                  <div className="profileInfoItem">
-                    <h4>Available from</h4>
-                    {formattedAvailability === "" ? (
-                      <p style={{ color: "#da9446" }}>Not updated yet</p>
-                    ) : (
-                      <p>{formattedAvailability}</p>
-                    )}
-                  </div>
+                <div className="profileInfoItem">
+                  <h4>Available from</h4>
+                  {formattedAvailability === "" ? (
+                    <p style={{ color: "#da9446" }}>Not updated yet</p>
+                  ) : (
+                    <p>{formattedAvailability}</p>
+                  )}
                 </div>
               </div>
             </div>
 
             {/*SECOND COLUMN*/}
-            <div className="infoBoxCont">
-              <div className="SubBoxCont">
+            <div className="infoBoxContSecond">
+              <div className="nestedInfoBoxCont">
                 <h1>About Me</h1>
                 {!aboutMeSection ? (
                   <p style={{ color: "#da9446" }}>
-                    Please tell about yourself ...
+                    Please tell about yourself ...()
                   </p>
                 ) : (
-                  <div>{aboutMeSection}</div>
+                  <div style={{ wordWrap: "break-word" }}>{aboutMeSection}</div>
                 )}
               </div>
-            </div>
 
-            {/*THIRD COLUMN*/}
+              {/*THIRD COLUMN*/}
 
-            <div className="infoBoxCont">
-              <div className="SubBoxCont">
+              <div className="nestedInfoBoxCont">
                 <div style={{ marginBottom: "50px", width: "50%" }}>
                   <h1>Links</h1>
                   <div className="linksBoxItems">
