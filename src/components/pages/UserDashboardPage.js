@@ -8,7 +8,6 @@ import {
 } from "../../actions/user";
 
 import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
-// import Footer from "../navigation/Footer";
 
 class UserDashboardPage extends Component {
   constructor(props, context) {
@@ -45,8 +44,6 @@ class UserDashboardPage extends Component {
       availability,
       mainFocus
     } = this.props.oneUser;
-
-    console.log(userImage);
 
     let placeholderUrl = require("../../img/empty-profile.png");
 
@@ -138,11 +135,11 @@ class UserDashboardPage extends Component {
                               "url(" +
                               `${
                                 process.env.REACT_APP_API_HOST
-                              }/uploads/${userImage}` +
+                                }/uploads/${userImage}` +
                               ")"
                           }}
                         >
-                          <div className="addHoverImg"/>
+                          <div className="addHoverImg" />
                         </div>
                       </label>
                       <input
@@ -204,130 +201,137 @@ class UserDashboardPage extends Component {
             </div>
 
             {/*SECOND COLUMN*/}
-            <div className="infoBoxCont">
-              <div className="SubBoxCont">
-                <h1>About Me</h1>
-                {!aboutMeSection ? (
-                  <p style={{ color: "#da9446" }}>
-                    Please tell about yourself ...
-                  </p>
-                ) : (
-                  <div>{aboutMeSection}</div>
-                )}
+            <div className="infoBoxContSecond">
+              <div className="nestedInfoBoxCont">
+                <div className="SubBoxCont">
+                  <h1>About Me</h1>
+                  {!aboutMeSection ? (
+                    <p style={{ color: "#da9446" }}>
+                      Please tell about yourself ...
+                    </p>
+                  ) : (
+                    <div>{aboutMeSection}</div>
+                  )}
+                </div>
               </div>
-            </div>
 
-            {/*THIRD COLUMN*/}
+              {/*THIRD COLUMN*/}
 
-            <div className="infoBoxCont">
-              <div className="SubBoxCont">
-                <div style={{ marginBottom: "50px", width: "50%" }}>
-                  <h1>Links</h1>
-                  <div className="linksBoxItems">
-                    {!linkedInLink ? (
-                      <div className="linksBoxItem">
-                        <img src={require("../../img/linkedin.png")} alt="" />
-                        <p style={{ color: "#da9446" }}>
-                          Please add your LinkedIn URL ...
-                        </p>
-                        <a
-                          style={{ display: "none" }}
-                          href={linkedInLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        />
-                      </div>
-                    ) : (
-                      <div className="linksBoxItem">
-                        <img src={require("../../img/linkedin.png")} alt="" />
-                        <a
-                          href={linkedInLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <p>{linkedInLink}</p>
-                        </a>
-                      </div>
-                    )}
-                    {!githubLink ? (
-                      <div className="linksBoxItem">
-                        <img src={require("../../img/github.png")} alt="" />
-                        <p style={{ color: "#da9446" }}>
-                          Please add your Github URL ...
-                        </p>
-                        <a
-                          href={githubLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        />
-                      </div>
-                    ) : (
-                      <div className="linksBoxItem">
-                        <img src={require("../../img/github.png")} alt="" />
-                        <a
-                          href={githubLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <p>{githubLink}</p>
-                        </a>
-                      </div>
-                    )}
-                    {!xingLink ? (
-                      <div className="linksBoxItem">
-                        <img src={require("../../img/xing.png")} alt="" />
-                        <p style={{ color: "#da9446" }}>
-                          Please add your Xing URL ...
-                        </p>
-                        <a
-                          href={xingLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        />
-                      </div>
-                    ) : (
-                      <div className="linksBoxItem">
-                        <img src={require("../../img/xing.png")} alt="" />
-                        <a
-                          href={xingLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <p>{xingLink}</p>
-                        </a>
-                      </div>
-                    )}
-                    {!portfolioLink ? (
-                      <div className="linksBoxItem">
-                        <img src={require("../../img/briefcase.png")} alt="" />
-                        <p style={{ color: "#da9446" }}>
-                          Please add your Portfolio URL ...
-                        </p>
-                        <a
-                          href={portfolioLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        />
-                      </div>
-                    ) : (
-                      <div className="linksBoxItem">
-                        <img src={require("../../img/briefcase.png")} alt="" />
-                        <a
-                          href={portfolioLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <p>{portfolioLink}</p>
-                        </a>
-                      </div>
-                    )}
+              <div className="nestedInfoBoxCont">
+                <div className="SubBoxCont">
+                  <div style={{ marginBottom: "50px", width: "50%" }}>
+                    <h1>Links</h1>
+                    <div className="linksBoxItems">
+                      {!linkedInLink ? (
+                        <div className="linksBoxItem">
+                          <img src={require("../../img/linkedin.png")} alt="" />
+                          <p style={{ color: "#da9446" }}>
+                            Please add your LinkedIn URL ...
+                          </p>
+                          <a
+                            style={{ display: "none" }}
+                            href={linkedInLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          />
+                        </div>
+                      ) : (
+                        <div className="linksBoxItem">
+                          <img src={require("../../img/linkedin.png")} alt="" />
+                          <a
+                            href={linkedInLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <p>{linkedInLink}</p>
+                          </a>
+                        </div>
+                      )}
+                      {!githubLink ? (
+                        <div className="linksBoxItem">
+                          <img src={require("../../img/github.png")} alt="" />
+                          <p style={{ color: "#da9446" }}>
+                            Please add your Github URL ...
+                          </p>
+                          <a
+                            href={githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          />
+                        </div>
+                      ) : (
+                        <div className="linksBoxItem">
+                          <img src={require("../../img/github.png")} alt="" />
+                          <a
+                            href={githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <p>{githubLink}</p>
+                          </a>
+                        </div>
+                      )}
+                      {!xingLink ? (
+                        <div className="linksBoxItem">
+                          <img src={require("../../img/xing.png")} alt="" />
+                          <p style={{ color: "#da9446" }}>
+                            Please add your Xing URL ...
+                          </p>
+                          <a
+                            href={xingLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          />
+                        </div>
+                      ) : (
+                        <div className="linksBoxItem">
+                          <img src={require("../../img/xing.png")} alt="" />
+                          <a
+                            href={xingLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <p>{xingLink}</p>
+                          </a>
+                        </div>
+                      )}
+                      {!portfolioLink ? (
+                        <div className="linksBoxItem">
+                          <img
+                            src={require("../../img/briefcase.png")}
+                            alt=""
+                          />
+                          <p style={{ color: "#da9446" }}>
+                            Please add your Portfolio URL ...
+                          </p>
+                          <a
+                            href={portfolioLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          />
+                        </div>
+                      ) : (
+                        <div className="linksBoxItem">
+                          <img
+                            src={require("../../img/briefcase.png")}
+                            alt=""
+                          />
+                          <a
+                            href={portfolioLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <p>{portfolioLink}</p>
+                          </a>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        {/*<Footer/>*/}
       </div>
     );
   }
