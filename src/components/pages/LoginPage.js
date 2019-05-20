@@ -7,6 +7,7 @@ import LoginForm from "../forms/LoginForm";
 import RegistrationForm from "../forms/RegistrationForm";
 import { login } from "../../actions/auth";
 import { registration } from "../../actions/user";
+import TopNavigation from "../navigation/TopNavigation"
 
 class LoginPage extends Component {
   submit = data =>
@@ -21,6 +22,7 @@ class LoginPage extends Component {
     let logoDCI = require("../../img/newDCILogo.png");
     return (
       <div>
+        <TopNavigation/>
         <div className="LoginCont">
           <div className="navigationBar">
             <div>
