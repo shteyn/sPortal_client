@@ -11,34 +11,23 @@ import UserCardParent from "./components/pages/UserCardParent";
 import Dashboard from "./components/pages/Dashboard";
 import UserRoutes from "./components/routes/UserRoutes";
 import GuestRoutes from "./components/routes/GuestRoutes";
-import TopNavigation from "./components/navigation/TopNavigation";
 import Footer from "./components/navigation/Footer";
 import AboutUsPage from "./components/footer_pages/AboutUsPage";
-import ContactForm from "./components/footer_pages/ContactForm";
 import FAQPage from "./components/footer_pages/FAQPage";
 import StoriesPage from "./components/footer_pages/StoriesPage";
 
-let logoDCI = require("./img/dciLogo.png");
 
-const App = ({ location, isAdmin, isAuthenticated }) => (
-  <div
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      height: "100vh",
-      width: "100vw",
-      justifyContent: "space-between"
-    }}
-  >
-    <div>
-      <Route location={location} path="/" exact component={HomePage} />
+const App = ({ location, isAdmin }) => (
+  <div className="App">
+    <div className="AppComponentsContainer">
+      <Route location={location} path="/" exact component={HomePage}/>
       <Route
         location={location}
         path="/about-us"
         exact
         component={AboutUsPage}
       />
-      <Route location={location} path="/faq" exact component={FAQPage} />
+      <Route location={location} path="/faq" exact component={FAQPage}/>
       <Route
         location={location}
         path="/stories"
@@ -88,8 +77,12 @@ const App = ({ location, isAdmin, isAuthenticated }) => (
         )}
       />
     </div>
+    {!isAdmin && location.pathname !== "/" ?
+      <div className="AppFooterCont">
+        <Footer/>
+      </div>
+      : null}
 
-    {!isAdmin && location.pathname !== "/" ? <Footer /> : null}
   </div>
 );
 

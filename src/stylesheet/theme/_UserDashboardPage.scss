@@ -77,8 +77,10 @@
       justify-content: space-between;
 
       .infoBoxCont {
-        flex: 0 1 calc(33% - 1em);
+        width: 100%;
         max-width: 460px;
+        //margin: 0 auto 0 auto;
+        height: 730px;
         .SubBoxCont {
           height: 100%;
           //width: 600px;
@@ -247,20 +249,21 @@
         padding: 0;
       }
 
-      /*.InfoCont {
+      .InfoCont {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         margin-left: auto;
         .infoBoxCont {
-          //margin: auto;
-          width: 33%;
+          margin: auto;
+          width: 100%;
+          height: 730px;
           .SubBoxCont {
             //min-width: 400px;
             margin-left: auto;
           }
         }
-      }*/
+      }
     }
   }
 

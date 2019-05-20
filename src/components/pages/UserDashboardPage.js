@@ -8,6 +8,7 @@ import {
 } from "../../actions/user";
 
 import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
+// import Footer from "../navigation/Footer";
 
 class UserDashboardPage extends Component {
   constructor(props, context) {
@@ -339,6 +340,7 @@ class UserDashboardPage extends Component {
             </div>
           </div>
         </div>
+        {/*<Footer/>*/}
       </div>
     );
   }
