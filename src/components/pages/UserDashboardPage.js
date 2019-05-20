@@ -91,111 +91,109 @@ class UserDashboardPage extends Component {
           {/*FIRST COLUMN*/}
           <div className="InfoCont">
             <div className="infoBoxCont">
-              <div className="SubBoxCont">
-                <div className="userImageUploadCont">
-                  {!userImage ? (
-                    <div>
-                      <label
-                        htmlFor="imgupload"
+              <div className="userImageUploadCont">
+                {!userImage ? (
+                  <div>
+                    <label
+                      htmlFor="imgupload"
+                      style={{
+                        cursor: "pointer"
+                      }}
+                    >
+                      <div
+                        className="userProfileImage"
                         style={{
-                          cursor: "pointer"
+                          backgroundImage: "url(" + placeholderUrl + ")"
                         }}
                       >
-                        <div
-                          className="userProfileImage"
-                          style={{
-                            backgroundImage: "url(" + placeholderUrl + ")"
-                          }}
-                        >
-                          <div className="addHoverImg" />
-                        </div>
-                      </label>
-                      <input
-                        id="imgupload"
-                        ref={this.userImageRef}
-                        type="file"
-                        name="userImageRef"
-                        onChange={this.submitUploadImage}
-                        style={{ display: "none" }}
-                      />
-                    </div>
+                        <div className="addHoverImg" />
+                      </div>
+                    </label>
+                    <input
+                      id="imgupload"
+                      ref={this.userImageRef}
+                      type="file"
+                      name="userImageRef"
+                      onChange={this.submitUploadImage}
+                      style={{ display: "none" }}
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <label
+                      htmlFor="imgupload"
+                      style={{
+                        cursor: "pointer",
+                        display: "block"
+                      }}
+                    >
+                      <div
+                        className="userProfileImage"
+                        style={{
+                          backgroundImage:
+                            "url(" +
+                            `${
+                              process.env.REACT_APP_API_HOST
+                            }/uploads/${userImage}` +
+                            ")"
+                        }}
+                      >
+                        <div className="addHoverImg" />
+                      </div>
+                    </label>
+                    <input
+                      id="imgupload"
+                      ref={this.userImageRef}
+                      type="file"
+                      name="userImageRef"
+                      onChange={this.submitUploadImage}
+                      style={{ display: "none" }}
+                    />
+                  </div>
+                )}
+              </div>
+              <div className="profileInfoCont">
+                <div className="profileInfoItem">
+                  <h4>First Name</h4>
+                  <p>{firstName}</p>
+                </div>
+                <div className="profileInfoItem">
+                  <h4>Last Name</h4>
+                  <p>{lastName}</p>
+                </div>
+                <div className="profileInfoItem">
+                  <h4>Email</h4>
+                  <p>{email}</p>
+                </div>
+                <div className="profileInfoItem">
+                  <h4>Location</h4>
+                  <p>{location}</p>
+                </div>
+                <div className="profileInfoItem">
+                  <h4>Course</h4>
+                  <p>{studentCourse}</p>
+                </div>
+                <div className="profileInfoItem">
+                  <h4>Class</h4>
+                  <p>{studentClass}</p>
+                </div>
+
+                <div className="profileInfoItem">
+                  <h4>Main Focus</h4>
+                  {mainFocus === "" ? (
+                    <p style={{ color: "#da9446" }}>Not updated yet</p>
                   ) : (
-                    <div>
-                      <label
-                        htmlFor="imgupload"
-                        style={{
-                          cursor: "pointer",
-                          display: "block"
-                        }}
-                      >
-                        <div
-                          className="userProfileImage"
-                          style={{
-                            backgroundImage:
-                              "url(" +
-                              `${
-                                process.env.REACT_APP_API_HOST
-                                }/uploads/${userImage}` +
-                              ")"
-                          }}
-                        >
-                          <div className="addHoverImg" />
-                        </div>
-                      </label>
-                      <input
-                        id="imgupload"
-                        ref={this.userImageRef}
-                        type="file"
-                        name="userImageRef"
-                        onChange={this.submitUploadImage}
-                        style={{ display: "none" }}
-                      />
-                    </div>
+                    <p>{mainFocus}</p>
                   )}
                 </div>
-                <div className="profileInfoCont">
-                  <div className="profileInfoItem">
-                    <h4>First Name</h4>
-                    <p>{firstName}</p>
-                  </div>
-                  <div className="profileInfoItem">
-                    <h4>Last Name</h4>
-                    <p>{lastName}</p>
-                  </div>
-                  <div className="profileInfoItem">
-                    <h4>Email</h4>
-                    <p>{email}</p>
-                  </div>
-                  <div className="profileInfoItem">
-                    <h4>Location</h4>
-                    <p>{location}</p>
-                  </div>
-                  <div className="profileInfoItem">
-                    <h4>Course</h4>
-                    <p>{studentCourse}</p>
-                  </div>
-                  <div className="profileInfoItem">
-                    <h4>Class</h4>
-                    <p>{studentClass}</p>
-                  </div>
 
-                  <div className="profileInfoItem">
-                    <h4>Main Focus</h4>
-                    {mainFocus === "" ? (
-                      <p style={{ color: "#da9446" }}>Not updated yet</p>
-                    ) : (
-                      <p>{mainFocus}</p>
-                    )}
-                  </div>
-
-                  <div className="profileInfoItem">
-                    <h4>Available from</h4>
-                    {formattedAvailability === "" ? (
-                      <p style={{ color: "#da9446" }}>Not updated yet</p>
-                    ) : (
-                      <p>{formattedAvailability}</p>
-                    )}
-                  </div>
+                <div className="profileInfoItem">
+                  <h4>Available from</h4>
+                  {formattedAvailability === "" ? (
+                    <p style={{ color: "#da9446" }}>Not updated yet</p>
+                  ) : (
+                    <p>{formattedAvailability}</p>
+                  )}
                 </div>
               </div>
             </div>
@@ -203,129 +201,119 @@ class UserDashboardPage extends Component {
             {/*SECOND COLUMN*/}
             <div className="infoBoxContSecond">
               <div className="nestedInfoBoxCont">
-                <div className="SubBoxCont">
-                  <h1>About Me</h1>
-                  {!aboutMeSection ? (
-                    <p style={{ color: "#da9446" }}>
-                      Please tell about yourself ...
-                    </p>
-                  ) : (
-                    <div>{aboutMeSection}</div>
-                  )}
-                </div>
+                <h1>About Me</h1>
+                {!aboutMeSection ? (
+                  <p style={{ color: "#da9446" }}>
+                    Please tell about yourself ...()
+                  </p>
+                ) : (
+                  <div style={{ wordWrap: "break-word" }}>{aboutMeSection}</div>
+                )}
               </div>
 
               {/*THIRD COLUMN*/}
 
               <div className="nestedInfoBoxCont">
-                <div className="SubBoxCont">
-                  <div style={{ marginBottom: "50px", width: "50%" }}>
-                    <h1>Links</h1>
-                    <div className="linksBoxItems">
-                      {!linkedInLink ? (
-                        <div className="linksBoxItem">
-                          <img src={require("../../img/linkedin.png")} alt="" />
-                          <p style={{ color: "#da9446" }}>
-                            Please add your LinkedIn URL ...
-                          </p>
-                          <a
-                            style={{ display: "none" }}
-                            href={linkedInLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          />
-                        </div>
-                      ) : (
-                        <div className="linksBoxItem">
-                          <img src={require("../../img/linkedin.png")} alt="" />
-                          <a
-                            href={linkedInLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <p>{linkedInLink}</p>
-                          </a>
-                        </div>
-                      )}
-                      {!githubLink ? (
-                        <div className="linksBoxItem">
-                          <img src={require("../../img/github.png")} alt="" />
-                          <p style={{ color: "#da9446" }}>
-                            Please add your Github URL ...
-                          </p>
-                          <a
-                            href={githubLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          />
-                        </div>
-                      ) : (
-                        <div className="linksBoxItem">
-                          <img src={require("../../img/github.png")} alt="" />
-                          <a
-                            href={githubLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <p>{githubLink}</p>
-                          </a>
-                        </div>
-                      )}
-                      {!xingLink ? (
-                        <div className="linksBoxItem">
-                          <img src={require("../../img/xing.png")} alt="" />
-                          <p style={{ color: "#da9446" }}>
-                            Please add your Xing URL ...
-                          </p>
-                          <a
-                            href={xingLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          />
-                        </div>
-                      ) : (
-                        <div className="linksBoxItem">
-                          <img src={require("../../img/xing.png")} alt="" />
-                          <a
-                            href={xingLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <p>{xingLink}</p>
-                          </a>
-                        </div>
-                      )}
-                      {!portfolioLink ? (
-                        <div className="linksBoxItem">
-                          <img
-                            src={require("../../img/briefcase.png")}
-                            alt=""
-                          />
-                          <p style={{ color: "#da9446" }}>
-                            Please add your Portfolio URL ...
-                          </p>
-                          <a
-                            href={portfolioLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          />
-                        </div>
-                      ) : (
-                        <div className="linksBoxItem">
-                          <img
-                            src={require("../../img/briefcase.png")}
-                            alt=""
-                          />
-                          <a
-                            href={portfolioLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <p>{portfolioLink}</p>
-                          </a>
-                        </div>
-                      )}
-                    </div>
+                <div style={{ marginBottom: "50px", width: "50%" }}>
+                  <h1>Links</h1>
+                  <div className="linksBoxItems">
+                    {!linkedInLink ? (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/linkedin.png")} alt="" />
+                        <p style={{ color: "#da9446" }}>
+                          Please add your LinkedIn URL ...
+                        </p>
+                        <a
+                          style={{ display: "none" }}
+                          href={linkedInLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      </div>
+                    ) : (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/linkedin.png")} alt="" />
+                        <a
+                          href={linkedInLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p>{linkedInLink}</p>
+                        </a>
+                      </div>
+                    )}
+                    {!githubLink ? (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/github.png")} alt="" />
+                        <p style={{ color: "#da9446" }}>
+                          Please add your Github URL ...
+                        </p>
+                        <a
+                          href={githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      </div>
+                    ) : (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/github.png")} alt="" />
+                        <a
+                          href={githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p>{githubLink}</p>
+                        </a>
+                      </div>
+                    )}
+                    {!xingLink ? (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/xing.png")} alt="" />
+                        <p style={{ color: "#da9446" }}>
+                          Please add your Xing URL ...
+                        </p>
+                        <a
+                          href={xingLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      </div>
+                    ) : (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/xing.png")} alt="" />
+                        <a
+                          href={xingLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p>{xingLink}</p>
+                        </a>
+                      </div>
+                    )}
+                    {!portfolioLink ? (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/briefcase.png")} alt="" />
+                        <p style={{ color: "#da9446" }}>
+                          Please add your Portfolio URL ...
+                        </p>
+                        <a
+                          href={portfolioLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      </div>
+                    ) : (
+                      <div className="linksBoxItem">
+                        <img src={require("../../img/briefcase.png")} alt="" />
+                        <a
+                          href={portfolioLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p>{portfolioLink}</p>
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

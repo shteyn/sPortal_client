@@ -85,16 +85,16 @@ class ToggleMenu extends Component {
                   </Link>
                 ) : (
                   <Link to="/dashboard" key="1">
-                    <div
+                    <img
                       onClick={this.toggleHandler}
                       id="gravatar-img"
-                      style={{
-                        backgroundImage:
-                          "url(" +
-                          `${process.env.REACT_APP_API_HOST}/${
-                            oneUser.userImage
-                          }` +
-                          ")"
+                      alt="example"
+                      src={`${process.env.REACT_APP_API_HOST}/uploads/${
+                        oneUser.userImage
+                      }`}
+                      onError={e => {
+                        e.target.onerror = null;
+                        e.target.src = `${placeholderUrl}`;
                       }}
                     />
                   </Link>

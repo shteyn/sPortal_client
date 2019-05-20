@@ -182,7 +182,7 @@ class UpdateUserProfileForm extends Component {
                   </InputGroup.Prepend>
                   <Form.Control
                     placeholder="Tell about yourself..."
-                    maxLength="200"
+                    maxLength="1000"
                     as="textarea"
                     aria-label="With textarea"
                     className="studentInfoInput"

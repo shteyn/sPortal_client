@@ -10,7 +10,6 @@ import { ReactComponent as LoadinSvg } from "../../img/loading.svg";
 
 import TopNavigation from "../navigation/TopNavigation";
 
-
 class Dashboard extends Component {
   state = {
     loading: true,
@@ -37,25 +36,22 @@ class Dashboard extends Component {
 
     return (
       <div>
-        <div className="dashboardNavigationBar"
-        style={{position: 'fixed'}}>
+        <div className="dashboardNavigationBar" style={{ position: "fixed" }}>
           <TopNavigation />
         </div>
         {!isAdmin && isConfirmed ? <UserDashboardPage /> : null}
-        {isAdmin ? <AdminDashboardPage /> : null}
+        {isAdmin ? <AdminDashboardPage oneUser={oneUser} /> : null}
         {!isConfirmationEmailConfirmed && !isConfirmed ? (
           <ConfirmEmailMessage user={user} />
         ) : null}
         {isConfirmationEmailConfirmed && !isConfirmed ? (
           <UserCanLoginMessage oneUser={oneUser} />
         ) : null}
-        {loading && !isAdmin && isConfirmed ? (
+        {/* {loading && !isAdmin && isConfirmed ? (
           <LoadinSvg loading />
         ) : !loading && !isAdmin && isConfirmed ? (
           <UserDashboardPage />
-        ) : null}
-
-        {isAdmin ? <AdminDashboardPage /> : null}
+        ) : null}*/}
       </div>
     );
   }

@@ -61,15 +61,15 @@ class TopNavigation extends Component {
                     </Link>
                   ) : (
                     <Link to="/dashboard" key="1">
-                      <div
+                      <img
                         id="gravatar-img"
-                        style={{
-                          backgroundImage:
-                            "url(" +
-                            `${process.env.REACT_APP_API_HOST}/uploads/${
-                              oneUser.userImage
-                            }` +
-                            ")"
+                        alt="example"
+                        src={`${process.env.REACT_APP_API_HOST}/uploads/${
+                          oneUser.userImage
+                        }`}
+                        onError={e => {
+                          e.target.onerror = null;
+                          e.target.src = `${placeholderUrl}`;
                         }}
                       />
                     </Link>

@@ -20,14 +20,15 @@ const App = ({ location, isAdmin }) => (
   <div className="App">
     <div className="AppComponentsContainer">
       <Route location={location} path="/" exact component={HomePage}/>
-
       <Route
         location={location}
         path="/about-us"
         exact
         component={AboutUsPage}
       />
+
       <Route location={location} path="/faq" exact component={FAQPage}/>
+
       <Route
         location={location}
         path="/stories"

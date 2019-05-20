@@ -8,6 +8,7 @@
   border-radius: 50%;
   width: 200px;
   height: 200px;
+
   .addHoverImg {
     visibility: hidden;
     border-radius: 50%;
@@ -16,6 +17,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.73);
+
     img {
       width: 100px;
       height: 100px;
@@ -25,6 +27,7 @@
       transform: translate(-50%, -50%);
     }
   }
+
   &:hover {
     .addHoverImg {
       visibility: visible;
@@ -37,6 +40,7 @@
       background-position: center center;
       background-size: 100px 100px;
       background-repeat: no-repeat;
+
       img {
         position: absolute;
         margin: auto;
@@ -44,17 +48,18 @@
     }
   }
 }
+
 .UserPage {
   background: #ffffff;
   width: 100%;
-  height: 1700px;
-  margin-bottom: 30px;
+  height: 100vh;
+
   .UserPageCont {
-    margin-bottom: 30px;
     .headerUserPage {
       max-width: 1470px;
       margin: 130px auto 0 auto;
       height: 100px;
+
       .updateProfileButton {
         background-color: #ffffff;
         border: none;
@@ -63,6 +68,7 @@
         color: #da9446;
       }
     }
+
     .InfoCont {
       width: 100%;
       margin: auto auto 100px auto;
@@ -72,7 +78,7 @@
       height: 800px;
       .infoBoxCont {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
         width: 442px;
         height: 100%;
         padding: 30px;
@@ -88,24 +94,29 @@
               height: 20px;
               border-radius: 10px;
             }
+
             .linksBoxItem {
               display: flex;
               justify-content: left;
               align-items: center;
               margin: 10px;
+
               p {
                 margin-left: 20px;
               }
             }
+
             a {
               display: flex;
               justify-items: center;
               cursor: pointer;
+
               &:hover {
                 cursor: pointer;
                 color: #ec7f37;
               }
             }
+
             h1 {
               font-family: Ropa Sans, sans-serif;
               font-style: normal;
@@ -132,9 +143,11 @@
       .nestedInfoBoxCont {
         border-radius: 19px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
         height: 49%;
         padding: 30px;
+      
+
         .linksBoxItems {
           display: flex;
           flex-direction: column;
@@ -148,19 +161,23 @@
             justify-content: left;
             align-items: center;
             margin: 10px;
+
             p {
               margin-left: 20px;
             }
           }
+
           a {
             display: flex;
             justify-items: center;
             cursor: pointer;
+
             &:hover {
               cursor: pointer;
               color: #ec7f37;
             }
           }
+
           h1 {
             font-family: Ropa Sans, sans-serif;
             font-style: normal;
@@ -174,18 +191,22 @@
       }
     }
   }
+
   .userImageUploadCont {
     label {
       width: 240px;
       height: 240px;
       margin: auto;
       display: block;
+
       &:hover {
         cursor: pointer;
       }
+
       input {
         width: 183px;
         visibility: hidden;
+
         &[type="file"] {
           &:focus {
             outline: none;
@@ -194,6 +215,7 @@
       }
     }
   }
+
   h2 {
     font-family: Ropa Sans, sans-serif;
     font-style: normal;
@@ -209,6 +231,7 @@
     font-size: 30px;
     color: rgba(29, 59, 139, 0.5);
   }
+
   h1 {
     font-family: Ropa Sans, sans-serif;
     font-style: normal;
@@ -217,6 +240,7 @@
     font-size: 36px;
     color: #da9446;
   }
+
   p {
     margin: 0;
     font-family: Ropa Sans, sans-serif;
@@ -226,26 +250,31 @@
     font-size: 18px;
     color: #5c5c5c;
   }
+
   .profileInfoCont {
     //width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding-top: 30px;
+
     .profileInfoItem {
       text-align: left;
       display: flex;
       justify-content: space-between;
       margin: 10px 0;
+
       h4 {
         display: inline;
         font-weight: bold;
         color: #5c5c5c;
       }
+
       p {
         display: inline;
       }
     }
+
     h2 {
       margin-right: 20px;
       font-family: Ropa Sans, sans-serif;
@@ -253,16 +282,19 @@
       font-weight: normal;
       color: #da9446;
     }
+
     p {
       margin: 0;
       padding: 0;
       align-self: center;
     }
   }
+
   hr {
     margin: 20px;
     background-color: #da9446;
   }
+
   @media only screen and (max-width: 722px) {
     .UserPageCont {
       margin: auto;
@@ -272,13 +304,44 @@
         height: 100px;
         padding: 0;
       }
+
+      /*.InfoCont {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: auto;
+        .infoBoxCont {
+          //margin: auto;
+          width: 33%;
+          .SubBoxCont {
+            //min-width: 400px;
+            margin-left: auto;
+          }
+        }
+      }*/
     }
   }
+
   @media only screen and (max-width: 1750px) {
     .headerUserPage {
       padding: 0 30px;
     }
-  }
-  @media only screen and (orientation: landscape) {
+    /*.InfoCont {
+      max-width: 1450px;
+      width: 100%;
+      padding: 0 30px;
+      display: flex;
+      //flex-wrap: wrap;
+      margin: 0 auto 30px auto;
+      //margin-left: auto;
+
+      .infoBoxCont {
+        //margin: auto;
+        .SubBoxCont {
+          min-width: 400px;
+          margin-left: auto;
+        }
+      }
+    }*/
   }
 }

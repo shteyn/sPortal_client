@@ -10,6 +10,13 @@
   background: rgb(255, 255, 255);
   border: none;
 
+  #adminInfo {
+    color: #ec7f37;
+    align-self: center;
+    font-size: 22px;
+    text-align: right;
+    margin: 10px 60px;
+  }
   .celled.table tr th {
     font-size: 18px;
     color: #393939;
