@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Modal, FormGroup } from "reactstrap";
 
 import moment from "moment";
-import ContactForm from "../footer_pages/ContactForm";
+import ContactStudentForm from "./ContactStudentForm";
 
 class UserCardModalForm extends Component {
   toggle = () => {
@@ -11,15 +11,11 @@ class UserCardModalForm extends Component {
 
   render() {
     let placeholderUrl = require("../../img/placeholderUser.jpeg");
-    let trans = require("../../img/transparent.png");
     let { user } = this.props;
 
     let currentDate = new Date();
     let date = new Date(user.availability);
     const newDate = moment(date).format("MMMM D, YYYY");
-
-    console.log("user modal", user.userImage);
-
     return (
       <div className="UserCardsModalFormCont">
         <Modal
@@ -32,13 +28,7 @@ class UserCardModalForm extends Component {
               <div className="imgDiv">
                 {user.userImage === "" ? (
                   <div>
-                    <img
-                      className="profileImgModal"
-                      src=""
-                      style={{
-                        backgroundImage: "url(" + placeholderUrl + ")"
-                      }}
-                    />
+                    <img className="profileImgModal" src={placeholderUrl} />
                   </div>
                 ) : (
                   <img
@@ -104,7 +94,7 @@ class UserCardModalForm extends Component {
                 <div>
                   <div className="CardLinks">
                     <button className="buttonContactUsFromUserCardModalForm">
-                      <ContactForm user={user} />
+                      <ContactStudentForm user={user} />
                     </button>
                     <div>
                       <FormGroup>

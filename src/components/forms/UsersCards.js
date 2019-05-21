@@ -78,7 +78,7 @@ class UserCards extends Component {
         );
         mainFocus.length = 0;
         compareArray.map(devFocus => {
-          mainFocus.push(devFocus);
+          return mainFocus.push(devFocus);
         });
       } else if (
         this.state.studentCourse === "Digital Marketing / E-Commerce"
@@ -88,7 +88,7 @@ class UserCards extends Component {
         );
         mainFocus.length = 0;
         compareArray.map(marketingFocus => {
-          mainFocus.push(marketingFocus);
+          return mainFocus.push(marketingFocus);
         });
       }
       return null;
@@ -219,7 +219,9 @@ class UserCards extends Component {
                     <img
                       className="profileImg"
                       alt="example"
-                      src={`http://localhost:8080/uploads/${oneUser.userImage}`}
+                      src={`${process.env.REACT_APP_API_HOST}/uploads/${
+                        oneUser.userImage
+                      }`}
                       onError={e => {
                         e.target.onerror = null;
                         e.target.src = `${placeholderUrl}`;

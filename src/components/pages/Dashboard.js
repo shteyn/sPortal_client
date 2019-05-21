@@ -47,11 +47,6 @@ class Dashboard extends Component {
         {isConfirmationEmailConfirmed && !isConfirmed ? (
           <UserCanLoginMessage oneUser={oneUser} />
         ) : null}
-        {/* {loading && !isAdmin && isConfirmed ? (
-          <LoadinSvg loading />
-        ) : !loading && !isAdmin && isConfirmed ? (
-          <UserDashboardPage />
-        ) : null}*/}
       </div>
     );
   }

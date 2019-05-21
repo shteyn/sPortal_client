@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import {
-  Button,
-  Modal,
-  Form,
-  Col,
-  InputGroup,
-  Dropdown,
-  DropdownButton
-} from "react-bootstrap";
+import { Button, Modal, Form, Col, InputGroup } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import {
   locationsArray,

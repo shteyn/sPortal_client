@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 import HomePage from "./components/pages/HomePage";
 import ConfirmationPage from "./components/pages/ConfirmationPage";
@@ -19,7 +19,7 @@ import StoriesPage from "./components/footer_pages/StoriesPage";
 const App = ({ location, isAdmin }) => (
   <div className="App">
     <div className="AppComponentsContainer">
-      <Route location={location} path="/" exact component={HomePage}/>
+      <Route location={location} path="/" exact component={HomePage} />
       <Route
         location={location}
         path="/about-us"
@@ -27,7 +27,7 @@ const App = ({ location, isAdmin }) => (
         component={AboutUsPage}
       />
 
-      <Route location={location} path="/faq" exact component={FAQPage}/>
+      <Route location={location} path="/faq" exact component={FAQPage} />
 
       <Route
         location={location}
@@ -78,12 +78,11 @@ const App = ({ location, isAdmin }) => (
         )}
       />
     </div>
-    {!isAdmin && location.pathname !== "/" ?
+    {!isAdmin && location.pathname !== "/" ? (
       <div className="AppFooterCont">
-        <Footer/>
+        <Footer />
       </div>
-      : null}
-
+    ) : null}
   </div>
 );
 
