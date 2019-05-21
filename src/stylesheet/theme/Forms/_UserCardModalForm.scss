@@ -16,10 +16,9 @@
 
     .imgDiv {
       width: 400px;
-      //background-position: center center;
-      // background-size: cover;
-      //background-repeat: no-repeat;
-      //margin: -15% 100px 0 -100px;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
       margin-right: 10px;
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
@@ -171,13 +170,14 @@
         object-fit: cover;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
-        //background-position: center center;
-        //background-size: cover;
-        //background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
         //margin: 30px auto;
         position: relative;
         //border-radius: 50%;
         .profileImgModal {
+          object-fit: cover;
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
           border-bottom-left-radius: 0;

@@ -13,6 +13,13 @@ export default {
       axios.post(`${process.env.REACT_APP_API_HOST}/api/users/contact-us`, {
         contactUsData
       }),
+    contactStudent: contactStudentData =>
+      axios.post(
+        `${process.env.REACT_APP_API_HOST}/api/users/contact-student`,
+        {
+          contactStudentData
+        }
+      ),
     registration: user =>
       axios
         .post(`${process.env.REACT_APP_API_HOST}/api/users/registration`, {

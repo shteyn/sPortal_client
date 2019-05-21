@@ -18,6 +18,8 @@ export const oneUser = oneUserData => ({
 
 export const contactUs = data => () => api.user.contactUs(data);
 
+export const contactStudent = data => () => api.user.contactStudent(data);
+
 export const filterLocation = userLocation => dispatch => {
   return dispatch({
     type: FILTER_USERS_BY_LOCATION,

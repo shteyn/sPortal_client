@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormCheck, Button, Modal, Form } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 class LegalPrivacy extends Component {
   constructor(props, context) {

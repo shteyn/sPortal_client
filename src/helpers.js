@@ -11,3 +11,4 @@ export const courseTypesArray = [
   "Digital Marketing / E-Commerce"
 ];
 export const inContact = ["Student", "Company", "Want become a student"];
+export const inContactStudent = ["Student", "Company"];

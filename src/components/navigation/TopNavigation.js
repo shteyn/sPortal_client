@@ -13,7 +13,7 @@ class TopNavigation extends Component {
   }
   render() {
     const { oneUser, logout, isAdmin } = this.props;
-    let placeholderUrl = require("../../img/placeholderUser.png");
+    let placeholderUrl = require("../../img/placeholderUser.jpeg");
     let adminImg = require("../../img/admin2.png");
     let logoDCI = require("../../img/newDCILogo.png");
 

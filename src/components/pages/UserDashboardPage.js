@@ -45,7 +45,7 @@ class UserDashboardPage extends Component {
       mainFocus
     } = this.props.oneUser;
 
-    let placeholderUrl = require("../../img/empty-profile.png");
+    let placeholderUrl = require("../../img/placeholderUser.jpeg");
 
     let formattedAvailability = "";
     if (availability && typeof availability === "string") {
@@ -204,7 +204,7 @@ class UserDashboardPage extends Component {
                 <h1>About Me</h1>
                 {!aboutMeSection ? (
                   <p style={{ color: "#da9446" }}>
-                    Please tell about yourself ...()
+                    Please tell about yourself ...
                   </p>
                 ) : (
                   <div style={{ wordWrap: "break-word" }}>{aboutMeSection}</div>

@@ -52,14 +52,14 @@ class RegistrationForm extends Component {
       errors.password = "Password should be at least 6 characters";
     if (data.password.length > 50)
       errors.password = "Password should no more then 20 characters";
-    if (data.password.search(/\d/) == -1)
+    if (data.password.search(/\d/) === -1)
       errors.password = "Password should contain numbers ";
     return errors;
   };
 
   render() {
     const { data, errors, loading } = this.state;
-
+    //const isEnabled = data.email.length > 0 && data.password.length > 0;
     return (
       <div className="loginForm">
         <form onSubmit={this.onSubmit} loading={loading.toString()}>
