@@ -31,27 +31,31 @@ class UserCardModalForm extends Component {
             <div className="secondDivModal">
               <div className="imgDiv">
                 {user.userImage === "" ? (
-                  <div>
-                    <img
-                      className="profileImgModal"
-                      src=""
-                      style={{
-                        backgroundImage: "url(" + placeholderUrl + ")"
-                      }}
-                    />
-                  </div>
+
+                    <div>
+                      <div
+                        className="profileImgModal"
+                        style={{
+                          backgroundImage: "url(" + placeholderUrl + ")"
+                        }}
+                        />
+                    </div>
+
                 ) : (
-                  <img
-                    className="profileImgModal"
-                    alt="example"
-                    src={`${process.env.REACT_APP_API_HOST}/uploads/${
-                      user.userImage
-                    }`}
-                    onError={e => {
-                      e.target.onerror = null;
-                      e.target.src = `${placeholderUrl}`;
-                    }}
-                  />
+                 <div>
+                   <img
+                     id="profileImgModal"
+                     alt="example"
+                     src={`${process.env.REACT_APP_API_HOST}/uploads/${
+                       user.userImage
+                       }`}
+                     onError={e => {
+                       e.target.onerror = null;
+                       e.target.src = `${placeholderUrl}`;
+                     }}
+                     // style={{maxWidth: "400px"}}
+                   />
+                 </div>
                 )}
               </div>
 

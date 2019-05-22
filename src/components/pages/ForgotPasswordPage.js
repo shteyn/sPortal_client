@@ -20,26 +20,25 @@ class ForgotPasswordPage extends Component {
     let logoDCI = require("../../img/newDCILogo.png");
     return (
       <div>
-        <TopNavigation/>
-          {/*<div className="navigationBar">*/}
-          {/*  <div className="navigationBarSubCont">*/}
-          {/*    <Link to="/user-card">*/}
-          {/*      <div className="label">*/}
-          {/*        <div*/}
-          {/*          id="dciLogo"*/}
-          {/*          style={{*/}
-          {/*            backgroundImage: "url(" + logoDCI + ")"*/}
-          {/*          }}*/}
-          {/*        />*/}
-          {/*      </div>*/}
-          {/*    </Link>*/}
-          {/*    <ul>*/}
-          {/*      <li>*/}
-          {/*        <Link to="/login">Login</Link>*/}
-          {/*      </li>*/}
-          {/*    </ul>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
+          <div className="navigationBar">
+            <div className="navigationBarSubCont">
+              <Link to="/user-card">
+                <div className="label">
+                  <div
+                    id="dciLogo"
+                    style={{
+                      backgroundImage: "url(" + logoDCI + ")"
+                    }}
+                  />
+                </div>
+              </Link>
+              <ul>
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         <div className="ForgotPasswordFormCont">
           <div className="forgotForm">
             {this.state.success ? (

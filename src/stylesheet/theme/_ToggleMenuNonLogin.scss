@@ -15,6 +15,7 @@
     transform: translateX(0);
   }
 }
+
 @keyframes slideOpacity {
   0% {
     opacity: 0;
@@ -51,6 +52,7 @@
     background-color: white;
     border: 2px solid rgb(255, 255, 255);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
     .ToggleMenuNonLogin {
       margin: 0;
       padding: 0;
@@ -71,45 +73,53 @@
         color: #5c5c5c;
       }
     }
+
     .ToggleMenuNonLogin.open {
       position: fixed;
       opacity: 1;
       top: 30px;
       left: 80%;
       z-index: 2000;
+
       &:hover {
         opacity: 1;
         color: #ffffff;
       }
     }
+
     .DrawerNavigationBar {
       position: fixed;
       z-index: 1050;
       left: 0;
       top: 0;
-      right: 0;
+      bottom: 0;
       width: 100%;
       max-width: 100%;
-      height: 100vh;
+      height: auto;
       box-sizing: border-box;
       background: #5c5c5c;
       transform: translateX(-722px);
       transition: transform 0.22s ease-in;
       padding: 0 10px 20px 10px;
+
       .DrawerItemNoneLogin {
+        height: 85px;
         display: flex;
         align-items: center;
+
         a {
           text-decoration: none;
           font-size: 28px;
           color: #ec7f37;
-          margin-left: 20px;
+          margin-left: 15%;
           text-shadow: none;
+
           &:hover {
             color: #ffffff;
           }
         }
       }
+
       ul {
         list-style: none;
         margin: 150px auto;
@@ -118,20 +128,24 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
+
         li {
           color: #ec7f37;
+
           a {
             text-decoration: none;
             font-size: 28px;
             color: #ec7f37;
             margin-left: 20px;
             text-shadow: none;
+
             &:hover {
               color: white;
             }
           }
         }
       }
+
       .DrawerItemLine {
         width: 60%;
         height: 1px;
@@ -140,17 +154,38 @@
         //animation: 0,5s shrink forwards;
       }
     }
+
     .DrawerNavigationBar.close {
       position: fixed;
       left: 0;
       top: 0;
       right: 0;
       overflow: auto;
-      height: 100vh;
+      height: 100%;
       background: #5c5c5c;
       opacity: 1;
       transform: translateX(0px);
       padding: 0 10px 20px 10px;
+
+      .DrawerItemNoneLogin {
+        position: fixed;
+        height: 85px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        a {
+          text-decoration: none;
+          font-size: 28px;
+          color: #ec7f37;
+          margin-left: 15%;
+          text-shadow: none;
+
+          &:hover {
+            color: #ffffff;
+          }
+        }
+      }
+
       ul {
         list-style: none;
         margin: 150px auto;
@@ -158,27 +193,32 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+
         li {
           color: #ec7f37;
           animation: 2s slideOpacity forwards;
+
           a {
             text-decoration: none;
             font-size: 28px;
             color: #ec7f37;
             margin-left: 20px;
             text-shadow: none;
+
             &:hover {
               color: white;
             }
           }
         }
       }
+
       .DrawerItem {
         position: absolute;
         display: flex;
         align-items: center;
         margin-left: 10%;
         margin-top: 5px;
+
         a {
           text-decoration: none;
           font-size: 28px;
@@ -186,11 +226,13 @@
           margin-left: 20px;
           text-shadow: none;
           animation: 2s slideOpacity forwards;
+
           &:hover {
             color: #ffffff;
           }
         }
       }
+
       .DrawerItemLine {
         width: 60%;
         height: 1px;

@@ -189,6 +189,10 @@
     }
   }
   @media only screen and (max-width: 560px) {
+    .FooterCont {
+      width: 100%;
+      max-width: 600px;
+    }
     .mainLegalContainerFooter {
       .legalContainerFooter {
         padding: 0 20px 0 20px;
