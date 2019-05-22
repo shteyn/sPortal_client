@@ -5,7 +5,7 @@ import Validator from "validator";
 import InlineError from "../messages/InlineError";
 import { contactUs } from "../../actions/user";
 import { inContact } from "../../helpers";
-import LegalPrivacy from "./LegalPrivacy";
+import LegalPrivacy from "../footer_pages/LegalPrivacy";
 
 class ContactForm extends Component {
   constructor(props, context) {
@@ -21,8 +21,6 @@ class ContactForm extends Component {
       data: {
         name: "",
         email: "",
-        phoneNumber: "",
-        location: "",
         question: "",
         inContact: "",
         legalPrivacy: true
@@ -30,15 +28,18 @@ class ContactForm extends Component {
     };
   }
 
-  onChange = event =>
+  onChange = event => {
+    console.log("onChange submit", event);
     this.setState({
       data: {
         ...this.state.data,
         [event.target.name]: event.target.value
       }
     });
+  };
 
   handleSubmit = event => {
+    console.log("handleSubmit  submit", event);
     event.preventDefault();
     const errors = this.validate(this.state.data);
     this.setState({ errors });
@@ -68,7 +69,6 @@ class ContactForm extends Component {
   }
   render() {
     const { data, errors, loading } = this.state;
-    console.log("contact form props", this.props);
     return (
       <div>
         <div variant="primary" onClick={this.handleShow}>

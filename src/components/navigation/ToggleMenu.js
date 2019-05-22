@@ -31,7 +31,7 @@ class ToggleMenu extends Component {
     const clsDrawer = ["DrawerNavigationBar"];
 
     const { oneUser, logout, isAdmin } = this.props;
-    let placeholderUrl = require("../../img/placeholderUser.png");
+    let placeholderUrl = require("../../img/placeholderUser.jpeg");
     let adminImg = require("../../img/admin2.png");
 
     if (this.state.openToggle) {
