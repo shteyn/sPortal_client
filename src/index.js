@@ -33,7 +33,8 @@ if (localStorage.userJWT) {
     lastName: payload.lastName,
     email: payload.email,
     confirmed: payload.confirmed,
-    isAdmin: payload.isAdmin
+    isAdmin: payload.isAdmin,
+    confirmationEmailSend: payload.confirmationEmailSend
   };
 
   store.dispatch(userLoggedIn(user));

@@ -38,8 +38,8 @@ class WaitingUsersForm extends Component {
 
           <Table.Body>
             {allUsers.map(oneUser => {
-              if(oneUser === null){
-                console.log('no users');
+              if (oneUser === null) {
+                console.log("no users");
               }
               if (
                 oneUser.confirmationEmailSend === true &&
@@ -99,13 +99,7 @@ WaitingUsersForm.propTypes = {
   deleteUser: PropTypes.func.isRequired
 };
 
-function mapStateToProps(state) {
-  return {
-    allUsers: state.allUsers
-  };
-}
-
 export default connect(
-  mapStateToProps,
+  null,
   { approveUser, deleteUser }
 )(WaitingUsersForm);

@@ -6,16 +6,27 @@ import { validateToken, resetPassword } from "../../actions/auth";
 import ResetPasswordForm from "../forms/ResetPasswordForm";
 
 class ResetPasswordPage extends Component {
+  _isMounted = false;
+
   state = {
     success: false,
     loading: true
   };
 
   componentDidMount() {
+    this._isMounted = true;
     this.props
       .validateToken(this.props.match.params.token)
-      .then(() => this.setState({ loading: false, success: true }))
+      .then(() => {
+        if (this._isMounted) {
+          this.setState({ loading: false, success: true });
+        }
+      })
       .catch(() => this.setState({ loading: false, success: false }));
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   submit = data =>

@@ -29,7 +29,6 @@ class ContactForm extends Component {
   }
 
   onChange = event => {
-    console.log("onChange submit", event);
     this.setState({
       data: {
         ...this.state.data,
@@ -39,7 +38,6 @@ class ContactForm extends Component {
   };
 
   handleSubmit = event => {
-    console.log("handleSubmit  submit", event);
     event.preventDefault();
     const errors = this.validate(this.state.data);
     this.setState({ errors });
@@ -88,7 +86,7 @@ class ContactForm extends Component {
 
             <Form onSubmit={this.handleSubmit} loading={loading.toString()}>
               <div className="ContactFormPersonalInfo">
-                <Form.Group controlId="formBasicName">
+                <Form.Group>
                   <Form.Label>Your Name</Form.Label>
                   <Form.Control
                     onChange={this.onChange}
@@ -101,7 +99,7 @@ class ContactForm extends Component {
                   <br />
                   {errors.name && <InlineError text={errors.name} />}
                 </Form.Group>
-                <Form.Group controlId="formBasicEmail">
+                <Form.Group>
                   <Form.Label>Your Email</Form.Label>
                   <Form.Control
                     onChange={this.onChange}
@@ -113,22 +111,22 @@ class ContactForm extends Component {
                   <br />
                   {errors.email && <InlineError text={errors.email} />}
                 </Form.Group>
-                <Form.Group controlId="formBasicNumber">
+                <Form.Group>
                   <Form.Label>Your Phone Number</Form.Label>
                   <Form.Control
                     onChange={this.onChange}
                     min="0"
                     type="number"
-                    value={data.phoneNumber}
+                    value={data.phoneNumber || ""}
                     name="phoneNumber"
                   />
                 </Form.Group>
-                <Form.Group controlId="formBasicCity">
+                <Form.Group>
                   <Form.Label>Your City</Form.Label>
                   <Form.Control
                     onChange={this.onChange}
                     type="text"
-                    value={data.location}
+                    value={data.location || ""}
                     name="location"
                   />
                 </Form.Group>

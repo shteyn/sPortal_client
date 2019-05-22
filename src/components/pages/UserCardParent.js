@@ -2,16 +2,33 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getAllUsers, filterLocation, getUserData } from "../../actions/user";
+import { getAllUsers, filterLocation } from "../../actions/user";
 import TopNavigation from "../navigation/TopNavigation";
 import ToggleMenuNonLogin from "../navigation/ToggleMenuNonLogin";
 import UsersCards from "../forms/UsersCards";
 
 class UserCardParent extends Component {
-  componentDidMount() {
-    this.props.getAllUsers();
-  }
+  _isMounted = false;
 
+  state = {
+    loading: true,
+    success: false
+  };
+
+  componentDidMount() {
+    this._isMounted = true;
+    this.props
+      .getAllUsers()
+      .then(() => {
+        if (this._isMounted) {
+          this.setState({ loading: false, success: true });
+        }
+      })
+      .catch(() => this.setState({ loading: false, success: false }));
+  }
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
   render() {
     let { isAuthenticated } = this.props;
     const { allUsers } = this.props.allUsers;
@@ -59,9 +76,9 @@ class UserCardParent extends Component {
 UserCardParent.propTypes = {
   allUsers: PropTypes.object.isRequired,
   getAllUsers: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired
   //oneUser: PropTypes.object.isRequired,
-  getUserData: PropTypes.func.isRequired
+  //getUserData: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
@@ -74,5 +91,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { getAllUsers, filterLocation, getUserData }
+  { getAllUsers, filterLocation }
 )(UserCardParent);

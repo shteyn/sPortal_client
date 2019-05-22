@@ -39,11 +39,19 @@
           color: #5c5c5c;
         }
 
+        #contactFormLink {
+          font-size: 20px;
+          text-decoration: none;
+          color: #969696;
+          &:hover {
+            color: #ec7f37;
+            cursor: pointer;
+          }
+        }
         a {
           font-size: 20px;
           text-decoration: none;
           color: #969696;
-
           &:hover {
             color: #ec7f37;
             cursor: pointer;
@@ -158,10 +166,8 @@
                 color: #ec7f37;
                 cursor: pointer;
               }
-
             }
           }
-
         }
       }
 
@@ -257,7 +263,6 @@
           flex: 1;
           align-items: center;
 
-
           li {
             width: 50%;
             padding: 0;
@@ -280,10 +285,8 @@
                 color: #ec7f37;
                 cursor: pointer;
               }
-
             }
           }
-
         }
       }
 
@@ -378,4 +381,3 @@
   //  }
   //}
 }
-

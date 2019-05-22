@@ -46,7 +46,7 @@ export default {
         .post(`${process.env.REACT_APP_API_HOST}/api/auth/validate_token`, {
           token
         })
-        .then(res => console.log("validateToken api", res)),
+        .then(res => console.log("validation")),
 
     resetPassword: data =>
       axios.post(`${process.env.REACT_APP_API_HOST}/api/auth/reset_password`, {

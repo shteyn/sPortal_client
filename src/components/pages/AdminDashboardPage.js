@@ -1,18 +1,15 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+//import PropTypes from "prop-types";
+//import { connect } from "react-redux";
 import { Tabs, Tab } from "react-bootstrap";
 //import TopNavigation from "../navigation/TopNavigation";
 import WaitingUsersForm from "../forms/WaitingUsersForm";
 import ConfirmedUsersForm from "../forms/ConfirmedUsersForm";
-import { getAllUsers } from "../../actions/user";
+//import { getAllUsers } from "../../actions/user";
 
 class AdminDashboardPage extends Component {
-  componentDidMount() {
-    this.props.getAllUsers();
-  }
   render() {
-    console.log("admin page props", this.props.oneUser);
+    const { allUsers } = this.props;
     return (
       <div className="admindashboard-cont">
         {/*<TopNavigation />*/}
@@ -23,7 +20,7 @@ class AdminDashboardPage extends Component {
             id="uncontrolled-tab-example"
           >
             <Tab eventKey="waitingStudents" title="Waiting Students">
-              <WaitingUsersForm />
+              <WaitingUsersForm allUsers={allUsers} />
             </Tab>
             <Tab eventKey="confirmedStudents" title="Confirmed Students">
               <ConfirmedUsersForm />
@@ -36,11 +33,4 @@ class AdminDashboardPage extends Component {
   }
 }
 
-AdminDashboardPage.propTypes = {
-  getAllUsers: PropTypes.func.isRequired
-};
-
-export default connect(
-  null,
-  { getAllUsers }
-)(AdminDashboardPage);
+export default AdminDashboardPage;
