@@ -16,12 +16,6 @@ import AboutUsPage from "./components/footer_pages/AboutUsPage";
 import FAQPage from "./components/footer_pages/FAQPage";
 import StoriesPage from "./components/footer_pages/StoriesPage";
 
-
-
-
-
-
-
 const App = ({ location, isAdmin }) => (
   <div className="App">
     <div className="AppComponentsContainer">
@@ -76,11 +70,7 @@ const App = ({ location, isAdmin }) => (
         path="/dashboard"
         exact
         component={props => (
-          <Dashboard
-            timestamp={new Date().toString()}
-            {...props}
-            location={location}
-          />
+          <Dashboard timestamp={new Date().toString()} location={location} />
         )}
       />
     </div>

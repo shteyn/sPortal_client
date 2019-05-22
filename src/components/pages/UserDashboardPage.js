@@ -328,18 +328,12 @@ class UserDashboardPage extends Component {
 
 UserDashboardPage.propTypes = {
   updateProfile: PropTypes.func.isRequired,
-  oneUser: PropTypes.object.isRequired,
+
   updateImage: PropTypes.func.isRequired,
   deleteUserByUser: PropTypes.func.isRequired
 };
 
-function mapStateToProps(state) {
-  return {
-    oneUser: state.oneUser
-  };
-}
-
 export default connect(
-  mapStateToProps,
+  null,
   { updateProfile, updateImage, deleteUserByUser }
 )(UserDashboardPage);

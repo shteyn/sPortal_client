@@ -7,10 +7,29 @@ import { getUserData } from "../../actions/user";
 import ToggleMenu from "./ToggleMenu";
 
 class TopNavigation extends Component {
+  _isMounted = false;
+
+  state = {
+    loading: true,
+    success: false
+  };
+
   componentDidMount() {
     const { email } = this.props.user;
-    this.props.getUserData(email);
+    this.props
+      .getUserData(email)
+      .then(() => {
+        if (this._isMounted) {
+          this.setState({ loading: false, success: true });
+        }
+      })
+      .catch(() => this.setState({ loading: false, success: false }));
   }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
   render() {
     const { oneUser, logout, isAdmin } = this.props;
     let placeholderUrl = require("../../img/placeholderUser.jpeg");
@@ -19,7 +38,7 @@ class TopNavigation extends Component {
 
     return (
       <div>
-        <ToggleMenu />
+        <ToggleMenu oneUser={oneUser} isAdmin={isAdmin} logout={logout} />
         <div className="navigationBar">
           <div className="navigationBarSubCont">
             <Link to="/user-card">

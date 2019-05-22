@@ -86,7 +86,7 @@ class ContactStudentForm extends Component {
           <Modal.Body style={{ height: "400px" }}>
             <Form onSubmit={this.handleSubmit} loading={loading.toString()}>
               <div className="ContactFormPersonalInfo">
-                <Form.Group controlId="formBasicName">
+                <Form.Group>
                   <Form.Label>Your Name</Form.Label>
                   <Form.Control
                     onChange={this.onChange}
@@ -99,7 +99,7 @@ class ContactStudentForm extends Component {
                   <br />
                   {errors.name && <InlineError text={errors.name} />}
                 </Form.Group>
-                <Form.Group controlId="formBasicEmail">
+                <Form.Group>
                   <Form.Label>Your Email</Form.Label>
                   <Form.Control
                     onChange={this.onChange}

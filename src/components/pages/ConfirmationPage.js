@@ -6,16 +6,25 @@ import { confirm } from "../../actions/auth";
 import { ReactComponent as LoadinSvg } from "../../img/loading.svg";
 
 class ConfirmationPage extends Component {
+  _isMounted = false;
   state = {
     loading: true,
     success: false
   };
 
   componentDidMount() {
+    this._isMounted = true;
     this.props
       .confirm(this.props.match.params.token)
-      .then(() => this.setState({ loading: false, success: true }))
+      .then(() => {
+        if (this._isMounted) {
+          this.setState({ loading: false, success: true });
+        }
+      })
       .catch(() => this.setState({ loading: false, success: false }));
+  }
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {
@@ -31,7 +40,7 @@ class ConfirmationPage extends Component {
           {loading && (
             <div className="ValidatingCont">
               <p>Validating your email</p>
-              <LoadinSvg loading />
+              <LoadinSvg loading={loading.toString()} />
             </div>
           )}
           {!loading && success && (

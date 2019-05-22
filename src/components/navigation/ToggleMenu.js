@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logout } from "../../actions/auth";
 import { getUserData } from "../../actions/user";
 import { Link } from "react-router-dom";
 
@@ -19,20 +18,15 @@ class ToggleMenu extends Component {
     });
   };
 
-  componentDidMount() {
-    const { email } = this.props.user;
-    this.props.getUserData(email);
-  }
-
   render() {
-    let logoDCI = require("../../img/newDCILogo.png");
-    const clsMenu = ["ToggleMenu", "fa"];
-
-    const clsDrawer = ["DrawerNavigationBar"];
-
     const { oneUser, logout, isAdmin } = this.props;
+
+    let logoDCI = require("../../img/newDCILogo.png");
     let placeholderUrl = require("../../img/placeholderUser.jpeg");
     let adminImg = require("../../img/admin2.png");
+
+    const clsMenu = ["ToggleMenu", "fa"];
+    const clsDrawer = ["DrawerNavigationBar"];
 
     if (this.state.openToggle) {
       clsMenu.push("fa-times");
@@ -206,19 +200,7 @@ class ToggleMenu extends Component {
 }
 
 ToggleMenu.propTypes = {
-  logout: PropTypes.func.isRequired,
-  getUserData: PropTypes.func.isRequired
+  logout: PropTypes.func.isRequired
 };
 
-function mapStateToProps(state) {
-  return {
-    user: state.user,
-    oneUser: state.oneUser,
-    isAdmin: !!state.user.isAdmin
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  { logout, getUserData }
-)(ToggleMenu);
+export default ToggleMenu;
