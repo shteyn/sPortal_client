@@ -152,9 +152,9 @@ class ContactStudentForm extends Component {
                     />
                     <div className="legalLink">
                       I have read and agree to the
-                      <a>
+                      <button>
                         <LegalPrivacy />
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>

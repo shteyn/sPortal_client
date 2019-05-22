@@ -60,9 +60,9 @@ class Footer extends Component {
                 <Link to="/faq">FAQ</Link>
               </li>
               <li>
-                <a>
+                <button>
                   <ContactForm />
-                </a>
+                </button>
               </li>
               <li>
                 <Link to="/stories" target="_blank">
