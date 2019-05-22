@@ -31,7 +31,6 @@ class UserCardModalForm extends Component {
             <div className="secondDivModal">
               <div className="imgDiv">
                 {user.userImage === "" ? (
-
                     <div>
                       <div
                         className="profileImgModal"
@@ -40,7 +39,6 @@ class UserCardModalForm extends Component {
                         }}
                         />
                     </div>
-
                 ) : (
                  <div>
                    <img

@@ -6,6 +6,7 @@ import {
   updateImage,
   deleteUserByUser
 } from "../../actions/user";
+import { Link } from "react-router-dom";
 
 import UpdateUserProfileForm from "../forms/UpdateUserProfileForm";
 
@@ -223,9 +224,9 @@ class UserDashboardPage extends Component {
                         <p style={{ color: "#da9446" }}>
                           Please add your LinkedIn URL ...
                         </p>
-                        <a
+                        <Link
                           style={{ display: "none" }}
-                          href={linkedInLink}
+                          to={linkedInLink}
                           target="_blank"
                           rel="noopener noreferrer"
                         />
@@ -248,8 +249,8 @@ class UserDashboardPage extends Component {
                         <p style={{ color: "#da9446" }}>
                           Please add your Github URL ...
                         </p>
-                        <a
-                          href={githubLink}
+                        <Link
+                          to={githubLink}
                           target="_blank"
                           rel="noopener noreferrer"
                         />
@@ -272,8 +273,8 @@ class UserDashboardPage extends Component {
                         <p style={{ color: "#da9446" }}>
                           Please add your Xing URL ...
                         </p>
-                        <a
-                          href={xingLink}
+                        <Link
+                          to={xingLink}
                           target="_blank"
                           rel="noopener noreferrer"
                         />
@@ -296,8 +297,8 @@ class UserDashboardPage extends Component {
                         <p style={{ color: "#da9446" }}>
                           Please add your Portfolio URL ...
                         </p>
-                        <a
-                          href={portfolioLink}
+                        <Link
+                          to={portfolioLink}
                           target="_blank"
                           rel="noopener noreferrer"
                         />

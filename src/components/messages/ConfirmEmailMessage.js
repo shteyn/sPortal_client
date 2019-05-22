@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 class ConfirmEmailMessage extends Component {
   render() {
-    console.log("email message form", this.props);
     return (
       <div className="ConfirmEmailMessageCont">
         <div className="ConfirmEmailMessage">

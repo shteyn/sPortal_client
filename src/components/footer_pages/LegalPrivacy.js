@@ -23,7 +23,7 @@ class LegalPrivacy extends Component {
     return (
       <div>
         <div variant="primary" onClick={this.handleShow}>
-          Contact
+          Data Privacy
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>

@@ -32,10 +32,22 @@ class Footer extends Component {
           </div>
           <div className="FooterContentItemOne">
             <ul>
-              <li><Link to="/about-us" >About Us</Link></li>
-              <li><Link to="/faq">FAQ</Link></li>
-              <li><a><ContactForm/></a></li>
-              <li><Link to="/stories" target="_blank">Stories</Link></li>
+              <li>
+                <Link to="/about-us">About Us</Link>
+              </li>
+              <li>
+                <Link to="/faq">FAQ</Link>
+              </li>
+              <li>
+                <button>
+                  <ContactForm />
+                </button>
+              </li>
+              <li>
+                <Link to="/stories" target="_blank">
+                  Stories
+                </Link>
+              </li>
             </ul>
           </div>
 
