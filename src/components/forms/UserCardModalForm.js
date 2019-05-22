@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Modal, FormGroup } from "reactstrap";
 
 import moment from "moment";
-import ContactStudentForm from "./ContactStudentForm";
+import ContactForm from "../footer_pages/ContactForm";
 
 class UserCardModalForm extends Component {
   toggle = () => {
@@ -11,11 +11,15 @@ class UserCardModalForm extends Component {
 
   render() {
     let placeholderUrl = require("../../img/placeholderUser.jpeg");
+    let trans = require("../../img/transparent.png");
     let { user } = this.props;
 
     let currentDate = new Date();
     let date = new Date(user.availability);
     const newDate = moment(date).format("MMMM D, YYYY");
+
+    console.log("user modal", user.userImage);
+
     return (
       <div className="UserCardsModalFormCont">
         <Modal
@@ -27,25 +31,29 @@ class UserCardModalForm extends Component {
             <div className="secondDivModal">
               <div className="imgDiv">
                 {user.userImage === "" ? (
-                  <div>
-                    <img
-                      alt="placeholder"
-                      className="profileImgModal"
-                      src={placeholderUrl}
-                    />
-                  </div>
+                    <div>
+                      <div
+                        className="profileImgModal"
+                        style={{
+                          backgroundImage: "url(" + placeholderUrl + ")"
+                        }}
+                        />
+                    </div>
                 ) : (
-                  <img
-                    className="profileImgModal"
-                    alt="example"
-                    src={`${process.env.REACT_APP_API_HOST}/uploads/${
-                      user.userImage
-                    }`}
-                    onError={e => {
-                      e.target.onerror = null;
-                      e.target.src = `${placeholderUrl}`;
-                    }}
-                  />
+                 <div>
+                   <img
+                     id="profileImgModal"
+                     alt="example"
+                     src={`${process.env.REACT_APP_API_HOST}/uploads/${
+                       user.userImage
+                       }`}
+                     onError={e => {
+                       e.target.onerror = null;
+                       e.target.src = `${placeholderUrl}`;
+                     }}
+                     // style={{maxWidth: "400px"}}
+                   />
+                 </div>
                 )}
               </div>
 
@@ -98,7 +106,7 @@ class UserCardModalForm extends Component {
                 <div>
                   <div className="CardLinks">
                     <button className="buttonContactUsFromUserCardModalForm">
-                      <ContactStudentForm user={user} />
+                      <ContactForm user={user} />
                     </button>
                     <div>
                       <FormGroup>

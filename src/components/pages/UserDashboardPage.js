@@ -215,7 +215,7 @@ class UserDashboardPage extends Component {
               {/*THIRD COLUMN*/}
 
               <div className="nestedInfoBoxCont">
-                <div style={{ marginBottom: "50px", width: "50%" }}>
+                <div>
                   <h1>Links</h1>
                   <div className="linksBoxItems">
                     {!linkedInLink ? (
