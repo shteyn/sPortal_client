@@ -28,7 +28,11 @@ class UserCardModalForm extends Component {
               <div className="imgDiv">
                 {user.userImage === "" ? (
                   <div>
-                    <img className="profileImgModal" src={placeholderUrl} />
+                    <img
+                      alt="placeholder"
+                      className="profileImgModal"
+                      src={placeholderUrl}
+                    />
                   </div>
                 ) : (
                   <img
