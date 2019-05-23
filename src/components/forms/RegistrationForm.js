@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Validator from "validator";
 import { locationsArray, courseTypesArray } from "../../helpers";
 import InlineError from "../messages/InlineError";
-
+import { Collapse } from "react-bootstrap";
 class RegistrationForm extends Component {
   state = {
     data: {
@@ -16,6 +16,7 @@ class RegistrationForm extends Component {
       studentCourse: ""
     },
     loading: false,
+    open: false,
     errors: {}
   };
 
@@ -47,21 +48,52 @@ class RegistrationForm extends Component {
     console.log("data.password", data.password);
     const errors = {};
     if (!Validator.isEmail(data.email)) errors.email = "Invalid email";
-    if (!data.password) errors.password = "Can't be blank";
+    if (!data.password) errors.password = "Password can't be blank";
     if (data.password.length < 6)
       errors.password = "Password should be at least 6 characters";
     if (data.password.length > 50)
       errors.password = "Password should no more then 20 characters";
     if (data.password.search(/\d/) === -1)
       errors.password = "Password should contain numbers ";
+    if (data.password.search(/[a-z]/) === -1)
+      errors.password =
+        "Password must contain at least 1 small alphabetical character.";
+    if (data.password.search(/[A-Z]/) === -1)
+      errors.password =
+        "Password must contain at least 1 capital alphabetical character.";
+    if (data.password.search(/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/) === -1)
+      errors.password = "Password must contain at least 1 special character.";
     return errors;
   };
 
   render() {
-    const { data, errors, loading } = this.state;
-    //const isEnabled = data.email.length > 0 && data.password.length > 0;
+    const { data, errors, loading, open } = this.state;
     return (
       <div className="loginForm">
+        <div className="passwordRequirements">
+          <div className="collapsedRequirements">
+            <a
+              onClick={() => this.setState({ open: !open })}
+              aria-controls="example-collapse-text"
+              aria-expanded={open}
+            >
+              <i className="fas fa-info-circle" />
+              Password Requirements
+              <i className="fas fa-info-circle" />
+            </a>
+
+            <Collapse in={this.state.open}>
+              <div id="example-collapse-text">
+                <li> At least 6 characters</li>
+                <li> No more then 20 characters</li>
+                <li> At least 1 letter (a, b, c...)</li>
+                <li> At least 1 capital letter (A, B, C...)</li>
+                <li> At least 1 number (1, 2, 3...)</li>
+                <li> At least 1 special character (@, #, $...)</li>
+              </div>
+            </Collapse>
+          </div>
+        </div>
         <form onSubmit={this.onSubmit} loading={loading.toString()}>
           <br />
           <input
@@ -119,12 +151,11 @@ class RegistrationForm extends Component {
           />
           <br />
           {errors.password && <InlineError text={errors.password} />}
-
           <br />
           <select
             name="location"
             onChange={this.onChange}
-            className="DropDownSelect"
+            className="DropDownSelectRegistrationForm"
             required
           >
             <option value="">Choose Location</option>
@@ -135,7 +166,7 @@ class RegistrationForm extends Component {
           <select
             name="studentCourse"
             onChange={this.onChange}
-            className="DropDownSelect"
+            className="DropDownSelectRegistrationForm"
             required
           >
             <option value="">Choose Course</option>

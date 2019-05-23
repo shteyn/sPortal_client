@@ -7,7 +7,8 @@ import LoginForm from "../forms/LoginForm";
 import RegistrationForm from "../forms/RegistrationForm";
 import { login } from "../../actions/auth";
 import { registration } from "../../actions/user";
-import TopNavigation from "../navigation/TopNavigation"
+import TopNavigation from "../navigation/TopNavigation";
+//import ToggleMenuNonLogin from "../navigation/ToggleMenuNonLogin";
 
 class LoginPage extends Component {
   submit = data =>
@@ -22,23 +23,8 @@ class LoginPage extends Component {
     let logoDCI = require("../../img/newDCILogo.png");
     return (
       <div>
-        <TopNavigation/>
+        <TopNavigation />
         <div className="LoginCont">
-          <div className="navigationBar">
-            <div>
-              <Link to="/user-card">
-                <div className="label">
-                  <div
-                    id="dciLogoLogin"
-                    style={{
-                      backgroundImage: "url(" + logoDCI + ")",
-                      backgroundPosition: "none"
-                    }}
-                  />
-                </div>
-              </Link>
-            </div>
-          </div>
           <div className="LoginModel">
             <Tabs defaultActiveKey="loginStudent" id="uncontrolled-tab-example">
               <Tab eventKey="loginStudent" title="Sign In">

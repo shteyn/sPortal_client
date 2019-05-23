@@ -6,9 +6,89 @@
   .loginForm {
     margin: auto;
     text-align: center;
-
     button {
       margin: auto;
+    }
+    .passwordRequirements {
+      width: 400px;
+      text-align: center;
+      margin: 0 auto 20px auto;
+      .collapsedRequirements {
+        text-align: center;
+        font-family: Ropa Sans, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 16px;
+        color: #5c5c5c;
+        margin-top: 20px;
+        .fas {
+          font-size: 18px;
+          margin-right: 5px;
+          margin-left: 5px;
+          color: #ec7f37;
+        }
+        a {
+          font-size: 20px;
+          color: #5c5c5c;
+          &:hover {
+            color: #ec7f37;
+          }
+        }
+      }
+      #example-collapse-text {
+        list-style: none;
+        text-align: left;
+        margin: 10px auto 0 108px;
+        li {
+          line-height: 1.5;
+        }
+        .far {
+          font-size: 12px;
+        }
+      }
+    }
+    .DropDownSelectRegistrationForm {
+      font-size: 15px;
+      font-weight: bold;
+      width: 515px;
+      margin: 10px;
+      height: 50px;
+      background-color: #ffffff;
+      color: #5c5c5c;
+      border-radius: 8px;
+      border-color: #dfdce3;
+      text-align-last: center;
+      -webkit-appearance: none;
+      outline: none;
+      option {
+        border: none;
+        -webkit-appearance: none;
+        outline-color: #ffffff;
+        &:active {
+          -webkit-appearance: none;
+          outline-color: #ffffff;
+          border: none;
+        }
+      }
+      &:hover {
+        background-color: rgba(236, 127, 55, 0.5);
+        //color: #ffffff;
+        //border: none;
+        color: #ffffff;
+        font-weight: bold;
+        -webkit-appearance: none;
+        outline: none;
+        border: none;
+        option {
+          color: #5c5c5c;
+          background-color: #ffffff;
+          outline-color: #ffffff;
+        }
+      }
+      @media (max-width: 630px) {
+        width: 305px;
+      }
     }
   }
 
@@ -82,11 +162,18 @@
     }
 
     .forgotPassDiv {
+      font-family: Ropa Sans, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      font-size: 18px;
       margin: 0 0 30px 0;
       text-align: center;
-
       a {
         color: #5c5c5c;
+        &:hover {
+          color: #ec7f37;
+        }
       }
     }
 

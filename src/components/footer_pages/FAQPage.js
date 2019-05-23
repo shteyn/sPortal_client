@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import TopNavigation from "../navigation/TopNavigation";
 
 class FAQPage extends Component {
   render() {
     return (
       <div>
+        <TopNavigation />
         <div className="FaqPageContainer">
           <div>
             <h1>FAQ</h1>
@@ -33,15 +35,6 @@ class FAQPage extends Component {
               <p>Still have questions? write us here</p>
             </div>
           </div>
-          <form>
-            <label htmlFor="inputName">Your name</label>
-            <input type="text" id="inputFirstName" />
-            <label htmlFor="inputEmail">Your email</label>
-            <input type="text" id="inputEmail" />
-            <label htmlFor="textArea">Your Question</label>
-            <textarea name="" id="textArea" cols="30" rows="10" />
-            <button className="FaqPageButton">Send</button>
-          </form>
         </div>
       </div>
     );

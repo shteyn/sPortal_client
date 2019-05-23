@@ -219,12 +219,12 @@
   font-size: 15px;
   font-weight: bold;
   width: 225px;
-  margin: 50px 20px;
+  margin: 10px;
   height: 50px;
   background-color: #ffffff;
   color: #5c5c5c;
   border-radius: 8px;
-  border-color: rgba(150, 150, 150, 0.62);
+  border-color: #dfdce3;
   text-align-last: center;
   -webkit-appearance: none;
   outline: none;
@@ -254,7 +254,7 @@
     }
   }
   @media (max-width: 630px) {
-    width: 225px;
+    width: 305px;
   }
 }
 .ResetBnt {
@@ -275,25 +275,12 @@
   }
 
   @media (max-width: 630px) {
-    width: 225px;
+    width: 305px;
   }
 }
 
 .location {
   text-align: center;
-}
-
-@media only screen and (max-width: 722px) {
-  .SelectCont {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: auto;
-
-    .DropDownSelect {
-      margin: 10px auto;
-    }
-  }
 }
 
 @media only screen and (max-width: 1060px) {
@@ -304,6 +291,18 @@
     text-align: center;
     margin: auto;
 
+    .DropDownSelect {
+      margin: 10px auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 722px) {
+  .SelectCont {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
     .DropDownSelect {
       margin: 10px auto;
     }
