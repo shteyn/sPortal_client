@@ -4,6 +4,7 @@ import ContactForm from "../forms/ContactForm";
 
 class Footer extends Component {
   render() {
+    console.log("props footer", this.props);
     return (
       <div className="FooterCont">
         <div className="FooterContentBox">
@@ -63,9 +64,12 @@ class Footer extends Component {
                 <ContactForm />
               </li>
               <li>
-                <Link to="/stories" target="_blank">
+                <a
+                  href="https://digitalcareerinstitute.org/en/stories/"
+                  target="_blank"
+                >
                   Stories
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

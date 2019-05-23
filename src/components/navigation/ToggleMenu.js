@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { getUserData } from "../../actions/user";
+//import { connect } from "react-redux";
+//import { getUserData } from "../../actions/user";
 import { Link } from "react-router-dom";
-
+import ContactForm from "../forms/ContactForm";
 class ToggleMenu extends Component {
   constructor(props) {
     super(props);
@@ -19,8 +19,8 @@ class ToggleMenu extends Component {
   };
 
   render() {
-    const { oneUser, logout, isAdmin } = this.props;
-
+    const { oneUser, logout, isAdmin, isAuthenticated } = this.props;
+    console.log("toogle menu", this.props);
     let logoDCI = require("../../img/newDCILogo.png");
     let placeholderUrl = require("../../img/placeholderUser.jpeg");
     let adminImg = require("../../img/admin2.png");
@@ -54,50 +54,58 @@ class ToggleMenu extends Component {
         </div>
         <div className={clsDrawer.join(" ")} style={{ opacity: "1" }}>
           <div>
-            <div className="DrawerItem">
-              {isAdmin && (
-                <Link to="/dashboard" key="1">
-                  <div
-                    onClick={this.toggleHandler}
-                    id="gravatar-img"
-                    style={{
-                      backgroundImage: "url(" + adminImg + ")"
-                    }}
-                  />
-                </Link>
-              )}
-              {!isAdmin && [
-                oneUser.userImage === "" ? (
+            {isAuthenticated ? (
+              <div className="DrawerItem">
+                {isAdmin && (
                   <Link to="/dashboard" key="1">
                     <div
                       onClick={this.toggleHandler}
                       id="gravatar-img"
                       style={{
-                        backgroundImage: "url(" + placeholderUrl + ")"
+                        backgroundImage: "url(" + adminImg + ")"
                       }}
                     />
                   </Link>
-                ) : (
-                  <Link to="/dashboard" key="1">
-                    <img
-                      onClick={this.toggleHandler}
-                      id="gravatar-img"
-                      alt="example"
-                      src={`${process.env.REACT_APP_API_HOST}/uploads/${
-                        oneUser.userImage
-                      }`}
-                      onError={e => {
-                        e.target.onerror = null;
-                        e.target.src = `${placeholderUrl}`;
-                      }}
-                    />
-                  </Link>
-                )
-              ]}
-              <Link to="/user-card" onClick={() => logout()}>
-                Logout
-              </Link>
-            </div>
+                )}
+                {!isAdmin && [
+                  oneUser.userImage === "" ? (
+                    <Link to="/dashboard" key="1">
+                      <div
+                        onClick={this.toggleHandler}
+                        id="gravatar-img"
+                        style={{
+                          backgroundImage: "url(" + placeholderUrl + ")"
+                        }}
+                      />
+                    </Link>
+                  ) : (
+                    <Link to="/dashboard" key="1">
+                      <img
+                        onClick={this.toggleHandler}
+                        id="gravatar-img"
+                        alt="example"
+                        src={`${process.env.REACT_APP_API_HOST}/uploads/${
+                          oneUser.userImage
+                        }`}
+                        onError={e => {
+                          e.target.onerror = null;
+                          e.target.src = `${placeholderUrl}`;
+                        }}
+                      />
+                    </Link>
+                  )
+                ]}
+                <Link to="/user-card" onClick={() => logout()}>
+                  Logout
+                </Link>
+              </div>
+            ) : (
+              <div className="DrawerItemNoneLogin">
+                <Link to="/login">
+                  <span>Login</span>
+                </Link>
+              </div>
+            )}
           </div>
           <ul>
             <li>
@@ -107,47 +115,23 @@ class ToggleMenu extends Component {
             </li>
             <div className="DrawerItemLine" />
             <li>
-              <a
-                href="https://digitalcareerinstitute.org/en/about-us/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link to="/about-us" rel="noopener noreferrer">
                 About Us
-              </a>
+              </Link>
             </li>
             <div className="DrawerItemLine" />
             <li>
               <a
-                href="https://digitalcareerinstitute.org/en/press/"
+                href="https://digitalcareerinstitute.org"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Press
+                Visit DCI
               </a>
             </li>
             <div className="DrawerItemLine" />
             <li>
-              <a
-                href="https://digitalcareerinstitute.org/contact/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Contact
-              </a>
-            </li>
-            <div className="DrawerItemLine" />
-            <li>
-              <a href="https://dci-jobs.personio.de/">Jobs at DCI</a>
-            </li>
-            <div className="DrawerItemLine" />
-            <li>
-              <a
-                href="https://digitalcareerinstitute.org/en/courses/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Courses
-              </a>
+              <ContactForm />
             </li>
             <div className="DrawerItemLine" />
             <li>

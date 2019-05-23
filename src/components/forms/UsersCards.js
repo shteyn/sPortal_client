@@ -49,10 +49,10 @@ class UserCards extends Component {
 
   clearAllFilters = () => {
     this.setState({
-      location: "",
-      availability: "",
-      mainFocus: "",
-      studentCourse: ""
+      location: (this.locationsRef.current.value = ""),
+      availability: (this.availabilityRef.current.value = ""),
+      mainFocus: (this.mainFocusRef.current.value = ""),
+      studentCourse: (this.studentCourseRef.current.value = "")
     });
   };
   render() {

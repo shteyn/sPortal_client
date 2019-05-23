@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { validateToken, resetPassword } from "../../actions/auth";
 import ResetPasswordForm from "../forms/ResetPasswordForm";
+import TopNavigation from "../navigation/TopNavigation";
 
 class ResetPasswordPage extends Component {
   _isMounted = false;
@@ -40,23 +41,8 @@ class ResetPasswordPage extends Component {
     let logoDCI = require("../../img/newDCILogo.png");
     return (
       <div>
+        <TopNavigation />
         <div className="ResetCont">
-          <div className="navigationBar">
-            <Link to="/user-card">
-              <div
-                id="dciLogoLogin"
-                style={{
-                  backgroundImage: "url(" + logoDCI + ")",
-                  backgroundPosition: "none"
-                }}
-              />
-            </Link>
-            <ul>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-            </ul>
-          </div>
           {loading && <p>Loading...</p>}
           {!loading && success && (
             <ResetPasswordForm submit={this.submit} token={token} />

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import InlineError from "../messages/InlineError";
+import { Collapse } from "react-bootstrap";
+
 class ResetPasswordForm extends Component {
   state = {
     data: {
@@ -9,6 +11,7 @@ class ResetPasswordForm extends Component {
       passwordConfirmation: ""
     },
     loading: false,
+    open: false,
     errors: {}
   };
   onChange = event =>
@@ -33,21 +36,60 @@ class ResetPasswordForm extends Component {
     }
   };
   validate = data => {
+    console.log("password", data);
     const errors = {};
-    if (!data.password) errors.password = "Can't be blank";
+    if (!data.password) errors.password = "Passwords can't be blank";
+    if (data.password.length < 8)
+      errors.password = "Password should be at least 6 characters";
+    if (data.password.length > 50)
+      errors.password = "Password should no more then 20 characters";
+    if (data.password.search(/\d/) === -1)
+      errors.password = "Password should contain numbers ";
+    if (data.password.search(/[a-z]/i) === -1)
+      errors.password =
+        "Password must contain at least 1 small alphabetical character.";
+    if (data.password.search(/[A-Z]/) === -1)
+      errors.password =
+        "Password must contain at least 1 capital alphabetical character.";
+    if (data.password.search(/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/) === -1)
+      errors.password = "Password must contain at least 1 special character.";
     if (data.password !== data.passwordConfirmation)
       errors.password = "Passwords must match";
     return errors;
   };
   render() {
-    const { data, errors, loading } = this.state;
+    const { data, errors, loading, open } = this.state;
     return (
       <div className="ResetModel">
         {errors.global && <p id="globalError">{errors.global}</p>}
         <div className="resetform">
           <form onSubmit={this.onSubmit} loading={loading.toString()}>
+            <div className="Reset-Password">
+              Reset Password
+              <div className="collapsedRequirements">
+                <a
+                  onClick={() => this.setState({ open: !open })}
+                  aria-controls="example-collapse-text"
+                  aria-expanded={open}
+                >
+                  <i class="fas fa-info-circle" />
+                  Password Requirements
+                  <i class="fas fa-info-circle" />
+                </a>
+
+                <Collapse in={this.state.open}>
+                  <div id="example-collapse-text">
+                    <li> At least 6 characters</li>
+                    <li> No more then 20 characters</li>
+                    <li> At least 1 letter (a, b, c...)</li>
+                    <li> At least 1 capital letter (A, B, C...)</li>
+                    <li> At least 1 number (1, 2, 3...)</li>
+                    <li> At least 1 special character (@, #, $...)</li>
+                  </div>
+                </Collapse>
+              </div>
+            </div>
             <div>
-              <p className="Reset-Password">Reset Password</p>
               <input
                 type="password"
                 id="password"
@@ -56,10 +98,11 @@ class ResetPasswordForm extends Component {
                 value={data.password}
                 onChange={this.onChange}
               />
+
               {errors.password && <InlineError text={errors.password} />}
-            </div>
-            <br />
-            <div>
+
+              <br />
+
               <input
                 type="password"
                 id="passwordConfirmation"

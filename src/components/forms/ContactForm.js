@@ -69,9 +69,17 @@ class ContactForm extends Component {
     const { data, errors, loading } = this.state;
     return (
       <div>
-        <div variant="primary" onClick={this.handleShow}>
-          Contact
-        </div>
+        <p
+          style={{
+            textDecoration: "none",
+            fontSize: "28px",
+            textShadow: "none"
+          }}
+          variant="primary"
+          onClick={this.handleShow}
+        >
+          Contact DCI Team
+        </p>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <div>

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getAllUsers, filterLocation } from "../../actions/user";
 import TopNavigation from "../navigation/TopNavigation";
-import ToggleMenuNonLogin from "../navigation/ToggleMenuNonLogin";
+//import ToggleMenuNonLogin from "../navigation/ToggleMenuNonLogin";
 import UsersCards from "../forms/UsersCards";
 
 class UserCardParent extends Component {
@@ -36,7 +36,8 @@ class UserCardParent extends Component {
 
     return (
       <div className="UserCardsCont">
-        <div className="navigationBarUserCardPage">
+        <TopNavigation />
+        {/*<div className="navigationBarUserCardPage">
           {isAuthenticated && <TopNavigation />}
           {!isAuthenticated && (
             <div>
@@ -62,7 +63,7 @@ class UserCardParent extends Component {
               </div>
             </div>
           )}
-        </div>
+        </div>*/}
 
         <div className="UserCardsListCont">
           <h1>OUR STUDENTS</h1>
