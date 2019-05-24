@@ -53,7 +53,7 @@ class Dashboard extends Component {
           <TopNavigation />
         </div>
         {!isAdmin && isConfirmed && isConfirmationEmailConfirmed && !loading ? (
-          <UserDashboardPage oneUser={oneUser} />
+          <UserDashboardPage oneUser={oneUser} user={user} />
         ) : null}
         {isAdmin && !loading ? (
           <AdminDashboardPage oneUser={user} allUsers={allUsers} />

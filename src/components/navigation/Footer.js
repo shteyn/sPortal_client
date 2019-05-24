@@ -4,7 +4,6 @@ import ContactForm from "../forms/ContactForm";
 
 class Footer extends Component {
   render() {
-    console.log("props footer", this.props);
     return (
       <div className="FooterCont">
         <div className="FooterContentBox">

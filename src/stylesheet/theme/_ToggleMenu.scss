@@ -119,7 +119,6 @@
           &:hover {
             color: #ffffff;
           }
-
         }
       }
       ul {
@@ -140,13 +139,18 @@
             &:hover {
               color: white;
             }
-            img{
+            img {
               border-radius: 6px;
               &:hover {
                 background-color: white;
               }
             }
           }
+        }
+        #contactFormLink {
+          text-decoration: none;
+          font-size: 28px;
+          text-shadow: none;
         }
       }
       .DrawerItemLine {
