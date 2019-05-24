@@ -20,7 +20,7 @@ class ToggleMenu extends Component {
 
   render() {
     const { oneUser, logout, isAdmin, isAuthenticated } = this.props;
-    console.log("toogle menu", this.props);
+
     let logoDCI = require("../../img/newDCILogo.png");
     let placeholderUrl = require("../../img/placeholderUser.jpeg");
     let adminImg = require("../../img/admin2.png");
@@ -130,7 +130,7 @@ class ToggleMenu extends Component {
               </a>
             </li>
             <div className="DrawerItemLine" />
-            <li>
+            <li id="contactFormLink">
               <ContactForm />
             </li>
             <div className="DrawerItemLine" />

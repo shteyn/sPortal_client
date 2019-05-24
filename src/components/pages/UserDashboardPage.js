@@ -47,7 +47,7 @@ class UserDashboardPage extends Component {
     } = this.props.oneUser;
 
     let placeholderUrl = require("../../img/placeholderUser.jpeg");
-
+    console.log("user dashboard props", this.props);
     let formattedAvailability = "";
     if (availability && typeof availability === "string") {
       const monthNames = [
@@ -76,18 +76,7 @@ class UserDashboardPage extends Component {
     return (
       <div className="UserPage">
         <div className="UserPageCont">
-          <div className="headerUserPage">
-            <div className="profileInfoItem">
-              <button className="updateProfileButton">
-                {this.props.oneUser._id ? (
-                  <UpdateUserProfileForm
-                    user={this.props.oneUser}
-                    updateProfile={this.updateProfile}
-                  />
-                ) : null}
-              </button>
-            </div>
-          </div>
+          <div className="headerUserPage" />
 
           {/*FIRST COLUMN*/}
           <div className="InfoCont">
@@ -153,15 +142,13 @@ class UserDashboardPage extends Component {
                   </div>
                 )}
               </div>
+
               <div className="profileInfoCont">
-                <div className="profileInfoItem">
-                  <h4>First Name</h4>
-                  <p>{firstName}</p>
+                <div id="profileName">
+                  {firstName} {lastName}
+                  <div style={{ margin: "20px 0" }} />
                 </div>
-                <div className="profileInfoItem">
-                  <h4>Last Name</h4>
-                  <p>{lastName}</p>
-                </div>
+
                 <div className="profileInfoItem">
                   <h4>Email</h4>
                   <p>{email}</p>
@@ -197,26 +184,50 @@ class UserDashboardPage extends Component {
                   )}
                 </div>
               </div>
+              <div style={{ textAlign: "center", margin: "20px 0" }}>
+                <button className="updateProfileButton">
+                  {this.props.oneUser._id ? (
+                    <UpdateUserProfileForm
+                      user={this.props.oneUser}
+                      updateProfile={this.updateProfile}
+                    />
+                  ) : null}
+                </button>
+              </div>
             </div>
-
             {/*SECOND COLUMN*/}
             <div className="infoBoxContSecond">
               <div className="nestedInfoBoxCont">
                 <h1>About Me</h1>
+
                 {!aboutMeSection ? (
-                  <p style={{ color: "#da9446" }}>
+                  <p
+                    style={{
+                      color: "#da9446",
+                      marginBottom: "10%",
+                      marginTop: "5%"
+                    }}
+                  >
                     Please tell about yourself ...
                   </p>
                 ) : (
-                  <div style={{ wordWrap: "break-word" }}>{aboutMeSection}</div>
+                  <p
+                    style={{
+                      wordWrap: "break-word",
+                      marginBottom: "10%",
+                      marginTop: "5%",
+                      lineHeight: "2"
+                    }}
+                  >
+                    {aboutMeSection}
+                  </p>
                 )}
-              </div>
 
-              {/*THIRD COLUMN*/}
+                {/*THIRD COLUMN*/}
 
-              <div className="nestedInfoBoxCont">
                 <div>
                   <h1>Links</h1>
+
                   <div className="linksBoxItems">
                     {!linkedInLink ? (
                       <div className="linksBoxItem">
@@ -328,7 +339,6 @@ class UserDashboardPage extends Component {
 
 UserDashboardPage.propTypes = {
   updateProfile: PropTypes.func.isRequired,
-
   updateImage: PropTypes.func.isRequired,
   deleteUserByUser: PropTypes.func.isRequired
 };
