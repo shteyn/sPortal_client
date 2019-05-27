@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Modal, FormGroup } from "reactstrap";
 
 import moment from "moment";
-import ContactForm from "../footer_pages/ContactForm";
+import ContactForm from "../forms/ContactForm";
 
 class UserCardModalForm extends Component {
   toggle = () => {
