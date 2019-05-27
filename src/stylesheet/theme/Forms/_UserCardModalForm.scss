@@ -45,7 +45,7 @@
           width: 100%;
           max-width: 400px;
           height: 100%;
-          //object-fit: cover;
+          object-fit: cover;
           border-top-left-radius: 20px;
           border-bottom-left-radius: 20px;
         }
@@ -223,6 +223,7 @@
           #profileImgModal {
             width: 100%;
             max-width: 460px;
+            object-fit: cover;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             border-bottom-left-radius: 0;
@@ -268,7 +269,7 @@
 
         div {
           max-width: 500px;
-          div{
+          div {
             width: 100%;
             max-width: 500px;
             border-top-left-radius: 20px;
@@ -279,6 +280,7 @@
           #profileImgModal {
             width: 100%;
             max-width: 500px;
+            object-fit: cover;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             border-bottom-left-radius: 0;
@@ -326,4 +328,3 @@
     }
   }
 }
-

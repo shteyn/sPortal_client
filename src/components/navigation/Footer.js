@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
-import ContactForm from '../footer_pages/ContactForm'
+import ContactForm from '../forms/ContactForm'
 
 class Footer extends Component {
   render() {
