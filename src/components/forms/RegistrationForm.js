@@ -79,7 +79,6 @@ class RegistrationForm extends Component {
             >
               <i className="fas fa-info-circle" />
               Password Requirements
-              <i className="fas fa-info-circle" />
             </a>
 
             <Collapse in={this.state.open}>
