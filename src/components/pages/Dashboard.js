@@ -62,7 +62,7 @@ class Dashboard extends Component {
           <ConfirmEmailMessage user={user} />
         ) : null}
         {isConfirmationEmailConfirmed && !isConfirmed && !loading ? (
-          <UserCanLoginMessage oneUser={oneUser} />
+          <UserCanLoginMessage oneUser={user} />
         ) : null}
       </div>
     );

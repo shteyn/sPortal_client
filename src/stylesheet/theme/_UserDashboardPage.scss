@@ -76,13 +76,11 @@
         padding: 30px;
         background: white;
         margin: 10px;
-
         .nestedInfoBoxCont {
           .linksBoxItems {
             display: flex;
             flex-direction: column;
             margin-top: 5%;
-
             img {
               width: 20px;
               height: 20px;
@@ -112,10 +110,7 @@
             }
 
             h1 {
-              font-family: Ropa Sans, sans-serif;
-              font-style: normal;
               font-weight: normal;
-              line-height: normal;
               font-size: 36px;
               color: #da9446;
               margin-bottom: 10px;
@@ -124,10 +119,12 @@
           }
         }
       }
-
       .updateProfileButton {
+        font-size: 16px;
+        font-weight: bold;
         height: 50px;
-        margin: 20px 5px;
+        background-color: #ffffff;
+        margin: 20px 5;
         border-radius: 5px;
         outline: none;
         border: none;
@@ -141,10 +138,10 @@
       max-width: 1000px;
       background: white;
       margin: 10px;
-      padding: 2%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: 2%;
 
       .nestedInfoBoxCont {
         height: 100%;
@@ -153,7 +150,6 @@
           display: flex;
           flex-direction: column;
           margin-top: 5%;
-
           img {
             width: 20px;
             height: 20px;
@@ -183,10 +179,7 @@
           }
 
           h1 {
-            font-family: Ropa Sans, sans-serif;
-            font-style: normal;
             font-weight: normal;
-            line-height: normal;
             font-size: 36px;
             color: #da9446;
             margin-bottom: 10px;
@@ -220,27 +213,18 @@
   }
 
   h2 {
-    font-family: Ropa Sans, sans-serif;
-    font-style: normal;
     font-weight: normal;
-    line-height: normal;
     color: #da9446;
   }
 
   h3 {
-    font-family: Ropa Sans, sans-serif;
-    font-style: normal;
     font-weight: normal;
-    line-height: normal;
     font-size: 30px;
     color: rgba(29, 59, 139, 0.5);
   }
 
   h1 {
-    font-family: Ropa Sans, sans-serif;
-    font-style: normal;
     font-weight: normal;
-    line-height: normal;
     font-size: 36px;
     color: #da9446;
     text-align: center;
@@ -248,10 +232,7 @@
 
   p {
     margin: 0;
-    font-family: Ropa Sans, sans-serif;
-    font-style: normal;
     font-weight: normal;
-    line-height: normal;
     font-size: 18px;
     color: #5c5c5c;
   }
@@ -261,13 +242,11 @@
     flex-direction: column;
     justify-content: flex-end;
     padding-top: 30px;
-
     #profileName {
       text-align: center;
       font-size: 34px;
       color: #da9446;
     }
-
     .profileInfoItem {
       text-align: left;
       display: flex;
@@ -287,8 +266,6 @@
 
     h2 {
       margin-right: 20px;
-      font-family: Ropa Sans, sans-serif;
-      font-style: normal;
       font-weight: normal;
       color: #da9446;
     }
@@ -299,29 +276,13 @@
       align-self: center;
     }
   }
-
 }
 
-
-@media only screen and (max-width: 722px) {
-  .UserPageCont {
-    margin: auto;
-
-    .headerUserPage {
-      max-width: 400px;
-      margin: 130px auto 0 auto;
-      height: 100px;
-      padding: 0;
-    }
+@media only screen and (max-width: 1750px) {
+  .headerUserPage {
+    padding: 0 30px;
   }
 }
-
-@media only screen and (max-width: 963px) {
-  #infoBoxCont {
-    border-right: none;
-  }
-}
-
 
 @media only screen and (max-width: 978px) {
   .UserPage {
@@ -349,9 +310,61 @@
   }
 }
 
-@media only screen and (max-width: 1750px) {
-  .headerUserPage {
-    padding: 0 30px;
+@media only screen and (max-width: 963px) {
+  #infoBoxCont {
+    border-right: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .UserPage {
+    width: 100%;
+    min-height: 100vh;
+    .UserPageCont {
+      .InfoCont {
+        height: 100%;
+        min-height: 100vh;
+        .infoBoxContSecond {
+          width: 442px;
+          min-height: 800px;
+          background: white;
+          border-radius: 19px;
+          margin: 10px;
+
+          .nestedInfoBoxCont {
+            max-width: 442px;
+            min-height: 380px;
+
+            .linksBoxItems {
+              width: 100%;
+              max-width: 380px;
+
+              .linksBoxItem {
+                a {
+                  p {
+                    max-width: 340px;
+                    word-wrap: break-word;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 722px) {
+  .UserPageCont {
+    margin: auto;
+
+    .headerUserPage {
+      max-width: 400px;
+      margin: 130px auto 0 auto;
+      height: 100px;
+      padding: 0;
+    }
   }
 }
 
@@ -359,13 +372,10 @@
   .UserPage {
     width: 100%;
     min-height: 100vh;
-
     .UserPageCont {
-
       .InfoCont {
         height: 100%;
         min-height: 100vh;
-
         .infoBoxContSecond {
           width: 442px;
           min-height: 800px;
@@ -398,46 +408,3 @@
     }
   }
 }
-
-@media only screen and (max-width: 768px) {
-  .UserPage {
-    width: 100%;
-    min-height: 100vh;
-
-    .UserPageCont {
-
-      .InfoCont {
-        height: 100%;
-        min-height: 100vh;
-
-        .infoBoxContSecond {
-          width: 442px;
-          min-height: 800px;
-          margin: 10px;
-          background: white;
-          border-radius: 19px;
-
-          .nestedInfoBoxCont {
-            max-width: 442px;
-            min-height: 380px;
-
-            .linksBoxItems {
-              width: 100%;
-              max-width: 380px;
-
-              .linksBoxItem {
-                a {
-                  p {
-                    max-width: 340px;
-                    word-wrap: break-word;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-

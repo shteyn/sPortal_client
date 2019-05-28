@@ -43,18 +43,15 @@
           font-size: 20px;
           text-decoration: none;
           color: #969696;
-
           &:hover {
             color: #ec7f37;
             cursor: pointer;
           }
         }
-
         a {
           font-size: 20px;
           text-decoration: none;
           color: #969696;
-
           &:hover {
             color: #ec7f37;
             cursor: pointer;
@@ -91,11 +88,14 @@
 
         a {
           text-decoration: none;
-          color: #969696;
+          i {
+            font-size: 28px;
+            color: rgba(150, 150, 150, 0.62);
 
-          &:hover {
-            color: #ec7f37;
-            cursor: pointer;
+            &:hover {
+              cursor: pointer;
+              color: rgba(236, 127, 55, 0.5);
+            }
           }
         }
       }
@@ -129,18 +129,14 @@
       }
     }
   }
-
   @media only screen and (max-width: 1000px) {
     .FooterContentBox {
       width: 100%;
-      //max-width: 1000px;
       margin: auto;
       padding-top: 20px;
       padding-bottom: 20px;
-
       .FooterContentItemOne {
         width: 50%;
-
         ul {
           margin: 0;
           padding: 0;
@@ -150,24 +146,20 @@
           flex-wrap: wrap;
           flex: 1;
           align-items: center;
-
           li {
             width: 50%;
             padding: 0;
             margin: 0;
             text-align: right;
             align-items: center;
-
             div {
               position: relative;
             }
-
             a {
               font-size: 20px;
               text-decoration: none;
               color: #969696;
               margin-left: 10px;
-
               &:hover {
                 color: #ec7f37;
                 cursor: pointer;
@@ -176,7 +168,6 @@
           }
         }
       }
-
       .FooterContentItemTwo {
         width: 45%;
         display: flex;
@@ -187,9 +178,8 @@
     .mainLegalContainerFooter {
       .legalContainerFooter {
         width: 100%;
-        //max-width: 700px;
+        max-width: 800px;
         margin: auto;
-
         div {
           width: 60%;
           max-width: 500px;
@@ -270,6 +260,7 @@
       }
     }
   }
+
   @media only screen and (max-width: 695px) {
     .FooterContentBox {
       .FooterContentItemOne {
@@ -277,7 +268,6 @@
           display: flex;
           flex-direction: column;
           justify-content: start;
-
           li {
             width: 100%;
           }
@@ -286,18 +276,15 @@
     }
     .mainLegalContainerFooter {
       padding: 5px 20px 5px 20px;
-
       .legalContainerFooter {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-
         div {
           text-align: right;
           width: 60%;
           display: flex;
           flex-wrap: wrap;
-
           h5 {
             width: 50%;
           }
@@ -305,24 +292,23 @@
       }
     }
   }
+
   @media only screen and (max-width: 560px) {
     .FooterCont {
       width: 100%;
+      width: 100%;
       max-width: 600px;
-
+      max-width: 600px;
       .mainLegalContainerFooter {
         padding: 0;
-
         .legalContainerFooter {
           padding: 10px 20px 0 20px;
           display: flex;
           justify-content: space-between;
-
           div {
             width: 45%;
             display: flex;
             flex-wrap: wrap;
-
             h5 {
               width: 50%;
             }
@@ -408,7 +394,6 @@
           list-style: none;
           display: flex;
           flex-wrap: wrap;
-
 
           li {
             width: 100%;

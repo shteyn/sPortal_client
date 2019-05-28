@@ -9,13 +9,23 @@
 .admindashboard-cont {
   background: rgb(255, 255, 255);
   border: none;
+  width: 100%;
+  max-width: 1470px;
+  margin: auto;
+  div {
+    width: 100%;
+    max-width: 1470px;
+    margin: auto;
+  }
 
   #adminInfo {
     color: #ec7f37;
+    width: 100%;
+    max-width: 1470px;
     align-self: center;
     font-size: 22px;
     text-align: right;
-    margin: 10px 60px;
+    margin: 10px auto;
   }
   .celled.table tr th {
     font-size: 18px;
@@ -47,15 +57,14 @@
   }
   .ui.celled.table {
     font-size: 15px;
-    font-style: normal;
     font-weight: normal;
-    line-height: normal;
     margin-top: 50px;
   }
   .ui.table {
     border-collapse: collapse;
     width: 100%;
     margin: 20px auto;
+    max-width: 1470px;
   }
   .ui.table td {
     padding: 20px 0;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Modal, FormGroup } from "reactstrap";
-
+import { Modal } from "reactstrap";
+import { Form } from "react-bootstrap";
 import moment from "moment";
 import ContactStudentForm from "./ContactStudentForm";
 
@@ -46,7 +46,6 @@ class UserCardModalForm extends Component {
                         e.target.onerror = null;
                         e.target.src = `${placeholderUrl}`;
                       }}
-                      // style={{maxWidth: "400px"}}
                     />
                   </div>
                 )}
@@ -55,48 +54,86 @@ class UserCardModalForm extends Component {
               <div className="contentDiv">
                 <div>
                   <div className="header">
-                    <div className="headerTitle">
-                      <span>{user.firstName}</span> &nbsp;{" "}
+                    {/*<div className="headerTitle">
+                      <span>{user.firstName}</span> &nbsp;
                       <span>{user.lastName}</span>
                     </div>
                     <div>
                       <button onClick={this.toggle} className="fa fa-times" />
-                    </div>
+                    </div>*/}
+                    <Form.Row>
+                      <Form.Group>
+                        <p className="headerTitle">
+                          {user.firstName} {user.lastName}
+                        </p>
+                      </Form.Group>
+                    </Form.Row>
+                    <button onClick={this.toggle} className="fa fa-times" />
                   </div>
-
-                  <FormGroup>
-                    {user.availability === null ? (
-                      <p key="0" style={{ color: "grey" }}>
-                        No info yet
-                      </p>
-                    ) : (
-                      [
-                        date > currentDate ? (
-                          <p key="1" style={{ color: "#5c5c5c" }}>
-                            {newDate}
-                          </p>
-                        ) : (
-                          <p key="2" style={{ color: "green" }}>
-                            Available for offers
-                          </p>
-                        )
-                      ]
-                    )}
-                  </FormGroup>
-                  <FormGroup>
-                    <p>{user.location}</p>
-                  </FormGroup>
-                  <FormGroup>
-                    <p>{user.studentClass}</p>
-                  </FormGroup>
-                  <div className="classEndMainFocusContainer">
-                    <span>{user.studentCourse}:</span>
-                    <p>{user.mainFocus}</p>
-                  </div>
-                  <div>
-                    <h3 id="aboutMe">About Me:</h3>
-                    <p>{user.aboutMeSection}</p>
-                  </div>
+                  <Form.Row>
+                    <Form.Group>
+                      <p className="smallTitles">Availability:&nbsp;&nbsp;</p>
+                    </Form.Group>
+                    <Form.Group>
+                      {user.availability === null ? (
+                        <p key="0" style={{ color: "grey" }}>
+                          No info yet
+                        </p>
+                      ) : (
+                        [
+                          date > currentDate ? (
+                            <p key="1" style={{ color: "#5c5c5c" }}>
+                              {newDate}
+                            </p>
+                          ) : (
+                            <p key="2" style={{ color: "green" }}>
+                              Available for offers
+                            </p>
+                          )
+                        ]
+                      )}
+                    </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                    <Form.Group>
+                      <p className="smallTitles">Location: &nbsp;&nbsp;</p>
+                    </Form.Group>
+                    <Form.Group>
+                      <p>{user.location}</p>
+                    </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                    <Form.Group>
+                      <p className="smallTitles">Course: &nbsp;&nbsp;</p>
+                    </Form.Group>
+                    <Form.Group>
+                      <p>{user.studentCourse}</p>
+                    </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                    <Form.Group>
+                      <p className="smallTitles">Main Focus: &nbsp;&nbsp;</p>
+                    </Form.Group>
+                    <Form.Group>
+                      {user.mainFocus ? (
+                        <p>{user.mainFocus}</p>
+                      ) : (
+                        <p>No information yet</p>
+                      )}
+                    </Form.Group>
+                  </Form.Row>
+                  <Form.Row style={{ marginTop: "15px" }}>
+                    <Form.Group>
+                      <p className="smallTitleAboutMe">About Me:&nbsp;&nbsp;</p>
+                    </Form.Group>
+                    <Form.Group>
+                      {user.aboutMeSection ? (
+                        <p>{user.aboutMeSection}</p>
+                      ) : (
+                        <p>No information about the student yet</p>
+                      )}
+                    </Form.Group>
+                  </Form.Row>
                 </div>
                 <div>
                   <div className="CardLinks">
@@ -104,7 +141,7 @@ class UserCardModalForm extends Component {
                       <ContactStudentForm user={user} />
                     </button>
                     <div>
-                      <FormGroup>
+                      <Form.Group>
                         {user.linkedInLink !== "" ? (
                           <div>
                             <a
@@ -113,15 +150,12 @@ class UserCardModalForm extends Component {
                               target="_blank"
                               href={`${user.linkedInLink}`}
                             >
-                              <img
-                                src={require("../../img/linkedin.png")}
-                                alt=""
-                              />
+                              <i className="fab fa-linkedin" />
                             </a>
                           </div>
                         ) : null}
-                      </FormGroup>
-                      <FormGroup>
+                      </Form.Group>
+                      <Form.Group>
                         {user.githubLink !== "" ? (
                           <div>
                             <a
@@ -130,15 +164,12 @@ class UserCardModalForm extends Component {
                               target="_blank"
                               href={`${user.githubLink}`}
                             >
-                              <img
-                                src={require("../../img/github.png")}
-                                alt=""
-                              />
+                              <i class="fab fa-github-square" />
                             </a>
                           </div>
                         ) : null}
-                      </FormGroup>
-                      <FormGroup>
+                      </Form.Group>
+                      <Form.Group>
                         {user.xingLink !== "" ? (
                           <div>
                             <a
@@ -147,12 +178,12 @@ class UserCardModalForm extends Component {
                               rel="noopener noreferrer"
                               href={`${user.xingLink}`}
                             >
-                              <img src={require("../../img/xing.png")} alt="" />
+                              <i class="fab fa-xing-square" />
                             </a>
                           </div>
                         ) : null}
-                      </FormGroup>
-                      <FormGroup>
+                      </Form.Group>
+                      <Form.Group>
                         {user.portfolioLink !== "" ? (
                           <div>
                             <a
@@ -161,14 +192,11 @@ class UserCardModalForm extends Component {
                               rel="noopener noreferrer"
                               href={`${user.portfolioLink}`}
                             >
-                              <img
-                                src={require("../../img/briefcase.png")}
-                                alt=""
-                              />
+                              <i class="fas fa-suitcase" />
                             </a>
                           </div>
                         ) : null}
-                      </FormGroup>
+                      </Form.Group>
                     </div>
                   </div>
                 </div>

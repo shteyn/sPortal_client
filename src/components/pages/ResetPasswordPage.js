@@ -38,7 +38,6 @@ class ResetPasswordPage extends Component {
   render() {
     const { loading, success } = this.state;
     const token = this.props.match.params.token;
-    let logoDCI = require("../../img/newDCILogo.png");
     return (
       <div>
         <TopNavigation />

@@ -49,7 +49,6 @@ class ContactForm extends Component {
 
   contactUs = data => this.props.contactUs(data).then(this.handleClose());
 
-  //making syntax validation onSubmit();
   validate = data => {
     const errors = {};
     if (!Validator.isEmail(data.email)) errors.email = "Invalid email";
@@ -75,7 +74,7 @@ class ContactForm extends Component {
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <div>
-              <h1>Contact</h1>
+              <h1>Contact DCI Team</h1>
             </div>
           </Modal.Header>
           <Modal.Body>

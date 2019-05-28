@@ -19,34 +19,22 @@ class Footer extends Component {
             <ul>
               <li>
                 <a href="https://www.facebook.com/devugees">
-                  <i
-                    className="fab fa-facebook-square"
-                    style={{ fontSize: "28px", color: "#ec7f37" }}
-                  />
+                  <i className="fab fa-facebook-square" />
                 </a>
               </li>
               <li>
                 <a href="https://twitter.com/DevugeesOrg">
-                  <i
-                    className="fab fa-twitter-square"
-                    style={{ fontSize: "28px", color: "#ec7f37" }}
-                  />
+                  <i className="fab fa-twitter-square" />
                 </a>
               </li>
               <li>
                 <a href="https://medium.com/devugees">
-                  <i
-                    className="fab fa-medium"
-                    style={{ fontSize: "28px", color: "#ec7f37" }}
-                  />
+                  <i className="fab fa-medium" />
                 </a>
               </li>
               <li>
                 <a href="https://www.youtube.com/channel/UCSM_3ldxjcclGTcXaJRBYTw">
-                  <i
-                    className="fab fa-youtube-square"
-                    style={{ fontSize: "28px", color: "#ec7f37" }}
-                  />
+                  <i className="fab fa-youtube-square" />
                 </a>
               </li>
             </ul>

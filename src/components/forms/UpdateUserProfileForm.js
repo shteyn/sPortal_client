@@ -17,8 +17,6 @@ class UpdateUserProfileForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.firstNameRef = React.createRef();
     this.lastNameRef = React.createRef();
-    // this.emailRef = React.createRef();
-    // this.locationRef = React.createRef();
     this.aboutMeSectionRef = React.createRef();
     this.studentClassRef = React.createRef();
     this.linkedInLinkRef = React.createRef();
@@ -72,9 +70,6 @@ class UpdateUserProfileForm extends Component {
     } else return null;
   }
 
-  //types = ["Berlin", "Düsseldorf", "Leipzig", "Hamburg"];
-  //focus = ["Front-End", "Back-End", "Full-Stack"];
-
   onChange = event => {
     this.setState({
       ...this.state,
@@ -126,7 +121,7 @@ class UpdateUserProfileForm extends Component {
     return (
       <div>
         <div variant="primary" onClick={this.handleShow}>
-          UPDATE PROFILE
+          Update Profile
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
@@ -174,7 +169,7 @@ class UpdateUserProfileForm extends Component {
                   </InputGroup.Prepend>
                   <Form.Control
                     placeholder="Tell about yourself..."
-                    maxLength="1000"
+                    maxLength="500"
                     as="textarea"
                     aria-label="With textarea"
                     className="studentInfoInput"
@@ -228,7 +223,6 @@ class UpdateUserProfileForm extends Component {
                 </Form.Group>
               </Form.Row>
               <Form.Row className="mb-5">
-                {/*Main Focus*/}
                 <Form.Group as={Col} controlId="formBasicEmail">
                   <InputGroup style={{ flexWrap: "nowrap" }}>
                     <InputGroup.Prepend>
@@ -286,6 +280,9 @@ class UpdateUserProfileForm extends Component {
                 </Form.Group>
               </Form.Row>
 
+              <p style={{ color: "#ec7f37" }}>
+                Please use only the https format(https://www.somewebsite.com)
+              </p>
               <Form.Row>
                 <Form.Group as={Col} controlId="formBasicEmail">
                   <InputGroup className="mb-3">
@@ -355,20 +352,23 @@ class UpdateUserProfileForm extends Component {
                   </InputGroup>
                 </Form.Group>
               </Form.Row>
-              <p style={{ color: "#da9446" }}>
-                Please use only the https format(https://www.somewebsite.com)
-              </p>
               <div
                 style={{
-                  textAlign: "right"
+                  textAlign: "center",
+                  marginTop: "50px"
                 }}
               >
                 <Button
                   variant="primary"
+                  className="saveChangesBtn"
                   style={{
-                    backgroundColor: "#da9446",
+                    backgroundColor: "#ec7f37",
                     border: "none",
-                    marginLeft: "20px"
+                    borderRadius: "5px",
+                    width: "150px",
+                    fontSize: "16px",
+                    fontWeight: "bold",
+                    height: "50px"
                   }}
                   type="submit"
                 >

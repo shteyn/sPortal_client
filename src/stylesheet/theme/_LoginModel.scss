@@ -15,10 +15,7 @@
       margin: 0 auto 20px auto;
       .collapsedRequirements {
         text-align: center;
-        font-family: Ropa Sans, sans-serif;
-        font-style: normal;
         font-weight: normal;
-        line-height: normal;
         font-size: 16px;
         color: #5c5c5c;
         margin-top: 20px;
@@ -73,8 +70,6 @@
       }
       &:hover {
         background-color: rgba(236, 127, 55, 0.5);
-        //color: #ffffff;
-        //border: none;
         color: #ffffff;
         font-weight: bold;
         -webkit-appearance: none;
@@ -107,8 +102,6 @@
       0 6px 20px 0 rgba(246, 245, 243, 1);
     height: 85px;
     background: white;
-    //background: #e3e3e3;
-    //background: #393939;
     top: 0;
     position: fixed;
     width: 100%;
@@ -117,7 +110,6 @@
     z-index: 999;
 
     .labelUserPage {
-      //color: white;
       text-decoration: none;
       margin-left: 20px;
       position: absolute;
@@ -138,13 +130,8 @@
 
         a {
           text-decoration: none;
-          font-family: Ropa Sans, sans-serif;
-          font-style: normal;
           font-weight: normal;
-          line-height: normal;
           font-size: 24px;
-          //color: #ffffff;
-
           color: #ec7f37;
         }
       }
@@ -155,17 +142,13 @@
     width: 630px;
     margin: 150px auto;
     vertical-align: center;
-    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 15px;
     @media (max-width: 630px) {
       width: 400px;
     }
 
     .forgotPassDiv {
-      font-family: Ropa Sans, sans-serif;
-      font-style: normal;
       font-weight: normal;
-      line-height: normal;
       font-size: 18px;
       margin: 0 0 30px 0;
       text-align: center;
@@ -187,10 +170,7 @@
       padding: 10px;
       border: 1px solid #dfdce3;
       border-radius: 8px;
-      font-family: Ropa Sans, sans-serif;
-      font-style: normal;
       font-weight: normal;
-      line-height: normal;
       font-size: 18px;
       color: #5c5c5c;
 
@@ -199,10 +179,7 @@
       }
 
       &::placeholder {
-        font-family: Ropa Sans, sans-serif;
-        font-style: normal;
         font-weight: normal;
-        line-height: normal;
         font-size: 20px;
         color: #5c5c5c;
       }
@@ -213,7 +190,7 @@
       width: 160px;
       height: 55px;
       margin: 20px 0 30px 0;
-      background: /* rgba(218, 148, 70, 0.5) */ #ec7f37;
+      background: #ec7f37;
       border: none;
       border-radius: 7px;
 
@@ -223,10 +200,7 @@
 
       a {
         text-decoration: none;
-        font-family: Ropa Sans, sans-serif;
-        font-style: normal;
         font-weight: normal;
-        line-height: normal;
         font-size: 30px;
         color: #ffffff;
       }
@@ -234,11 +208,9 @@
   }
 
   .nav-tabs {
-    //border-bottom: 1px solid #da9446;
     border: none;
     display: flex;
     justify-content: space-evenly;
-    //margin-bottom: 30px;
     .nav-link {
       border: none;
       width: 50%;
@@ -250,10 +222,7 @@
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       text-decoration: none;
-      font-family: Ropa Sans, sans-serif;
-      font-style: normal;
       font-weight: normal;
-      line-height: normal;
       font-size: 30px;
       color: #5c5c5c;
     }
@@ -264,10 +233,7 @@
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
       text-decoration: none;
-      font-family: Ropa Sans, sans-serif;
-      font-style: normal;
       font-weight: normal;
-      line-height: normal;
       font-size: 30px;
       color: #ec7f37;
     }

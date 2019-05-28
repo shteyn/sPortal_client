@@ -8,7 +8,6 @@
 @import "theme/UserCards";
 @import "theme/ConfirmEmailMessage";
 @import "theme/ConfirmationPage";
-@import "theme/RegistrationForm";
 @import "theme/UpdateUserProfileForm";
 @import "theme/AdminDashboardPage";
 @import "theme/Footer";
@@ -17,15 +16,16 @@
 @import "theme/FooterPage/AboutUsPage";
 @import "theme/FooterPage/FAQPage";
 @import "theme/FooterPage/ContactForm";
-
-
 @import "theme/Forms/UserCardModalForm";
 
 body,
 html {
+  font-family: Ropa Sans, sans-serif;
+  font-style: normal;
+  line-height: normal;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -37,4 +37,20 @@ html {
   .modal-open {
     overflow: visible;
   }
+}
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+span,
+a,
+button,
+select,
+input {
+  font-family: Ropa Sans, sans-serif;
+  font-style: normal;
+  line-height: normal;
 }

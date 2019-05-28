@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Table, Button } from "semantic-ui-react";
-
 import { deleteUser } from "../../actions/user";
 
 class ConfirmedUsersForm extends Component {

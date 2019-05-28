@@ -56,7 +56,6 @@ class LoginForm extends Component {
             id="email"
             name="email"
             placeholder="Email..."
-            // autoComplete="email"
             value={data.email}
             onChange={this.onChange}
             required

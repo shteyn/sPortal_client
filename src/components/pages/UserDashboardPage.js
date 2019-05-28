@@ -47,7 +47,6 @@ class UserDashboardPage extends Component {
     } = this.props.oneUser;
 
     let placeholderUrl = require("../../img/placeholderUser.jpeg");
-    console.log("user dashboard props", this.props);
     let formattedAvailability = "";
     if (availability && typeof availability === "string") {
       const monthNames = [
