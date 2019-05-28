@@ -43,15 +43,18 @@
           font-size: 20px;
           text-decoration: none;
           color: #969696;
+
           &:hover {
             color: #ec7f37;
             cursor: pointer;
           }
         }
+
         a {
           font-size: 20px;
           text-decoration: none;
           color: #969696;
+
           &:hover {
             color: #ec7f37;
             cursor: pointer;
@@ -102,16 +105,20 @@
   .mainLegalContainerFooter {
     width: 100%;
     background-color: #ec7f37;
+    padding: 0 20px 0 20px;
 
     .legalContainerFooter {
       align-items: center;
       display: flex;
       justify-content: space-between;
       width: 100%;
-      height: 50px;
+      min-height: 50px;
       max-width: 1450px;
       margin: auto;
       color: #ffffff;
+      h5 {
+        margin: 0;
+      }
 
       div {
         width: 100%;
@@ -123,10 +130,10 @@
     }
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     .FooterContentBox {
       width: 100%;
-      max-width: 700px;
+      //max-width: 1000px;
       margin: auto;
       padding-top: 20px;
       padding-bottom: 20px;
@@ -153,7 +160,6 @@
 
             div {
               position: relative;
-              top: -8px;
             }
 
             a {
@@ -181,7 +187,7 @@
     .mainLegalContainerFooter {
       .legalContainerFooter {
         width: 100%;
-        max-width: 700px;
+        //max-width: 700px;
         margin: auto;
 
         div {
@@ -194,28 +200,169 @@
       }
     }
   }
+  @media only screen and (max-width: 800px) {
+    .FooterContentBox {
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      .FooterContentItemOne {
+        width: 50%;
+
+        ul {
+          margin: 0;
+          padding: 0;
+          width: 70%;
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          flex: 1;
+          align-items: center;
+
+          li {
+            width: 50%;
+            padding: 0;
+            margin: 0;
+            text-align: right;
+            align-items: center;
+
+            div {
+              position: relative;
+            }
+
+            a {
+              font-size: 20px;
+              text-decoration: none;
+              color: #969696;
+              margin-left: 10px;
+
+              &:hover {
+                color: #ec7f37;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      .FooterContentItemTwo {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+    .mainLegalContainerFooter {
+      .legalContainerFooter {
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+
+        div {
+          width: 60%;
+          max-width: 500px;
+          display: flex;
+          justify-content: space-between;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 695px) {
+    .FooterContentBox {
+      .FooterContentItemOne {
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+
+          li {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .mainLegalContainerFooter {
+      padding: 5px 20px 5px 20px;
+
+      .legalContainerFooter {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+        div {
+          text-align: right;
+          width: 60%;
+          display: flex;
+          flex-wrap: wrap;
+
+          h5 {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
   @media only screen and (max-width: 560px) {
     .FooterCont {
       width: 100%;
       max-width: 600px;
+
+      .mainLegalContainerFooter {
+        padding: 0;
+
+        .legalContainerFooter {
+          padding: 10px 20px 0 20px;
+          display: flex;
+          justify-content: space-between;
+
+          div {
+            width: 45%;
+            display: flex;
+            flex-wrap: wrap;
+
+            h5 {
+              width: 50%;
+            }
+          }
+        }
+      }
     }
+  }
+  @media only screen and (max-width: 445px) {
     .mainLegalContainerFooter {
+      padding: 20px;
+      display: flex;
+      text-align: center;
+
       .legalContainerFooter {
-        padding: 0 20px 0 20px;
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
+        text-align: center;
 
         div {
-          width: 45%;
+          width: 80%;
           display: flex;
           flex-wrap: wrap;
+          text-align: center;
+
+          h5 {
+            width: 50%;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+          }
         }
       }
     }
   }
   @media only screen and (max-width: 375px) {
     .mainLegalContainerFooter {
-      padding: 20px;
+      padding: 10px;
+      height: 90px;
       display: flex;
       text-align: center;
 
@@ -226,8 +373,10 @@
 
         div {
           width: 80%;
+          height: 40px;
           display: flex;
           flex-wrap: wrap;
+          text-align: center;
 
           h5 {
             width: 50%;
@@ -252,7 +401,6 @@
 
       .FooterContentItemOne {
         width: 100%;
-
         ul {
           margin: 0;
           padding: 0;
@@ -260,11 +408,10 @@
           list-style: none;
           display: flex;
           flex-wrap: wrap;
-          flex: 1;
-          align-items: center;
+
 
           li {
-            width: 50%;
+            width: 100%;
             padding: 0;
             margin: 0;
             text-align: center;
@@ -272,7 +419,6 @@
 
             div {
               position: relative;
-              top: -8px;
             }
 
             a {
@@ -295,10 +441,12 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
         ul {
           display: flex;
           justify-content: space-evenly;
           padding: 0 30px 0 30px;
+
           li {
             margin: 0;
             padding: 0;
@@ -307,77 +455,4 @@
       }
     }
   }
-  //@media only screen and (max-width: 800px) {
-  //  .FooterContentBox {
-  //    width: 100%;
-  //    max-width: 700px;
-  //    margin: auto;
-  //    padding-top: 20px;
-  //    padding-bottom: 20px;
-  //
-  //    .FooterContentItemOne {
-  //      width: 50%;
-  //
-  //      ul {
-  //        margin: 0;
-  //        padding: 0;
-  //        width: 70%;
-  //        list-style: none;
-  //        display: flex;
-  //        flex-wrap: wrap;
-  //        flex: 1;
-  //        align-items: center;
-  //
-  //        li {
-  //          width: 50%;
-  //          padding: 0;
-  //          margin: 0;
-  //          text-align: right;
-  //          align-items: center;
-  //
-  //          div {
-  //            position: relative;
-  //            top: -8px;
-  //          }
-  //
-  //          a {
-  //            font-size: 20px;
-  //            text-decoration: none;
-  //            color: #969696;
-  //            margin-left: 10px;
-  //
-  //            &:hover {
-  //              color: #ec7f37;
-  //              cursor: pointer;
-  //            }
-  //
-  //          }
-  //        }
-  //
-  //      }
-  //    }
-  //
-  //    .FooterContentItemTwo {
-  //      width: 45%;
-  //      display: flex;
-  //      flex-direction: column;
-  //      justify-content: space-between;
-  //    }
-  //  }
-  //  .mainLegalContainerFooter {
-  //    .legalContainerFooter {
-  //      width: 100%;
-  //      max-width: 700px;
-  //      margin: auto;
-  //
-  //      div {
-  //        width: 60%;
-  //        max-width: 500px;
-  //        display: flex;
-  //        justify-content: space-between;
-  //        color: #ffffff;
-  //      }
-  //    }
-  //  }
-  //}
 }

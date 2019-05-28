@@ -66,6 +66,7 @@ class Footer extends Component {
                 <a
                   href="https://digitalcareerinstitute.org/en/stories/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Stories
                 </a>
