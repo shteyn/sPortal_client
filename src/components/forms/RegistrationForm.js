@@ -43,7 +43,6 @@ class RegistrationForm extends Component {
     }
   };
 
-  //making syntax validation onSubmit();
   validate = data => {
     console.log("data.password", data.password);
     const errors = {};
@@ -135,7 +134,7 @@ class RegistrationForm extends Component {
             required
           />
           <br />
-          {/* InlineError server side validation */}
+
           {errors.email && <InlineError text={errors.email} />}
 
           <input

@@ -16,8 +16,6 @@
 }
 .navigationBar {
   width: 100%;
-  //margin: auto;
-  //width: 1500px;
   z-index: 1;
   height: 85px;
   display: flex;
@@ -45,8 +43,6 @@
     position: relative;
     padding: 0;
     #dciLogo {
-      //border-radius: 50%;
-      //border: 2px solid rgb(255, 255, 255);
       width: 180px;
       height: 85px;
       background-position: center center;
@@ -73,10 +69,7 @@
       align-self: center;
       a {
         text-decoration: none;
-        font-family: Ropa Sans, sans-serif;
-        font-style: normal;
         font-weight: normal;
-        line-height: normal;
         font-size: 28px;
         color: #ec7f37;
       }

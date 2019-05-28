@@ -53,7 +53,6 @@ class ContactStudentForm extends Component {
   contactStudent = data =>
     this.props.contactStudent(data).then(this.handleClose());
 
-  //making syntax validation onSubmit();
   validate = data => {
     const errors = {};
     if (!Validator.isEmail(data.email)) errors.email = "Invalid email";
@@ -80,13 +79,16 @@ class ContactStudentForm extends Component {
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <div>
-              <h1>Contact {user.firstName}</h1>
+              <h1>
+                Contact{" "}
+                <span style={{ color: "#ec7f37" }}>{user.firstName}</span>
+              </h1>
             </div>
           </Modal.Header>
-          <Modal.Body style={{ height: "400px" }}>
+          <Modal.Body>
             <Form onSubmit={this.handleSubmit} loading={loading.toString()}>
               <div className="ContactFormPersonalInfo">
-                <Form.Group>
+                <Form.Group style={{ maxWidth: "400", width: "33%" }}>
                   <Form.Label>Your Name</Form.Label>
                   <Form.Control
                     onChange={this.onChange}
@@ -99,7 +101,7 @@ class ContactStudentForm extends Component {
                   <br />
                   {errors.name && <InlineError text={errors.name} />}
                 </Form.Group>
-                <Form.Group>
+                <Form.Group style={{ maxWidth: "400", width: "33%" }}>
                   <Form.Label>Your Email</Form.Label>
                   <Form.Control
                     onChange={this.onChange}
@@ -111,7 +113,7 @@ class ContactStudentForm extends Component {
                   <br />
                   {errors.email && <InlineError text={errors.email} />}
                 </Form.Group>
-                <Form.Group>
+                <Form.Group style={{ maxWidth: "400", width: "33%" }}>
                   <Form.Label>Who Are you</Form.Label>
                   <select
                     className="selectContactForm"

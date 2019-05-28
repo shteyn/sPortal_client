@@ -2,7 +2,9 @@
   width: 100%;
   max-width: 1000px;
   margin: 100px auto;
-
+  .form-row {
+    margin: 0;
+  }
   .modal-content {
     border-radius: 20px;
     padding: 0;
@@ -22,7 +24,6 @@
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
-      //margin: -15% 100px 0 -100px;
       margin-right: 10px;
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
@@ -61,10 +62,7 @@
 
       h3 {
         text-decoration: none;
-        font-family: Ropa Sans, sans-serif;
-        font-style: normal;
         font-weight: normal;
-        line-height: normal;
         font-size: 28px;
         color: #ec7f37;
         margin-top: 10px;
@@ -83,23 +81,16 @@
         max-width: 800px;
 
         .headerTitle {
-          span {
-            padding: 0;
-            margin: 0;
-            text-decoration: none;
-            font-family: Ropa Sans, sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            line-height: normal;
-            font-size: 28px;
-            color: #ec7f37;
-          }
+          padding: 0;
+          margin: 0;
+          text-decoration: none;
+          font-weight: normal;
+          font-size: 28px;
+          color: #ec7f37;
         }
 
         button {
           margin: 10px 0 0 50px;
-          //margin: auto;
-          //align-self: start;
           background: none;
           border: none;
 
@@ -107,6 +98,16 @@
             color: #ec7f37;
           }
         }
+      }
+      .smallTitles {
+        font-weight: normal;
+        font-size: 18px;
+        color: #ec7f37;
+      }
+      .smallTitleAboutMe {
+        font-weight: normal;
+        font-size: 18px;
+        color: #ec7f37;
       }
     }
 
@@ -121,21 +122,14 @@
         display: flex;
         justify-content: center;
 
-        img {
-          width: 31px;
-          height: 31px;
-          color: rgba(29, 59, 139, 0.5);
-          border-radius: 50%;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        i {
+          font-size: 31px;
+          color: rgba(150, 150, 150, 0.62);
           margin: 10px;
 
           &:hover {
-            border-radius: 50%;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-              0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            width: 41px;
-            height: 41px;
+            cursor: pointer;
+            color: rgba(236, 127, 55, 0.5);
           }
         }
       }
@@ -148,11 +142,9 @@
         border: none;
         background-color: #ec7f37;
         color: #ffffff;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
         &:hover {
-          background-color: #1d3b8b;
+          background-color: rgba(236, 127, 55, 0.5);
         }
       }
     }
@@ -168,10 +160,7 @@
 
     span {
       text-decoration: none;
-      font-family: Ropa Sans, sans-serif;
-      font-style: normal;
       font-weight: normal;
-      line-height: normal;
       font-size: 20px;
       color: #5c5c5c;
       margin-right: 20px;
@@ -182,10 +171,7 @@
       padding: 0;
       margin: 0;
       text-decoration: none;
-      font-family: Ropa Sans, sans-serif;
-      font-style: normal;
       font-weight: normal;
-      line-height: normal;
       font-size: 28px;
       color: #ec7f37;
     }
@@ -217,9 +203,7 @@
         object-position: center;
 
         div {
-          //width: 500px;
           max-width: 500px;
-
           #profileImgModal {
             width: 100%;
             max-width: 460px;
@@ -316,15 +300,6 @@
     .UserCardsListCont {
       width: 100%;
       margin: auto;
-    }
-  }
-}
-
-@media only screen and (max-width: 425px) {
-  .App {
-    max-width: 500px;
-    .AppComponentsContainer {
-      width: 100%;
     }
   }
 }

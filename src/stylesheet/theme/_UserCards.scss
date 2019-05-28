@@ -29,16 +29,12 @@
   .UserCardsListCont {
     min-height: 100vh;
     margin-bottom: 20px;
-    //position: relative;
     text-align: center;
     margin-top: 200px;
 
     h1 {
-      font-family: Ropa Sans, sans-serif;
-      font-style: normal;
       font-weight: normal;
       font-size: 72px;
-      line-height: normal;
       text-align: center;
       color: #ec7f37;
       margin-bottom: 30px;
@@ -46,11 +42,8 @@
 
     h3 {
       margin: 0 0 20px 0;
-      font-family: Ropa Sans, sans-serif;
-      font-style: normal;
       font-weight: normal;
       font-size: 48px;
-      line-height: normal;
       text-align: center;
       color: #5c5c5c;
     }
@@ -65,7 +58,6 @@
       width: 100%;
       max-width: 1470px;
       margin: auto auto 100px auto;
-      //position: relative;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -76,7 +68,6 @@
         width: 342px;
         height: 558px;
         padding: 30px;
-        // background: rgba(23, 51, 150, 0.1);
         background: white;
         border-radius: 19px;
         margin: 10px;
@@ -109,7 +100,6 @@
           .mainFocusCont {
             width: 100%;
             margin: 15px 0;
-            //height: 45px;
             .courseItem {
               color: #da9446;
               font-size: 18px;
@@ -133,18 +123,14 @@
             display: flex;
             justify-content: center;
 
-            img {
-              width: 31px;
-              height: 31px;
-              color: rgba(29, 59, 139, 0.5);
+            i {
+              font-size: 31px;
+              color: rgba(150, 150, 150, 0.62);
               margin: 10px;
 
               &:hover {
-                border-radius: 50%;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-                  0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                width: 41px;
-                height: 41px;
+                cursor: pointer;
+                color: rgba(236, 127, 55, 0.5);
               }
             }
           }
@@ -154,7 +140,6 @@
           width: 100%;
           height: 87px;
           margin: 30px auto;
-          //background: rgba(218, 148, 70, 0.5);
           background: rgba(236, 127, 55, 0.5);
           border-radius: 9px;
           display: flex;
@@ -164,8 +149,6 @@
           .location {
             margin: 15px 10px 0 10px;
             width: 50%;
-            font-family: Ropa Sans, sans-serif;
-            font-style: normal;
             font-weight: normal;
             font-size: 22px;
             line-height: normal;
@@ -177,18 +160,14 @@
             display: flex;
             flex-direction: column;
             justify-items: left;
-            //text-align: left;
             width: 100%;
 
             p {
               width: 100%;
               text-align: left;
               margin: 15px 0 0 5px;
-              font-family: Ropa Sans, sans-serif;
-              font-style: normal;
               font-weight: normal;
               font-size: 22px;
-              line-height: normal;
               color: #5c5c5c;
             }
           }
@@ -202,11 +181,8 @@
 
         p {
           color: #1d3b8b;
-          font-family: Ropa Sans, sans-serif;
-          font-style: normal;
           font-weight: normal;
           font-size: 36px;
-          line-height: normal;
           text-align: center;
           margin: 0;
         }
@@ -240,8 +216,6 @@
   }
   &:hover {
     background-color: rgba(236, 127, 55, 0.5);
-    //color: #ffffff;
-    //border: none;
     color: #ffffff;
     font-weight: bold;
     -webkit-appearance: none;
@@ -260,10 +234,10 @@
 .ResetBnt {
   font-size: 16px;
   font-weight: bold;
-  width: 125px;
+  width: 110px;
+  height: 40px;
   margin: 20px 0 40px 0;
-  height: 50px;
-  background-color: rgba(150, 150, 150, 0.62);
+  background-color: #ec7f37;
 
   color: #ffffff;
   border-radius: 8px;

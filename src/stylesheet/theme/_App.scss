@@ -21,17 +21,17 @@
 
 @media only screen and (max-width: 510px) {
   .App {
-    width: 510px;
+    max-width: 510px;
 
     .AppFooterCont {
-      width: 510px;
+      width: 100%;
     }
   }
 }
 
 @media only screen and (max-width: 425px) {
   .App {
-    max-width: 500px;
+    max-width: 425px;
 
     .AppComponentsContainer {
       width: 100%;
@@ -41,7 +41,7 @@
 
 @media only screen and (max-width: 375px) {
   .App {
-    max-width: 500px;
+    max-width: 375;
 
     .AppComponentsContainer {
       width: 100%;
@@ -51,7 +51,7 @@
 
 @media only screen and (max-width: 320px) {
   .App {
-    max-width: 500px;
+    max-width: 100vww;
 
     .AppComponentsContainer {
       width: 100%;

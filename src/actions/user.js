@@ -61,7 +61,7 @@ export const deleteUser = id => dispatch =>
       }
     })
     .catch(err => {
-      console.log(err);
+      console.log("deleteUser Error", err);
     });
 
 export const deleteUserByUser = id => dispatch =>
@@ -76,30 +76,23 @@ export const getAllUsers = () => dispatch =>
       dispatch(allUsersList(allUsers));
     })
     .catch(err => {
-      console.log("getAllUsers", err);
+      console.log("getAllUsers Error", err);
     });
 
 //TBD add message to user, that account is not found
 export const getUserData = email => dispatch =>
-  api.user.getUserData(email).then(user => {
-    if (user !== null) {
-      dispatch(oneUser(user));
-    } else {
-      dispatch(userLoggedOut());
-    }
-  });
-
-/*export const getUserData = email => dispatch =>
   api.user
     .getUserData(email)
     .then(user => {
-      console.log("getUserData FNC", user);
-
-      dispatch(oneUser(user));
+      if (user !== null) {
+        dispatch(oneUser(user));
+      } else {
+        dispatch(userLoggedOut());
+      }
     })
     .catch(err => {
-      console.log("Error getUserData", err);
-    });*/
+      console.log("getUserData Error", err);
+    });
 
 export const updateProfile = userData => dispatch =>
   api.user
@@ -108,7 +101,7 @@ export const updateProfile = userData => dispatch =>
       dispatch(oneUser(updatedUser));
     })
     .catch(err => {
-      console.log("Error updateProfile", err);
+      console.log("updateProfile Error", err);
     });
 
 export const updateImage = formData => dispatch =>
@@ -118,5 +111,5 @@ export const updateImage = formData => dispatch =>
       dispatch(oneUser(updateImage));
     })
     .catch(err => {
-      console.log("Error updateImage", updateImage, err);
+      console.log(" updateImage Error", updateImage, err);
     });

@@ -275,7 +275,7 @@ class UserCards extends Component {
                           target="_blank"
                           href={`${oneUser.linkedInLink}`}
                         >
-                          <img src={require("../../img/linkedin.png")} alt="" />
+                          <i className="fab fa-linkedin" />
                         </a>
                       </div>
                     ) : null}
@@ -287,7 +287,7 @@ class UserCards extends Component {
                           target="_blank"
                           href={`${oneUser.githubLink}`}
                         >
-                          <img src={require("../../img/github.png")} alt="" />
+                          <i className="fab fa-github-square" />
                         </a>
                       </div>
                     ) : null}
@@ -299,7 +299,7 @@ class UserCards extends Component {
                           rel="noopener noreferrer"
                           href={`${oneUser.xingLink}`}
                         >
-                          <img src={require("../../img/xing.png")} alt="" />
+                          <i className="fab fa-xing-square" />
                         </a>
                       </div>
                     ) : null}
@@ -311,10 +311,7 @@ class UserCards extends Component {
                           rel="noopener noreferrer"
                           href={`${oneUser.portfolioLink}`}
                         >
-                          <img
-                            src={require("../../img/briefcase.png")}
-                            alt=""
-                          />
+                          <i className="fas fa-suitcase" />
                         </a>
                       </div>
                     ) : null}

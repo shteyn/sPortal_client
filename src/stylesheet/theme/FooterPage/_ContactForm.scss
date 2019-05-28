@@ -2,6 +2,7 @@
   .show .modal-dialog {
     max-width: 1100px;
     padding: 20px;
+    margin-top: 100px;
     .modal-content {
       padding: 20px;
       border-radius: 28px;
@@ -16,6 +17,9 @@
           width: 100%;
           margin: auto;
         }
+        h1 {
+          color: #5c5c5c;
+        }
       }
       .modal-body {
         width: 100%;
@@ -27,10 +31,7 @@
           text-align: center;
           margin-top: 50px;
           text-decoration: none;
-          font-family: Ropa Sans, sans-serif;
-          font-style: normal;
           font-weight: normal;
-          line-height: normal;
           font-size: 21px;
           color: #ec7f37;
           word-break: break-word;
@@ -46,7 +47,7 @@
           justify-content: space-between;
           .form-group {
             color: #495057;
-            margin: 10px;
+            //margin: 10px;
             .selectContactForm {
               display: block;
               width: 100%;
@@ -101,7 +102,7 @@
       border: none;
       background-color: #ec7f37;
       &:hover {
-        background-color: #969696;
+        background-color: rgba(236, 127, 55, 0.5);
       }
     }
   }
@@ -111,10 +112,8 @@
   .fade .modal-dialog {
     max-width: 1100px;
     padding: 20px;
-    /*position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%) !important;*/
+    margin-top: 100px;
+
     .modal-content {
       padding: 20px;
       border-radius: 28px;
@@ -136,10 +135,7 @@
           text-align: center;
           margin-top: 50px;
           text-decoration: none;
-          font-family: Ropa Sans, sans-serif;
-          font-style: normal;
           font-weight: normal;
-          line-height: normal;
           font-size: 21px;
           color: #ec7f37;
           word-break: break-word;
@@ -155,7 +151,7 @@
           justify-content: space-between;
           .form-group {
             color: #495057;
-            margin: 10px;
+            //margin: 10px;
             .selectContactForm {
               display: block;
               width: 100%;
@@ -202,7 +198,7 @@
       border: none;
       background-color: #ec7f37;
       &:hover {
-        background-color: #969696;
+        background-color: rgba(236, 127, 55, 0.5);
       }
     }
   }

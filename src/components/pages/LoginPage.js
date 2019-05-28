@@ -8,7 +8,6 @@ import RegistrationForm from "../forms/RegistrationForm";
 import { login } from "../../actions/auth";
 import { registration } from "../../actions/user";
 import TopNavigation from "../navigation/TopNavigation";
-//import ToggleMenuNonLogin from "../navigation/ToggleMenuNonLogin";
 
 class LoginPage extends Component {
   submit = data =>
@@ -20,7 +19,6 @@ class LoginPage extends Component {
       .then(() => this.props.history.push("/dashboard"));
 
   render() {
-    let logoDCI = require("../../img/newDCILogo.png");
     return (
       <div>
         <TopNavigation />
