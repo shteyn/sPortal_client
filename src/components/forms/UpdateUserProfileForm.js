@@ -44,7 +44,8 @@ class UpdateUserProfileForm extends Component {
     portfolioLink: "",
     xingLink: "",
     availability: this.props.user.availability,
-    mainFocus: this.props.user.mainFocus
+    mainFocus: this.props.user.mainFocus,
+    chars_left: 500
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -90,11 +91,21 @@ class UpdateUserProfileForm extends Component {
       show: true
     });
   }
+
   handleChange = date => {
     this.setState({
       startDate: date
     });
   };
+
+  handleWordCount = event => {
+    const charCount = event.target.value.length;
+    const charLeft = 500 - charCount;
+    this.setState({
+      chars_left: charLeft
+    });
+  };
+
   handleSubmit = event => {
     event.preventDefault();
     const updatedUser = {
@@ -124,7 +135,7 @@ class UpdateUserProfileForm extends Component {
           Update Profile
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
+          <Modal.Header closeButton id="headerFromUpdate">
             <Modal.Title>Update Your Profile</Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -162,13 +173,13 @@ class UpdateUserProfileForm extends Component {
                   </InputGroup>
                 </Form.Group>
               </Form.Row>
-              <Form.Group controlId="formBasicEmail">
-                <InputGroup className="mb-5">
+              <Form.Group controlId="formBasicEmail" id="inputGroup" className="mb-5">
+                <InputGroup>
                   <InputGroup.Prepend>
                     <InputGroup.Text>About Me</InputGroup.Text>
                   </InputGroup.Prepend>
                   <Form.Control
-                    placeholder="Tell about yourself..."
+                    placeholder="Tell about yourself... ( Max 500 Characters )"
                     maxLength="500"
                     as="textarea"
                     aria-label="With textarea"
@@ -177,8 +188,10 @@ class UpdateUserProfileForm extends Component {
                     type="text"
                     name="aboutMeSection"
                     defaultValue={this.props.user.aboutMeSection}
+                    onChange={this.handleWordCount}
                   />
                 </InputGroup>
+                <p>{this.state.chars_left} <span>characters left</span></p>
               </Form.Group>
 
               <Form.Row className="mb-5">
@@ -240,19 +253,19 @@ class UpdateUserProfileForm extends Component {
                       )}
                       {studentCourse === "Web Development"
                         ? devFocusArray.map((item, i) => {
-                            if (item !== this.state.mainFocus) {
-                              return <option key={i}>{item}</option>;
-                            } else {
-                              return null;
-                            }
-                          })
+                          if (item !== this.state.mainFocus) {
+                            return <option key={i}>{item}</option>;
+                          } else {
+                            return null;
+                          }
+                        })
                         : marketingFocusArray.map((item, i) => {
-                            if (item !== this.state.mainFocus) {
-                              return <option key={i}>{item}</option>;
-                            } else {
-                              return null;
-                            }
-                          })}
+                          if (item !== this.state.mainFocus) {
+                            return <option key={i}>{item}</option>;
+                          } else {
+                            return null;
+                          }
+                        })}
                     </select>
                   </InputGroup>
                 </Form.Group>
