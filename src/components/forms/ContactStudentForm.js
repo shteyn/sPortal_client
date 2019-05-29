@@ -88,7 +88,7 @@ class ContactStudentForm extends Component {
           <Modal.Body>
             <Form onSubmit={this.handleSubmit} loading={loading.toString()}>
               <div className="ContactFormPersonalInfo">
-                <Form.Group style={{ maxWidth: "400", width: "33%" }}>
+                <Form.Group>
                   <Form.Label>Your Name</Form.Label>
                   <Form.Control
                     onChange={this.onChange}
@@ -101,7 +101,7 @@ class ContactStudentForm extends Component {
                   <br />
                   {errors.name && <InlineError text={errors.name} />}
                 </Form.Group>
-                <Form.Group style={{ maxWidth: "400", width: "33%" }}>
+                <Form.Group>
                   <Form.Label>Your Email</Form.Label>
                   <Form.Control
                     onChange={this.onChange}
@@ -113,7 +113,7 @@ class ContactStudentForm extends Component {
                   <br />
                   {errors.email && <InlineError text={errors.email} />}
                 </Form.Group>
-                <Form.Group style={{ maxWidth: "400", width: "33%" }}>
+                <Form.Group>
                   <Form.Label>Who Are you</Form.Label>
                   <select
                     className="selectContactForm"
@@ -144,8 +144,7 @@ class ContactStudentForm extends Component {
                 {errors.question && <InlineError text={errors.question} />}
               </Form.Group>
               <Form.Group>
-                <div className="checkboxContainerItems">
-                  <div className="checkboxContainerItem">
+                <div className="checkboxContainerItems" id="checkboxContainerItems">
                     <FormCheck
                       name="legalPrivacy"
                       required
@@ -158,7 +157,6 @@ class ContactStudentForm extends Component {
                         <LegalPrivacy />
                       </button>
                     </div>
-                  </div>
                 </div>
               </Form.Group>
               <Button type="submit">Submit</Button>

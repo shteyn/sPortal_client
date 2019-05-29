@@ -65,6 +65,9 @@
       }
     }
   }
+  #headerFromUpdate {
+    padding: 20px 50px ;
+  }
   .modal-title {
     color: #da9446;
     font-size: 2rem;
@@ -90,6 +93,18 @@
     background-color: #ffffff;
     color: #5c5c5c;
     border-color: #e9ecef;
+  }
+
+  #inputGroup {
+    p {
+      margin-top: 10px;
+      color: #6c757d;
+      width: 100%;
+      text-align: right;
+      span {
+        color: #ec7f37;
+      }
+    }
   }
 }
 
