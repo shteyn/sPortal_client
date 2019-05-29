@@ -1,5 +1,5 @@
 # DCI Alumni Book
-## Website: https://alumni.digitalcareerinstitute.org/
+Website: https://alumni.digitalcareerinstitute.org/
 
 ## Task
 Create a basic alumni book portal for the [DCI Digital Career Institute](https://digitalcareerinstitute.org) with authentication and email confirmation, where user will have 3  roles:
