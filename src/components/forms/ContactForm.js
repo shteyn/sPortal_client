@@ -74,11 +74,11 @@ class ContactForm extends Component {
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <div>
-              <h1>Contact DCI Team</h1>
+              <h1>Contact <span style={{color: "#ec7f37"}}>DCI Team</span></h1>
             </div>
           </Modal.Header>
           <Modal.Body>
-            <h5>
+            <h5 style={{color: "#ec7f37", textAlign: "center"}}>
               Let’s connect! Our admissions team will call you soon to chat
               about our courses and your goals.
             </h5>
@@ -158,8 +158,7 @@ class ContactForm extends Component {
                 {errors.question && <InlineError text={errors.question} />}
               </Form.Group>
               <Form.Group>
-                <div className="checkboxContainerItems">
-                  <div className="checkboxContainerItem">
+                <div className="checkboxContainerItems" id="checkboxContainerItems">
                     <FormCheck
                       name="legalPrivacy"
                       required
@@ -172,7 +171,6 @@ class ContactForm extends Component {
                         <LegalPrivacy />
                       </button>
                     </div>
-                  </div>
                 </div>
               </Form.Group>
               <Button type="submit">Contact our Team</Button>
