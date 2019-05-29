@@ -11,10 +11,10 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   .FooterContentBox {
-    max-width: 1490px;
+    max-width: 1470px;
     width: 100%;
     margin: 45px auto 45px auto;
-    padding: 0 20px 0 20px;
+    //padding: 0 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -22,13 +22,14 @@
 
     .FooterContentItemOne {
       width: 60%;
+      max-width: 600px;
       display: flex;
       justify-content: right;
 
       ul {
         margin: 0;
         padding: 0;
-        width: 70%;
+        width: 100%;
         list-style: none;
         display: flex;
         justify-content: space-between;
@@ -44,7 +45,7 @@
           text-decoration: none;
           color: #969696;
           &:hover {
-            color: #ec7f37;
+            color: rgba(236, 127, 55, 0.5);
             cursor: pointer;
           }
         }
@@ -53,7 +54,7 @@
           text-decoration: none;
           color: #969696;
           &:hover {
-            color: #ec7f37;
+            color: rgba(236, 127, 55, 0.5);
             cursor: pointer;
           }
         }
@@ -64,15 +65,17 @@
       width: 35%;
       flex-direction: column;
       justify-items: self-start;
+      font-size: 20px;
 
       h5 {
         margin-bottom: 10px;
-        color: #5c5c5c;
+        color: #969696;
+        font-size: 20px;
       }
 
       p {
-        margin-bottom: 10px;
-        color: #5c5c5c;
+        margin-bottom: 30px;
+        color: #969696;
       }
 
       ul {
@@ -111,21 +114,30 @@
       align-items: center;
       display: flex;
       justify-content: space-between;
+      max-width: 1470px;
       width: 100%;
       min-height: 50px;
-      max-width: 1450px;
+      max-width: 1470px;
       margin: auto;
       color: #ffffff;
-      h5 {
-        margin: 0;
-      }
 
+      a {
+        margin: 0;
+        font-size: 20px;
+        color: #ffffff;
+      }
       div {
-        width: 100%;
-        max-width: 500px;
+        width: 60%;
+        max-width: 600px;
+        //width: 100%;
         display: flex;
         justify-content: space-between;
         color: #ffffff;
+        a {
+          //width: 20%;
+          //max-width: 100px;
+          //text-align: right;
+        }
       }
     }
   }
@@ -138,7 +150,7 @@
       .FooterContentItemOne {
         width: 50%;
         ul {
-          margin: 0;
+          margin-right: 10px;
           padding: 0;
           width: 70%;
           list-style: none;
@@ -178,7 +190,7 @@
     .mainLegalContainerFooter {
       .legalContainerFooter {
         width: 100%;
-        max-width: 800px;
+        max-width: 1000px;
         margin: auto;
         div {
           width: 60%;

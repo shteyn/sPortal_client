@@ -58,7 +58,7 @@ class TopNavigation extends Component {
                 </div>
               </Link>
               <ul>
-                <li>
+                <li style={{ marginRight: "20px" }}>
                   <Link to="/user-card" onClick={() => logout()}>
                     Logout
                   </Link>

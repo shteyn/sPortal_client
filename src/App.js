@@ -14,6 +14,11 @@ import GuestRoutes from "./components/routes/GuestRoutes";
 import Footer from "./components/navigation/Footer";
 import AboutUsPage from "./components/footer_pages/AboutUsPage";
 import FAQPage from "./components/footer_pages/FAQPage";
+import Disclaimer from "./components/footer_pages/Disclaimer";
+import Imprint from "./components/footer_pages/Imprint";
+import Datenschutz from "./components/footer_pages/Datenschutz";
+import DataPrivacy from "./components/footer_pages/DataPrivacy";
+
 import StoriesPage from "./components/footer_pages/StoriesPage";
 
 const App = ({ location, isAdmin }) => (
@@ -28,6 +33,25 @@ const App = ({ location, isAdmin }) => (
       />
 
       <Route location={location} path="/faq" exact component={FAQPage} />
+      <Route
+        location={location}
+        path="/dataprivacy"
+        exact
+        component={DataPrivacy}
+      />
+      <Route
+        location={location}
+        path="/datenschutz"
+        exact
+        component={Datenschutz}
+      />
+      <Route location={location} path="/imprint" exact component={Imprint} />
+      <Route
+        location={location}
+        path="/disclaimer"
+        exact
+        component={Disclaimer}
+      />
 
       <Route
         location={location}

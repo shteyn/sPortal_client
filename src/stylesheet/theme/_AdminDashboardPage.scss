@@ -1,3 +1,7 @@
+.adminFilter {
+  padding-top: 50px;
+  text-align: center;
+}
 .nav {
   margin-top: 20px;
 
@@ -49,21 +53,22 @@
   .ui.celled {
     width: 70%;
     margin: 50px 15% auto;
-    color: rgb(0, 0, 0);
+    color: #969696;
     background: rgb(255, 255, 255);
     position: absolute;
     overflow: auto;
     block-size: 43px;
   }
   .ui.celled.table {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: normal;
     margin-top: 50px;
+    color: #969696;
   }
   .ui.table {
     border-collapse: collapse;
     width: 100%;
-    margin: 20px auto;
+    margin: auto;
     max-width: 1470px;
   }
   .ui.table td {

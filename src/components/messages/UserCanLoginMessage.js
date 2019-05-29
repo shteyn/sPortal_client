@@ -7,7 +7,7 @@ class UserCanLoginMessage extends Component {
         <div className="ConfirmEmailMessage">
           <div>
             <h1 style={{ color: "#da9446", marginBottom: "50px" }}>
-              Dear {this.props.oneUser.firstName},
+              Dear {this.props.oneUser.firstName}
             </h1>
 
             <p>Your profile is still not verified. </p>

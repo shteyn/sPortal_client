@@ -51,7 +51,7 @@ class ResetPasswordForm extends Component {
     if (data.password.search(/[A-Z]/) === -1)
       errors.password =
         "Password must contain at least 1 capital alphabetical character.";
-    if (data.password.search(/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/) === -1)
+    if (data.password.search(/[ !@#$%^&*()_+\-=\]{};':"\\|,.<>?]/) === -1)
       errors.password = "Password must contain at least 1 special character.";
     if (data.password !== data.passwordConfirmation)
       errors.password = "Passwords must match";
@@ -64,31 +64,7 @@ class ResetPasswordForm extends Component {
         {errors.global && <p id="globalError">{errors.global}</p>}
         <div className="resetform">
           <form onSubmit={this.onSubmit} loading={loading.toString()}>
-            <div className="Reset-Password">
-              Reset Password
-              <div className="collapsedRequirements">
-                <a
-                  onClick={() => this.setState({ open: !open })}
-                  aria-controls="example-collapse-text"
-                  aria-expanded={open}
-                >
-                  <i class="fas fa-info-circle" />
-                  Password Requirements
-                  <i class="fas fa-info-circle" />
-                </a>
-
-                <Collapse in={this.state.open}>
-                  <div id="example-collapse-text">
-                    <li> At least 6 characters</li>
-                    <li> No more then 20 characters</li>
-                    <li> At least 1 letter (a, b, c...)</li>
-                    <li> At least 1 capital letter (A, B, C...)</li>
-                    <li> At least 1 number (1, 2, 3...)</li>
-                    <li> At least 1 special character (@, #, $...)</li>
-                  </div>
-                </Collapse>
-              </div>
-            </div>
+            <div className="Reset-Password">Reset Password</div>
             <div>
               <input
                 type="password"
@@ -97,10 +73,25 @@ class ResetPasswordForm extends Component {
                 placeholder="Insert new password..."
                 value={data.password}
                 onChange={this.onChange}
+                onClick={() => this.setState({ open: !open })}
+                aria-controls="example-collapse-text"
+                aria-expanded={open}
               />
-
+              <div className="passwordRequirements">
+                <div className="collapsedRequirements">
+                  <Collapse in={this.state.open}>
+                    <div id="example-collapse-text">
+                      <li> At least 6 characters</li>
+                      <li> No more then 20 characters</li>
+                      <li> At least 1 letter (a, b, c...)</li>
+                      <li> At least 1 capital letter (A, B, C...)</li>
+                      <li> At least 1 number (1, 2, 3...)</li>
+                      <li> At least 1 special character (@, #, $...)</li>
+                    </div>
+                  </Collapse>
+                </div>
+              </div>
               {errors.password && <InlineError text={errors.password} />}
-
               <br />
 
               <input

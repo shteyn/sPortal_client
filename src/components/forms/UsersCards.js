@@ -59,11 +59,10 @@ class UserCards extends Component {
     const { allUsers } = this.props.allUsers;
     const locations = [];
     const mainFocus = [];
-
     const studentCourse = courseTypesArray;
 
     allUsers.map(user => {
-      if (locations.indexOf(user.location) < 0) {
+      if (locations.indexOf(user.location) < 0 && user.confirmed !== false) {
         locations.push(user.location);
       }
       return null;
