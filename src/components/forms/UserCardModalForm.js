@@ -5,7 +5,6 @@ import moment from "moment";
 import ContactStudentForm from "./ContactStudentForm";
 
 class UserCardModalForm extends Component {
-
   toggle = () => {
     this.props.hide();
   };
@@ -13,7 +12,7 @@ class UserCardModalForm extends Component {
   render() {
     let placeholderUrl = require("../../img/placeholderUser.jpeg");
     let { user } = this.props;
-   
+
     let currentDate = new Date();
     let date = new Date(user.availability);
     const newDate = moment(date).format("MMMM D, YYYY");
@@ -42,7 +41,8 @@ class UserCardModalForm extends Component {
                       id="profileImgModal"
                       alt="example"
                       src={`${process.env.REACT_APP_API_HOST}/uploads/${
-                        user.userImage}`}
+                        user.userImage
+                      }`}
                       onError={e => {
                         e.target.onerror = null;
                         e.target.src = `${placeholderUrl}`;
@@ -62,7 +62,7 @@ class UserCardModalForm extends Component {
                         </p>
                       </Form.Group>
                     </Form.Row>
-                    <button onClick={this.toggle} className="fa fa-times"/>
+                    <button onClick={this.toggle} className="fa fa-times" />
                   </div>
                   <Form.Row>
                     <Form.Group>
@@ -132,7 +132,7 @@ class UserCardModalForm extends Component {
                 <div>
                   <div className="CardLinks">
                     <button className="buttonContactUsFromUserCardModalForm">
-                      <ContactStudentForm user={user}/>
+                      <ContactStudentForm user={user} />
                     </button>
                     <div>
                       <Form.Group>
@@ -144,7 +144,7 @@ class UserCardModalForm extends Component {
                               target="_blank"
                               href={`${user.linkedInLink}`}
                             >
-                              <i className="fab fa-linkedin"/>
+                              <i className="fab fa-linkedin" />
                             </a>
                           </div>
                         ) : null}
@@ -159,7 +159,6 @@ class UserCardModalForm extends Component {
                               href={`${user.githubLink}`}
                             >
                               <i className="fab fa-github-square" />
-
                             </a>
                           </div>
                         ) : null}
@@ -173,9 +172,7 @@ class UserCardModalForm extends Component {
                               rel="noopener noreferrer"
                               href={`${user.xingLink}`}
                             >
-
                               <i className="fab fa-xing-square" />
-
                             </a>
                           </div>
                         ) : null}
@@ -189,9 +186,7 @@ class UserCardModalForm extends Component {
                               rel="noopener noreferrer"
                               href={`${user.portfolioLink}`}
                             >
-
                               <i className="fas fa-suitcase" />
-
                             </a>
                           </div>
                         ) : null}
@@ -203,7 +198,6 @@ class UserCardModalForm extends Component {
             </div>
           </div>
         </Modal>
-        {contactForm}
       </div>
     );
   }

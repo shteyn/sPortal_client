@@ -45,7 +45,29 @@ class UpdateUserProfileForm extends Component {
     xingLink: "",
     availability: this.props.user.availability,
     mainFocus: this.props.user.mainFocus,
-    chars_left: 500
+    chars_left: null
+  };
+
+  componentDidMount() {
+    const initialValue = this.props.user.aboutMeSection.length;
+    if (initialValue > 0) {
+      const remainChar = 500 - initialValue;
+      this.setState({
+        chars_left: remainChar
+      });
+    } else {
+      this.setState({
+        chars_left: 500
+      });
+    }
+  }
+
+  handleWordCount = event => {
+    const charCount = event.target.value.length;
+    const charLeft = 500 - charCount;
+    this.setState({
+      chars_left: charLeft
+    });
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -98,14 +120,6 @@ class UpdateUserProfileForm extends Component {
     });
   };
 
-  handleWordCount = event => {
-    const charCount = event.target.value.length;
-    const charLeft = 500 - charCount;
-    this.setState({
-      chars_left: charLeft
-    });
-  };
-
   handleSubmit = event => {
     event.preventDefault();
     const updatedUser = {
@@ -134,7 +148,11 @@ class UpdateUserProfileForm extends Component {
         <div variant="primary" onClick={this.handleShow}>
           Update Profile
         </div>
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal
+          show={this.state.show}
+          onHide={this.handleClose}
+          id="ModalUpdateUserForm"
+        >
           <Modal.Header closeButton id="headerFromUpdate">
             <Modal.Title>Update Your Profile</Modal.Title>
           </Modal.Header>
@@ -173,7 +191,11 @@ class UpdateUserProfileForm extends Component {
                   </InputGroup>
                 </Form.Group>
               </Form.Row>
-              <Form.Group controlId="formBasicEmail" id="inputGroup" className="mb-5">
+              <Form.Group
+                controlId="formBasicEmail"
+                id="inputGroup"
+                className="mb-5"
+              >
                 <InputGroup>
                   <InputGroup.Prepend>
                     <InputGroup.Text>About Me</InputGroup.Text>
@@ -191,7 +213,9 @@ class UpdateUserProfileForm extends Component {
                     onChange={this.handleWordCount}
                   />
                 </InputGroup>
-                <p>{this.state.chars_left} <span>characters left</span></p>
+                <p>
+                  {this.state.chars_left} <span>characters left</span>
+                </p>
               </Form.Group>
 
               <Form.Row className="mb-5">
@@ -253,19 +277,19 @@ class UpdateUserProfileForm extends Component {
                       )}
                       {studentCourse === "Web Development"
                         ? devFocusArray.map((item, i) => {
-                          if (item !== this.state.mainFocus) {
-                            return <option key={i}>{item}</option>;
-                          } else {
-                            return null;
-                          }
-                        })
+                            if (item !== this.state.mainFocus) {
+                              return <option key={i}>{item}</option>;
+                            } else {
+                              return null;
+                            }
+                          })
                         : marketingFocusArray.map((item, i) => {
-                          if (item !== this.state.mainFocus) {
-                            return <option key={i}>{item}</option>;
-                          } else {
-                            return null;
-                          }
-                        })}
+                            if (item !== this.state.mainFocus) {
+                              return <option key={i}>{item}</option>;
+                            } else {
+                              return null;
+                            }
+                          })}
                     </select>
                   </InputGroup>
                 </Form.Group>
