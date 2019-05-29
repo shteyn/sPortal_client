@@ -53,7 +53,7 @@
     .label {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
+      //margin-left: 20px;
       align-self: center;
     }
   }
@@ -65,13 +65,17 @@
     margin: 0;
     padding: 0;
     li {
-      margin-right: 20px;
+      //margin-right: 20px;
       align-self: center;
       a {
         text-decoration: none;
         font-weight: normal;
         font-size: 28px;
         color: #ec7f37;
+        &:hover {
+          color: rgba(236, 127, 55, 0.5);
+          cursor: pointer;
+        }
       }
     }
   }

@@ -39,6 +39,7 @@ class ForgotPasswordForm extends Component {
   validate = data => {
     const errors = {};
     if (!Validator.isEmail(data.email)) errors.email = "Invalid email";
+    if (!data.email) errors.email = "Email can't be blank";
     return errors;
   };
 
@@ -60,6 +61,7 @@ class ForgotPasswordForm extends Component {
             value={data.email}
             onChange={this.onChange}
           />
+          <br />
           {errors.email && <InlineError text={errors.email} />}
           <br />
           <button>Submit</button>

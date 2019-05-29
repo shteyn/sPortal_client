@@ -16,6 +16,7 @@ class UserCardModalForm extends Component {
     let currentDate = new Date();
     let date = new Date(user.availability);
     const newDate = moment(date).format("MMMM D, YYYY");
+
     return (
       <div className="UserCardsModalFormCont">
         <Modal
@@ -74,7 +75,7 @@ class UserCardModalForm extends Component {
                     <Form.Group>
                       <p className="smallTitles">Availability:&nbsp;&nbsp;</p>
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group className="smallTitlesProperties">
                       {user.availability === null ? (
                         <p key="0" style={{ color: "grey" }}>
                           No info yet
@@ -98,7 +99,7 @@ class UserCardModalForm extends Component {
                     <Form.Group>
                       <p className="smallTitles">Location: &nbsp;&nbsp;</p>
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group className="smallTitlesProperties">
                       <p>{user.location}</p>
                     </Form.Group>
                   </Form.Row>
@@ -106,7 +107,7 @@ class UserCardModalForm extends Component {
                     <Form.Group>
                       <p className="smallTitles">Course: &nbsp;&nbsp;</p>
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group className="smallTitlesProperties">
                       <p>{user.studentCourse}</p>
                     </Form.Group>
                   </Form.Row>
@@ -114,7 +115,7 @@ class UserCardModalForm extends Component {
                     <Form.Group>
                       <p className="smallTitles">Main Focus: &nbsp;&nbsp;</p>
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group className="smallTitlesProperties">
                       {user.mainFocus ? (
                         <p>{user.mainFocus}</p>
                       ) : (
@@ -126,7 +127,7 @@ class UserCardModalForm extends Component {
                     <Form.Group>
                       <p className="smallTitleAboutMe">About Me:&nbsp;&nbsp;</p>
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group className="smallTitlesProperties">
                       {user.aboutMeSection ? (
                         <p>{user.aboutMeSection}</p>
                       ) : (
@@ -164,7 +165,7 @@ class UserCardModalForm extends Component {
                               target="_blank"
                               href={`${user.githubLink}`}
                             >
-                              <i class="fab fa-github-square" />
+                              <i className="fab fa-github-square" />
                             </a>
                           </div>
                         ) : null}
@@ -178,7 +179,7 @@ class UserCardModalForm extends Component {
                               rel="noopener noreferrer"
                               href={`${user.xingLink}`}
                             >
-                              <i class="fab fa-xing-square" />
+                              <i className="fab fa-xing-square" />
                             </a>
                           </div>
                         ) : null}
@@ -192,7 +193,7 @@ class UserCardModalForm extends Component {
                               rel="noopener noreferrer"
                               href={`${user.portfolioLink}`}
                             >
-                              <i class="fas fa-suitcase" />
+                              <i className="fas fa-suitcase" />
                             </a>
                           </div>
                         ) : null}

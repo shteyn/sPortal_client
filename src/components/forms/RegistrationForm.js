@@ -60,7 +60,7 @@ class RegistrationForm extends Component {
     if (data.password.search(/[A-Z]/) === -1)
       errors.password =
         "Password must contain at least 1 capital alphabetical character.";
-    if (data.password.search(/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/) === -1)
+    if (data.password.search(/[ !@#$%^&*()_+\-=\]{};':"\\|,.<>?]/) === -1)
       errors.password = "Password must contain at least 1 special character.";
     return errors;
   };
@@ -69,29 +69,6 @@ class RegistrationForm extends Component {
     const { data, errors, loading, open } = this.state;
     return (
       <div className="loginForm">
-        <div className="passwordRequirements">
-          <div className="collapsedRequirements">
-            <a
-              onClick={() => this.setState({ open: !open })}
-              aria-controls="example-collapse-text"
-              aria-expanded={open}
-            >
-              <i className="fas fa-info-circle" />
-              Password Requirements
-            </a>
-
-            <Collapse in={this.state.open}>
-              <div id="example-collapse-text">
-                <li> At least 6 characters</li>
-                <li> No more then 20 characters</li>
-                <li> At least 1 letter (a, b, c...)</li>
-                <li> At least 1 capital letter (A, B, C...)</li>
-                <li> At least 1 number (1, 2, 3...)</li>
-                <li> At least 1 special character (@, #, $...)</li>
-              </div>
-            </Collapse>
-          </div>
-        </div>
         <form onSubmit={this.onSubmit} loading={loading.toString()}>
           <br />
           <input
@@ -146,8 +123,25 @@ class RegistrationForm extends Component {
             value={data.password}
             onChange={this.onChange}
             required
+            onClick={() => this.setState({ open: !open })}
+            aria-controls="example-collapse-text"
+            aria-expanded={open}
           />
           <br />
+          <div className="passwordRequirements">
+            <div className="collapsedRequirements">
+              <Collapse in={this.state.open}>
+                <div id="example-collapse-text">
+                  <li> At least 6 characters</li>
+                  <li> No more then 20 characters</li>
+                  <li> At least 1 letter (a, b, c...)</li>
+                  <li> At least 1 capital letter (A, B, C...)</li>
+                  <li> At least 1 number (1, 2, 3...)</li>
+                  <li> At least 1 special character (@, #, $...)</li>
+                </div>
+              </Collapse>
+            </div>
+          </div>
           {errors.password && <InlineError text={errors.password} />}
           <br />
           <select

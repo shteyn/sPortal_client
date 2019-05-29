@@ -63,10 +63,11 @@
     }
 
     .InfoCont {
+      max-width: 1470px;
       width: 100%;
       margin: auto auto 100px auto;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       flex-wrap: wrap;
       min-height: 800px;
 
@@ -75,7 +76,7 @@
         border-right: 1px solid rgba(0, 0, 0, 0.1);
         padding: 30px;
         background: white;
-        margin: 10px;
+        //margin: 10px;
         .nestedInfoBoxCont {
           .linksBoxItems {
             display: flex;
@@ -137,7 +138,7 @@
       width: 50%;
       max-width: 1000px;
       background: white;
-      margin: 10px;
+      //margin: 10px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;

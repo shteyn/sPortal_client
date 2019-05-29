@@ -45,7 +45,7 @@ class ConfirmationPage extends Component {
           )}
           {!loading && success && (
             <div className="verifiedCont">
-              <h1>Dear {firstName},</h1>
+              <h1>Dear {firstName}</h1>
               <br />
               <p>
                 Your profile will been verified as soon as possible by our

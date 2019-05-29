@@ -28,7 +28,7 @@ class UserCardParent extends Component {
     this._isMounted = false;
   }
   render() {
-    let { isAuthenticated } = this.props;
+    //let { isAuthenticated } = this.props;
     const { allUsers } = this.props.allUsers;
 
     return (
@@ -45,14 +45,14 @@ class UserCardParent extends Component {
 
 UserCardParent.propTypes = {
   allUsers: PropTypes.object.isRequired,
-  getAllUsers: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool.isRequired
+  getAllUsers: PropTypes.func.isRequired
+  //isAuthenticated: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    allUsers: state.allUsers,
-    isAuthenticated: !!state.user.token
+    allUsers: state.allUsers
+    //isAuthenticated: !!state.user.token
   };
 }
 

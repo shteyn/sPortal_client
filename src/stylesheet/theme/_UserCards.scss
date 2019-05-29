@@ -37,7 +37,7 @@
       font-size: 72px;
       text-align: center;
       color: #ec7f37;
-      margin-bottom: 30px;
+      margin-bottom: 100px;
     }
 
     h3 {
@@ -71,6 +71,12 @@
         background: white;
         border-radius: 19px;
         margin: 10px;
+        &:hover {
+          cursor: pointer;
+          .userInfoCards .userName p {
+            color: rgba(236, 127, 55, 0.5);
+          }
+        }
 
         .profileImg {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -102,12 +108,12 @@
             margin: 15px 0;
             .courseItem {
               color: #da9446;
-              font-size: 18px;
+              font-size: 20px;
               margin-bottom: 15px;
             }
             .mainFocusItem {
               color: #5c5c5c;
-              font-size: 17px;
+              font-size: 20px;
             }
           }
         }
@@ -149,10 +155,10 @@
           .location {
             margin: 15px 10px 0 10px;
             width: 50%;
-            font-weight: normal;
+            font-weight: bold;
             font-size: 22px;
             line-height: normal;
-            color: #5c5c5c;
+            color: #fff;
           }
 
           .Availability {
@@ -164,10 +170,10 @@
 
             p {
               width: 100%;
-              text-align: left;
-              margin: 15px 0 0 5px;
+              //text-align: left;
+              margin-top: 15px;
               font-weight: normal;
-              font-size: 22px;
+              font-size: 20px;
               color: #5c5c5c;
             }
           }
@@ -192,7 +198,7 @@
 }
 
 .DropDownSelect {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   width: 225px;
   margin: 10px;
@@ -236,7 +242,7 @@
   font-weight: bold;
   width: 110px;
   height: 40px;
-  margin: 20px 0 40px 0;
+  margin: 40px 0;
   background-color: #ec7f37;
 
   color: #ffffff;

@@ -24,11 +24,10 @@ class WaitingUsersForm extends Component {
         <Table celled>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>Location</Table.HeaderCell>
               <Table.HeaderCell>Course</Table.HeaderCell>
+              <Table.HeaderCell>Location</Table.HeaderCell>
+              <Table.HeaderCell>Name</Table.HeaderCell>
               <Table.HeaderCell>Class</Table.HeaderCell>
-              <Table.HeaderCell>First Name</Table.HeaderCell>
-              <Table.HeaderCell>Last Name</Table.HeaderCell>
               <Table.HeaderCell>E-Mail</Table.HeaderCell>
               <Table.HeaderCell>User Status</Table.HeaderCell>
               <Table.HeaderCell>Approve Student</Table.HeaderCell>
@@ -38,20 +37,18 @@ class WaitingUsersForm extends Component {
 
           <Table.Body>
             {allUsers.map(oneUser => {
-              if (oneUser === null) {
-                console.log("no users");
-              }
               if (
                 oneUser.confirmationEmailSend === true &&
                 !oneUser.confirmed
               ) {
                 return (
                   <Table.Row key={oneUser._id}>
-                    <Table.Cell>{oneUser.location}</Table.Cell>
                     <Table.Cell>{oneUser.studentCourse}</Table.Cell>
+                    <Table.Cell>{oneUser.location}</Table.Cell>
+                    <Table.Cell>
+                      {oneUser.firstName} {oneUser.lastName}
+                    </Table.Cell>
                     <Table.Cell>{oneUser.studentClass}</Table.Cell>
-                    <Table.Cell>{oneUser.firstName}</Table.Cell>
-                    <Table.Cell>{oneUser.lastName}</Table.Cell>
                     <Table.Cell>{oneUser.email}</Table.Cell>
                     <Table.Cell>
                       {oneUser.confirmed ? "Approved" : "Not Approved"}

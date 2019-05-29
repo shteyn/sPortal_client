@@ -4,9 +4,9 @@
   background: #ffffff;
 
   .ConfirmEmailMessage {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     max-width: 800px;
-    margin: 180px auto 100px auto;
+    margin: 250px auto;
     padding: 40px;
     border-radius: 13px;
     background: white;
@@ -22,8 +22,8 @@
       color: #ec7f37;
     }
     p {
-      font-size: 20px;
-      color: #393939;
+      font-size: 28px;
+      color: #969696;
     }
   }
 }

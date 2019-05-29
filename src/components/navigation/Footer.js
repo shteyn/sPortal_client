@@ -9,7 +9,7 @@ class Footer extends Component {
         <div className="FooterContentBox">
           <div className="FooterContentItemTwo">
             <h5>
-              <b>DCI Digitale Career Institute</b>
+              <b>DCI Digital Career Institute</b>
             </h5>
             <p>
               The Digital Career Institute was born as an initiative to
@@ -64,13 +64,18 @@ class Footer extends Component {
         </div>
         <div className="mainLegalContainerFooter">
           <div className="legalContainerFooter">
-            <h5>DCI Digitale Career Institute</h5>
-
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://digitalcareerinstitute.org"
+            >
+              DCI Digital Career Institute
+            </a>
             <div>
-              <h5>Disclaimer</h5>
-              <h5>Imprint</h5>
-              <h5>Datenschutz</h5>
-              <h5>Data Privacy</h5>
+              <Link to="/disclaimer">Disclaimer</Link>
+              <Link to="/imprint">Imprint</Link>
+              <Link to="/datenschutz">Datenschutz</Link>
+              <Link to="/dataprivacy">Data Privacy</Link>
             </div>
           </div>
         </div>
