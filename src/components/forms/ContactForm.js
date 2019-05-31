@@ -71,14 +71,20 @@ class ContactForm extends Component {
         <p variant="primary" onClick={this.handleShow}>
           Contact DCI Team
         </p>
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal
+          show={this.state.show}
+          onHide={this.handleClose}
+          id="ContactFormModal"
+        >
           <Modal.Header closeButton>
             <div>
-              <h1>Contact <span style={{color: "#ec7f37"}}>DCI Team</span></h1>
+              <h1 style={{ color: "#5c5c5c" }}>
+                Contact <span style={{ color: "#ec7f37" }}>DCI Team</span>
+              </h1>
             </div>
           </Modal.Header>
           <Modal.Body>
-            <h5 style={{color: "#ec7f37", textAlign: "center"}}>
+            <h5 style={{ color: "#ec7f37", textAlign: "center" }}>
               Let’s connect! Our admissions team will call you soon to chat
               about our courses and your goals.
             </h5>
@@ -158,19 +164,22 @@ class ContactForm extends Component {
                 {errors.question && <InlineError text={errors.question} />}
               </Form.Group>
               <Form.Group>
-                <div className="checkboxContainerItems" id="checkboxContainerItems">
-                    <FormCheck
-                      name="legalPrivacy"
-                      required
-                      onChange={this.onChange}
-                      value={true}
-                    />
-                    <div className="legalLink">
-                      I have read and agree to the
-                      <button>
-                        <LegalPrivacy />
-                      </button>
-                    </div>
+                <div
+                  className="checkboxContainerItems"
+                  id="checkboxContainerItems"
+                >
+                  <FormCheck
+                    name="legalPrivacy"
+                    required
+                    onChange={this.onChange}
+                    value={true}
+                  />
+                  <div className="legalLink">
+                    I have read and agree to the
+                    <button>
+                      <LegalPrivacy />
+                    </button>
+                  </div>
                 </div>
               </Form.Group>
               <Button type="submit">Contact our Team</Button>

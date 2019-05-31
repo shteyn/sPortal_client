@@ -204,8 +204,7 @@ class UserDashboardPage extends Component {
                     style={{
                       color: "#da9446",
                       marginBottom: "10%",
-                      marginTop: "5%",
-                      textAlign: "center"
+                      marginTop: "5%"
                     }}
                   >
                     Please tell about yourself ...
@@ -216,8 +215,7 @@ class UserDashboardPage extends Component {
                       wordWrap: "break-word",
                       marginBottom: "10%",
                       marginTop: "5%",
-                      lineHeight: "2",
-                      textAlign: "center"
+                      lineHeight: "2"
                     }}
                   >
                     {aboutMeSection}

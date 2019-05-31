@@ -18,7 +18,6 @@ class ContactStudentForm extends Component {
       show: false,
       loading: false,
       errors: {},
-
       data: {
         studentName: this.props.user.firstName,
         studentEmail: this.props.user.email,
@@ -76,10 +75,14 @@ class ContactStudentForm extends Component {
         <div variant="primary" onClick={this.handleShow}>
           Contact
         </div>
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal
+          show={this.state.show}
+          onHide={this.handleClose}
+          id="ContactFormModal"
+        >
           <Modal.Header closeButton>
             <div>
-              <h1>
+              <h1 style={{ color: "#5c5c5c" }}>
                 Contact{" "}
                 <span style={{ color: "#ec7f37" }}>{user.firstName}</span>
               </h1>
@@ -88,7 +91,7 @@ class ContactStudentForm extends Component {
           <Modal.Body>
             <Form onSubmit={this.handleSubmit} loading={loading.toString()}>
               <div className="ContactFormPersonalInfo">
-                <Form.Group>
+                <Form.Group id="contactFormGroup">
                   <Form.Label>Your Name</Form.Label>
                   <Form.Control
                     onChange={this.onChange}
@@ -101,7 +104,7 @@ class ContactStudentForm extends Component {
                   <br />
                   {errors.name && <InlineError text={errors.name} />}
                 </Form.Group>
-                <Form.Group>
+                <Form.Group id="contactFormGroup">
                   <Form.Label>Your Email</Form.Label>
                   <Form.Control
                     onChange={this.onChange}
@@ -113,7 +116,7 @@ class ContactStudentForm extends Component {
                   <br />
                   {errors.email && <InlineError text={errors.email} />}
                 </Form.Group>
-                <Form.Group>
+                <Form.Group id="contactFormGroup">
                   <Form.Label>Who Are you</Form.Label>
                   <select
                     className="selectContactForm"
@@ -144,19 +147,22 @@ class ContactStudentForm extends Component {
                 {errors.question && <InlineError text={errors.question} />}
               </Form.Group>
               <Form.Group>
-                <div className="checkboxContainerItems" id="checkboxContainerItems">
-                    <FormCheck
-                      name="legalPrivacy"
-                      required
-                      onChange={this.onChange}
-                      value={true}
-                    />
-                    <div className="legalLink">
-                      I have read and agree to the
-                      <button>
-                        <LegalPrivacy />
-                      </button>
-                    </div>
+                <div
+                  className="checkboxContainerItems"
+                  id="checkboxContainerItems"
+                >
+                  <FormCheck
+                    name="legalPrivacy"
+                    required
+                    onChange={this.onChange}
+                    value={true}
+                  />
+                  <div className="legalLink">
+                    I have read and agree to the
+                    <button>
+                      <LegalPrivacy />
+                    </button>
+                  </div>
                 </div>
               </Form.Group>
               <Button type="submit">Submit</Button>
