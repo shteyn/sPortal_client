@@ -84,7 +84,15 @@ class ContactForm extends Component {
             </div>
           </Modal.Header>
           <Modal.Body>
-            <h5 style={{ color: "#ec7f37", textAlign: "center" }}>
+            <h5
+              style={{
+                fontSize: "22px",
+                color: "#ec7f37",
+                textAlign: "center",
+                marginTop: "50px",
+                marginBottom: "50px"
+              }}
+            >
               Let’s connect! Our admissions team will call you soon to chat
               about our courses and your goals.
             </h5>
@@ -151,7 +159,9 @@ class ContactForm extends Component {
                 </Form.Group>
               </div>
               <Form.Group>
-                <Form.Label>Your Question</Form.Label>
+                <Form.Label style={{ color: "#495057" }}>
+                  Your Question
+                </Form.Label>
                 <Form.Control
                   onChange={this.onChange}
                   as="textarea"
@@ -174,7 +184,7 @@ class ContactForm extends Component {
                     onChange={this.onChange}
                     value={true}
                   />
-                  <div className="legalLink">
+                  <div className="legalLink" style={{ color: "#495057" }}>
                     I have read and agree to the
                     <button>
                       <LegalPrivacy />

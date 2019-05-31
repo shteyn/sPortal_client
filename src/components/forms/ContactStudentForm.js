@@ -132,7 +132,9 @@ class ContactStudentForm extends Component {
                 </Form.Group>
               </div>
               <Form.Group>
-                <Form.Label>Your Message</Form.Label>
+                <Form.Label style={{ color: "#495057" }}>
+                  Your Message
+                </Form.Label>
                 <Form.Control
                   onChange={this.onChange}
                   as="textarea"
@@ -157,7 +159,7 @@ class ContactStudentForm extends Component {
                     onChange={this.onChange}
                     value={true}
                   />
-                  <div className="legalLink">
+                  <div className="legalLink" style={{ color: "#495057" }}>
                     I have read and agree to the
                     <button>
                       <LegalPrivacy />
