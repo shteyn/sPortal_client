@@ -1,200 +1,118 @@
-#checkboxContainerItems {
+#ContactFormModal {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-
-  .form-check {
+  max-width: 1000px;
+  margin: 100px auto;
+  .form-row {
     margin: 0;
-    padding: 0;
-
-    .form-check-input.position-static {
-      margin: 0 10px 0 0;
-    }
+  }
+  .modal-content {
+    border-radius: 20px;
+    padding: 30px;
+    height: 600px;
   }
 
-  button {
-    background: none;
-    color: #ec7f37;
-    border: none;
-    outline: none;
-
-    &:focus {
-      outline: none;
+  .ContactFormPersonalInfo {
+    display: flex;
+    justify-content: space-between;
+    #contactFormGroup {
+      width: 33%;
     }
-  }
-}
-@media (min-width: 576px) {
-  .fade.modal.show {
-    .modal-dialog {
-      padding: 20px;
-      margin-top: 100px;
-
-      .modal-content {
+    .form-group {
+      color: #495057;
+      .selectContactForm {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
         border: 1px solid #ced4da;
-        padding: 20px;
-        border-radius: 28px;
-
-        .modal-header {
-          width: 100%;
-          padding: 30px;
-          display: flex;
-          justify-content: center;
-          border: none;
-
-          div {
-            width: 100%;
-            margin: auto;
-          }
-
-          h1 {
-            color: #5c5c5c;
-          }
-        }
-
-        .modal-body {
-          width: 100%;
-          max-width: 1060px;
-          margin: auto;
-          padding: 20px 50px;
-
-          h5 {
-            text-align: center;
-            margin-top: 50px;
-            text-decoration: none;
-            font-weight: normal;
-            font-size: 21px;
-            color: #ec7f37;
-            word-break: break-word;
-            word-wrap: break-word;
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-            margin-inline-start: 0;
-            margin-inline-end: 0;
-          }
-
-          .ContactFormPersonalInfo {
-            display: flex;
-            justify-content: space-between;
-
-            .form-group {
-              color: #495057;
-              //margin: 10px;
-              .selectContactForm {
-                display: block;
-                width: 100%;
-                height: calc(1.5em + 0.75rem + 2px);
-                padding: 0.375rem 0.75rem;
-                font-size: 1rem;
-                font-weight: 400;
-                line-height: 1.5;
-                color: #495057;
-                background-color: #fff;
-                background-clip: padding-box;
-                border: 1px solid #ced4da;
-                border-radius: 0.25rem;
-                -webkit-transition: border-color 0.15s ease-in-out,
-                box-shadow 0.15s ease-in-out;
-                transition: border-color 0.15s ease-in-out,
-                box-shadow 0.15s ease-in-out;
-              }
-            }
-          }
-        }
+        border-radius: 0.25rem;
+        -webkit-transition: border-color 0.15s ease-in-out,
+          box-shadow 0.15s ease-in-out;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
       }
+    }
+  }
+  #checkboxContainerItems {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 
-      #checkboxContainerItems {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
+    .form-check {
+      margin: 0;
+      padding: 0;
 
-        .form-check {
-          margin: 0;
-          padding: 0;
-
-          .form-check-input.position-static {
-            margin: 0 10px 0 0;
-          }
-        }
-
-        button {
-          background: none;
-          color: #ec7f37;
-          border: none;
-          outline: none;
-
-          &:focus {
-            outline: none;
-          }
-        }
+      .form-check-input.position-static {
+        margin: 0 10px 0 0;
       }
+    }
 
-      .btn.btn-primary {
-        width: 100%;
-        color: #ffffff;
+    button {
+      background: none;
+      color: #ec7f37;
+      border: none;
+      outline: none;
+
+      &:focus {
         outline: none;
-        border: none;
-        background-color: #ec7f37;
-
-        &:hover {
-          background-color: rgba(236, 127, 55, 0.5);
-        }
       }
+    }
+  }
+  .btn.btn-primary {
+    width: 100%;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    background-color: #ec7f37;
+
+    &:hover {
+      background-color: rgba(236, 127, 55, 0.5);
     }
   }
 }
 
-@media only screen and (max-width: 785px) {
-  .fade.modal.show {
-    border: 1px solid #ced4da;
-    .modal-body {
-      .ContactFormPersonalInfo {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+@media only screen and (max-width: 768px) {
+  .modal.show {
+    width: 100vw;
+    padding: 0 !important;
+    margin: 0;
 
-        .form-group {
-          width: 48%;
-        }
+    #ContactFormModal {
+      width: 100vw;
+      margin-top: 100px;
+      .modal-dialog {
+        margin: 0;
       }
-      #checkboxContainerItems {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-
-        .form-check {
-          margin: 0;
-          padding: 0;
-
-          .form-check-input.position-static {
-            margin: 0 10px 0 0;
-          }
-        }
-
-        button {
-          background: none;
-          color: #ec7f37;
-          border: none;
-          outline: none;
-
-          &:focus {
-            outline: none;
-          }
-        }
+      .modal-content {
+        height: 60vh;
+        border-radius: 20px;
+        padding: 0;
       }
     }
   }
 }
 
 @media only screen and (max-width: 575px) {
-  .fade.modal.show {
-    .modal-dialog {
-      padding: 20px;
-      margin-top: 100px;
-      .modal-content {
-        border-radius: 28px;
-        padding: 20px;
+  .modal.show {
+    width: 100vw;
+    padding: 0 !important;
+    margin: 0;
+    #ContactFormModal {
+      max-width: 500px;
+      margin: 0;
+      .modal-dialog {
+        margin: 0;
       }
-      .modal-body {
+      .modal-content {
+        height: 100vh;
+        border-radius: 0;
+        border: 0;
+        padding: 0;
         .ContactFormPersonalInfo {
           display: flex;
           justify-content: space-between;
@@ -217,104 +135,85 @@
           }
         }
       }
+    }
+  }
+}
 
-      #checkboxContainerItems {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-
-        .form-check {
-          margin: 0;
+@media only screen and (max-width: 375px) {
+  .modal.show {
+    width: 100vw;
+    padding: 0 !important;
+    margin: 0;
+    #ContactFormModal {
+      margin: 0;
+      .modal-content {
+        height: 100vh;
+        border-radius: 0;
+        border: 0;
+        padding: 10px 20px 10px 10px;
+        .modal-body {
           padding: 0;
+          .ContactFormPersonalInfo {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
 
-          .form-check-input.position-static {
-            margin: 0 10px 0 0;
+            .form-group {
+              width: 48%;
+              height: 70px;
+              display: flex;
+              flex-direction: column;
+
+              .selectContactForm {
+                background: none;
+                height: 35px;
+                outline: none;
+                border: 1px solid #ced4da;
+                border-radius: 3px;
+              }
+            }
           }
         }
-
-        button {
-          background: none;
-          color: #ec7f37;
-          border: none;
-          outline: none;
-
-          &:focus {
-            outline: none;
-          }
-        }
-      }
-
-      .btn.btn-primary {
-        width: 100%;
-        max-width: 800px;
-        background-color: #ec7f37;
-        outline: none;
-        border: none;
       }
     }
   }
 }
 
-@media only screen and (max-width: 450px){
+@media only screen and (max-width: 320px) {
   .fade.modal.show {
-    .modal-dialog {
-      .modal-body {
+    width: 100vw;
+    padding: 0 !important;
+    margin: 0;
+    #ContactFormModal {
+      margin: 0;
+      .modal-content {
+        height: 100%;
+        border-radius: 0;
+        border: 0;
+        padding: 10px 20px 10px 10px;
         .ContactFormPersonalInfo {
-          width: 100%;
-          max-width: 450px;
           display: flex;
-          flex-direction: column;
+          justify-content: space-between;
+          flex-direction: row;
+          flex-wrap: wrap;
 
           .form-group {
-            width: 100%;
-            max-width: 450px;
+            width: 48%;
+            height: 70px;
+            display: flex;
+            flex-direction: column;
+
+            .selectContactForm {
+              background: none;
+              height: 35px;
+              outline: none;
+              border: 1px solid #ced4da;
+              border-radius: 3px;
+            }
           }
         }
       }
     }
   }
 }
-
-@media only screen and (max-width: 382px) {
-  .modal-header {
-    div {
-      h1 {
-        font-size: 30px;
-      }
-    }
-  }
-
-  #checkboxContainerItems {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-
-    .form-check {
-      margin: 0;
-      padding: 0;
-
-      .form-check-input.position-static {
-        margin: 0 10px 0 0;
-      }
-    }
-    .legalLink {
-      width: 80%;
-      text-align: left;
-    }
-
-    button {
-      margin: 0;
-      padding: 0;
-      background: none;
-      color: #ec7f37;
-      border: none;
-      outline: none;
-
-      &:focus {
-        outline: none;
-      }
-    }
-  }
-}
-
-
