@@ -53,7 +53,7 @@ class ConfirmationPage extends Component {
                 to you profile.
               </p>
               <p style={{ marginTop: "50px" }}>Best regards,</p>
-              <p style={{ color: "#da9446" }}>DCI-Team</p>
+              <p style={{ color: "#1d3b8b" }}>DCI-Team</p>
             </div>
           )}
 

@@ -84,7 +84,7 @@ class ContactStudentForm extends Component {
             <div>
               <h1 style={{ color: "#5c5c5c" }}>
                 Contact{" "}
-                <span style={{ color: "#ec7f37" }}>{user.firstName}</span>
+                <span style={{ color: "#1d3b8b" }}>{user.firstName}</span>
               </h1>
             </div>
           </Modal.Header>

@@ -317,7 +317,7 @@ class UpdateUserProfileForm extends Component {
                 </Form.Group>
               </Form.Row>
 
-              <p style={{ color: "#ec7f37" }}>
+              <p style={{ color: "#1d3b8b" }}>
                 Please use only the https format(https://www.somewebsite.com)
               </p>
               <Form.Row>
@@ -399,7 +399,7 @@ class UpdateUserProfileForm extends Component {
                   variant="primary"
                   className="saveChangesBtn"
                   style={{
-                    backgroundColor: "#ec7f37",
+                    backgroundColor: "#1d3b8b",
                     border: "none",
                     borderRadius: "5px",
                     width: "150px",

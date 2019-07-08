@@ -79,7 +79,7 @@ class ContactForm extends Component {
           <Modal.Header closeButton>
             <div>
               <h1 style={{ color: "#5c5c5c" }}>
-                Contact <span style={{ color: "#ec7f37" }}>DCI Team</span>
+                Contact <span style={{ color: "#1d3b8b" }}>DCI Team</span>
               </h1>
             </div>
           </Modal.Header>
@@ -87,7 +87,7 @@ class ContactForm extends Component {
             <h5
               style={{
                 fontSize: "22px",
-                color: "#ec7f37",
+                color: "#1d3b8b",
                 textAlign: "center",
                 marginTop: "50px",
                 marginBottom: "50px"

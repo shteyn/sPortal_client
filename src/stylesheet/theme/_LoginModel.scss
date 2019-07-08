@@ -13,7 +13,7 @@
     button {
       margin: auto;
       &:hover {
-        background-color: rgba(236, 127, 55, 0.5);
+        background-color: rgba(29, 59, 139, 0.5);
         cursor: pointer;
       }
     }
@@ -32,7 +32,7 @@
           font-size: 18px;
           margin-right: 5px;
           margin-left: 5px;
-          color: #ec7f37;
+          color: #1d3b8b;
         }
         button {
           font-size: 20px;
@@ -40,7 +40,7 @@
           background-color: none;
 
           &:hover {
-            color: rgba(236, 127, 55, 0.5);
+            color: rgba(29, 59, 139, 0.5);
             cursor: pointer;
           }
         }
@@ -48,7 +48,7 @@
       #example-collapse-text {
         list-style: none;
         text-align: left;
-        color: #ec7f37;
+        color: #1d3b8b;
 
         //margin: 10px auto 0 108px;
         li {
@@ -83,7 +83,7 @@
         }
       }
       &:hover {
-        background-color: rgba(236, 127, 55, 0.5);
+        background-color: rgba(29, 59, 139, 0.5);
         color: #ffffff;
         font-weight: bold;
         -webkit-appearance: none;
@@ -101,7 +101,7 @@
     }
   }
 
-  #dciLogoLogin {
+  #dci_logo.svgLogin {
     width: 180px;
     height: 80px;
     background-size: contain;
@@ -134,7 +134,7 @@
       a {
         color: #5c5c5c;
         &:hover {
-          color: rgba(236, 127, 55, 0.5);
+          color: rgba(29, 59, 139, 0.5);
         }
       }
     }
@@ -171,7 +171,7 @@
       font-size: 18px;
       //font-weight: bold;
       margin: 40px 0 20px 0;
-      background: #ec7f37;
+      background: #1d3b8b;
       border: none;
       border-radius: 7px;
 
@@ -194,7 +194,7 @@
     justify-content: space-evenly;
     margin-bottom: 10px;
     a:hover {
-      color: rgba(236, 127, 55, 0.5);
+      color: rgba(29, 59, 139, 0.5);
       cursor: pointer;
     }
     .nav-link {
@@ -215,13 +215,13 @@
 
     .nav-link.active {
       //box-shadow: 0 -4px 5px 0 rgba(0, 0, 0, 0.2),0 -5px 5px -150px rgba(0, 0, 0, 0.19);
-      //border-bottom: 1px solid #ec7f37;
+      //border-bottom: 1px solid #1d3b8b;
       //border-top-left-radius: 15px;
       //border-top-right-radius: 15px;
       text-decoration: none;
       font-weight: normal;
       font-size: 30px;
-      color: #ec7f37;
+      color: #1d3b8b;
     }
   }
 
@@ -229,7 +229,7 @@
     //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 0 0 2% 2%;
     //margin-top: -8px;
-    //border: 1px solid #ec7f37;
+    //border: 1px solid #1d3b8b;
   }
 
   .tab-content > .active {

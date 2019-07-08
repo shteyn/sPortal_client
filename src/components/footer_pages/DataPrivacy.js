@@ -20,7 +20,7 @@ class DataPrivacy extends Component {
               </p>
               <p>
                 <span id="inlineSpan">Contact for data privacy:</span>
-                <span style={{ color: "#ec7f37" }}>
+                <span style={{ color: "#1d3b8b" }}>
                   datenschutzauskunft@digitalcareerinstitute.org
                 </span>
               </p>
@@ -83,7 +83,7 @@ class DataPrivacy extends Component {
                     If you have questions pertaining to one of these points
                     please refer to:
                   </span>
-                  <span style={{ color: "#ec7f37" }}>
+                  <span style={{ color: "#1d3b8b" }}>
                     datenschutzauskunft@digitalcareerinstitute.org
                   </span>
                 </p>

@@ -220,7 +220,7 @@ class ConfirmedUsersForm extends Component {
                       ) : (
                         [
                           date > currentDate ? (
-                            <p key="1" style={{ color: "#ec7f37" }}>
+                            <p key="1" style={{ color: "#1d3b8b" }}>
                               {newDate}
                             </p>
                           ) : (
@@ -234,7 +234,7 @@ class ConfirmedUsersForm extends Component {
                     <Table.Cell className="adminTableBtn">
                       <Button
                         style={{
-                          backgroundColor: "#ec7f37",
+                          backgroundColor: "#1d3b8b",
                           color: "white"
                         }}
                         onClick={deleteUser => {

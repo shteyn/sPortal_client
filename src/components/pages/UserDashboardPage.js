@@ -168,7 +168,7 @@ class UserDashboardPage extends Component {
                 <div className="profileInfoItem">
                   <h4>Main Focus</h4>
                   {mainFocus === "" ? (
-                    <p style={{ color: "#da9446" }}>Not updated yet</p>
+                    <p style={{ color: "#1d3b8b" }}>Not updated yet</p>
                   ) : (
                     <p>{mainFocus}</p>
                   )}
@@ -177,7 +177,7 @@ class UserDashboardPage extends Component {
                 <div className="profileInfoItem">
                   <h4>Available from</h4>
                   {formattedAvailability === "" ? (
-                    <p style={{ color: "#da9446" }}>Not updated yet</p>
+                    <p style={{ color: "#1d3b8b" }}>Not updated yet</p>
                   ) : (
                     <p>{formattedAvailability}</p>
                   )}
@@ -202,7 +202,7 @@ class UserDashboardPage extends Component {
                 {!aboutMeSection ? (
                   <p
                     style={{
-                      color: "#da9446",
+                      color: "#1d3b8b",
                       marginBottom: "10%",
                       marginTop: "5%"
                     }}
@@ -231,7 +231,7 @@ class UserDashboardPage extends Component {
                     {!linkedInLink ? (
                       <div className="linksBoxItem">
                         <img src={require("../../img/linkedin.png")} alt="" />
-                        <p style={{ color: "#da9446" }}>
+                        <p style={{ color: "#1d3b8b" }}>
                           Please add your LinkedIn URL ...
                         </p>
                         <Link
@@ -256,7 +256,7 @@ class UserDashboardPage extends Component {
                     {!githubLink ? (
                       <div className="linksBoxItem">
                         <img src={require("../../img/github.png")} alt="" />
-                        <p style={{ color: "#da9446" }}>
+                        <p style={{ color: "#1d3b8b" }}>
                           Please add your Github URL ...
                         </p>
                         <Link
@@ -280,7 +280,7 @@ class UserDashboardPage extends Component {
                     {!xingLink ? (
                       <div className="linksBoxItem">
                         <img src={require("../../img/xing.png")} alt="" />
-                        <p style={{ color: "#da9446" }}>
+                        <p style={{ color: "#1d3b8b" }}>
                           Please add your Xing URL ...
                         </p>
                         <Link
@@ -304,7 +304,7 @@ class UserDashboardPage extends Component {
                     {!portfolioLink ? (
                       <div className="linksBoxItem">
                         <img src={require("../../img/briefcase.png")} alt="" />
-                        <p style={{ color: "#da9446" }}>
+                        <p style={{ color: "#1d3b8b" }}>
                           Please add your Portfolio URL ...
                         </p>
                         <Link

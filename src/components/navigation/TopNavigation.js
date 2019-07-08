@@ -34,7 +34,7 @@ class TopNavigation extends Component {
     const { oneUser, logout, isAdmin, isAuthenticated } = this.props;
     let placeholderUrl = require("../../img/placeholderUser.jpeg");
     let adminImg = require("../../img/admin2.png");
-    let logoDCI = require("../../img/newDCILogo.png");
+    let logoDCI = require("../../img/dci_logo.svg");
 
     return (
       <div>
@@ -47,14 +47,9 @@ class TopNavigation extends Component {
         {isAuthenticated ? (
           <div className="navigationBar">
             <div className="navigationBarSubCont">
-              <Link to="/user-card">
-                <div className="label">
-                  <div
-                    id="dciLogo"
-                    style={{
-                      backgroundImage: "url(" + logoDCI + ")"
-                    }}
-                  />
+              <Link className="h-100" to="/user-card">
+                <div className="label h-100">
+                 <img className="h-100" src={logoDCI}/> 
                 </div>
               </Link>
               <ul>
@@ -107,16 +102,11 @@ class TopNavigation extends Component {
         ) : (
           <div className="navigationBar">
             <div className="navigationBarSubCont">
-              <Link to="/user-card">
-                <div className="label">
-                  <div
-                    id="dciLogo"
-                    style={{
-                      backgroundImage: "url(" + logoDCI + ")"
-                    }}
-                  />
-                </div>
-              </Link>
+            <Link className="h-100" to="/user-card">
+            <div className="label h-100">
+             <img className="h-100" src={logoDCI}/> 
+            </div>
+          </Link>
               <ul>
                 <li>
                   <Link to="/login">Login</Link>

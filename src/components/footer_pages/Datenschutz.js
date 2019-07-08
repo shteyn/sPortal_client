@@ -20,7 +20,7 @@ class Datenschutz extends Component {
               </p>
               <p>
                 <span id="inlineSpan">Kontaktdaten Datenschutz:</span>
-                <span style={{ color: "#ec7f37" }}>
+                <span style={{ color: "#1d3b8b" }}>
                   datenschutzauskunft@digitalcareerinstitute.org
                 </span>
               </p>
@@ -76,7 +76,7 @@ class Datenschutz extends Component {
                 <span id="inlineSpan">
                   Falls Sie dazu Fragen haben, wenden Sie sich bitte an:
                 </span>
-                <span style={{ color: "#ec7f37" }}>
+                <span style={{ color: "#1d3b8b" }}>
                   datenschutzauskunft@digitalcareerinstitute.org
                 </span>
               </p>

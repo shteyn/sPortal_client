@@ -18,7 +18,7 @@ class Imprint extends Component {
               </p>
               <p>
                 <span id="inlineSpan">E-Mail-Kontakt:</span>
-                <span style={{ color: "#ec7f37" }}>info@devugees.org</span>
+                <span style={{ color: "#1d3b8b" }}>info@devugees.org</span>
               </p>
               <p>
                 <span id="inlineSpan">Internet:</span>

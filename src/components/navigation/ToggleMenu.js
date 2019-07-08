@@ -21,7 +21,7 @@ class ToggleMenu extends Component {
   render() {
     const { oneUser, logout, isAdmin, isAuthenticated } = this.props;
 
-    let logoDCI = require("../../img/newDCILogo.png");
+    let logoDCI = require("../../img/dci_logo.svg");
     let placeholderUrl = require("../../img/placeholderUser.jpeg");
     let adminImg = require("../../img/admin2.png");
 

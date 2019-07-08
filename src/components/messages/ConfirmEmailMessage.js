@@ -6,7 +6,7 @@ class ConfirmEmailMessage extends Component {
       <div className="ConfirmEmailMessageCont">
         <div className="ConfirmEmailMessage">
           <div>
-            <h1 style={{ color: "#da9446", marginBottom: "50px" }}>
+            <h1 style={{ color: "#1d3b8b", marginBottom: "50px" }}>
               Dear {this.props.user.firstName}
             </h1>
             <p>Thank you for taking time to register with DCI Students Book.</p>
@@ -15,7 +15,7 @@ class ConfirmEmailMessage extends Component {
               and review your request.
             </p>
             <p style={{ marginTop: "50px" }}>Best regards,</p>
-            <p style={{ color: "#da9446" }}>DCI-Team</p>
+            <p style={{ color: "#1d3b8b" }}>DCI-Team</p>
           </div>
         </div>
       </div>

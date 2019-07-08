@@ -42,7 +42,7 @@
     height: 100%;
     position: relative;
     padding: 0;
-    #dciLogo {
+    #dci_logo.svg {
       width: 180px;
       height: 85px;
       background-position: center center;
@@ -71,9 +71,9 @@
         text-decoration: none;
         font-weight: normal;
         font-size: 28px;
-        color: #ec7f37;
+        color: #1d3b8b;
         &:hover {
-          color: rgba(236, 127, 55, 0.5);
+          color: rgba(29, 59, 139, 0.5);
           cursor: pointer;
         }
       }

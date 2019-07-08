@@ -176,7 +176,7 @@ class Disclaimer extends Component {
               </p>
               <p>
                 <span id="inlineSpan">E-Mail-Kontakt:</span>
-                <span style={{ color: "#ec7f37" }}>
+                <span style={{ color: "#1d3b8b" }}>
                   sergio.cardeal@devugees.org
                 </span>
               </p>

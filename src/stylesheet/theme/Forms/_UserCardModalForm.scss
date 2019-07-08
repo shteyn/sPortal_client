@@ -64,7 +64,7 @@
         text-decoration: none;
         font-weight: normal;
         font-size: 28px;
-        color: #ec7f37;
+        color: #1d3b8b;
         margin-top: 10px;
       }
 
@@ -86,7 +86,7 @@
           text-decoration: none;
           font-weight: normal;
           font-size: 28px;
-          color: #ec7f37;
+          color: #1d3b8b;
         }
 
         button {
@@ -95,14 +95,14 @@
           border: none;
 
           &:hover {
-            color: #ec7f37;
+            color: #1d3b8b;
           }
         }
       }
       .smallTitles {
         font-weight: normal;
         font-size: 18px;
-        color: #ec7f37;
+        color: #1d3b8b;
       }
       .smallTitlesProperties {
         font-size: 18px;
@@ -111,7 +111,7 @@
       .smallTitleAboutMe {
         font-weight: normal;
         font-size: 18px;
-        color: #ec7f37;
+        color: #1d3b8b;
       }
     }
 
@@ -133,7 +133,7 @@
 
           &:hover {
             cursor: pointer;
-            color: rgba(236, 127, 55, 0.5);
+            color: rgba(29, 59, 139, 0.5);
           }
         }
       }
@@ -144,11 +144,11 @@
         border-radius: 5px;
         outline: none;
         border: none;
-        background-color: #ec7f37;
+        background-color: #1d3b8b;
         color: #ffffff;
 
         &:hover {
-          background-color: rgba(236, 127, 55, 0.5);
+          background-color: rgba(29, 59, 139, 0.5);
         }
       }
     }
@@ -177,7 +177,7 @@
       text-decoration: none;
       font-weight: normal;
       font-size: 28px;
-      color: #ec7f37;
+      color: #1d3b8b;
     }
   }
 }

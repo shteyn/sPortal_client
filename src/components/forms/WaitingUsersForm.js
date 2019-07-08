@@ -58,7 +58,7 @@ class WaitingUsersForm extends Component {
                       <Button
                         onClick={this.approveUser.bind(this, oneUser._id)}
                         style={{
-                          color: "#ec7f37"
+                          color: "#1d3b8b"
                         }}
                       >
                         {"Approve"}
@@ -67,7 +67,7 @@ class WaitingUsersForm extends Component {
                     <Table.Cell>
                       <Button
                         style={{
-                          backgroundColor: "#ec7f37",
+                          backgroundColor: "#1d3b8b",
                           color: "white"
                         }}
                         onClick={deleteUser => {

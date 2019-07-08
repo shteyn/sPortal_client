@@ -17,7 +17,7 @@ class ToggleMenuNonLogin extends Component {
 
 
   render() {
-    let logoDCI = require("../../img/newDCILogo.png");
+    let logoDCI = require("../../img/dci_logo.svg");
     const clsMenu = [
       'ToggleMenuNonLogin',
       'fa'
